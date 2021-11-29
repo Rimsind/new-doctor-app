@@ -1,6 +1,60 @@
 import Link from "next/link";
 import Layout2 from "../components/Layout/Layout2";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { setCookie } from "nookies";
+import router from "next/router";
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    if (!data.email || !data.password) {
+      alert("please fill all data");
+      return;
+    }
+    try {
+      const payload = {
+        identifier: data.email,
+        password: data.password,
+      };
+      const res = await axios.post(
+        "https://manage.riimstechnology.com/auth/local",
+        payload
+      );
+      const result = res.data;
+      console.log(result);
+
+      if (result.jwt && result.user.role.id === 3) {
+        //after login process
+        //storing jwt
+        // Set
+        setCookie(null, "token", result.jwt, {
+          maxAge: 30 * 24 * 60 * 60,
+          path: "/",
+        });
+        setCookie(null, "user", JSON.stringify(result.user), {
+          maxAge: 30 * 24 * 60 * 60,
+          path: "/",
+        });
+
+        //reset form data
+        reset();
+        alert("login success");
+        router.push("/");
+      }
+    } catch (err) {
+      console.log(err.message);
+      alert("login failed");
+    }
+  };
+
   return (
     <>
       <section
@@ -35,7 +89,10 @@ const Login = () => {
                       </div>
                     </div>
                   </div>
-                  <form action="index.html" className="login-form mt-4">
+                  <form
+                    className="login-form mt-4"
+                    onSubmit={handleSubmit(onSubmit)}
+                  >
                     <div className="row">
                       <div className="col-lg-12">
                         <div className="mb-3">
@@ -48,6 +105,7 @@ const Login = () => {
                             placeholder="Email"
                             name="email"
                             required=""
+                            {...register("email")}
                           />
                         </div>
                       </div>
@@ -62,6 +120,7 @@ const Login = () => {
                             className="form-control"
                             placeholder="Password"
                             required=""
+                            {...register("password")}
                           />
                         </div>
                       </div>

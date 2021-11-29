@@ -2,6 +2,7 @@ import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Layout2 from "../components/Layout/Layout2";
+import router from "next/router";
 
 const Signup = () => {
   //react-hook-form
@@ -9,6 +10,7 @@ const Signup = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -21,12 +23,15 @@ const Signup = () => {
     return result;
   };
 
+  // creating user profile after user is created
   const createUserProfile = async (data, token) => {
     const profilePayload = {
-      First_name: data.firstName,
-      Last_name: data.lastName,
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
     };
+
+    //post function for the user profile
     const res = await axios.post(
       "https://manage.riimstechnology.com/doctors",
       profilePayload,
@@ -37,36 +42,48 @@ const Signup = () => {
       }
     );
     const result = res.data;
-    console.log(result);
+    return result;
   };
 
+  //onsubmit function defined
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    // input validation
+
     if (!data.firstName || !data.lastName || !data.email || !data.password) {
       alert("please fill all data");
       return;
     }
 
-    // register user
     try {
       const payload = {
         username: data.email,
         email: data.email,
         password: data.password,
-        role: "Doctor",
       };
 
       const result = await registerUser(payload);
-
+      // console.log(result);
       if (result.jwt) {
         // create profile
-        createUserProfile(data, result.jwt);
-        //auto login
-        // store token
-      }
 
-      // create prodifle
+        const profile = await createUserProfile(data, result.jwt);
+        console.log(profile);
+
+        await axios.put(
+          `https://manage.riimstechnology.com/users/${result.user.id}`,
+          {
+            profileId: profile.id,
+            role: 3,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${result.jwt}`,
+            },
+          }
+        );
+      }
+      reset();
+      router.push("/login");
     } catch (err) {
       console.log(err.message);
     }
@@ -172,32 +189,6 @@ const Signup = () => {
                           <button type="submit" className="btn btn-primary">
                             Register
                           </button>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-12 mt-3 text-center">
-                        <h6 className="text-muted">Or</h6>
-                      </div>
-
-                      <div className="col-6 mt-3">
-                        <div className="d-grid">
-                          <a
-                            href="javascript:void(0)"
-                            className="btn btn-soft-primary"
-                          >
-                            <i className="uil uil-facebook"></i> Facebook
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className="col-6 mt-3">
-                        <div className="d-grid">
-                          <a
-                            href="javascript:void(0)"
-                            className="btn btn-soft-primary"
-                          >
-                            <i className="uil uil-google"></i> Google
-                          </a>
                         </div>
                       </div>
 
