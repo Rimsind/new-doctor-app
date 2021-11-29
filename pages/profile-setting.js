@@ -1,7 +1,41 @@
-import PasswordUpdate from "../components/PasswordUpdate";
+// import PasswordUpdate from "../components/PasswordUpdate";
 import ProfileInformation from "../components/ProfileInformation";
 import ProfilePicture from "../components/ProfilePicture";
+import { parseCookies } from "nookies";
+import useSWR from "swr";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import apiUrl from "../config/api";
+
+
 const profilSetting = () => {
+  const [token, setToken] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const {data, loading, error} = useSWR(`${apiUrl}/doctors/${currentUser?.profileId}`,
+  async(url) => {
+    const res = await axios.get(url,
+      {
+        headers: {
+          Authorization : `Bearer ${token}`
+        }
+      }
+      )
+      const result = res.data
+      return result
+  }
+  )
+
+  useEffect(() => {
+    const {token, user} = parseCookies()
+    if(token && user) {
+      setToken(token)
+      const userData = JSON.parse(user)
+      setCurrentUser(userData)
+    }
+  }, [])
+  if(data) console.log(data)
+
   return (
     <>
       <h5 className="mb-0 pb-2">Schedule Timing</h5>
@@ -12,10 +46,10 @@ const profilSetting = () => {
 
         <ProfilePicture />
 
-        <ProfileInformation />
+        <ProfileInformation doctor={data} />
       </div>
 
-      <PasswordUpdate />
+      {/* <PasswordUpdate /> */}
 
       {/* <div className="rounded shadow mt-4">
         <div className="p-4 border-bottom profile-heading">

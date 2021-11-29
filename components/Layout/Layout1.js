@@ -47,14 +47,28 @@ const Layout1 = ({ children }) => {
                 </Link>
               </li>
 
-              <li>
-                <Link href="/profile-setting">
-                  <a>
-                    <i className="ri-user-settings-line me-2 d-inline-block"></i>
-                    Profile Settings
-                  </a>
-                </Link>
-              </li>
+              
+              <li className="sidebar-dropdown">
+                  <a href="javascript:void(0)"><i className=" ri-user-settings-line me-2 d-inline-block"></i>Profile</a>
+                    <div className="sidebar-submenu">
+                        <ul>
+                            <li>
+                            <Link href="/profile-setting">
+                              <a>
+                                Profile Settings
+                              </a>
+                            </Link>
+                            </li>
+                            <li>
+                            <Link href="/password-setting">
+                              <a>
+                                Password Settings
+                              </a>
+                            </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
               <li>
                 <Link href="/">
                   <a>
