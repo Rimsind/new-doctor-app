@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-const ProfilePicture = () => {
+const ProfilePicture = ({ doctor }) => {
+  console.log(doctor, "doctor details");
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     event.preventDefault();
@@ -16,7 +17,7 @@ const ProfilePicture = () => {
               <Image
                 height="220"
                 width="220"
-                src="/images/doctors/doc.png"
+                src={doctor.image.url}
                 className="avatar  rounded-pill shadow mx-auto d-block profile-pic"
                 alt=""
               />

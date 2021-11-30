@@ -1,7 +1,5 @@
 import { useForm } from "react-hook-form";
-const ProfileInformation = ({ doctors }) => {
-  console.log(doctors, "doctor details");
-
+const ProfileInformation = ({ doctor }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data, event) => {
@@ -22,7 +20,7 @@ const ProfileInformation = ({ doctors }) => {
                   type="text"
                   className="form-control"
                   placeholder="First Name :"
-                  defaultValue=""
+                  defaultValue={!!doctor.firstName ? doctor.firstName : ""}
                 />
               </div>
             </div>
@@ -34,7 +32,8 @@ const ProfileInformation = ({ doctors }) => {
                   name="lastName"
                   type="text"
                   className="form-control"
-                  placeholder="Last Name :"
+                  placeholder="Last Name "
+                  defaultValue={!!doctor.lastName ? doctor.lastName : ""}
                 />
               </div>
             </div>
@@ -47,6 +46,7 @@ const ProfileInformation = ({ doctors }) => {
                   type="email"
                   className="form-control"
                   placeholder="Your email :"
+                  defaultValue={!!doctor.email ? doctor.email : ""}
                 />
               </div>
             </div>
@@ -59,6 +59,7 @@ const ProfileInformation = ({ doctors }) => {
                   type="text"
                   className="form-control"
                   placeholder="Phone no. :"
+                  defaultValue={!!doctor.phone ? doctor.phone : ""}
                 />
               </div>
             </div>
@@ -70,6 +71,9 @@ const ProfileInformation = ({ doctors }) => {
                   type="text"
                   className="form-control"
                   placeholder="MBBS"
+                  defaultValue={
+                    !!doctor.qualification ? doctor.qualification : ""
+                  }
                 />
               </div>
             </div>
@@ -80,7 +84,10 @@ const ProfileInformation = ({ doctors }) => {
                   name="experienceInYear"
                   type="number"
                   className="form-control"
-                  placeholder="MBBS"
+                  placeholder="10"
+                  defaultValue={
+                    !!doctor.experienceInYrs ? doctor.experienceInYrs : ""
+                  }
                 />
               </div>
             </div>
@@ -92,7 +99,8 @@ const ProfileInformation = ({ doctors }) => {
                   name="bio"
                   rows="4"
                   className="form-control"
-                  placeholder="Bio :"
+                  placeholder="Bio "
+                  defaultValue={!!doctor.bio ? doctor.bio : ""}
                 ></textarea>
               </div>
             </div>

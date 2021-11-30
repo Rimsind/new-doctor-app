@@ -1,14 +1,15 @@
 // import PasswordUpdate from "../components/PasswordUpdate";
 import ProfileInformation from "../components/ProfileInformation";
 import ProfilePicture from "../components/ProfilePicture";
-import { parseCookies } from "nookies";
-import useSWR from "swr";
+import { useEffect, useState } from "react";
+import { apiUrl } from "../config/api";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import apiUrl from "../config/api";
+import useSWR from "swr";
+import { parseCookies } from "nookies";
 
 const profilSetting = () => {
   const [token, setToken] = useState(null);
+
   const [currentUser, setCurrentUser] = useState(null);
 
   const { data, loading, error } = useSWR(
@@ -23,7 +24,6 @@ const profilSetting = () => {
       return result;
     }
   );
-  console.log(data, "doctor details");
 
   useEffect(() => {
     const { token, user } = parseCookies();
@@ -33,12 +33,14 @@ const profilSetting = () => {
       setCurrentUser(userData);
     }
   }, []);
-  if (!data) {
-    <div>
-      <h1>loading...</h1>
-    </div>;
-  }
 
+  if (!data) {
+    return (
+      <div>
+        <h2>loading...</h2>
+      </div>
+    );
+  }
   return (
     <>
       <h5 className="mb-0 pb-2">Schedule Timing</h5>
@@ -47,28 +49,10 @@ const profilSetting = () => {
           <h5 className="mb-0">Personal Information :</h5>
         </div>
 
-        <ProfilePicture />
+        <ProfilePicture doctor={data} />
 
-        <ProfileInformation doctors={data} />
+        <ProfileInformation doctor={data} />
       </div>
-
-      {/* <PasswordUpdate /> */}
-
-      {/* <div className="rounded shadow mt-4">
-        <div className="p-4 border-bottom profile-heading">
-          <h5 className="mb-0 text-danger">Delete Account :</h5>
-        </div>
-
-        <div className="p-4 profile-body">
-          <h6 className="mb-0 fw-normal">
-            Do you want to delete the account? Please press below
-            &quot;Delete&quot; button
-          </h6>
-          <div className="mt-4">
-            <button className="btn btn-danger">Delete Account</button>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };

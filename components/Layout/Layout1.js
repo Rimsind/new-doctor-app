@@ -1,7 +1,46 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { apiUrl } from "../../config/api";
+import axios from "axios";
+import useSWR from "swr";
+import { parseCookies } from "nookies";
 
 const Layout1 = ({ children }) => {
+  const [token, setToken] = useState(null);
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const { data, loading, error } = useSWR(
+    `${apiUrl}/doctors/${currentUser?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
+  useEffect(() => {
+    const { token, user } = parseCookies();
+    if (token && user) {
+      setToken(token);
+      const userData = JSON.parse(user);
+      setCurrentUser(userData);
+    }
+  }, []);
+
+  if (!data) {
+    return (
+      <div>
+        <h2>loading...</h2>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="page-wrapper chiller-theme toggled">
@@ -31,8 +70,8 @@ const Layout1 = ({ children }) => {
                 </h6>
               </li>
               <li>
-                <Link href="/">
-                  <a href="index.html">
+                <Link href="/home">
+                  <a>
                     <i className="ri-airplay-line me-2 d-inline-block"></i>
                     Dashboard
                   </a>
@@ -157,7 +196,7 @@ const Layout1 = ({ children }) => {
                       <Image
                         height="50"
                         width="50"
-                        src="/images/doctors/doc.png"
+                        src={data.image.url}
                         className="avatar avatar-ex-small rounded-circle"
                         alt=""
                       />
@@ -173,7 +212,7 @@ const Layout1 = ({ children }) => {
                         <Image
                           height="50"
                           width="50"
-                          src="/images/doctors/doc.png"
+                          src={data.image.url}
                           className="avatar avatar-md-sm rounded-circle border shadow"
                           alt=""
                         />

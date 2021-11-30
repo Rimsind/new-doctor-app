@@ -29,7 +29,6 @@ const Login = () => {
         payload
       );
       const result = res.data;
-      console.log(result);
 
       if (result.jwt && result.user.role.id === 3) {
         //after login process
@@ -47,7 +46,7 @@ const Login = () => {
         //reset form data
         reset();
         alert("login success");
-        router.push("/");
+        router.push("/home");
       }
     } catch (err) {
       console.log(err.message);
