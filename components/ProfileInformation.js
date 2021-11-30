@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
-const ProfileInformation = ({doctor}) => {
-  console.log(doctor, "doctor details")
+const ProfileInformation = ({ doctors }) => {
+  console.log(doctors, "doctor details");
 
-  const {register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data, event) => {
     event.preventDefault();
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   return (
     <>
@@ -99,7 +99,7 @@ const ProfileInformation = ({doctor}) => {
           </div>
 
           <div className="row">
-            <div className="col-sm-12" style={{textAlign: "right"}}>
+            <div className="col-sm-12" style={{ textAlign: "right" }}>
               <input
                 type="submit"
                 id="submit"

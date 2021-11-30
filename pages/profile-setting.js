@@ -7,34 +7,37 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import apiUrl from "../config/api";
 
-
 const profilSetting = () => {
   const [token, setToken] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
 
-  const {data, loading, error} = useSWR(`${apiUrl}/doctors/${currentUser?.profileId}`,
-  async(url) => {
-    const res = await axios.get(url,
-      {
+  const { data, loading, error } = useSWR(
+    `${apiUrl}/doctors/${currentUser?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
         headers: {
-          Authorization : `Bearer ${token}`
-        }
-      }
-      )
-      const result = res.data
-      return result
-  }
-  )
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  console.log(data, "doctor details");
 
   useEffect(() => {
-    const {token, user} = parseCookies()
-    if(token && user) {
-      setToken(token)
-      const userData = JSON.parse(user)
-      setCurrentUser(userData)
+    const { token, user } = parseCookies();
+    if (token && user) {
+      setToken(token);
+      const userData = JSON.parse(user);
+      setCurrentUser(userData);
     }
-  }, [])
-  if(data) console.log(data)
+  }, []);
+  if (!data) {
+    <div>
+      <h1>loading...</h1>
+    </div>;
+  }
 
   return (
     <>
@@ -46,7 +49,7 @@ const profilSetting = () => {
 
         <ProfilePicture />
 
-        <ProfileInformation doctor={data} />
+        <ProfileInformation doctors={data} />
       </div>
 
       {/* <PasswordUpdate /> */}

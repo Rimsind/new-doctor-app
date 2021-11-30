@@ -4,8 +4,8 @@ const ProfilePicture = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     event.preventDefault();
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   return (
     <>
@@ -22,7 +22,10 @@ const ProfilePicture = () => {
               />
             </div>
 
-            <div className="col-lg-5 col-md-8 text-center text-md-start mt-4 mt-sm-0" {...register("uploadFile")}>
+            <div
+              className="col-lg-5 col-md-8 text-center text-md-start mt-4 mt-sm-0"
+              {...register("uploadFile")}
+            >
               <h5 className="">Upload your picture</h5>
               <input
                 type="file"
@@ -34,7 +37,7 @@ const ProfilePicture = () => {
             </div>
 
             <div className="col-lg-5 col-md-12 text-lg-end text-center mt-4 mt-lg-0">
-            <input
+              <input
                 type="submit"
                 id="submit"
                 name="send"

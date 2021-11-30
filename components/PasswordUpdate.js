@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 const PasswordUpdate = () => {
-  const {register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     event.preventDefault();
-    console.log(data)
-  }
+    console.log(data);
+  };
   return (
     <>
       <div className="rounded shadow mt-4">
@@ -19,7 +19,7 @@ const PasswordUpdate = () => {
                 <div className="mb-3" {...register("oldPassword")}>
                   <label className="form-label">Old password :</label>
                   <input
-                  name="oldPassword"
+                    name="oldPassword"
                     type="password"
                     className="form-control"
                     placeholder="Old password"
@@ -32,7 +32,7 @@ const PasswordUpdate = () => {
                 <div className="mb-3" {...register("newPassword")}>
                   <label className="form-label">New password :</label>
                   <input
-                  name="newPassword"
+                    name="newPassword"
                     type="password"
                     className="form-control"
                     placeholder="New password"
@@ -45,7 +45,7 @@ const PasswordUpdate = () => {
                 <div className="mb-3" {...register("retypeNewPassword")}>
                   <label className="form-label">Re-type New password :</label>
                   <input
-                  name="retypeNewPassword"
+                    name="retypeNewPassword"
                     type="password"
                     className="form-control"
                     placeholder="Re-type New password"
@@ -55,8 +55,13 @@ const PasswordUpdate = () => {
               </div>
 
               <div className="col-lg-12 mt-2 mb-0">
-                <div className="update-password-btn" style={{textAlign: "right"}}>
-                <button type="submit" className="btn btn-primary">Save password</button>
+                <div
+                  className="update-password-btn"
+                  style={{ textAlign: "right" }}
+                >
+                  <button type="submit" className="btn btn-primary">
+                    Save password
+                  </button>
                 </div>
               </div>
             </div>
