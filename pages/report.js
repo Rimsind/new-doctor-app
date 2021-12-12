@@ -22,38 +22,10 @@ const Report = () => {
       return result;
     }
   );
-  console.log(data?.patient?.medicalHistory?.surgicalHistory);
   return (
     <>
       <Head>
-        <link
-          rel="stylesheet"
-          id="astra-theme-css-css"
-          href="/asset/wp-content/themes/astra/assets/css/minified/style.min5b75.css?ver=3.0.2"
-          media="all"
-        />
-        <link rel="stylesheet" href="/asset/astra-style.css" />
-        <link
-          rel="stylesheet"
-          id="astra-google-fonts-css"
-          href="http://fonts.googleapis.com/css?family=Open+Sans%3A400%7CPoppins%3A600%2C500&amp;display=fallback&amp;ver=3.0.2"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="elementor-frontend-css"
-          href="/asset/wp-content/plugins/elementor/assets/css/frontend.min3d36.css?ver=3.3.1"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="elementor-post-2911-css"
-          href="/asset/wp-content/uploads/elementor/css/post-2911d7c5.css?ver=1638804915"
-          media="all"
-        />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css/" />
-
-        <link rel="stylesheet" href="/asset/style.css" />
       </Head>
       <div className=" page-template-default page page-id-2911 ehf-footer ehf-template-astra ehf-stylesheet-astra ast-desktop ast-page-builder-template ast-no-sidebar astra-3.0.2 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent elementor-default elementor-kit-532 elementor-page elementor-page-2911">
         <div className="hfeed site" id="page">
@@ -453,7 +425,10 @@ const Report = () => {
                                       <Image
                                         width="250"
                                         height="250"
-                                        src={data?.patient?.image?.url}
+                                        src={
+                                          data?.patient?.image?.url ||
+                                          "/images/profile.png"
+                                        }
                                         className="attachment-full size-full"
                                         alt=""
                                         loading="lazy"
