@@ -105,8 +105,8 @@ const Signup = () => {
                     <div className="row">
                       <div className="col-md-6">
                         <div className="login-doctor">
-                          <Link href="/signup">
-                            <a>Signup asPatient</a>
+                          <Link href="https://demo.rimsind.com/user/signup">
+                            <a>Signup as Patient</a>
                           </Link>
                         </div>
                       </div>
@@ -197,7 +197,7 @@ const Signup = () => {
                           <small className="text-dark me-2">
                             Already have an account ?
                           </small>
-                          <Link href="/login">
+                          <Link href="/">
                             <a className="text-dark fw-bold">Sign in</a>
                           </Link>
                         </p>

@@ -85,7 +85,7 @@ const Login = () => {
                     <div className="row">
                       <div className="col-md-6">
                         <div className="login-doctor">
-                          <Link href="/login">
+                          <Link href="https://demo.rimsind.com/user/login">
                             <a>Login as Patient</a>
                           </Link>
                         </div>
