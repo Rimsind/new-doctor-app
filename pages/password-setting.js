@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-const passwordSetting = () => {
+const PasswordSetting = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     event.preventDefault();
@@ -72,4 +72,4 @@ const passwordSetting = () => {
   );
 };
 
-export default passwordSetting;
+export default PasswordSetting;

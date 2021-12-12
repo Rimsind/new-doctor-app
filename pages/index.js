@@ -4,7 +4,9 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { setCookie } from "nookies";
 import router from "next/router";
+import { useAuth } from "../context/index";
 const Login = () => {
+  const { dispatchAuth } = useAuth();
   const {
     register,
     handleSubmit,
@@ -15,10 +17,12 @@ const Login = () => {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
+    dispatchAuth({ type: "AUTH_LOADING" });
     if (!data.email || !data.password) {
       alert("please fill all data");
       return;
     }
+
     try {
       const payload = {
         identifier: data.email,
@@ -31,9 +35,6 @@ const Login = () => {
       const result = res.data;
 
       if (result.jwt && result.user.role.id === 3) {
-        //after login process
-        //storing jwt
-        // Set
         setCookie(null, "token", result.jwt, {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",
@@ -43,13 +44,23 @@ const Login = () => {
           path: "/",
         });
 
-        //reset form data
+        dispatchAuth({
+          type: "LOGIN_SUCCESS",
+          payload: { token: result.jwt, user: result.user },
+        });
+
         reset();
         alert("login success");
         router.push("/home");
       }
-    } catch (err) {
-      console.log(err.message);
+    } catch (error) {
+      dispatchAuth({
+        type: "LOGIN_FAILED",
+        payload: error.message
+          ? error.message
+          : "Something went wrong, try agin",
+      });
+      console.log(error.message);
       alert("login failed");
     }
   };
@@ -153,26 +164,6 @@ const Login = () => {
                       <div className="col-lg-12 mb-0">
                         <div className="d-grid">
                           <button className="btn btn-primary">Log in</button>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-12 mt-3 text-center">
-                        <h6 className="text-muted">Or</h6>
-                      </div>
-
-                      <div className="col-6 mt-3">
-                        <div className="d-grid">
-                          <a href="#" className="btn btn-soft-primary">
-                            <i className="uil uil-facebook"></i> Facebook
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className="col-6 mt-3">
-                        <div className="d-grid">
-                          <a href="#" className="btn btn-soft-primary">
-                            <i className="uil uil-google"></i> Google
-                          </a>
                         </div>
                       </div>
 

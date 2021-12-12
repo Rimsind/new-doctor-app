@@ -5,11 +5,22 @@ import { apiUrl } from "../../config/api";
 import axios from "axios";
 import useSWR from "swr";
 import { parseCookies } from "nookies";
+import Head from "next/head";
+import Script from "next/script";
+import Router from "next/router";
 
 const Layout1 = ({ children }) => {
   const [token, setToken] = useState(null);
-
   const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const { token, user } = parseCookies();
+    if (token && user) {
+      setToken(token);
+      const userData = JSON.parse(user);
+      setCurrentUser(userData);
+    }
+  }, []);
 
   const { data, loading, error } = useSWR(
     `${apiUrl}/doctors/${currentUser?.profileId}`,
@@ -24,15 +35,6 @@ const Layout1 = ({ children }) => {
     }
   );
 
-  useEffect(() => {
-    const { token, user } = parseCookies();
-    if (token && user) {
-      setToken(token);
-      const userData = JSON.parse(user);
-      setCurrentUser(userData);
-    }
-  }, []);
-
   if (!data) {
     return (
       <div>
@@ -41,8 +43,33 @@ const Layout1 = ({ children }) => {
     );
   }
 
+  const logOutHandler = () => {
+    Router.push("/");
+  };
+
   return (
     <>
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossOrigin="anonymous"
+      ></Script>
+      <Head>
+        <meta charSet="utf-8" />
+
+        <meta
+          name="description"
+          content="Premium Bootstrap 4 Landing Page Template"
+        />
+        <meta
+          name="keywords"
+          content="Appointment, Booking, System, Dashboard, Health"
+        />
+        <meta name="author" content="Shreethemes" />
+        <meta name="email" content="shreethemes@gmail.com" />
+        <meta name="website" content="http://www.shreethemes.in" />
+        <meta name="Version" content="v1.0.0" />
+      </Head>
       <div className="page-wrapper chiller-theme toggled">
         <nav id="sidebar" className="sidebar-wrapper">
           <div
@@ -66,7 +93,7 @@ const Layout1 = ({ children }) => {
             <ul className="sidebar-menu pt-3">
               <li>
                 <h6 style={{ color: "blue", textAlign: "center" }}>
-                  Welcome! Dr. Samir Kumar Barman
+                  Welcome! Dr. {data?.firstName}
                 </h6>
               </li>
               <li>
@@ -160,27 +187,6 @@ const Layout1 = ({ children }) => {
                 >
                   <i className="ri-menu-line"></i>
                 </a>
-                <div className="search-bar p-0 d-none d-md-block ms-2">
-                  <div id="search" className="menu-search mb-0">
-                    <form
-                      role="search"
-                      method="get"
-                      id="searchform"
-                      className="searchform"
-                    >
-                      <div>
-                        <input
-                          type="text"
-                          className="border rounded-pill"
-                          name="s"
-                          id="s"
-                          placeholder="Search Keywords..."
-                        />
-                        <input type="submit" id="searchsubmit" value="Search" />
-                      </div>
-                    </form>
-                  </div>
-                </div>
               </div>
 
               <ul className="list-unstyled mb-0">
@@ -188,7 +194,7 @@ const Layout1 = ({ children }) => {
                   <div className="dropdown dropdown-primary">
                     <button
                       type="button"
-                      className="btn btn-pills btn-soft-primary dropdown-toggle p-0"
+                      className="btn btn-pills  dropdown-toggle p-0"
                       data-bs-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
@@ -196,7 +202,7 @@ const Layout1 = ({ children }) => {
                       <Image
                         height="50"
                         width="50"
-                        src={data.image.url}
+                        src={data?.image?.url || "/images/profile.png"}
                         className="avatar avatar-ex-small rounded-circle"
                         alt=""
                       />
@@ -212,40 +218,44 @@ const Layout1 = ({ children }) => {
                         <Image
                           height="50"
                           width="50"
-                          src={data.image.url}
+                          src={data?.image?.url || "/images/profile.png"}
                           className="avatar avatar-md-sm rounded-circle border shadow"
                           alt=""
                         />
                         <div className="flex-1 ms-2">
-                          <span className="d-block mb-1">Calvin Carlo</span>
+                          <span className="d-block mb-1">
+                            Dr.{data?.firstName}
+                          </span>
                           <small className="text-muted">Orthopedic</small>
                         </div>
                       </a>
-                      <a className="dropdown-item text-dark" href="index.html">
-                        <span className="mb-0 d-inline-block me-1">
-                          <i className="ri-airplay-line align-middle h6"></i>
-                        </span>
-                        Dashboard
-                      </a>
-                      <a
-                        className="dropdown-item text-dark"
-                        href="dr-profile.html"
-                      >
-                        <span className="mb-0 d-inline-block me-1">
-                          <i className="ri-user-settings-line align-middle h6"></i>
-                        </span>
-                        Profile Settings
-                      </a>
+                      <Link href="/home">
+                        <a className="dropdown-item text-dark">
+                          <span className="mb-0 d-inline-block me-1">
+                            <i className="ri-airplay-line align-middle h6"></i>
+                          </span>
+                          Dashboard
+                        </a>
+                      </Link>
+                      <Link href="/profile-setting">
+                        <a className="dropdown-item text-dark">
+                          <span className="mb-0 d-inline-block me-1">
+                            <i className="ri-user-settings-line align-middle h6"></i>
+                          </span>
+                          Profile
+                        </a>
+                      </Link>
                       <div className="dropdown-divider border-top"></div>
-                      <a
+
+                      <button
                         className="dropdown-item text-dark"
-                        href="lock-screen.html"
+                        onClick={logOutHandler}
                       >
                         <span className="mb-0 d-inline-block me-1">
                           <i className="ri-logout-circle-r-line align-middle h6"></i>
                         </span>
                         Logout
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </li>

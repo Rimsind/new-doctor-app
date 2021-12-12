@@ -1,38 +1,28 @@
 // import PasswordUpdate from "../components/PasswordUpdate";
 import ProfileInformation from "../components/ProfileInformation";
 import ProfilePicture from "../components/ProfilePicture";
-import { useEffect, useState } from "react";
+
 import { apiUrl } from "../config/api";
 import axios from "axios";
 import useSWR from "swr";
-import { parseCookies } from "nookies";
 
-const profilSetting = () => {
-  const [token, setToken] = useState(null);
+import { useAuth } from "../context";
 
-  const [currentUser, setCurrentUser] = useState(null);
+const ProfilSetting = () => {
+  const { auth } = useAuth();
 
   const { data, loading, error } = useSWR(
-    `${apiUrl}/doctors/${currentUser?.profileId}`,
+    `${apiUrl}/doctors/${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${auth.token}`,
         },
       });
       const result = res.data;
       return result;
     }
   );
-
-  useEffect(() => {
-    const { token, user } = parseCookies();
-    if (token && user) {
-      setToken(token);
-      const userData = JSON.parse(user);
-      setCurrentUser(userData);
-    }
-  }, []);
 
   if (!data) {
     return (
@@ -57,4 +47,4 @@ const profilSetting = () => {
   );
 };
 
-export default profilSetting;
+export default ProfilSetting;

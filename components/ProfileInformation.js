@@ -1,16 +1,55 @@
 import { useForm } from "react-hook-form";
+import { apiUrl, fetcher } from "../config/api";
+import axios from "axios";
+import { useAuth } from "../context";
+import { useState } from "react";
+import useSWR from "swr";
 const ProfileInformation = ({ doctor }) => {
-  const { register, handleSubmit } = useForm();
+  const { auth } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
 
-  const onSubmit = (data, event) => {
+  const { register, handleSubmit } = useForm();
+  const updateProfile = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
-    console.log(data);
+    try {
+      const payload = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phone: data.phone,
+        qualification: data.qualification,
+        experienceInYrs: data.experienceInYear,
+        bio: data.bio,
+        skype_id: data.skype_id,
+        specialty: {
+          id: data.specialty,
+        },
+      };
+      console.log(payload);
+
+      const res = await axios.put(
+        `${apiUrl}/doctors/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      setLoading(false);
+      alert("Profile Updated Succesfully");
+      return result;
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
     <>
       <div className="p-4 profile-body">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(updateProfile)}>
           <div className="row">
             <div className="col-md-6" {...register("firstName")}>
               <div className="mb-3">
@@ -51,11 +90,11 @@ const ProfileInformation = ({ doctor }) => {
               </div>
             </div>
 
-            <div className="col-md-6" {...register("phoneNumber")}>
+            <div className="col-md-6" {...register("phone")}>
               <div className="mb-3">
                 <label className="form-label">Phone no.</label>
                 <input
-                  name="phoneNumber"
+                  name="phone"
                   type="text"
                   className="form-control"
                   placeholder="Phone no. :"
@@ -91,6 +130,41 @@ const ProfileInformation = ({ doctor }) => {
                 />
               </div>
             </div>
+            <div className="col-md-6">
+              <div className="mb-3">
+                <label className="form-label">Specialization</label>
+                <select
+                  className="form-select"
+                  aria-label="Default select example"
+                  {...register("specialty")}
+                >
+                  <option
+                    defaultChecked={
+                      !!doctor.specialty?.id ? doctor.specialty?.id : ""
+                    }
+                  >
+                    {!!doctor.specialty?.name ? doctor.specialty?.name : ""}
+                  </option>
+                  {specialties?.map((item, index) => (
+                    <option value={item.id} key={index}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="mb-3">
+                <label className="form-label">Skype ID</label>
+                <input
+                  name="skypeId"
+                  type="text"
+                  className="form-control"
+                  {...register("skype_id")}
+                  defaultValue={!!doctor.skype_id ? doctor.skype_id : ""}
+                />
+              </div>
+            </div>
 
             <div className="col-md-12" {...register("bio")}>
               <div className="mb-3">
@@ -113,7 +187,8 @@ const ProfileInformation = ({ doctor }) => {
                 id="submit"
                 name="send"
                 className="btn btn-primary"
-                value="Save changes"
+                value={loading ? "Uploading..." : "Save"}
+                disabled={loading}
               />
             </div>
           </div>

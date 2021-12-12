@@ -1,6 +1,37 @@
 import Link from "next/link";
 import Image from "next/image";
+import useSWR from "swr";
+import { apiUrl } from "../config/api";
+import { parseCookies } from "nookies";
+import axios from "axios";
+import { useState, useEffect } from "react";
 const Navbar = () => {
+  const [token, setToken] = useState(null);
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const { token, user } = parseCookies();
+    if (token && user) {
+      setToken(token);
+      const userData = JSON.parse(user);
+      setCurrentUser(userData);
+    }
+  }, []);
+
+  const { data } = useSWR(
+    `${apiUrl}/appointments?doctor=${currentUser?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
   return (
     <>
       <nav id="sidebar" className="sidebar-wrapper">
@@ -24,8 +55,8 @@ const Navbar = () => {
 
           <ul className="sidebar-menu pt-3">
             <li style={{ backgroundColor: "#396cf0", marginBottom: "2px" }}>
-              <Link href="/">
-                <a href="index.html" style={{ color: "#ffffff" }}>
+              <Link href="/appointment">
+                <a style={{ color: "#ffffff" }}>
                   <i
                     className="ri-arrow-go-back-fill me-2 d-inline-block"
                     style={{ color: "blue" }}
@@ -36,122 +67,7 @@ const Navbar = () => {
             </li>
             <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
               <Link href="/diagnosis">
-                <a>Amit Mahapatra </a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra </a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra </a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#ffa2a2", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
-              </Link>
-            </li>
-            <li style={{ backgroundColor: "#87f5d4", marginBottom: "2px" }}>
-              <Link href="/diagnosis">
-                <a>Amit Mahapatra</a>
+                <a>ID:01 Amit Mahapatra </a>
               </Link>
             </li>
           </ul>

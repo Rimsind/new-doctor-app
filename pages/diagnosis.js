@@ -1,13 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
-import Layout3 from "../components/Layout/Layout3";
-// import AssesmentTab from "../components/AssesmentTab";
+// import Layout3 from "../components/Layout/Layout3";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { apiUrl } from "../config/api";
+import axios from "axios";
+import { useAuth } from "../context";
+
 const Diagnosis = () => {
+  const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+
+  const { data } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   return (
     <>
       <div className="row">
         <div className="col-xl-8 col-lg-6">
-          <h5 className="mb-0">Appointment Id #123456</h5>
+          <h5 className="mb-0">Appointment Id #{data?.id}</h5>
         </div>
 
         <div className="col-xl-4 col-lg-6 mt-4 mt-lg-0">
@@ -42,7 +62,7 @@ const Diagnosis = () => {
             <Image
               height="200"
               width="200"
-              src="/images/client/01.jpg"
+              src={data?.patient?.image?.url || "/images/client/01.jpg"}
               className="diagnosis-img avatar-large mt-sm-0 rounded-circle"
               alt=""
             />
@@ -55,39 +75,29 @@ const Diagnosis = () => {
               <tbody>
                 <tr>
                   <td>Patient Name</td>
-                  <td>Arya Jana</td>
+                  <td>
+                    {data?.patient?.first_name} {data?.patient?.last_name}
+                  </td>
                 </tr>
                 <tr>
                   <td>Patient ID</td>
-                  <td>#123456</td>
+                  <td>{data?.patient?.id}</td>
                 </tr>
                 <tr>
                   <td>Date of Birth</td>
-                  <td>16th Dec, 1950</td>
+                  <td>{data?.patient?.dob}</td>
                 </tr>
                 <tr>
-                  <td>Code</td>
-                  <td>PC1246</td>
+                  <td>Email</td>
+                  <td>{data?.patient?.email}</td>
                 </tr>
                 <tr>
                   <td>Mobile</td>
-                  <td>9876543210</td>
+                  <td>{data?.patient?.phone}</td>
                 </tr>
                 <tr>
-                  <td>Emergency Contact</td>
-                  <td>123456789</td>
-                </tr>
-                <tr>
-                  <td>Allergy</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <td>Family Doctor</td>
-                  <td>Dr. Shibram Kapat</td>
-                </tr>
-                <tr>
-                  <td>Nominee</td>
-                  <td>Archana Jana</td>
+                  <td>Gender</td>
+                  <td>{data?.patient?.gender}</td>
                 </tr>
               </tbody>
             </table>
@@ -96,7 +106,7 @@ const Diagnosis = () => {
             <div className="row">
               <div className="col-md-12">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/">
+                  <Link href={`/report?appointmentId=${data?.id}`}>
                     <a className="btn-custom btn btn-primary">
                       Print Clinical Report
                     </a>
@@ -115,7 +125,20 @@ const Diagnosis = () => {
             <div className="row">
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/form/general-information">
+                  <Link
+                    href={`/form/chief-complains?appointmentId=${data?.id}`}
+                  >
+                    <a className="btn-custom btn btn-success">
+                      Cheif Complaints with Duration
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link
+                    href={`/form/general-information?appointmentId=${data?.id}`}
+                  >
                     <a className="btn-custom btn btn-success">
                       General Information
                     </a>
@@ -125,7 +148,7 @@ const Diagnosis = () => {
 
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/form/social-history">
+                  <Link href={`/form/social-history?appointmentId=${data?.id}`}>
                     <a className="btn-custom btn btn-success">
                       Social History & Living Environment
                     </a>
@@ -134,7 +157,9 @@ const Diagnosis = () => {
               </div>
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/form/employment-status">
+                  <Link
+                    href={`/form/employment-status?appointmentId=${data?.id}`}
+                  >
                     <a className="btn-custom btn btn-success">
                       Employment Status
                     </a>
@@ -143,7 +168,9 @@ const Diagnosis = () => {
               </div>
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/form/medical-history">
+                  <Link
+                    href={`/form/medical-history?appointmentId=${data?.id}`}
+                  >
                     <a className="btn-custom btn btn-success">
                       Past Medical History
                     </a>
@@ -152,7 +179,9 @@ const Diagnosis = () => {
               </div>
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/form/functional-status">
+                  <Link
+                    href={`/form/functional-status?appointmentId=${data?.id}`}
+                  >
                     <a className="btn-custom btn btn-success">
                       Current Functional Status
                     </a>
@@ -161,9 +190,20 @@ const Diagnosis = () => {
               </div>
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link href="/form/family-history">
+                  <Link href={`/form/family-history?appointmentId=${data?.id}`}>
                     <a className="btn-custom btn btn-success">
                       Family Medical History
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link
+                    href={`/form/past-medical-records?appointmentId=${data?.id}`}
+                  >
+                    <a className="btn-custom btn btn-success">
+                      Past Medical Records
                     </a>
                   </Link>
                 </div>
@@ -178,4 +218,4 @@ const Diagnosis = () => {
 
 export default Diagnosis;
 
-Diagnosis.getLayout = (Diagnosis) => <Layout3>{Diagnosis}</Layout3>;
+// Diagnosis.getLayout = (Diagnosis) => <Layout3>{Diagnosis}</Layout3>;

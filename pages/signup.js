@@ -197,7 +197,7 @@ const Signup = () => {
                           <small className="text-dark me-2">
                             Already have an account ?
                           </small>
-                          <Link href="/doctor/login">
+                          <Link href="/login">
                             <a className="text-dark fw-bold">Sign in</a>
                           </Link>
                         </p>
