@@ -83,7 +83,7 @@ const Signup = () => {
         );
       }
       reset();
-      router.push("/login");
+      router.push("/");
     } catch (err) {
       console.log(err.message);
     }
