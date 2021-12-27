@@ -1,6 +1,6 @@
 import FormCloseBtn from "../../components/FormCloseBtn";
 import { useRouter } from "next/router";
-const assesment = () => {
+const Assesment = () => {
   const { appointmentId } = useRouter().query;
   return (
     <>
@@ -118,4 +118,4 @@ const assesment = () => {
   );
 };
 
-export default assesment;
+export default Assesment;

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import FormCloseBtn from "../../components/FormCloseBtn";
 
-const historyofpresentillness = () => {
+const HistoryOfPresentIllness = () => {
   const { appointmentId } = useRouter().query;
   return (
     <>
@@ -410,4 +410,4 @@ const historyofpresentillness = () => {
   );
 };
 
-export default historyofpresentillness;
+export default HistoryOfPresentIllness;

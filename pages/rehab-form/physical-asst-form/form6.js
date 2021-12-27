@@ -7,7 +7,7 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
-const form6 = () => {
+const Form6 = () => {
   const { appointmentId } = useRouter().query;
   return (
     <>
@@ -499,4 +499,4 @@ const form6 = () => {
   );
 };
 
-export default form6;
+export default Form6;
