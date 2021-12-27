@@ -1,0 +1,345 @@
+import Pagination2 from "../../../components/Pagination2";
+import FormCloseBtn from "../../../components/FormCloseBtn";
+import {
+  IdentifiedProblem,
+  LongTermGoal,
+  ShortTermGoal,
+  TreatmentPlan,
+} from "../../../components/AssestmentForm/index";
+import { useRouter } from "next/router";
+const form15 = () => {
+  const { appointmentId } = useRouter().query;
+  return (
+    <>
+      <div className="general-information-form relative p-6 flex-auto">
+        <div className="max-w-6xl mx-auto md:py-10">
+          <div className="space-y-5 border-2 p-10 rounded">
+            <div className="space-y-2 pb-5">
+              <div className="gen-form-upper row">
+                <div className="col-md-2"></div>
+                <div className="col-md-8">
+                  <div className="text-center pb-6">
+                    <h3 className="general-information-form-title font-bold">
+                      JOINT INTEGRETY AND MOBILITY ASSESSMNET
+                    </h3>
+                  </div>
+                </div>
+                <FormCloseBtn id={appointmentId} />
+              </div>
+              <div>
+                <div className="gen-form">
+                  <div className="row justify-content-between align-items-start">
+                    <div className="col-md-6">
+                      <h3>APPREHENSION TEST</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>COMPRESSION AND DISTRACTION TEST</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>DRAWER TEST</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>GLIDE TEST</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>IMPINGEMENT TEST</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>PALPATION</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>SHEAR TESTS</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>VALGUS AND VARUS STRESS TEST</h3>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">NEGATIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">POSITIVE</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <IdentifiedProblem />
+                <ShortTermGoal />
+                <LongTermGoal />
+                <TreatmentPlan />
+              </div>
+            </div>
+          </div>
+          <Pagination2 name15="active" id={appointmentId} />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default form15;

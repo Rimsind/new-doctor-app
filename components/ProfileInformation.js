@@ -26,7 +26,6 @@ const ProfileInformation = ({ doctor }) => {
           id: data.specialty,
         },
       };
-      console.log(payload);
 
       const res = await axios.put(
         `${apiUrl}/doctors/${auth.user?.profileId}`,
