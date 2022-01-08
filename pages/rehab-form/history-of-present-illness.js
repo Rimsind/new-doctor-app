@@ -347,62 +347,14 @@ const HistoryOfPresentIllness = () => {
         </div>
         <div className="gen-form-btn">
           <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-6">
-              <ul className="pagination mb-0 list-unstyled">
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    Prev
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    1
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    2
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    3
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    4
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    5
-                  </a>
-                </li>
-                <li className="active">
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    6
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    7
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    Next{" "}
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
+            <div className="col-md-4"></div>
+
+            <div className="col-md-4">
               <a href="#" className="btn btn-success">
-                {" "}
-                Save Changes{" "}
+                Save Changes
               </a>
             </div>
+            <div className="col-md-4"></div>
           </div>
         </div>
       </div>

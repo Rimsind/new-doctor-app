@@ -104,11 +104,20 @@ const Diagnosis = () => {
           </div>
           <div className="patient-user-panel mt-3">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-md-6">
                 <div className="patient-user-panel-btn mt-3">
                   <Link href={`/report?appointmentId=${data?.id}`}>
                     <a className="btn-custom btn btn-primary">
                       Print Clinical Report
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link href={`/prescription?appointmentId=${data?.id}`}>
+                    <a className="btn-custom btn btn-danger">
+                      Print E-Prescription
                     </a>
                   </Link>
                 </div>

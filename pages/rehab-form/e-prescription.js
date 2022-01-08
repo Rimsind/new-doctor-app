@@ -1,7 +1,51 @@
 import FormCloseBtn from "../../components/FormCloseBtn";
 import { useRouter } from "next/router";
+import { useState } from "react";
 const Eprescription = () => {
   const { appointmentId } = useRouter().query;
+
+  const [patientEducation, setPatientEducation] = useState();
+  const [patientEducationList, setPatientEducationList] = useState([]);
+
+  const addPatientEducation = () => {
+    setPatientEducationList([
+      ...patientEducationList,
+      {
+        patientEducation: patientEducation,
+      },
+    ]);
+    setPatientEducation("");
+  };
+
+  const [patientRestriction, setPatientRestriction] = useState();
+  const [patientRestrictionList, setPatientRestrictionList] = useState([]);
+
+  const addPatientRestriction = () => {
+    setPatientRestrictionList([
+      ...patientRestrictionList,
+      {
+        patientRestriction: patientRestriction,
+      },
+    ]);
+    setPatientRestriction("");
+  };
+
+  const [testName, setTestName] = useState();
+  const [specification, setSpecification] = useState();
+  const [testList, setTestList] = useState([]);
+
+  const addTest = () => {
+    setTestList([
+      ...testList,
+      {
+        testName: testName,
+        specification: specification,
+      },
+    ]);
+    setTestName("");
+    setSpecification("");
+  };
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -9,8 +53,8 @@ const Eprescription = () => {
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <div className="gen-form-upper row">
-                <div className="col-md-4"></div>
-                <div className="col-md-4">
+                <div className="col-md-2"></div>
+                <div className="col-md-8">
                   <div className="text-center pb-6">
                     <h3 className="general-information-form-title font-bold">
                       E - Prescription
@@ -22,7 +66,7 @@ const Eprescription = () => {
               <div className="gen-form">
                 <h3>Medicine</h3>
                 <div className="row justify-content-between align-items-end mt-3">
-                  <div className="col-md-2">
+                  <div className="col-md-4">
                     <label htmlFor="" className="form-label">
                       Medicine Name:
                     </label>
@@ -54,7 +98,7 @@ const Eprescription = () => {
                       placeholder="500"
                     />
                   </div>
-                  <div className="col-md-1">
+                  <div className="col-md-2">
                     <label htmlFor="" className="form-label">
                       Route
                     </label>
@@ -68,7 +112,7 @@ const Eprescription = () => {
                     </select>
                   </div>
 
-                  <div className="col-md-1">
+                  <div className="col-md-2">
                     <label htmlFor="" className="form-label">
                       Duration (Days)
                     </label>
@@ -79,7 +123,7 @@ const Eprescription = () => {
                       placeholder="60"
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <label htmlFor="" className="form-label">
                       Frequency
                     </label>
@@ -117,7 +161,7 @@ const Eprescription = () => {
                       <option value="12">O2- PRN</option>
                     </select>
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-4">
                     <label htmlFor="" className="form-label">
                       Reason
                     </label>
@@ -128,7 +172,7 @@ const Eprescription = () => {
                       placeholder="Enter the reason"
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-4">
                     <label htmlFor="" className="form-label">
                       Instruction
                     </label>
@@ -137,6 +181,17 @@ const Eprescription = () => {
                       className="form-control"
                       id=""
                       placeholder="Enter the reason"
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <label htmlFor="" className="form-label">
+                      Side-Effects
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id=""
+                      placeholder=""
                     />
                   </div>
                   <div className="col-md-1">
@@ -171,7 +226,9 @@ const Eprescription = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
+                      <th scope="row">
+                        <i class="ri-close-circle-line"></i>
+                      </th>
                       <td>Moexipril (Univasc)</td>
                       <td>500</td>
                       <td>Oral</td>
@@ -195,29 +252,45 @@ const Eprescription = () => {
                       aria-label="Default select example"
                     >
                       <option selected>Open this select menu</option>
-                      <option value="1">amniocentesis</option>
-                      <option value="2">blood analysis</option>
-                      <option value="3">gastric fluid analysis</option>
-                      <option value="1">kidney function test</option>
-                      <option value="2">liver function test</option>
-                      <option value="3">lumbar puncture</option>
-                      <option value="1">malabsorption test</option>
-                      <option value="2">Pap smear</option>
-                      <option value="3">phenolsulfonphthalein test</option>
-                      <option value="1">pregnancy test</option>
-                      <option value="2">prenatal testing</option>
-                      <option value="3">protein-bound iodine test</option>
-                      <option value="2">angiocardiography</option>
-                      <option value="3">angiography</option>
-                      <option value="1">brain scanning</option>
-                      <option value="2">cholecystography</option>
-                      <option value="3">myelography</option>
-                      <option value="1">tomography</option>
-                      <option value="2">complementation test</option>
-                      <option value="3">
+                      <option value="amniocentesis">amniocentesis</option>
+                      <option value="blood analysis">blood analysis</option>
+                      <option value="gastric fluid analysis">
+                        gastric fluid analysis
+                      </option>
+                      <option value="kidney function test">
+                        kidney function test
+                      </option>
+                      <option value="liver function test">
+                        liver function test
+                      </option>
+                      <option value="lumbar puncture">lumbar puncture</option>
+                      <option value="malabsorption test">
+                        malabsorption test
+                      </option>
+                      <option value="Pap smear">Pap smear</option>
+                      <option value="phenolsulfonphthalein test">
+                        phenolsulfonphthalein test
+                      </option>
+                      <option value="pregnancy test">pregnancy test</option>
+                      <option value="prenatal testing">prenatal testing</option>
+                      <option value="protein-bound iodine test">
+                        protein-bound iodine test
+                      </option>
+                      <option value="angiocardiography">
+                        angiocardiography
+                      </option>
+                      <option value="angiography">angiography</option>
+                      <option value="brain scanning">brain scanning</option>
+                      <option value="cholecystography">cholecystography</option>
+                      <option value="myelography">myelography</option>
+                      <option value="tomography">tomography</option>
+                      <option value="complementation test">
+                        complementation test
+                      </option>
+                      <option value=" fluorescence in situ hybridization">
                         fluorescence in situ hybridization
                       </option>
-                      <option value="3">
+                      <option value="preimplantation genetic diagnosis">
                         preimplantation genetic diagnosis
                       </option>
                     </select>
@@ -231,16 +304,21 @@ const Eprescription = () => {
                       aria-label="Default select example"
                     >
                       <option selected>Open this select menu</option>
-                      <option value="1">Left Hand</option>
-                      <option value="2">Right Hand</option>
+                      <option value="1">Left Side</option>
+                      <option value="2">Right Side</option>
                       <option value="3">Fore Head</option>
+                      <option value="3">Upper Abdoman</option>
+                      <option value="3">Lower Abdoman</option>
                     </select>
                   </div>
                   <div className="col-md-2">
                     <div className="prescription-add-btn">
-                      <a href="#" className="btn btn-primary prescription-btn">
+                      <span
+                        className="btn btn-primary prescription-btn"
+                        onClick={addTest}
+                      >
                         Add
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -263,7 +341,9 @@ const Eprescription = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
+                      <th scope="row">
+                        <i class="ri-close-circle-line"></i>
+                      </th>
                       <td>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit.
@@ -280,15 +360,20 @@ const Eprescription = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id=""
-                      placeholder=""
+                      name="patientRestriction"
+                      placeholder="Patient Restriction"
+                      onChange={(e) => setPatientRestriction(e.target.value)}
+                      value={patientRestriction}
                     />
                   </div>
                   <div className="col-md-2">
                     <div className="prescription-add-btn">
-                      <a href="#" className="btn btn-primary prescription-btn">
+                      <span
+                        className="btn btn-primary prescription-btn"
+                        onClick={addPatientRestriction}
+                      >
                         Add
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -309,13 +394,14 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Iste ratione iusto ex exercitationem et laborum
-                      </td>
-                    </tr>
+                    {patientRestrictionList.map((item, index) => (
+                      <tr key={index}>
+                        <th scope="row">
+                          <i class="ri-close-circle-line"></i>
+                        </th>
+                        <td>{item.patientRestriction}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -326,15 +412,20 @@ const Eprescription = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id=""
-                      placeholder=""
+                      name="patientEducation"
+                      placeholder="Patient Education"
+                      onChange={(e) => setPatientEducation(e.target.value)}
+                      value={patientEducation}
                     />
                   </div>
                   <div className="col-md-2">
                     <div className="prescription-add-btn">
-                      <a href="#" className="btn btn-primary prescription-btn">
+                      <span
+                        className="btn btn-primary prescription-btn"
+                        onClick={addPatientEducation}
+                      >
                         Add
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -355,13 +446,14 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Iste ratione iusto ex exercitationem et laborum
-                      </td>
-                    </tr>
+                    {patientEducationList.map((item, index) => (
+                      <tr key={index}>
+                        <th scope="row">
+                          <i class="ri-close-circle-line"></i>
+                        </th>
+                        <td>{item.patientEducation}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -420,63 +512,15 @@ const Eprescription = () => {
             </div>
           </div>
         </div>
-        <div className="gen-form-btn">
+        <div className="gen-form-btn mt-3">
           <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-6">
-              <ul className="pagination mb-0 list-unstyled">
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    Prev
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    1
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    2
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    3
-                  </a>
-                </li>
-                <li className="active">
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    4
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    5
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    6
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    7
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pe-3 ps-3 pt-2 pb-2 border">
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
+            <div className="col-md-5"></div>
+            <div className="col-md-2">
               <a href="#" className="btn btn-success">
                 Save Changes
               </a>
             </div>
+            <div className="col-md-5"></div>
           </div>
         </div>
       </div>

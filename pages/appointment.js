@@ -4,10 +4,11 @@ import useSWR from "swr";
 import { apiUrl } from "../config/api";
 import axios from "axios";
 import { useAuth } from "../context";
+
 const Appointment = () => {
   const { auth } = useAuth();
 
-  const { data } = useSWR(
+  const { data, error } = useSWR(
     `${apiUrl}/appointments?doctor=${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
