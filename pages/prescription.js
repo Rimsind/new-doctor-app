@@ -44,7 +44,12 @@ const Prescription = () => {
           <div className="row align-items-center">
             <div className="col-md-2">
               <div className="left-content">
-                <Image src="/images/logo-dark.png" height="120" width="170" />
+                <Image
+                  src="/images/logo-dark.png"
+                  height="120"
+                  width="170"
+                  alt=""
+                />
               </div>
             </div>
             <div className="col-md-6">
@@ -90,6 +95,7 @@ const Prescription = () => {
                   src={data?.patient?.image?.url || "/images/profile.png"}
                   height="300"
                   width="300"
+                  alt=""
                   style={{
                     background: "linear-gradient(45deg, #116aa1, #720330)",
                     padding: "1rem",

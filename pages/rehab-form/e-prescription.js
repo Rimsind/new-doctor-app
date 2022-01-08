@@ -227,7 +227,7 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <th scope="row">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </th>
                       <td>Moexipril (Univasc)</td>
                       <td>500</td>
@@ -342,7 +342,7 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <th scope="row">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </th>
                       <td>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -397,7 +397,7 @@ const Eprescription = () => {
                     {patientRestrictionList.map((item, index) => (
                       <tr key={index}>
                         <th scope="row">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </th>
                         <td>{item.patientRestriction}</td>
                       </tr>
@@ -449,7 +449,7 @@ const Eprescription = () => {
                     {patientEducationList.map((item, index) => (
                       <tr key={index}>
                         <th scope="row">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </th>
                         <td>{item.patientEducation}</td>
                       </tr>
