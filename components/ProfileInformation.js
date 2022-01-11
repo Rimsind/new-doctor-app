@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "../context";
 import { useState } from "react";
 import useSWR from "swr";
+import router from "next/router";
 const ProfileInformation = ({ doctor }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);

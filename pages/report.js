@@ -22,6 +22,7 @@ const Report = () => {
       return result;
     }
   );
+  
   return (
     <>
       <Head>

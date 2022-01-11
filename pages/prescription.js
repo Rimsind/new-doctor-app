@@ -24,6 +24,17 @@ const Prescription = () => {
     }
   );
 
+  // const makeArrfromString = (str) => {
+  //   if (str) {
+  //     const arr = str.split(",");
+  //     const result = arr.map((item) => item.trim());
+
+  //     return result;
+  //   } else {
+  //     str = "";
+  //   }
+  // };
+
   return (
     <>
       <Head>
@@ -175,7 +186,7 @@ const Prescription = () => {
               }}
             >
               <p className="fs-5 fw-bold">Medicine</p>
-              <table className="table table-striped table-bordered border-dark">
+              <table className="table table-striped ">
                 <thead>
                   <tr>
                     <th scope="col">Sl.</th>
@@ -190,39 +201,19 @@ const Prescription = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Moexipril (Univasc)</td>
-                    <td>500</td>
-                    <td>Oral</td>
-                    <td>60</td>
-                    <td>Daily</td>
-                    <td>hgavcfjhdvjhvbfh</td>
-                    <td>fjhvdfjhbh</td>
-                    <td>fjhvdfjhbh</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Moexipril (Univasc)</td>
-                    <td>500</td>
-                    <td>Oral</td>
-                    <td>60</td>
-                    <td>Daily</td>
-                    <td>hgavcfjhdvjhvbfh</td>
-                    <td>fjhvdfjhbh</td>
-                    <td>fjhvdfjhbh</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Moexipril (Univasc)</td>
-                    <td>500</td>
-                    <td>Oral</td>
-                    <td>60</td>
-                    <td>Daily</td>
-                    <td>hgavcfjhdvjhvbfh</td>
-                    <td>fjhvdfjhbh</td>
-                    <td>fjhvdfjhbh</td>
-                  </tr>
+                  {data?.eprescription?.medicine?.map((item, index) => (
+                    <tr key={index}>
+                      <th scope="row">{item?.id}</th>
+                      <td>{item?.name}</td>
+                      <td>{item?.mg}</td>
+                      <td>{item?.route}</td>
+                      <td>{item?.duration}</td>
+                      <td>{item?.frequency}</td>
+                      <td>{item?.reason}</td>
+                      <td>{item?.instruction}</td>
+                      <td>{item?.sideEffects}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -235,7 +226,7 @@ const Prescription = () => {
               }}
             >
               <p className="fs-5 fw-bold">Test</p>
-              <table className="table table-striped table-bordered border-dark">
+              <table className="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col">Sl.</th>
@@ -244,27 +235,13 @@ const Prescription = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
-                    <td>Modi repudiandae qui temporibus voluptate eaque</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
-                    <td>Modi repudiandae qui temporibus voluptate eaque</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
-                    <td>Modi repudiandae qui temporibus voluptate eaque</td>
-                  </tr>
+                  {data?.eprescription?.test?.map((item, index) => (
+                    <tr key={index}>
+                      <th scope="row">{item?.id}</th>
+                      <td>{item?.name}</td>
+                      <td>{item?.specification}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -277,31 +254,15 @@ const Prescription = () => {
               }}
             >
               <p className="fs-5 fw-bold">Food & Fluid Restriction</p>
-              <table className="table table-striped table-bordered border-dark">
+              <table className="table table-striped ">
                 <thead>
                   <tr>
-                    <th scope="col">Sl.</th>
                     <th scope="col">Food & Fluid Restriction</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
+                    <td>{data?.eprescription?.restrictions}</td>
                   </tr>
                 </tbody>
               </table>
@@ -315,31 +276,43 @@ const Prescription = () => {
               }}
             >
               <p className="fs-5 fw-bold">Patient Education</p>
-              <table className="table table-striped table-bordered border-dark">
+              <table className="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">Sl.</th>
                     <th scope="col">Patient Education</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
+                    <td>{data?.eprescription?.patient_education}</td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              className="rfa-gen-form-data-table mt-4"
+              style={{
+                background: "white",
+                padding: "10px",
+                borderRadius: "3px",
+              }}
+            >
+              <p className="fs-5 fw-bold">Follow-up Time Period</p>
+              <table className="table table-striped">
+                <thead>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
+                    <th scope="col">Days</th>
+                    <th scope="col">Weeks</th>
+                    <th scope="col">Months</th>
+                    <th scope="col">Type</th>
                   </tr>
+                </thead>
+                <tbody>
                   <tr>
-                    <th scope="row">3</th>
-                    <td>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </td>
+                    <td>{data?.eprescription?.followup?.days}</td>
+                    <td>{data?.eprescription?.followup?.weeks}</td>
+                    <td>{data?.eprescription?.followup?.months}</td>
+                    <td>{data?.eprescription?.followup?.type}</td>
                   </tr>
                 </tbody>
               </table>
