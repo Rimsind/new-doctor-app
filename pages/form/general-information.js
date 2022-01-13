@@ -42,34 +42,359 @@ const GeneralInformation = () => {
               <div className="gen-form">
                 <div className="row justify-content-between align-items-start">
                   <div className="col-md-3">
-                    <h3>Race / Ethnicity:</h3>
+                    <h3>Race / Ethnicity</h3>
                   </div>
-                  <div className="col-md-3">
-                    <p>{data?.patient?.generalInformation?.race}</p>
-                  </div>
-                  <div className="col-md-3">
-                    <h3>Language:</h3>
-                  </div>
-                  <div className="col-md-3">
-                    <p>{data?.patient?.generalInformation?.language}</p>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Asian</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Native American</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Black</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">White</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Pacific Islander</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Hispanic</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Latino</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="gen-form">
                 <div className="row justify-content-between align-items-center">
                   <div className="col-md-3">
-                    <h3>Highest Level Of Education</h3>
+                    <h3>Language</h3>
                   </div>
-                  <div className="col-md-3">
-                    <p>{data?.patient?.generalInformation?.education}</p>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Speaks English</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Speak &amp; Understand</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Interpreter Needed</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <div className="gen-form">
+                <div className="row justify-centent-between align-items-center">
                   <div className="col-md-3">
-                    <h3>Hand Foot Dominance:</h3>
+                    <h3>Highest Level of Education</h3>
                   </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Grade School</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Technical School</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Some College</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Master&apos;s Degree</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">High School</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Trade School</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">College Graduate</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form">
+                <div className="row justify-centent-between align-items-center">
                   <div className="col-md-3">
-                    <p>
-                      {data?.patient?.generalInformation?.physical_dominance}
-                    </p>
+                    <h3>Hand Foot Dominance</h3>
+                  </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">N/A</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Ambidexterous</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Left</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Right</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

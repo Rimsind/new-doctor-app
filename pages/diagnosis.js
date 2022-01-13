@@ -230,7 +230,7 @@ const Diagnosis = () => {
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
                   <Link
-                    href={`/rehab-form/history-of-present-illness?appointmentId=${data?.id}`}
+                    href={`/form/history-of-present-illness?appointmentId=${data?.id}`}
                   >
                     <a className="btn-custom btn btn-info">
                       History Of Present Illness
@@ -251,19 +251,61 @@ const Diagnosis = () => {
               </div>
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link
-                    href={`/rehab-form/assesment?appointmentId=${data?.id}`}
-                  >
+                  <Link href={`/form/assesment?appointmentId=${data?.id}`}>
                     <a className="btn-custom btn btn-info">Assesment</a>
                   </Link>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="patient-user-panel-btn mt-3">
-                  <Link
-                    href={`/rehab-form/e-prescription?appointmentId=${data?.id}`}
-                  >
+                  <Link href={`/form/e-prescription?appointmentId=${data?.id}`}>
                     <a className="btn-custom btn btn-info">E-Prescription</a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="patient-subjective-info">
+            <div className="mt-4 ms-3 pt-3">
+              <h5 className="mt-3 mb-1" style={{ textAlign: "center" }}>
+                DOCTOR ASSESSMENT (MEDICINE)
+              </h5>
+            </div>
+            <div className="row">
+              <div className="col-md-3">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link
+                    href={`/form/history-of-present-illness?appointmentId=${data?.id}`}
+                  >
+                    <a className="btn-custom btn btn-primary">
+                      History Of Present Illness
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link
+                    href={`/medicine-form/clinical-examination?appointmentId=${data?.id}`}
+                  >
+                    <a className="btn-custom btn btn-primary">
+                      Clinical Examination
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link href={`/form/assesment?appointmentId=${data?.id}`}>
+                    <a className="btn-custom btn btn-primary">Assesment</a>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="col-md-3">
+                <div className="patient-user-panel-btn mt-3">
+                  <Link href={`/form/e-prescription?appointmentId=${data?.id}`}>
+                    <a className="btn-custom btn btn-primary">E-Prescription</a>
                   </Link>
                 </div>
               </div>
