@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import FormCloseBtn from "../../components/FormCloseBtn";
 
-const clinicalexamination = () => {
+const ClinicalExamination = () => {
   const { appointmentId } = useRouter().query;
   return (
     <>
@@ -353,4 +353,4 @@ const clinicalexamination = () => {
   );
 };
 
-export default clinicalexamination;
+export default ClinicalExamination;
