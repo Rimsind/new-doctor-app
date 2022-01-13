@@ -32,6 +32,48 @@ const SocialHistory = () => {
     "Others",
   ];
 
+  const live_with = [
+    "Alone",
+    "Relative(s)",
+    "Friend(s)",
+    "Child or Children",
+    "Spouse",
+    "Oldage Home",
+    "Partner",
+    "Brother(s)",
+    "Sister(s)",
+    "Others",
+  ];
+
+  const home_haves = [
+    "One Level",
+    "Two Level",
+    "Multi Level",
+    "Stairs, No Railing",
+    "Ramps",
+    "Elevation",
+    "Elevators",
+    "Stairs, Railing",
+    "Uneven Terrain",
+    "Others",
+  ];
+
+  const do_uses = [
+    "Forearm Crutches",
+    "Axillary Crutches",
+    "Standard Walker",
+    "Manual Wheelchair",
+    "Quad Cane",
+    "Regular Cane",
+    "Front Wheel Walker",
+    "Motorized Wheelchair",
+    "Four Wheel Walker with Seat",
+    "Glasses",
+    "Left Hearing Aid",
+    "Right Hearing Aid",
+    "Others",
+  ];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto container">
@@ -50,8 +92,8 @@ const SocialHistory = () => {
                 <FormCloseBtn id={appointmentId} />
               </div>
 
-              <div className="gen-form">
-                <div className="row justify-content-between align-items-center">
+              <d iv className="gen-form">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>Where do you live?</h3>
                   </div>
@@ -77,316 +119,66 @@ const SocialHistory = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </d>
               <div className="gen-form">
-                <div className="row justify-content-between align-items-center">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>With whom do you live?</h3>
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Alone</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Relative(s)</p>
+                      {live_with?.map((item, index) => (
+                        <div className="col-md-3" key={index}>
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-10">
+                              <p className="space-x-4">{item}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Friend(s)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Child or Children</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Spouse</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Patient(s)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Group Setting</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Partner</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Brother(s)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Sister(s)</p>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>Does your home have?</h3>
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">One Level</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Two Level</p>
+                      {home_haves?.map((item, index) => (
+                        <div className="col-md-3" key={index}>
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-10">
+                              <p className="space-x-4">{item}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Multi Level</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Stairs, No Ralling</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Ramps</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Elevation</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Elevators</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Stairs, Ralling</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Uneven Terrain</p>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
+
                       <div className="col-md-9">
                         <div className="row">
                           <div className="col-md-1">
                             <input
                               className="form-check-input"
-                              type="radio"
+                              type="checkbox"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -414,7 +206,7 @@ const SocialHistory = () => {
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>How Many Steps?</h3>
                   </div>
@@ -457,203 +249,29 @@ const SocialHistory = () => {
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-content-between align-items-center">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>Do You Use?</h3>
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Forearm Crutches</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Axillary Crutches</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Straight Cane</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Walker</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Manual Wheelchair</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Quad Cane</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Two Cane</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Rolling Walker</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Motor Wheelchair</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Glasses</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Hearing Aid</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <div className="row justify-centent-between align-items-center">
-                              <div className="col-md-4">
-                                <p className="space-x-4">Others: </p>
-                              </div>
-                              <div className="col-md-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder=""
-                                />
-                              </div>
+                      {do_uses?.map((item, index) => (
+                        <div className="col-md-3" key={index}>
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-10">
+                              <p className="space-x-4">{item}</p>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -676,10 +294,10 @@ const SocialHistory = () => {
                   </div>
                 </div>
               </div>
-              <div className="child-gen-form-heading">
+              <div className="child-gen-form-heading mt-3">
                 <h5>Social / Health Habits</h5>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-center">
+                  <div className="row">
                     <div className="col-md-3">
                       <h3>Do You Smoke Tobacco?</h3>
                     </div>
@@ -750,7 +368,7 @@ const SocialHistory = () => {
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-center">
+                  <div className="row">
                     <div className="col-md-3">
                       <h3>Do You Drink Alcohol?</h3>
                     </div>
@@ -859,10 +477,10 @@ const SocialHistory = () => {
                         </div>
                         <div className="col-md-6"></div>
                       </div>
-                      <div className="row justify-centent-between align-items-center">
+                      <div className="row justify-centent-between align-items-center mb-3">
                         <div className="col-md-6">
                           <p className="space-x-4">
-                            If yes how many times per week?{" "}
+                            If yes how many times per week?
                           </p>
                         </div>
                         <div className="col-md-6">
@@ -873,11 +491,9 @@ const SocialHistory = () => {
                           />
                         </div>
                       </div>
-                      <div className="row justify-centent-between align-items-center">
+                      <div className="row justify-centent-between align-items-center mb-3">
                         <div className="col-md-6">
-                          <p className="space-x-4">
-                            How many minutes per day?{" "}
-                          </p>
+                          <p className="space-x-4">How many minutes per day?</p>
                         </div>
                         <div className="col-md-6">
                           <input
@@ -887,10 +503,10 @@ const SocialHistory = () => {
                           />
                         </div>
                       </div>
-                      <div className="row justify-centent-between align-items-center">
+                      {/* <div className="row justify-centent-between align-items-center">
                         <div className="col-md-6">
                           <p className="space-x-4">
-                            (Beyond normal daily activities & Chores)?{" "}
+                            (Beyond normal daily activities & Chores)?
                           </p>
                         </div>
                         <div className="col-md-6">
@@ -900,7 +516,7 @@ const SocialHistory = () => {
                             placeholder="Describe exercise or activity"
                           />
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

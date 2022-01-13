@@ -38,333 +38,748 @@ const FunctionalStatus = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Difficulty with locomotion / movement such as:</h3>
+              <div className="gen-form mb-3">
+                <div className="row justify-content-between align-items-start">
+                  <h3 className="fs-5 fs-bold text-dark mb-3">
+                    Any Difficulty With Current Functional Mobility
+                  </h3>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Bed Mobility</h3>
                   </div>
-                  <div className="col-md-9">
+                  <div className="col-md-8">
                     <div className="row">
-                      <div className="col-md-3">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Current"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Bed Mobility</p>
+                            <p className="space-x-4">Current</p>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-9">
-                        <div className="row">
-                          <div className="col-md-1">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-11">
-                            <p className="space-x-4">
-                              Transfers (such as bed to chair, from bed to
-                              commode / toilet)
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Prior"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">On ramps</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Gait (Walking)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">On level surfaces</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">On stairs</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">On uneven surfaces</p>
+                            <p className="space-x-4">Prior</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Difficulty with self-care activities such as:</h3>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Bathing</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Dressing</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Toileting</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Difficulty with home management such as:</h3>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Household Chores</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Shopping</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Driving/Transportation</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Care of Dependents</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>
-                      Difficulty with community and work activities such as:
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">
+                      Transfers (such as bed to chair, from bed to commode /
+                      toilet)
                     </h3>
                   </div>
-                  <div className="col-md-9">
+                  <div className="col-md-8">
                     <div className="row">
-                      <div className="col-md-4">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Current"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Work</p>
+                            <p className="space-x-4">Current</p>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Prior"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">School</p>
+                            <p className="space-x-4">Prior</p>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form mb-3">
+                <div className="row justify-content-between align-items-start">
+                  <h3 className="fs-5 fs-bold text-dark mb-3">
+                    Any Difficulty with Walking / movement such as
+                  </h3>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">On Ramps</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Current"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Recreation</p>
+                            <p className="space-x-4">Current</p>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Prior"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Sport</p>
+                            <p className="space-x-4">Prior</p>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Gai (Walking)</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name=""
+                              value="Current"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Play Activity</p>
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">
+                      On Level Surfaces
+                    </h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">On Stairs</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">
+                      On Uneven Surfaces
+                    </h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form mb-3">
+                <div className="row justify-content-between align-items-start">
+                  <h3 className="fs-5 fs-bold text-dark mb-3">
+                    Any Difficulty With Self-Care Activities Such As
+                  </h3>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Bathing</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Dressing</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Toileting</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form mb-3">
+                <div className="row justify-content-between align-items-start">
+                  <h3 className="fs-5 fs-bold text-dark mb-3">
+                    Any Difficulty With Home Management Such As
+                  </h3>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Household Chores</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Shopping</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">
+                      Driving / Transporting
+                    </h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">
+                      Care Of Dependents
+                    </h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form mb-3">
+                <div className="row justify-content-between align-items-start">
+                  <h3 className="fs-5 fs-bold text-dark mb-3">
+                    Any Difficulty With Community And Work Activities Such As
+                  </h3>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Work</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">School</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Recreation</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Sport</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <h3 className="fs-6 fs-bold text-dark">Play Activity</h3>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Current"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Current</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name=""
+                              value="Prior"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Prior</p>
                           </div>
                         </div>
                       </div>

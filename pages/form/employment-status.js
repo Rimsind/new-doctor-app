@@ -20,7 +20,30 @@ const EmploymentStatus = () => {
       return result;
     }
   );
-  // console.log(data?.patient?.employmentStatus);
+
+  const work_involves = [
+    "Prolonged Standing",
+    "Working with bent neck",
+    "Lifting light object",
+    "Prolonged Sitting",
+    "Frequent typing",
+    "Lifting heavy object",
+    "Prolonged Walking",
+    "Repetitive overhead work",
+    "Prolonged Driving",
+    "Excessive reaching",
+    "Carrying heavy object",
+    "Prolonged forward bending",
+    "Frequent hand grasping",
+    "Repetitive pushing/pulling",
+    "Exposure to",
+    "Climbing ladders",
+    "Repetitive arm motions",
+    "Excessive stair climbing",
+    "Repetitive foot motions",
+    "Others",
+  ];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto container">
@@ -40,95 +63,35 @@ const EmploymentStatus = () => {
               </div>
 
               <div className="gen-form">
-                <div className="row justify-content-between align-items-center">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>Work Status</h3>
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="workStatus"
+                              value="Work Full Time"
                             />
                           </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Unemployed</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
+                          <div className="col-md-9">
                             <p className="space-x-4">Work Full Time</p>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Work Light Duty</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Student</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Homemaker</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="workStatus"
+                              value="Work Part Time"
                             />
                           </div>
                           <div className="col-md-10">
@@ -136,14 +99,59 @@ const EmploymentStatus = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="workStatus"
+                              value="Work Light Duty"
+                            />
+                          </div>
+                          <div className="col-md-9">
+                            <p className="space-x-4">Work Light Duty</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="workStatus"
+                              value="Homemaker"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Homemaker</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="workStatus"
+                              value="Retired"
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">Retired</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="workStatus"
+                              value="Disabled"
                             />
                           </div>
                           <div className="col-md-10">
@@ -151,18 +159,34 @@ const EmploymentStatus = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="workStatus"
+                              value="Unemployed"
                             />
                           </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Retired</p>
+                          <div className="col-md-8">
+                            <p className="space-x-4">Unemployed</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="workStatus"
+                              value="Student"
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <p className="space-x-4">Student</p>
                           </div>
                         </div>
                       </div>
@@ -186,331 +210,29 @@ const EmploymentStatus = () => {
               </div>
 
               <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
+                <div className="row ">
                   <div className="col-md-3">
                     <h3>Your Work Involves (Check all that apply)</h3>
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Prolonged Standing</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Working with bent neck</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Lifting light object</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Prolonged Sitting</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Frequent typing</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Lifting heavy object</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Prolonged Walking</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">
-                              Repetitive overhead work
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Prolonged Driving</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Excessive reaching</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Carrying heavy object</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">
-                              Prolonged forward bending
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Frequent hand grasping</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">
-                              Repetitive pushing/pulling
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Exposure to</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Climbing ladders</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Repetitive arm motions</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">
-                              Excessive stair climbing
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Repetitive foot motions</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-9">
-                        <div className="row">
-                          <div className="col-md-1">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-11">
-                            <div className="row justify-centent-between align-items-center">
-                              <div className="col-md-5">
-                                <p className="space-x-4">Others</p>
-                              </div>
-                              <div className="col-md-7">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder=""
-                                />
-                              </div>
+                      {work_involves?.map((item, index) => (
+                        <div className="col-md-3" key={index}>
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                            <div className="col-md-10">
+                              <p className="space-x-4">{item}</p>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>

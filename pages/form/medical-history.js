@@ -20,7 +20,80 @@ const MedicalHistory = () => {
       return result;
     }
   );
-  // console.log(data?.patient?.medicalHistory);
+
+  const pastMedicalHistory = [
+    "No past medical history",
+    "Diabetes",
+    "Genetic Disease",
+    "Pacemaker",
+    "AIDS",
+    "Anemia",
+    "Emphysema",
+    "Kidney Disease",
+    "Parkinson’s Disease",
+    "Asthma",
+    "Epilepsy/Seizures",
+    "Fractures",
+    "Liver Disease",
+    "Prostate Disease",
+    "Arthritis",
+    "Glaucoma",
+    "Low Blood Pressure",
+    "Skin Disorder",
+    "Blood Disorder",
+    "Heart Attack",
+    "Lung Disorder",
+    "CVA/Stroke",
+    "Broken Bones",
+    "Heart Disease",
+    "Lyme’s Disease",
+    "Thyroid Disorder",
+    "Circulation Problems",
+    "Hepatitis",
+    "Macular Degeneration",
+    "Ulcers (Stomach)",
+    "Cancer",
+    "Head Injury",
+    "Multiple Sclerosis",
+    "Repeated Infections",
+    "Cystic Fibrosis",
+    "High Blood Pressure",
+    "Osteoporosis",
+    "Depression",
+    "High Cholesterol",
+    "Muscular Dystrophy",
+    "Restless Leg Syndrome",
+    "Fibromyalgia",
+    "Migraine",
+    "Others",
+  ];
+
+  const diagnostic_tests = [
+    "No Diagnostic Testing",
+    "Bronchoscopy",
+    "EMG/Nerve Conduction",
+    "Stool Test",
+    "Angiogram",
+    "CT scan",
+    "Mammogram",
+    "Stress Test",
+    "Arthroscopy",
+    "Ultrasound",
+    "MRI",
+    "Urine Test",
+    "Biopsy",
+    "Echocardiogram",
+    "Pap smear",
+    "X - Ray",
+    "Blood Test",
+    "EEG",
+    "Pulmonary function Test",
+    "Bone Scan",
+    "EKG",
+    "Spinal Tap",
+    "Others",
+  ];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto container">
@@ -40,581 +113,29 @@ const MedicalHistory = () => {
               </div>
 
               <div className="gen-form">
-                <h3 className="font-bold">
+                <h3 className="font-bold mb-3">
                   Past medical history - Please check if anyone in your family
                   has or had any or the following:
                 </h3>
                 <div className="row justify-content-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">No past medical history</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Diabetes</p>
+                  {pastMedicalHistory.map((item, index) => (
+                    <div className="col-md-3" key={index}>
+                      <div className="row">
+                        <div className="col-md-2">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                          />
+                        </div>
+                        <div className="col-md-10">
+                          <p className="space-x-4">{item}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Genetic Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Pacemaker</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">AIDS</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Emphysema</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Kidney Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Parkinson’s Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Asthma</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Epilepsy/Seizures</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Liver Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Prostate Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Arthritis</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Glaucoma</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Low Blood Pressure</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Skin Disorder</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Blood Disorder</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Heart Attack</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Lung Disorder</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Stroke</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Broken Bones</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Heart Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Lyme’s Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Thyroid Disorder</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Circulation Problems</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Hepatitis</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Macular Degeneration</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Ulcers (Stomach)</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Cancer</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Head Injury</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Multiple Sclerosis</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Repeated Infections</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Cystic Fibrosis</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">High Blood Pressure</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Osteoporosis</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Depression</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">High Cholesterol</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Muscular Dystrophy</p>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
+
                   <div className="col-md-3"></div>
                   <div className="col-md-3"></div>
                 </div>
@@ -637,7 +158,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -652,7 +173,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -677,7 +198,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -692,7 +213,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -717,7 +238,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -732,7 +253,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -757,7 +278,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -772,7 +293,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -797,7 +318,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -812,7 +333,7 @@ const MedicalHistory = () => {
                           <div className="col-md-6">
                             <input
                               className="form-check-input"
-                              type="checkbox"
+                              type="radio"
                               name="flexRadioDefault"
                               id="flexRadioDefault1"
                             />
@@ -844,7 +365,7 @@ const MedicalHistory = () => {
                 </div>
               </div>
 
-              <div className="gen-form">
+              {/* <div className="gen-form">
                 <h3 className="font-bold">
                   Surgical History – Please list any surgeries you had, and if
                   known include dates:
@@ -997,8 +518,8 @@ const MedicalHistory = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="gen-form">
+              </div> */}
+              {/* <div className="gen-form">
                 <h3 className="font-bold">
                   Past medical history - Please check if anyone in your family
                   has or had any or the following:
@@ -1455,382 +976,40 @@ const MedicalHistory = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="gen-form">
-                <h3 className="font-bold">
+              </div> */}
+              <div
+                className="gen-form mb-3"
+                style={{ borderBottom: "1px solid #bbbaba" }}
+              >
+                <h3 className="fs-6 fs-bold text-dark mb-3">
                   Diagnostic Test/Measures - within the past year, have you had
                   any of the following (Check all that apply):
                 </h3>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
+                <div className="row justify-centent-between align-items-start">
+                  <div className="col-md-12">
                     <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">No Diagnostic Testing</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Bronchoscopy</p>
+                      {diagnostic_tests.map((item, index) => (
+                        <div className="col-md-4" key={index}>
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="diagnostic_tests"
+                                value={item}
+                              />
+                            </div>
+                            <div className="col-md-10">
+                              <p className="space-x-4">{item}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">EMG/Nerve Conduction</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Stool Test</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Angiogram</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">CT scan</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Mammogram</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Stress Test</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Arthroscopy</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Ultrasound</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">MRI</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Urine Test</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Biopsy</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Echocardiogram</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Pap smear</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">X - Ray</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Blood Test</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">EEG</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-5">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Pulmonary function Test</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4"></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p className="space-x-4">Bone Scan</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">EKG</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Spinal Tap</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-5"></div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="gen-form">
+              {/* <div className="gen-form">
                 <h3 className="font-bold">
                   Medications & Allergies – please check or list all medications
                   or allergies:
@@ -2075,6 +1254,309 @@ const MedicalHistory = () => {
                     </div>
                   </div>
                 </div>
+              </div> */}
+              <div className="row mb-3">
+                <div className="col-md-9">
+                  <h3 className="fs-6 fs-bold text-dark">
+                    Medications & Allergies – please check or list all
+                    medications or allergies:
+                  </h3>
+                </div>
+                <div className="col-md-3">
+                  <div className="text-end">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Add New Entry
+                    </button>
+                  </div>
+
+                  <div
+                    className="modal fade"
+                    id="exampleModal"
+                    tabIndex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered modal-lg">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h3 className="fs-6 fs-bold text-dark">
+                            Medications & Allergies – please check or list all
+                            medications or allergies:
+                          </h3>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <div className="gen-form mb-3">
+                            <div className="row justify-centent-between align-items-start mb-3">
+                              <div className="col-md-12">
+                                <div className="row">
+                                  <div className="col-md-2">Medicine Name:</div>
+                                  <div className="col-md-4">
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      name="MedicineName"
+                                      placeholder=""
+                                    />
+                                  </div>
+                                  <div className="col-md-4">
+                                    Medicine Dose (Including MG/MCG):
+                                  </div>
+                                  <div className="col-md-2">
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      name="MedicineName"
+                                      placeholder=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row justify-centent-between align-items-start mb-3">
+                              <div className="col-md-4">
+                                <div className="row">
+                                  <div className="col-md-6">Start Date:</div>
+                                  <div className="col-md-6">
+                                    <input
+                                      type="date"
+                                      className="form-control"
+                                      name="MedicineName"
+                                      placeholder=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-md-4">
+                                <div className="row">
+                                  <div className="col-md-4">Status:</div>
+                                  <div className="col-md-8">
+                                    <select
+                                      className="form-select form-select-sm"
+                                      aria-label=".form-select-sm example"
+                                    >
+                                      <option selected>Select Items</option>
+                                      <option value="1">Continue</option>
+                                      <option value="2">End</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-md-4">
+                                <div className="row">
+                                  <div className="col-md-4">Status:</div>
+                                  <div className="col-md-8">
+                                    <select
+                                      className="form-select form-select-sm"
+                                      aria-label=".form-select-sm example"
+                                    >
+                                      <option selected>Select Items</option>
+                                      <option value="1">Continue</option>
+                                      <option value="2">End</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row justify-centent-between align-items-center mb-3">
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-5">
+                                    Route (The Way of Taking Medicine):
+                                  </div>
+                                  <div className="col-md-7">
+                                    <select
+                                      className="form-select form-select-sm"
+                                      aria-label=".form-select-sm example"
+                                    >
+                                      <option selected>Select Items</option>
+                                      <option value="1">Capsule</option>
+                                      <option value="2">Injection</option>
+                                      <option value="3">Other Way</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-7">
+                                    Friquency (How Many Doses Per/Day):
+                                  </div>
+                                  <div className="col-md-5">
+                                    <select
+                                      className="form-select form-select-sm"
+                                      aria-label=".form-select-sm example"
+                                    >
+                                      <option value="1">Yes</option>
+                                      <option value="2">No</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row justify-centent-between align-items-start mb-3">
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-5">
+                                    Any Side Effect:
+                                  </div>
+                                  <div className="col-md-7">
+                                    <select
+                                      className="form-select form-select-sm"
+                                      aria-label=".form-select-sm example"
+                                    >
+                                      <option selected>Select Items</option>
+                                      <option value="1">Yes</option>
+                                      <option value="2">No</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-2">If Yes:</div>
+                                  <div className="col-md-10">
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      name="MedicineName"
+                                      placeholder=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row justify-centent-between align-items-center">
+                              <div className="col-md-2">
+                                <h3 className="fs-6 fs-bold text-dark">
+                                  Allergies
+                                </h3>
+                              </div>
+                              <div className="col-md-10">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <div className="row">
+                                      <div className="col-md-10">
+                                        <p className="space-x-4">
+                                          Known allergies to date:
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-md-8">
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      name="allergies"
+                                      placeholder=""
+                                    />
+                                  </div>
+                                  <div className="col-md-4"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="add_btn text-end mb-3">
+                            <button type="button" className="btn btn-primary">
+                              Add
+                            </button>
+                          </div>
+                          <div
+                            className="table-responsive"
+                            style={{ borderTop: "1px solid #bbbaba" }}
+                          >
+                            <table className="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Medicine Name</th>
+                                  <th scope="col">Medicine Dose</th>
+                                  <th scope="col">Start Date</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Type</th>
+                                  <th scope="col">Route</th>
+                                  <th scope="col">Friquency </th>
+                                  <th scope="col">Any Side Effect</th>
+                                  <th scope="col">If Yes </th>
+                                  <th scope="col">Allergies</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Cipcal</td>
+                                  <td>500</td>
+                                  <td>13/01/2022</td>
+                                  <td>Continue</td>
+                                  <td>Prescribed</td>
+                                  <td>Oral</td>
+                                  <td>2 times per day</td>
+                                  <td>Yes</td>
+                                  <td>Headech</td>
+                                  <td>Rashes</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="table-responsive">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Medicine Name</th>
+                      <th scope="col">Medicine Dose</th>
+                      <th scope="col">Start Date</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Route</th>
+                      <th scope="col">Friquency </th>
+                      <th scope="col">Any Side Effect</th>
+                      <th scope="col">If Yes </th>
+                      <th scope="col">Allergies</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cipcal</td>
+                      <td>500</td>
+                      <td>13/01/2022</td>
+                      <td>Continue</td>
+                      <td>Prescribed</td>
+                      <td>Oral</td>
+                      <td>2 times per day</td>
+                      <td>Yes</td>
+                      <td>Headech</td>
+                      <td>Rashes</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>

@@ -40,7 +40,7 @@ const GeneralInformation = () => {
               </div>
 
               <div className="gen-form">
-                <div className="row justify-content-between align-items-start">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>Race / Ethnicity</h3>
                   </div>
@@ -52,8 +52,8 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="Asian"
                             />
                           </div>
                           <div className="col-md-10">
@@ -67,12 +67,12 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="African"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Native American</p>
+                            <p className="space-x-4">African</p>
                           </div>
                         </div>
                       </div>
@@ -82,12 +82,12 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="European"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Black</p>
+                            <p className="space-x-4">European</p>
                           </div>
                         </div>
                       </div>
@@ -97,12 +97,12 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="North American"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">White</p>
+                            <p className="space-x-4">North American</p>
                           </div>
                         </div>
                       </div>
@@ -112,12 +112,12 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="South American"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Pacific Islander</p>
+                            <p className="space-x-4">South American</p>
                           </div>
                         </div>
                       </div>
@@ -127,12 +127,12 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="Australian"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Hispanic</p>
+                            <p className="space-x-4">Australian</p>
                           </div>
                         </div>
                       </div>
@@ -142,12 +142,12 @@ const GeneralInformation = () => {
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="race"
+                              value="Others"
                             />
                           </div>
                           <div className="col-md-10">
-                            <p className="space-x-4">Latino</p>
+                            <p className="space-x-4">Others</p>
                           </div>
                         </div>
                       </div>
@@ -156,192 +156,104 @@ const GeneralInformation = () => {
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-content-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Language</h3>
-                  </div>
-                  <div className="col-md-9">
+                <div className="row">
+                  <div className="col-md-6">
                     <div className="row">
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Speaks English</p>
-                          </div>
-                        </div>
+                      <div className="col-md-6">
+                        <h3 className="fs-6 fs-bold text-dark">Language</h3>
                       </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Speak &amp; Understand</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Interpreter Needed</p>
-                          </div>
-                        </div>
+                      <div className="col-md-6">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option name="language">Select Option</option>
+                          <option value="English" name="language">
+                            English
+                          </option>
+                          <option value="Hindi" name="language">
+                            Hindi
+                          </option>
+                          <option value="Bengali" name="language">
+                            Bengali
+                          </option>
+                          <option value="Marathi" name="language">
+                            Marathi
+                          </option>
+                          <option value="Telugu" name="language">
+                            Telugu
+                          </option>
+                          <option value="Tamil" name="language">
+                            Tamil
+                          </option>
+                          <option value="Gujarati" name="language">
+                            Gujarati
+                          </option>
+                          <option value="Urdu" name="language">
+                            Urdu
+                          </option>
+                          <option value="Kannada" name="language">
+                            Kannada
+                          </option>
+                        </select>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Highest Level of Education</h3>
-                  </div>
-                  <div className="col-md-9">
+                  <div className="col-md-6">
                     <div className="row">
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Grade School</p>
-                          </div>
-                        </div>
+                      <div className="col-md-6">
+                        <h3 className="fs-6 fs-bold text-dark">
+                          Highest Level of Education
+                        </h3>
                       </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Technical School</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Some College</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Master&apos;s Degree</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">High School</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Trade School</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">College Graduate</p>
-                          </div>
-                        </div>
+                      <div className="col-md-6">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option name="language">Select Option</option>
+                          <option value="Grade School" name="education">
+                            Grade School
+                          </option>
+                          <option value="Technical School" name="education">
+                            Technical School
+                          </option>
+                          <option value="Some College" name="education">
+                            Some College
+                          </option>
+                          <option value="Master's Degree" name="education">
+                            Master&apos;s Degree
+                          </option>
+                          <option value="High School" name="education">
+                            High School
+                          </option>
+                          <option value="Trade School" name="education">
+                            Trade School
+                          </option>
+                          <option value="College Graduate" name="education">
+                            College Graduate
+                          </option>
+                        </select>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
+                <div className="row">
                   <div className="col-md-3">
                     <h3>Hand Foot Dominance</h3>
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="handFootDominance"
+                              value="N/A"
                             />
                           </div>
                           <div className="col-md-10">
@@ -349,29 +261,14 @@ const GeneralInformation = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                          </div>
-                          <div className="col-md-10">
-                            <p className="space-x-4">Ambidexterous</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="row">
-                          <div className="col-md-2">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="handFootDominance"
+                              value="Left"
                             />
                           </div>
                           <div className="col-md-10">
@@ -379,14 +276,14 @@ const GeneralInformation = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-4">
                         <div className="row">
                           <div className="col-md-2">
                             <input
                               className="form-check-input"
                               type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
+                              name="handFootDominance"
+                              value="Right"
                             />
                           </div>
                           <div className="col-md-10">

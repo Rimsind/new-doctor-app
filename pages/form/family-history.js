@@ -21,6 +21,23 @@ const FamilyHistory = () => {
     }
   );
 
+  const disease = [
+    "Anemia",
+    "Cancer",
+    "Diabetes",
+    "Epilepsy",
+    "Glaucoma",
+    "Heart Disease",
+    "High Blood Pressure",
+    "Hay Fever",
+    "Hives",
+    "Kidney Disease",
+    "Mental Illness",
+    "Rheumatoid Arthritis",
+    "Tuberculosis",
+    "Others",
+  ];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto container">
@@ -38,9 +55,12 @@ const FamilyHistory = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
+              <div className="gen-form mb-3">
+                <div
+                  className="row justify-centent-between align-items-center"
+                  style={{ marginBottom: "10px" }}
+                >
+                  <div className="col-md-6">
                     <div className="row">
                       <div className="col-md-4">
                         <label htmlFor="" className="form-label">
@@ -48,21 +68,15 @@ const FamilyHistory = () => {
                         </label>
                       </div>
                       <div className="col-md-8">
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select</option>
-                          <option value="1">Mother</option>
-                          <option value="2">Father</option>
-                          <option value="3">Wife</option>
-                          <option value="3">Child</option>
-                          <option value="3">Grand Father</option>
-                        </select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          name="relation"
+                        />
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-md-6">
                     <div className="row">
                       <div className="col-md-8">
                         <label htmlFor="" className="form-label">
@@ -71,32 +85,34 @@ const FamilyHistory = () => {
                       </div>
                       <div className="col-md-4">
                         <input
-                          type="number"
+                          type="text"
                           className="form-control"
-                          id=""
-                          placeholder=""
+                          name="age_if_living"
+                          defaultValue="0"
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                </div>
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-6">
                     <div className="row">
                       <div className="col-md-8">
                         <label htmlFor="" className="form-label">
-                          Age (if death)
+                          Age (if dead)
                         </label>
                       </div>
                       <div className="col-md-4">
                         <input
-                          type="number"
+                          type="text"
                           className="form-control"
-                          id=""
-                          placeholder=""
+                          name="age_if_death"
+                          defaultValue="0"
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-md-6">
                     <div className="row">
                       <div className="col-md-7">
                         <label htmlFor="" className="form-label">
@@ -107,218 +123,51 @@ const FamilyHistory = () => {
                         <input
                           type="text"
                           className="form-control"
-                          id=""
-                          placeholder=""
+                          name="cause_of_death"
+                          defaultValue="NA"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-                <h3 className="mt-2">
-                  Which disease they hade? (Check all that apply)
+                <h3 className="mt-2 fs-6 fs-bold text-dark mb-3">
+                  Please mention Medical Problems (Check all that apply)
                 </h3>
                 <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Anemia</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Cancer</p>
+                  {disease.map((item, index) => (
+                    <div className="col-md-3" key={index}>
+                      <div className="row">
+                        <div className="col-md-2">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            name="disease"
+                            value={item}
+                          />
+                        </div>
+                        <div className="col-md-10">
+                          <p>{item}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Diabetes</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Epilepsy</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Glaucoma</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Heart Disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>High Blood Pressure</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Hay Fever</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Hives</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Kidney disease</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Mental illness</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Rheumatoid arthritis</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="row">
-                      <div className="col-md-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <p>Tuberculosis</p>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="gen-form-add-btn pb-5">
-                  <a href="#" className="btn btn-primary">
-                    Add
-                  </a>
+                <div className="gen-form-soft-button">
+                  <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4">
+                      <div
+                        className="right-button"
+                        style={{ textAlign: "right" }}
+                      >
+                        <button type="submit" className="btn btn-success">
+                          Save Changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
