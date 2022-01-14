@@ -282,7 +282,6 @@ const MedicalHistory = () => {
                                 type="radio"
                                 name="periodTrouble"
                                 id="flexRadioDefault1"
-                                name="periodTrouble"
                                 value="Yes"
                                 {...register("periodTrouble")}
                                 defaultChecked={
