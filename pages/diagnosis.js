@@ -23,6 +23,7 @@ const Diagnosis = () => {
       return result;
     }
   );
+
   return (
     <>
       <div className="row">
