@@ -242,6 +242,89 @@ const Eprescription = () => {
     "Hatric 3 Tablet",
   ];
 
+  const restriction = [
+    "select",
+    "NO CONCENTRATED SWEETS",
+    "NPO",
+    "PEG TUBE",
+    "PUREED",
+    "PUREED NO ADDED SALT",
+    "REGULAR DIET",
+    "DIABETIC DIET",
+    "ENSURE SUPPLEMENT",
+    "FLUID RESTRICTED DIET",
+    "FULL LIQUID",
+    "GLEUCERNIA SUPPLEMENT 1 CAN 1X DAY AND 1 CAN PRN MISSED MEALS",
+    "HEART HEALTHY",
+    "HIGH FIBER",
+    "AVOID CONCENTRATED SWEETS",
+    "CARDIAC DIET",
+    "CHOPPED MEAT",
+    "CONSISTENT CARBOHYDRATE",
+    "CONSISTENT CARBOHYDRATE",
+    "HIGH FIBER",
+    "HONEY THICKENED LIQUIDS",
+    "ISOSOURCE",
+    "LIBERALIZED DIABETIS",
+    "NAS",
+    "NO ORANGES,BANANAS,ORANGE JUICE,MELONS,TOMATOES",
+    "LIMIT VIT K",
+    "LOW CHOLESTEROL",
+    "LOW FAT",
+    "LOW SODIUM",
+    "MECHANICAL SOFT",
+    "NECTAR THICK LIQUIDS",
+    "NO CARBS",
+    "REGULAR NO ADDED FAT",
+    "REGULAR NO ADDED SALT",
+    "RENAL DIET",
+    "RENAL DIET",
+    "THIN LIQUIDS",
+    "TWOCAL PER PEG TUBE",
+  ];
+  const pEducation = [
+    "select",
+    "Weight loss",
+    "Exercise 45-60 min 4-5/wk",
+    "EIOH cessation",
+    "smoking cessation",
+    "Low fat,low salt,low cholesterol diet",
+    "Diabetes",
+    "No driving or no activity requiring mental aiemess while on _____",
+    "Increase oral fluid",
+    "No heavy lifting",
+    "Plan of care explained to the patient",
+    "RTC or go to ED if signs/symptoms worsens _____ Total time face to face ______ minutes >50% conseling/coordination of care",
+  ];
+  const precautionList = [
+    "select",
+    "SHARPS CONTAINERS",
+    "SMOKING IN HOME",
+    "SOILED/UNHYGENIC LIVING CONDITIONS",
+    "STANDARD PRECAUTIONS",
+    "UNIVERSAL PRECAUTIONS , INFECTION PRECAUTIONS , FALL PRECAUTIONS , CLERA PATHWAYS , MEDICATION PRECAUTIONS , SAFEETY PRECAUTIONS , EMERGENCY PLAN",
+    "UNSAFE FLOORING",
+    "CLUTTERED ENVIRONMENT",
+    "CONTACT PRECAUTIONS",
+    "COVID PRECAUTIONS",
+    "DEMENTIA",
+    "DEMETIA WITH WANDERING",
+    "DEPRESSIVE DISORDER PRECAUTIONS",
+    "DIABETIC PRECAUTIONS",
+    "EMERGENCY PLAN",
+    "EMERGENCY PRECAUTIONS",
+    "FALL PRECAUTIONS",
+    "HONEY THICKEND LIQUIDS",
+    "INADEQUATE LIGHTING",
+    "INDOOR PET",
+    "INFECTION PRECAUTION",
+    "INSECTS/RODENTS",
+    "JOINT PRECAUTIONS",
+    "LONG TERM ANTICOAGULATION",
+  ];
+
+  const treatmentList = ["Select"];
+
   return (
     <>
       <form onSubmit={handleSubmit(submitPrescription)}>
@@ -259,6 +342,72 @@ const Eprescription = () => {
                     </div>
                   </div>
                   <FormCloseBtn id={appointmentId} />
+                </div>
+                <div
+                  className="rfa-gen-form-data-table mt-4"
+                  style={{
+                    background: " white",
+                    padding: "10px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th colSpan="2" style={{ textAlign: "center" }}>
+                          Medical Diagnosis
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="col">ICD.10 Code</th>
+                        <th scope="col">Specification</th>
+                      </tr>
+
+                      <tr>
+                        <td>10.21</td>
+                        <td>hfgdfbdfgfdgbh</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  className="rfa-gen-form-data-table mt-4"
+                  style={{
+                    background: " white",
+                    padding: "10px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th colSpan="6" style={{ textAlign: "center" }}>
+                          Past Medicine Records
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="col">Medicine Name</th>
+                        <th scope="col">MG</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Reason</th>
+                      </tr>
+
+                      <tr>
+                        <td>ghdfghdfh</td>
+                        <td>hfgh</td>
+                        <td>fghgfh</td>
+                        <td>gfhgfh</td>
+                        <td>fghgfh</td>
+                        <td>jgfjhfgj</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 <div className="gen-form">
                   <h3>Medicine</h3>
@@ -408,7 +557,7 @@ const Eprescription = () => {
                     </tbody>
                   </table>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mt-3">
                   <h3>Test</h3>
                   <div className="row justify-content-between align-items-end mt-3">
                     <div className="col-md-5">
@@ -480,15 +629,86 @@ const Eprescription = () => {
                     </tbody>
                   </table>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mt-3">
+                  <h3>Precaution & Safety Measures</h3>
+                  <div className="row justify-content-between align-items-end mt-3">
+                    <div className="col-md-5">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label="Default select example"
+                        onChange={(e) => setTestName(e.target.value)}
+                      >
+                        {precautionList?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="col-md-5">
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="patientEducation"
+                        placeholder="Others:"
+                      />
+                    </div>
+                    <div className="col-md-2">
+                      <div className="prescription-add-btn">
+                        <span className="btn btn-primary prescription-btn">
+                          Add
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="rfa-gen-form-data-table mt-4"
+                  style={{
+                    background: "white",
+                    padding: "10px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Precautions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <i className="ri-close-circle-line"></i>
+                        </th>
+                        <td>gghjh</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="gen-form mt-3">
                   <h3>Food & Fluid Restriction</h3>
                   <div className="row justify-content-between align-items-end mt-3">
-                    <div className="col-md-10">
+                    <div className="col-md-5">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label="Default select example"
+                        onChange={(e) => setSpecification(e.target.value)}
+                      >
+                        {restriction?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="col-md-5">
                       <input
                         type="text"
                         className="form-control"
                         name="patientRestriction"
-                        placeholder="Patient Restriction"
+                        placeholder="Other Restrictions"
                         onChange={(e) => setPatientRestriction(e.target.value)}
                         value={patientRestriction}
                       />
@@ -532,15 +752,28 @@ const Eprescription = () => {
                     </tbody>
                   </table>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mt-3">
                   <h3>Patient Education</h3>
                   <div className="row justify-content-between align-items-end mt-3">
-                    <div className="col-md-10">
+                    <div className="col-md-5">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label="Default select example"
+                        onChange={(e) => setSpecification(e.target.value)}
+                      >
+                        {pEducation?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="col-md-5">
                       <input
                         type="text"
                         className="form-control"
                         name="patientEducation"
-                        placeholder="Patient Education"
+                        placeholder="Others"
                         onChange={(e) => setPatientEducation(e.target.value)}
                         value={patientEducation}
                       />
@@ -581,6 +814,63 @@ const Eprescription = () => {
                           <td>{item}</td>
                         </tr>
                       ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="gen-form mt-3">
+                  <h3>Other Treatment Referral</h3>
+                  <div className="row justify-content-between align-items-end mt-3">
+                    <div className="col-md-5">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label="Default select example"
+                      >
+                        {treatmentList?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="col-md-5">
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="patientEducation"
+                        placeholder="Others"
+                      />
+                    </div>
+                    <div className="col-md-2">
+                      <div className="prescription-add-btn">
+                        <span className="btn btn-primary prescription-btn">
+                          Add
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="rfa-gen-form-data-table mt-4"
+                  style={{
+                    background: "white",
+                    padding: "10px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Treatment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <i className="ri-close-circle-line"></i>
+                        </th>
+                        <td>dfbvfb bdf b</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
