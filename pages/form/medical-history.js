@@ -6,6 +6,7 @@ import { useAuth } from "../../context";
 import { useRouter } from "next/router";
 import { apiUrl } from "../../config/api";
 import Pagination from "../../components/Pagination";
+import { useState } from "react";
 const MedicalHistory = () => {
   const { appointmentId } = useRouter().query;
   const { auth } = useAuth();
@@ -21,6 +22,17 @@ const MedicalHistory = () => {
       return result;
     }
   );
+
+  const [medicineName, setMedicineName] = useState();
+  const [dose, setDose] = useState();
+  const [date, setDate] = useState();
+  const [status, setStatus] = useState();
+  const [type, setType] = useState();
+  const [route, setRoute] = useState();
+  const [frequency, setfrequency] = useState();
+  const [sideEffect, setSideEffect] = useState();
+  const [ifYes, setIfYes] = useState();
+  const [allergies, setAllergies] = useState();
 
   const { medicalHistory, id: patientId } = data?.patient;
   const { register, handleSubmit } = useForm();
@@ -136,6 +148,37 @@ const MedicalHistory = () => {
     "EKG",
     "Spinal Tap",
     "Others",
+  ];
+
+  const frequencyList = [
+    "Select",
+    "DAILY",
+    " 2 TIMES A WEEK",
+    "2 TIMES DAILY",
+    "3 TIMES A WEEK",
+    "3 TIMES DAILY",
+    "4 TIMES A WEEK",
+    "4 TIMES DAILY",
+    "AS DIRECTED",
+    "AS NEEDED",
+    "BED TIME",
+    "EVERY 12 HOURS",
+    "EVERY 2 HOURS",
+    "EVERY 4 HOURS",
+    "EVERY 6 HOURS",
+    "EVERY 72 HOURS",
+    "EVERY 8 HOURS",
+    "EVERY AM",
+    "EVERY OTHER DAY",
+    "EVERY OTHER WEEK",
+    "EVERY PM",
+    "HOURLY",
+    "ENTERMITTENT",
+    "MONTHLY",
+    "WEEKLY",
+    "O2- CONTINUOUS",
+    "O2- NIGHTLY",
+    "O2- PRN",
   ];
 
   const makeArrfromString = (str) => {
@@ -1283,8 +1326,10 @@ const MedicalHistory = () => {
                                         aria-label=".form-select-sm example"
                                       >
                                         <option selected>Select Items</option>
-                                        <option value="1">Continue</option>
-                                        <option value="2">End</option>
+                                        <option value="1">Prescribed</option>
+                                        <option value="2">
+                                          Non-Prescribed
+                                        </option>
                                       </select>
                                     </div>
                                   </div>
@@ -1315,8 +1360,11 @@ const MedicalHistory = () => {
                                         className="form-select form-select-sm"
                                         aria-label=".form-select-sm example"
                                       >
-                                        <option value="1">Yes</option>
-                                        <option value="2">No</option>
+                                        {frequencyList.map((item, index) => (
+                                          <option value={item} key={index}>
+                                            {item}
+                                          </option>
+                                        ))}
                                       </select>
                                     </div>
                                   </div>
