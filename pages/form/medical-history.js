@@ -33,6 +33,7 @@ const MedicalHistory = () => {
   const [sideEffect, setSideEffect] = useState();
   const [ifYes, setIfYes] = useState();
   const [allergies, setAllergies] = useState();
+  const [medicineList, setMedicineList] = useState([]);
 
   const { medicalHistory, id: patientId } = data?.patient;
   const { register, handleSubmit } = useForm();
