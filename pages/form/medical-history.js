@@ -29,11 +29,31 @@ const MedicalHistory = () => {
   const [status, setStatus] = useState();
   const [type, setType] = useState();
   const [route, setRoute] = useState();
-  const [frequency, setfrequency] = useState();
+  const [frequency, setFrequency] = useState();
   const [sideEffect, setSideEffect] = useState();
   const [ifYes, setIfYes] = useState();
-  const [allergies, setAllergies] = useState();
   const [medicineList, setMedicineList] = useState([]);
+
+  const addMedicine = () => {
+    setMedicineList([
+      ...medicineList,
+      {
+        medicineName: medicineName,
+        dose: dose,
+        data: date,
+        status: status,
+        type: type,
+        route: route,
+        frequency: frequency,
+        sideEffect: sideEffect,
+        ifYes: ifYes,
+      },
+    ]);
+    setMedicineName("");
+    setDose("");
+    setDate("");
+    setIfYes("");
+  };
 
   const { medicalHistory, id: patientId } = data?.patient;
   const { register, handleSubmit } = useForm();
@@ -1268,7 +1288,10 @@ const MedicalHistory = () => {
                                         type="text"
                                         className="form-control"
                                         name="MedicineName"
-                                        placeholder=""
+                                        value={medicineName}
+                                        onChange={(e) =>
+                                          setMedicineName(e.target.value)
+                                        }
                                       />
                                     </div>
                                   </div>
@@ -1281,7 +1304,10 @@ const MedicalHistory = () => {
                                         type="text"
                                         className="form-control"
                                         name="MedicineName"
-                                        placeholder=""
+                                        value={dose}
+                                        onChange={(e) =>
+                                          setDose(e.target.value)
+                                        }
                                       />
                                     </div>
                                     <div className="col-md-6">
@@ -1294,7 +1320,10 @@ const MedicalHistory = () => {
                                             type="date"
                                             className="form-control"
                                             name="MedicineName"
-                                            placeholder=""
+                                            value={date}
+                                            onChange={(e) =>
+                                              setDate(e.target.value)
+                                            }
                                           />
                                         </div>
                                       </div>
@@ -1310,10 +1339,15 @@ const MedicalHistory = () => {
                                       <select
                                         className="form-select form-select-sm"
                                         aria-label=".form-select-sm example"
+                                        onChange={(e) =>
+                                          setStatus(e.target.value)
+                                        }
                                       >
-                                        <option selected>Select Items</option>
-                                        <option value="1">Continue</option>
-                                        <option value="2">End</option>
+                                        <option selected>Select Status</option>
+                                        <option value="Continue">
+                                          Continue
+                                        </option>
+                                        <option value="End">End</option>
                                       </select>
                                     </div>
                                   </div>
@@ -1325,10 +1359,15 @@ const MedicalHistory = () => {
                                       <select
                                         className="form-select form-select-sm"
                                         aria-label=".form-select-sm example"
+                                        onChange={(e) =>
+                                          setType(e.target.value)
+                                        }
                                       >
                                         <option selected>Select Items</option>
-                                        <option value="1">Prescribed</option>
-                                        <option value="2">
+                                        <option value="Prescribed">
+                                          Prescribed
+                                        </option>
+                                        <option value="Non-Prescribed">
                                           Non-Prescribed
                                         </option>
                                       </select>
@@ -1344,11 +1383,18 @@ const MedicalHistory = () => {
                                       <select
                                         className="form-select form-select-sm"
                                         aria-label=".form-select-sm example"
+                                        onChange={(e) =>
+                                          setRoute(e.target.value)
+                                        }
                                       >
                                         <option selected>Select Items</option>
-                                        <option value="1">Capsule</option>
-                                        <option value="2">Injection</option>
-                                        <option value="3">Other Way</option>
+                                        <option value="Capsule">Capsule</option>
+                                        <option value="Injection">
+                                          Injection
+                                        </option>
+                                        <option value="Other Way">
+                                          Other Way
+                                        </option>
                                       </select>
                                     </div>
                                   </div>
@@ -1360,6 +1406,9 @@ const MedicalHistory = () => {
                                       <select
                                         className="form-select form-select-sm"
                                         aria-label=".form-select-sm example"
+                                        onChange={(e) =>
+                                          setFrequency(e.target.value)
+                                        }
                                       >
                                         {frequencyList.map((item, index) => (
                                           <option value={item} key={index}>
@@ -1382,10 +1431,13 @@ const MedicalHistory = () => {
                                       <select
                                         className="form-select form-select-sm"
                                         aria-label=".form-select-sm example"
+                                        onChange={(e) =>
+                                          setSideEffect(e.target.value)
+                                        }
                                       >
                                         <option selected>Select Items</option>
-                                        <option value="1">Yes</option>
-                                        <option value="2">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
                                       </select>
                                     </div>
                                   </div>
@@ -1398,7 +1450,10 @@ const MedicalHistory = () => {
                                         type="text"
                                         className="form-control"
                                         name="MedicineName"
-                                        placeholder=""
+                                        value={ifYes}
+                                        onChange={(e) =>
+                                          setIfYes(e.target.value)
+                                        }
                                       />
                                     </div>
                                   </div>
@@ -1406,9 +1461,12 @@ const MedicalHistory = () => {
                               </div>
                             </div>
                             <div className="add_btn text-end mb-3">
-                              <button type="button" className="btn btn-primary">
+                              <span
+                                className="btn btn-primary"
+                                onClick={addMedicine}
+                              >
                                 Add
-                              </button>
+                              </span>
                             </div>
                             <div
                               className="table-responsive"
@@ -1429,17 +1487,19 @@ const MedicalHistory = () => {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>Cipcal</td>
-                                    <td>500</td>
-                                    <td>13/01/2022</td>
-                                    <td>Continue</td>
-                                    <td>Prescribed</td>
-                                    <td>Oral</td>
-                                    <td>2 times per day</td>
-                                    <td>Yes</td>
-                                    <td>Headech</td>
-                                  </tr>
+                                  {medicineList.map((item, index) => (
+                                    <tr key={index}>
+                                      <td>{item.medicineName}</td>
+                                      <td>{item.dose}</td>
+                                      <td>{item.date}</td>
+                                      <td>{item.status}</td>
+                                      <td>{item.type}</td>
+                                      <td>{item.route}</td>
+                                      <td>{item.frequency}</td>
+                                      <td>{item.sideEffect}</td>
+                                      <td>{item.ifYes}</td>
+                                    </tr>
+                                  ))}
                                 </tbody>
                               </table>
                             </div>
@@ -1462,7 +1522,7 @@ const MedicalHistory = () => {
                   </div>
                 </div>
 
-                <div className="table-responsive mb-3">
+                <div className="table-responsive">
                   <table className="table">
                     <thead>
                       <tr>
@@ -1493,20 +1553,6 @@ const MedicalHistory = () => {
                       </tr>
                     </tbody>
                   </table>
-                </div>
-                <div className="row mb-3">
-                  <div className="col-md-4">
-                    <h3 className="fs-6 fs-bold text-dark">Allergies</h3>
-                    <p className="space-x-4">Known allergies to date:</p>
-                  </div>
-                  <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="allergies"
-                      placeholder=""
-                    />
-                  </div>
                 </div>
                 <div className="gen-form-soft-button mt-3">
                   <div className="row">
