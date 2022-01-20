@@ -11,7 +11,7 @@ import { useAuth } from "../context";
 const ProfilSetting = () => {
   const { auth } = useAuth();
 
-  const { data, loading, error } = useSWR(
+  const { data } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {

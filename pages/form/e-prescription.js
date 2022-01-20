@@ -11,9 +11,26 @@ const Eprescription = () => {
 
   const { appointmentId } = useRouter().query;
 
+  const [precaution, setPrecaution] = useState();
+  const [allPrecaution, setAllPrecaution] = useState([]);
+  const addPrecaution = () => {
+    setAllPrecaution((oldItems) => {
+      return [...oldItems, precaution];
+    });
+    setPrecaution("");
+  };
+
+  const [referral, setReferral] = useState();
+  const [allReferral, setAllReferral] = useState([]);
+  const addReferral = () => {
+    setAllReferral((oldItems) => {
+      return [...oldItems, referral];
+    });
+    setReferral("");
+  };
+
   const [patientEducation, setPatientEducation] = useState();
   const [patientEducationList, setPatientEducationList] = useState([]);
-
   const addPatientEducation = () => {
     setPatientEducationList((oldItems) => {
       return [...oldItems, patientEducation];
@@ -243,7 +260,6 @@ const Eprescription = () => {
   ];
 
   const restriction = [
-    "select",
     "NO CONCENTRATED SWEETS",
     "NPO",
     "PEG TUBE",
@@ -281,9 +297,9 @@ const Eprescription = () => {
     "RENAL DIET",
     "THIN LIQUIDS",
     "TWOCAL PER PEG TUBE",
+    "Others",
   ];
   const pEducation = [
-    "select",
     "Weight loss",
     "Exercise 45-60 min 4-5/wk",
     "EIOH cessation",
@@ -295,9 +311,9 @@ const Eprescription = () => {
     "No heavy lifting",
     "Plan of care explained to the patient",
     "RTC or go to ED if signs/symptoms worsens _____ Total time face to face ______ minutes >50% conseling/coordination of care",
+    "Others",
   ];
   const precautionList = [
-    "select",
     "SHARPS CONTAINERS",
     "SMOKING IN HOME",
     "SOILED/UNHYGENIC LIVING CONDITIONS",
@@ -321,9 +337,10 @@ const Eprescription = () => {
     "INSECTS/RODENTS",
     "JOINT PRECAUTIONS",
     "LONG TERM ANTICOAGULATION",
+    "Others",
   ];
 
-  const treatmentList = ["Select"];
+  const treatmentList = ["option 1", "option 2", "option 3", "option 4"];
 
   return (
     <>
@@ -636,8 +653,9 @@ const Eprescription = () => {
                       <select
                         className="form-select form-select-sm"
                         aria-label="Default select example"
-                        onChange={(e) => setTestName(e.target.value)}
+                        onChange={(e) => setPrecaution(e.target.value)}
                       >
+                        <option selected>Select</option>
                         {precautionList?.map((item, index) => (
                           <option value={item} key={index}>
                             {item}
@@ -651,11 +669,15 @@ const Eprescription = () => {
                         className="form-control"
                         name="patientEducation"
                         placeholder="Others:"
+                        onChange={(e) => setPrecaution(e.target.value)}
                       />
                     </div>
                     <div className="col-md-2">
                       <div className="prescription-add-btn">
-                        <span className="btn btn-primary prescription-btn">
+                        <span
+                          className="btn btn-primary prescription-btn"
+                          onClick={addPrecaution}
+                        >
                           Add
                         </span>
                       </div>
@@ -678,12 +700,14 @@ const Eprescription = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>gghjh</td>
-                      </tr>
+                      {allPrecaution.map((item, index) => (
+                        <tr>
+                          <th scope="row" key={index}>
+                            <i className="ri-close-circle-line"></i>
+                          </th>
+                          <td>{item}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -694,8 +718,9 @@ const Eprescription = () => {
                       <select
                         className="form-select form-select-sm"
                         aria-label="Default select example"
-                        onChange={(e) => setSpecification(e.target.value)}
+                        onChange={(e) => setPatientRestriction(e.target.value)}
                       >
+                        <option selected>Select</option>
                         {restriction?.map((item, index) => (
                           <option value={item} key={index}>
                             {item}
@@ -710,7 +735,6 @@ const Eprescription = () => {
                         name="patientRestriction"
                         placeholder="Other Restrictions"
                         onChange={(e) => setPatientRestriction(e.target.value)}
-                        value={patientRestriction}
                       />
                     </div>
                     <div className="col-md-2">
@@ -759,8 +783,9 @@ const Eprescription = () => {
                       <select
                         className="form-select form-select-sm"
                         aria-label="Default select example"
-                        onChange={(e) => setSpecification(e.target.value)}
+                        onChange={(e) => setPatientEducation(e.target.value)}
                       >
+                        <option selected>Select</option>
                         {pEducation?.map((item, index) => (
                           <option value={item} key={index}>
                             {item}
@@ -768,17 +793,16 @@ const Eprescription = () => {
                         ))}
                       </select>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-6">
                       <input
                         type="text"
                         className="form-control"
                         name="patientEducation"
                         placeholder="Others"
                         onChange={(e) => setPatientEducation(e.target.value)}
-                        value={patientEducation}
                       />
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-1">
                       <div className="prescription-add-btn">
                         <span
                           className="btn btn-primary prescription-btn"
@@ -824,7 +848,9 @@ const Eprescription = () => {
                       <select
                         className="form-select form-select-sm"
                         aria-label="Default select example"
+                        onChange={(e) => setReferral(e.target.value)}
                       >
+                        <option select>Select</option>
                         {treatmentList?.map((item, index) => (
                           <option value={item} key={index}>
                             {item}
@@ -838,11 +864,15 @@ const Eprescription = () => {
                         className="form-control"
                         name="patientEducation"
                         placeholder="Others"
+                        onChange={(e) => setReferral(e.target.value)}
                       />
                     </div>
                     <div className="col-md-2">
                       <div className="prescription-add-btn">
-                        <span className="btn btn-primary prescription-btn">
+                        <span
+                          className="btn btn-primary prescription-btn"
+                          onClick={addReferral}
+                        >
                           Add
                         </span>
                       </div>
@@ -865,12 +895,14 @@ const Eprescription = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>dfbvfb bdf b</td>
-                      </tr>
+                      {allReferral.map((item, index) => (
+                        <tr key={index}>
+                          <th scope="row">
+                            <i className="ri-close-circle-line"></i>
+                          </th>
+                          <td>{item}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>

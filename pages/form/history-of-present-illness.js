@@ -1,8 +1,24 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 import FormCloseBtn from "../../components/FormCloseBtn";
 
 const HistoryOfPresentIllness = () => {
   const { appointmentId } = useRouter().query;
+
+  const [slautation, setSalutation] = useState();
+  const [name, setName] = useState();
+  const [age, setAge] = useState();
+  const [gender, setGender] = useState();
+  const [pleasant, setPleasant] = useState();
+  const [cameWith, setCameWith] = useState();
+  const [cameTo, setCameTo] = useState();
+  const [problem, setProblem] = useState();
+  const [treatedWith, setTreatedWith] = useState();
+  const [resulting, setResulting] = useState();
+  const [stated, setStated] = useState();
+  const [hasDone, setHasDone] = useState();
+  const [medication, setMedication] = useState();
+  const [other, setOther] = useState();
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -29,22 +45,25 @@ const HistoryOfPresentIllness = () => {
                         type="radio"
                         name="flexRadioDefault"
                         id="flexRadioDefault2"
-                        checked
-                      />{" "}
-                      Mr. /{" "}
+                        value="Mr"
+                        onChange={(e) => setSalutation(e.target.value)}
+                      />
+                      Mr. /
                       <input
                         className="form-check-input"
                         type="radio"
                         name="flexRadioDefault"
                         id="flexRadioDefault2"
-                      />{" "}
+                        value="Mrs"
+                        onChange={(e) => setSalutation(e.target.value)}
+                      />
                       Mrs.
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Amit Mahapatra"
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="col-md-3">
@@ -54,66 +73,72 @@ const HistoryOfPresentIllness = () => {
                           <input
                             type="number"
                             className="form-control"
-                            placeholder="23"
+                            onChange={(e) => setAge(e.target.value)}
                           />
                         </div>
                         <div className="col-md-2">Y.o</div>
                       </div>
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-3">
                       <select
                         className="form-select"
                         aria-label="Default select example"
+                        onChange={(e) => setGender(e.target.value)}
                       >
-                        <option selected>Male</option>
-                        <option value="1">Female</option>
-                        <option value="2">Other</option>
+                        <option selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
-                    <div className="col-md-3">
+                  </div>
+                  <div className="row align-items-center mt-2">
+                    <div className="col-md-4">
                       <div className="row align-items-center">
-                        <div className="col-md-6">Pleasant</div>
-                        <div className="col-md-6">
+                        <div className="col-md-3">Pleasant</div>
+                        <div className="col-md-9">
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="gentleman"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="row align-items-center">
-                        <div className="col-md-2">with</div>
-                        <div className="col-md-10">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="no acute distress"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="row align-items-center">
-                        <div className="col-md-6">came to the</div>
-                        <div className="col-md-6">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="clinic"
+                            onChange={(e) => setPleasant(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <div className="row align-items-center">
-                        <div className="col-md-7">with a problem of</div>
-                        <div className="col-md-5">
+                        <div className="col-md-2">with</div>
+                        <div className="col-md-10">
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="back pain"
+                            onChange={(e) => setCameWith(e.target.value)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="row align-items-center">
+                        <div className="col-md-4">came to the</div>
+                        <div className="col-md-8">
+                          <input
+                            type="text"
+                            className="form-control"
+                            onChange={(e) => setCameTo(e.target.value)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row align-items-center mt-2">
+                    <div className="col-md-6">
+                      <div className="row align-items-center">
+                        <div className="col-md-4">with a problem of</div>
+                        <div className="col-md-8">
+                          <input
+                            type="text"
+                            className="form-control"
+                            onChange={(e) => setProblem(e.target.value)}
                           />
                         </div>
                       </div>
@@ -127,48 +152,52 @@ const HistoryOfPresentIllness = () => {
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="pain medication"
+                            onChange={(e) => setTreatedWith(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-3">
+                  </div>
+                  <div className="row align-items-center mt-2">
+                    <div className="col-md-6">
                       <div className="row align-items-center">
-                        <div className="col-md-6">resulting in</div>
-                        <div className="col-md-6">
+                        <div className="col-md-3">resulting in</div>
+                        <div className="col-md-9">
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="no relief"
+                            onChange={(e) => setResulting(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-6">
                       <div className="row align-items-center">
                         <div className="col-md-3">Patient stated</div>
                         <div className="col-md-9">
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="while driving motor bike got hit from the back and fell from the bike"
+                            onChange={(e) => setStated(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-5">
+                  </div>
+                  <div className="row align-items-center mt-2">
+                    <div className="col-md-6">
                       <div className="row align-items-center">
-                        <div className="col-md-6">Patient was done</div>
-                        <div className="col-md-6">
+                        <div className="col-md-4">Patient was done</div>
+                        <div className="col-md-8">
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="MRI, X-ray, and etc"
+                            onChange={(e) => setHasDone(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-md-6">
                       <div className="row align-items-center">
                         <div className="col-md-6">
                           Patient current medication
@@ -177,21 +206,23 @@ const HistoryOfPresentIllness = () => {
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="Brufen 600 mg"
+                            onChange={(e) => setMedication(e.target.value)}
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                  </div>
+                  <div className="row align-items-center mt-2">
+                    <div className="col-md-12">
                       <div className="row align-items-center">
-                        <div className="col-md-6">
+                        <div className="col-md-3">
                           Other relevant factors are
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-9">
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="present / not present"
+                            onChange={(e) => setOther(e.target.value)}
                           />
                         </div>
                       </div>
@@ -206,13 +237,19 @@ const HistoryOfPresentIllness = () => {
                 <h3>Preview:</h3>
 
                 <p>
-                  Mr. Amit Mahapatra is a 23 y.o Male pleasant gentleman with no
-                  acute distress came to the clinic with a problem of back pain.
-                  Patient currently treated with pain medication resulting in no
-                  relief. Patient stated while driving motor bike got hit from
-                  the back and fell from the bike. Patient was done MRI, X-ray,
-                  and etc. Patient current medication includes Brufen 600 mg.
-                  Other relevant factors are present/ not present.
+                  <strong>{slautation}</strong>. <strong>{name}</strong> is a
+                  <strong> {age}</strong> y.o <strong>{gender}</strong> pleasant
+                  <strong>{pleasant}</strong> with
+                  <strong> {cameWith}</strong> came to the
+                  <strong> {cameTo} </strong>
+                  with a problem of
+                  <strong> {problem}</strong>. Patient currently treated with
+                  <strong> {treatedWith} </strong> resulting in
+                  <strong> {resulting} </strong>. Patient stated
+                  <strong> {stated}</strong>. Patient was done
+                  <strong> {hasDone}</strong>. Patient current medication
+                  includes <strong>{medication}</strong>. Other relevant factors
+                  are <strong> {other}</strong>.
                 </p>
               </div>
               <div className="gen-form">
@@ -256,91 +293,6 @@ const HistoryOfPresentIllness = () => {
                     />
                   </div>
                 </div>
-              </div>
-              <div className="gen-form-upper row">
-                <div className="col-md-12">
-                  <div className="text-center pb-6">
-                    <h3 className="general-information-form-title font-bold">
-                      Current Functional Status
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <h6>Difficulty with locomotion / movement such as:</h6>
-                  </div>
-                  <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Bed Mobility , On ramps"
-                      readOnly
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <h6>Difficulty with self-care activities such as:</h6>
-                  </div>
-                  <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Bathing"
-                      readOnly
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <h6>Difficulty with home management such as:</h6>
-                  </div>
-                  <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <h6>
-                      Difficulty with community and work activities such as:
-                    </h6>
-                  </div>
-                  <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div classNameName="gen-form-upper row">
-                <div classNameName="col-md-12">
-                  <div classNameName="text-center pb-6">
-                    <h3 classNameName="general-information-form-title font-bold">
-                      Prior Functional Status(Your status prior to the date of
-                      onset/Injury):
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="gen-form-para gen-form"
-                style={{ marginTop: "10px" }}
-              >
-                <p>here the data will be viewed.</p>
               </div>
             </div>
           </div>
