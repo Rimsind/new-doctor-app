@@ -5,7 +5,7 @@ const Reurology = (props) => {
       <div className="patient-subjective-info">
         <div className="mt-4 ms-3 pt-3">
           <h5 className="mt-3 mb-1" style={{ textAlign: "center" }}>
-            DOCTOR ASSESSMENT (Reurology)
+            DOCTOR ASSESSMENT (Neurology)
           </h5>
         </div>
         <div className="row">
