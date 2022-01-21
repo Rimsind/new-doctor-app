@@ -41,8 +41,6 @@ const Diagnosis = () => {
       return result;
     }
   );
-  const { specialty } = doctor;
-  console.log(specialty?.name, "doctor details");
 
   return (
     <>

@@ -23,7 +23,7 @@ const Reurology = (props) => {
           <div className="col-md-3">
             <div className="patient-user-panel-btn mt-3">
               <Link
-                href={`/medicine-form/clinical-examination?appointmentId=${props.data?.id}`}
+                href={`/neurology/clinical-examination?appointmentId=${props.data?.id}`}
               >
                 <a className="btn-custom btn btn-primary">
                   Clinical Examination

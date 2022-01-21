@@ -1,12 +1,98 @@
-// import FormCloseBtn from "../../components/FormCloseBtn";
-// import router, { useRouter } from "next/router";
-// import { useState } from "react";
+import FormCloseBtn from "../../components/FormCloseBtn";
+import router, { useRouter } from "next/router";
+import { useState } from "react";
 // import { useAuth } from "../../context";
 // import { useForm } from "react-hook-form";
 // import axios from "axios";
 // import { apiUrl } from "../../config/api";
 
-const ClinicalExam = () => {
+const catagoryList = [
+  "Mental status examination",
+  "Cranial nerve examination",
+  "Motor system",
+  "Deep tendon reflexes",
+  "Sensation",
+  "Cerebellum",
+];
+
+const testList = [
+  "The assessment of consciousness, often using the Glasgow Coma Scale (GCS)",
+  "Mental status examination, often including the abbreviated mental test score (AMTS) or mini mental state examination (MMSE)",
+  "Global assessment of higher functions",
+  "Intracranial pressure is roughly estimated by fundoscopy; this also enables assessment for microvascular disease",
+  "Cranial nerves (I-XII)",
+  "sense of smell (I)",
+  " visual fields and acuity (II)",
+  "eye movements (III, IV, VI) and pupils (III, sympathetic and parasympathetic)",
+  "sensory function of face (V)",
+  " strength of facial (VII) and shoulder girdle muscles (XI)",
+  "hearing (VII, VIII)",
+  "taste (VII, IX, X)",
+  "pharyngeal movement and reflex (IX, X)",
+  "tongue movements (XII)",
+  "Muscle strength, often graded on the MRC scale 0 to 5[4] (i.e., 0 = Complete Paralysis to 5 = Normal Power)",
+  "grades 4−, 4 and 4+ maybe used to indicate movement against slight",
+  " moderate and strong resistance respectively",
+  "Muscle tone and signs of rigidity",
+  "Examination of posture",
+  "Decerebrate",
+  "Decorticate",
+  "Hemiparetic",
+  "Resting tremors",
+  "Abnormal movements",
+  "Seizure",
+  "Fasciculations",
+  "Tone",
+  "Spasticity",
+  "Pronator drift",
+  "Rigidity",
+  "Cogwheeling (abnormal tone suggestive of Parkinson's disease)",
+  "Gegenhalten – is resistance to passive change, where the strength of antagonist muscles increases with increasing examiner force. More common in dementia",
+  "Reflexes: masseter",
+  "biceps and triceps tendon",
+  "knee tendon",
+  "ankle jerk and plantar (i.e., Babinski sign)",
+  "Globally, brisk reflexes suggest an abnormality of the UMN or pyramidal tract, while decreased reflexes suggest abnormality in the anterior horn, LMN, nerve or motor end plate. A reflex hammer is used for this testing",
+  "Sensory system testing involves provoking sensations of fine touch, pain and temperature. Fine touch can be evaluated with a monofilament test, touching various dermatomes with a nylon monofilament to detect any subjective absence of touch perception",
+  "Sensory",
+  "Light touch",
+  "Pain",
+  "Temperature",
+  "Vibration",
+  "Position sense",
+  "Graphesthesia",
+  "Stereognosis, and Two-point discrimination (for discriminative sense)",
+  "Extinction",
+  "Romberg test – 2 out of the following 3 must be intact to maintain balance: i. vision ii. vestibulocochlear system iii. epicritic sensation",
+  "Cerebellar testing",
+  "Dysmetria",
+  "Finger-to-nose test",
+  "Ankle-over-tibia test",
+  "Dysdiadochokinesis",
+  "Rapid pronation-supination",
+  "Ataxia",
+  "Assessment of gait",
+  "Nystagmus",
+  "Intention tremor",
+  "Staccato speech.",
+];
+
+const ClinicalExamination = () => {
+  const { appointmentId } = useRouter().query;
+
+  const [catagory, setCatagory] = useState();
+  const [test, setTest] = useState();
+  const [data, setData] = useState([]);
+
+  const addData = () => {
+    setData([
+      ...data,
+      {
+        catagory: catagory,
+        test: test,
+      },
+    ]);
+  };
   return (
     <>
       <form>
@@ -23,6 +109,7 @@ const ClinicalExam = () => {
                       </h3>
                     </div>
                   </div>
+                  <FormCloseBtn id={appointmentId} />
                 </div>
 
                 <div className="gen-form mt-3">
@@ -33,13 +120,14 @@ const ClinicalExam = () => {
                       <select
                         className="form-select"
                         aria-label="Default select example"
-                        // onChange={(e) => setTestName(e.target.value)}
+                        onChange={(e) => setCatagory(e.target.value)}
                       >
-                        <option>Select Option</option>
-                        <option>One</option>
-                        <option>Two</option>
-                        <option>Three</option>
-                        <option>Four</option>
+                        <option selected>Select Option</option>
+                        {catagoryList.map((item, index) => (
+                          <option key={index} value={item}>
+                            {item}
+                          </option>
+                        ))}
                       </select>
                     </div>
                     <div className="col-md-5">
@@ -47,20 +135,21 @@ const ClinicalExam = () => {
                       <select
                         className="form-select"
                         aria-label="Default select example"
-                        // onChange={(e) => setSpecification(e.target.value)}
+                        onChange={(e) => setTest(e.target.value)}
                       >
-                        <option>Select Option</option>
-                        <option>One</option>
-                        <option>Two</option>
-                        <option>Three</option>
-                        <option>Four</option>
+                        <option selected>Select Option</option>
+                        {testList.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
                       </select>
                     </div>
                     <div className="col-md-2">
                       <div className="prescription-add-btn">
                         <span
                           className="btn btn-primary prescription-btn"
-                          //   onClick={addTest}
+                          onClick={addData}
                         >
                           Add
                         </span>
@@ -86,11 +175,13 @@ const ClinicalExam = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>X</td>
-                        <td>Categories One</td>
-                        <td>Test One</td>
-                      </tr>
+                      {data.map((item, index) => (
+                        <tr key={index}>
+                          <td>X</td>
+                          <td>{item.catagory}</td>
+                          <td>{item.test}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -150,4 +241,4 @@ const ClinicalExam = () => {
   );
 };
 
-export default ClinicalExam;
+export default ClinicalExamination;
