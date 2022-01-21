@@ -701,8 +701,8 @@ const Eprescription = () => {
                     </thead>
                     <tbody>
                       {allPrecaution.map((item, index) => (
-                        <tr>
-                          <th scope="row" key={index}>
+                        <tr key={index}>
+                          <th scope="row">
                             <i className="ri-close-circle-line"></i>
                           </th>
                           <td>{item}</td>
