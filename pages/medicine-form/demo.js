@@ -23,6 +23,12 @@ const Demo = () => {
     ]);
   };
 
+  const [height, setHeight] = useState();
+  const [weight, setWeight] = useState();
+  let meter = height / 100;
+  let result = weight / (meter * meter);
+  let BMI = result.toFixed(1);
+
   const skinList = [
     "No rashes or other changes",
     "no cyanosis",
@@ -221,91 +227,68 @@ const Demo = () => {
           <div className="gen-form">
             <h3>Vital Signs</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-3">
-                <label>Height (Without Shoes) (cm / lb)</label>
+              <div className="col-md-2">
+                <label>Height (cm)</label>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="cm"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="lb"
+                      onChange={(e) => setHeight(e.target.value)}
                     />
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
-                <label>Weight (Dressed) (Kg / lb)</label>
+              <div className="col-md-2">
+                <label>Weight (Kg)</label>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="kg"
+                      onChange={(e) => setWeight(e.target.value)}
                     />
                   </div>
-                  <div className="col-md-6">
+                </div>
+              </div>
+              <div className="col-md-2">
+                <label>BMI</label>
+                <div className="row">
+                  <div className="col-md-12">
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="lb"
+                      value={BMI}
+                      contentEditable="false"
                     />
                   </div>
                 </div>
               </div>
               <div className="col-md-3">
-                <label>Blood Pressure (Right Arm)</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Text"
-                />
+                <label>BP (Right Arm)</label>
+                <input type="text" className="form-control" />
               </div>
               <div className="col-md-3">
-                <label>Blood Pressure (Left Arm)</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Text"
-                />
+                <label>BP (Left Arm)</label>
+                <input type="text" className="form-control" />
               </div>
               <div className="col-md-3 mt-4">
                 <label>Heart Rate</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Text"
-                />
+                <input type="text" className="form-control" />
               </div>
               <div className="col-md-3 mt-4">
-                <label>Heart Rate (Regular)</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Text"
-                />
+                <label> Emter O2 Saturation</label>
+                <input type="text" className="form-control" />
               </div>
               <div className="col-md-3 mt-4">
                 <label>Respiratory Rate</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Text"
-                />
+                <input type="text" className="form-control" />
               </div>
               <div className="col-md-3 mt-4">
                 <label>Temperature (Oral)</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Text"
-                />
+                <input type="text" className="form-control" />
               </div>
             </div>
           </div>
