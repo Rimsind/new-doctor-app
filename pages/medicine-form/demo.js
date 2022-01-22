@@ -842,7 +842,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>GastroinDescriptioninal</h3>
+            <h3>Gastrointestinal</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
@@ -970,7 +970,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Abdomen</h3>
+            <h3>Abdominal</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
@@ -1034,7 +1034,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Genitalia</h3>
+            <h3>genitourinary</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
@@ -1290,7 +1290,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Nerologic</h3>
+            <h3>Nerological</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
@@ -1354,7 +1354,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Hematologic</h3>
+            <h3>Hematological</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
@@ -1418,7 +1418,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Endocrine</h3>
+            <h3>Endocrinal</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
@@ -1482,7 +1482,7 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Psychological</h3>
+            <h3>Psychological & Psychiatric Illness</h3>
             <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-5">
                 <select
