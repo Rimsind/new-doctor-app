@@ -366,7 +366,7 @@ const Demo = () => {
                 <div
                   className="modal fade"
                   id="exampleModal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -395,7 +395,7 @@ const Demo = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Checked checkbox
                               </label>
@@ -411,7 +411,7 @@ const Demo = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Checked checkbox
                               </label>
@@ -429,7 +429,7 @@ const Demo = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Checked checkbox
                               </label>
@@ -445,7 +445,7 @@ const Demo = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Checked checkbox
                               </label>
