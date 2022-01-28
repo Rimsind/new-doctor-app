@@ -360,6 +360,165 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
+            <h3>Demo</h3>
+            <div className="row justify-content-between align-items-end mt-3">
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="exampleModal"
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">
+                          Skin Demo
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-2">
+                <div className="assessment-add-btn">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              className="rfa-gen-form-data-table mt-4"
+              style={{
+                background: "white",
+                padding: "10px",
+                borderRadius: "3px",
+              }}
+            >
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th className="text-center" colSpan="2" scope="col">
+                      Title
+                    </th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {allSkin.map((item, index) => (
+                    <tr key={index}>
+                      <td>X</td>
+                      <td>{item.skin}</td>
+                      <td>{item.skinDescription}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="gen-form mt-3">
             <h3>Head, Eyes, Ears, Nose, Throat (HEENT)</h3>
             <div className="gen-form">
               <div className="row">
