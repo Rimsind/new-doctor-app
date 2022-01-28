@@ -292,76 +292,24 @@ const Demo = () => {
               </div>
             </div>
           </div>
+
           <div className="gen-form mt-3">
-            <h3>Skin</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  onChange={(e) => setSkin(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {skinList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  onChange={(e) => setSkinDescription(e.target.value)}
-                  value={skinDescription}
-                />
+              <div className="col-9 mb-2">
+                <h3>Skin</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    onClick={addSkin}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
                 </div>
               </div>
-            </div>
-            <div
-              className="rfa-gen-form-data-table mt-4"
-              style={{
-                background: "white",
-                padding: "10px",
-                borderRadius: "3px",
-              }}
-            >
-              <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <th className="text-center" colSpan="2" scope="col">
-                      Title
-                    </th>
-                    <th scope="col">Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {allSkin.map((item, index) => (
-                    <tr key={index}>
-                      <td>X</td>
-                      <td>{item.skin}</td>
-                      <td>{item.skinDescription}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="gen-form mt-3">
-            <h3>Demo</h3>
-            <div className="row justify-content-between align-items-end mt-3">
               <div className="col-md-4">
                 <div
                   className="modal fade"
@@ -374,7 +322,7 @@ const Demo = () => {
                     <div className="modal-content">
                       <div className="modal-header">
                         <h5 className="modal-title" id="exampleModalLabel">
-                          Skin Demo
+                          Skin
                         </h5>
                         <button
                           type="button"
@@ -476,18 +424,6 @@ const Demo = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-2">
-                <div className="assessment-add-btn">
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Add Entry
-                  </button>
-                </div>
-              </div>
             </div>
             <div
               className="rfa-gen-form-data-table mt-4"
@@ -507,13 +443,11 @@ const Demo = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {allSkin.map((item, index) => (
-                    <tr key={index}>
-                      <td>X</td>
-                      <td>{item.skin}</td>
-                      <td>{item.skinDescription}</td>
-                    </tr>
-                  ))}
+                  <tr>
+                    <td>X</td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
