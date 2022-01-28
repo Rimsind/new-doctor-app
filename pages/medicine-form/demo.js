@@ -304,7 +304,7 @@ const Demo = () => {
                     type="button"
                     className="btn btn-primary"
                     data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
+                    data-bs-target="#skinModal"
                   >
                     Add Entry
                   </button>
@@ -313,15 +313,15 @@ const Demo = () => {
               <div className="col-md-4">
                 <div
                   className="modal fade"
-                  id="exampleModal"
+                  id="skinModal"
                   tabIndex="-1"
-                  aria-labelledby="exampleModalLabel"
+                  aria-labelledby="skinModalLabel"
                   aria-hidden="true"
                 >
                   <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                       <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">
+                        <h5 className="modal-title" id="skinModalLabel">
                           Skin
                         </h5>
                         <button
@@ -444,7 +444,992 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="gen-form mt-5 mb-5 bg-light p-4">
+            <h3>Head, Eyes, Ears, Nose, Throat (HEENT)</h3>
+            <div className="gen-form">
+              <div className="row justify-content-between align-items-end mt-3">
+                <div className="col-9 mb-2">
+                  <h3>Head</h3>
+                </div>
+                <div className="col-md-2">
+                  <div className="assessment-add-btn">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#headModal"
+                    >
+                      Add Entry
+                    </button>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div
+                    className="modal fade"
+                    id="headModal"
+                    tabIndex="-1"
+                    aria-labelledby="headModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="headModalLabel">
+                            Head
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text">
+                            <input
+                              type="text"
+                              placeholder="Others"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th className="text-center" colSpan="2" scope="col">
+                        Title
+                      </th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="#">
+                          <i class="ri-close-circle-line"></i>
+                        </a>
+                      </td>
+                      <td>xyz</td>
+                      <td>asdfghjkl</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="gen-form">
+              <div className="row justify-content-between align-items-end mt-3">
+                <div className="col-9 mb-2">
+                  <h3>Eyes</h3>
+                </div>
+                <div className="col-md-2">
+                  <div className="assessment-add-btn">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#eyesModal"
+                    >
+                      Add Entry
+                    </button>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div
+                    className="modal fade"
+                    id="eyesModal"
+                    tabIndex="-1"
+                    aria-labelledby="eyesModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="eyesModalLabel">
+                            Eyes
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text">
+                            <input
+                              type="text"
+                              placeholder="Others"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th className="text-center" colSpan="2" scope="col">
+                        Title
+                      </th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="#">
+                          <i class="ri-close-circle-line"></i>
+                        </a>
+                      </td>
+                      <td>xyz</td>
+                      <td>asdfghjkl</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="gen-form">
+              <div className="row justify-content-between align-items-end mt-3">
+                <div className="col-9 mb-2">
+                  <h3>Ears</h3>
+                </div>
+                <div className="col-md-2">
+                  <div className="assessment-add-btn">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#earsModal"
+                    >
+                      Add Entry
+                    </button>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div
+                    className="modal fade"
+                    id="earsModal"
+                    tabIndex="-1"
+                    aria-labelledby="earsModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="earsModalLabel">
+                            Ears
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text">
+                            <input
+                              type="text"
+                              placeholder="Others"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th className="text-center" colSpan="2" scope="col">
+                        Title
+                      </th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="#">
+                          <i class="ri-close-circle-line"></i>
+                        </a>
+                      </td>
+                      <td>xyz</td>
+                      <td>asdfghjkl</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="gen-form">
+              <div className="row justify-content-between align-items-end mt-3">
+                <div className="col-9 mb-2">
+                  <h3>Nose</h3>
+                </div>
+                <div className="col-md-2">
+                  <div className="assessment-add-btn">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#noseModal"
+                    >
+                      Add Entry
+                    </button>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div
+                    className="modal fade"
+                    id="noseModal"
+                    tabIndex="-1"
+                    aria-labelledby="noseModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="noseModalLabel">
+                            Nose
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text">
+                            <input
+                              type="text"
+                              placeholder="Others"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th className="text-center" colSpan="2" scope="col">
+                        Title
+                      </th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="#">
+                          <i class="ri-close-circle-line"></i>
+                        </a>
+                      </td>
+                      <td>xyz</td>
+                      <td>asdfghjkl</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="gen-form2">
+              <div className="row justify-content-between align-items-end mt-3">
+                <div className="col-9 mb-2">
+                  <h3>Throat</h3>
+                </div>
+                <div className="col-md-2">
+                  <div className="assessment-add-btn">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#throatModal"
+                    >
+                      Add Entry
+                    </button>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div
+                    className="modal fade"
+                    id="throatModal"
+                    tabIndex="-1"
+                    aria-labelledby="throatModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="throatModalLabel">
+                            Throat
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  Checked checkbox
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text">
+                            <input
+                              type="text"
+                              placeholder="Others"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th className="text-center" colSpan="2" scope="col">
+                        Title
+                      </th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="#">
+                          <i class="ri-close-circle-line"></i>
+                        </a>
+                      </td>
+                      <td>xyz</td>
+                      <td>asdfghjkl</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div className="gen-form mt-3">
+            <div className="row justify-content-between align-items-end mt-3">
+              <div className="col-9 mb-2">
+                <h3>Neck</h3>
+              </div>
+              <div className="col-md-2">
+                <div className="assessment-add-btn">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#neckModal"
+                  >
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="neckModal"
+                  tabIndex="-1"
+                  aria-labelledby="neckModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="neckModalLabel">
+                          Neck
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="rfa-gen-form-data-table mt-4"
+              style={{
+                background: "white",
+                padding: "10px",
+                borderRadius: "3px",
+              }}
+            >
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th className="text-center" colSpan="2" scope="col">
+                      Title
+                    </th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
                     <td>xyz</td>
                     <td>asdfghjkl</td>
                   </tr>
@@ -453,183 +1438,133 @@ const Demo = () => {
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Head, Eyes, Ears, Nose, Throat (HEENT)</h3>
-            <div className="gen-form">
-              <div className="row">
-                <div className="col-md-3">
-                  <p className="fs-6 fw-bold">Head</p>
-                </div>
-                <div className="col-md-3">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    // onChange={(e) => setPrecaution(e.target.value)}
+            <div className="row justify-content-between align-items-end mt-3">
+              <div className="col-9 mb-2">
+                <h3>Lymph Nodes</h3>
+              </div>
+              <div className="col-md-2">
+                <div className="assessment-add-btn">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#lymphNodesModal"
                   >
-                    <option>Select</option>
-                    <option>One</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                  </select>
-                </div>
-                <div className="col-md-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Text"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <div className="assessment-add-btn">
-                    <span
-                      className="btn btn-primary assessment-btn"
-                      //   onClick={addPrecaution}
-                    >
-                      Add
-                    </span>
-                  </div>
+                    Add Entry
+                  </button>
                 </div>
               </div>
-            </div>
-            <div className="gen-form">
-              <div className="row">
-                <div className="col-md-3">
-                  <p className="fs-6 fw-bold">Eyes</p>
-                </div>
-                <div className="col-md-3">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    // onChange={(e) => setPrecaution(e.target.value)}
-                  >
-                    <option>Select</option>
-                    <option>One</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                  </select>
-                </div>
-                <div className="col-md-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Text"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <div className="assessment-add-btn">
-                    <span
-                      className="btn btn-primary assessment-btn"
-                      //   onClick={addPrecaution}
-                    >
-                      Add
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="gen-form">
-              <div className="row">
-                <div className="col-md-3">
-                  <p className="fs-6 fw-bold">Ears</p>
-                </div>
-                <div className="col-md-3">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    // onChange={(e) => setPrecaution(e.target.value)}
-                  >
-                    <option>Select</option>
-                    <option>One</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                  </select>
-                </div>
-                <div className="col-md-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Text"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <div className="assessment-add-btn">
-                    <span
-                      className="btn btn-primary assessment-btn"
-                      //   onClick={addPrecaution}
-                    >
-                      Add
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="gen-form">
-              <div className="row">
-                <div className="col-md-3">
-                  <p className="fs-6 fw-bold">Nose</p>
-                </div>
-                <div className="col-md-3">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    // onChange={(e) => setPrecaution(e.target.value)}
-                  >
-                    <option>Select</option>
-                    <option>One</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                  </select>
-                </div>
-                <div className="col-md-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Text"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <div className="assessment-add-btn">
-                    <span
-                      className="btn btn-primary assessment-btn"
-                      //   onClick={addPrecaution}
-                    >
-                      Add
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="gen-form">
-              <div className="row">
-                <div className="col-md-3">
-                  <p className="fs-6 fw-bold">Throat (HEENT)</p>
-                </div>
-                <div className="col-md-3">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    // onChange={(e) => setPrecaution(e.target.value)}
-                  >
-                    <option>Select</option>
-                    <option>One</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                  </select>
-                </div>
-                <div className="col-md-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Text"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <div className="assessment-add-btn">
-                    <span
-                      className="btn btn-primary assessment-btn"
-                      //   onClick={addPrecaution}
-                    >
-                      Add
-                    </span>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="lymphNodesModal"
+                  tabIndex="-1"
+                  aria-labelledby="lymphNodesModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="lymphNodesModalLabel">
+                          Lymph Nodes
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -653,48 +1588,147 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Head</td>
-                    <td>Lorem ipsum dolor sit omit</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Neck</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {neckList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Respiratory, Thorax & Lungs</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#respiratoryModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="respiratoryModal"
+                  tabIndex="-1"
+                  aria-labelledby="respiratoryModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="respiratoryModalLabel">
+                          Respiratory, Thorax & Lungs
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -717,48 +1751,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Lymph Nodes</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {lympNodesList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Cardiovascular</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cardiovascularModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="cardiovascularModal"
+                  tabIndex="-1"
+                  aria-labelledby="cardiovascularModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="cardiovascularModalLabel"
+                        >
+                          Cardiovascular
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -781,48 +1917,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Respiratory, Thorax & Lungs</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {thoraxList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Gastrointestinal</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#gastrointestinalModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="gastrointestinalModal"
+                  tabIndex="-1"
+                  aria-labelledby="gastrointestinalModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="gastrointestinalModalLabel"
+                        >
+                          Gastrointestinal
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -845,48 +2083,147 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Cardiovascular</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {cardioList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Breasts</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#breastsModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="breastsModal"
+                  tabIndex="-1"
+                  aria-labelledby="breastsModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="breastsModalLabel">
+                          Breasts
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -909,48 +2246,147 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Gastrointestinal</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {gastroList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Abdominal</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#abdominalModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="abdominalModal"
+                  tabIndex="-1"
+                  aria-labelledby="abdominalModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="abdominalModalLabel">
+                          Abdominal
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -973,48 +2409,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Breasts</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {breastList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Genitourinary</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#genitourinaryModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="genitourinaryModal"
+                  tabIndex="-1"
+                  aria-labelledby="genitourinaryModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="genitourinaryModalLabel"
+                        >
+                          Genitourinary
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1037,48 +2575,147 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Abdominal</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {abdomentList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Rectal</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#rectalModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="rectalModal"
+                  tabIndex="-1"
+                  aria-labelledby="rectalModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="rectalModalLabel">
+                          Rectal
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1101,48 +2738,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>genitourinary</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {genitalList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Peripheral Vascular</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#peripheralVascularModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="peripheralVascularModal"
+                  tabIndex="-1"
+                  aria-labelledby="peripheralVascularModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="peripheralVascularModalLabel"
+                        >
+                          Peripheral Vascular
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1165,48 +2904,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Rectal</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {rectalList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Muscoloskeletal & Extremities</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#muscoloskeletalExtremitiesModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="muscoloskeletalExtremitiesModal"
+                  tabIndex="-1"
+                  aria-labelledby="muscoloskeletalExtremitiesModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="muscoloskeletalExtremitiesModalLabel"
+                        >
+                          Muscoloskeletal & Extremities
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1229,48 +3070,147 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Peripheral Vascular</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {peripheralList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Neurological</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#neurologicalModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="neurologicalModal"
+                  tabIndex="-1"
+                  aria-labelledby="neurologicalModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="neurologicalModalLabel">
+                          Neurological
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1293,48 +3233,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Muscoloskeletal & Extremities</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {muscoloList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Hematological</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#hematologicalModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="hematologicalModal"
+                  tabIndex="-1"
+                  aria-labelledby="hematologicalModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="hematologicalModalLabel"
+                        >
+                          Hematological
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1357,48 +3399,147 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Nerological</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {neurologicList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Endocrinal</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#endocrinalModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="endocrinalModal"
+                  tabIndex="-1"
+                  aria-labelledby="endocrinalModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="endocrinalModalLabel">
+                          Endocrinal
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1421,48 +3562,150 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="gen-form mt-3">
-            <h3>Hematological</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {hematologicList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
+              <div className="col-9 mb-2">
+                <h3>Psychological & Psychiatric Illness</h3>
               </div>
               <div className="col-md-2">
                 <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#psychologicalPsychiatricIllnessModal"
                   >
-                    Add
-                  </span>
+                    Add Entry
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div
+                  className="modal fade"
+                  id="psychologicalPsychiatricIllnessModal"
+                  tabIndex="-1"
+                  aria-labelledby="psychologicalPsychiatricIllnessModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5
+                          className="modal-title"
+                          id="psychologicalPsychiatricIllnessModalLabel"
+                        >
+                          Psychological & Psychiatric Illness
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckChecked"
+                              >
+                                Checked checkbox
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1485,137 +3728,13 @@ const Demo = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="gen-form mt-3">
-            <h3>Endocrinal</h3>
-            <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {endocrineList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
-              </div>
-              <div className="col-md-2">
-                <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
-                  >
-                    Add
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="rfa-gen-form-data-table mt-4"
-              style={{
-                background: "white",
-                padding: "10px",
-                borderRadius: "3px",
-              }}
-            >
-              <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <th className="text-center" colSpan="2" scope="col">
-                      Title
-                    </th>
-                    <th scope="col">Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="gen-form mt-3">
-            <h3>Psychological & Psychiatric Illness</h3>
-            <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-5">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                >
-                  <option selected>Select</option>
-                  {psychologicalList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-md-5">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="patientEducation"
-                  placeholder="Others:"
-                  // onChange={(e) => setPrecaution(e.target.value)}
-                />
-              </div>
-              <div className="col-md-2">
-                <div className="assessment-add-btn">
-                  <span
-                    className="btn btn-primary assessment-btn"
-                    //   onClick={addPrecaution}
-                  >
-                    Add
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="rfa-gen-form-data-table mt-4"
-              style={{
-                background: "white",
-                padding: "10px",
-                borderRadius: "3px",
-              }}
-            >
-              <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <th className="text-center" colSpan="2" scope="col">
-                      Title
-                    </th>
-                    <th scope="col">Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>X</td>
-                    <td>Title One</td>
-                    <td>Description One</td>
+                    <td>
+                      <a href="#">
+                        <i class="ri-close-circle-line"></i>
+                      </a>
+                    </td>
+                    <td>xyz</td>
+                    <td>asdfghjkl</td>
                   </tr>
                 </tbody>
               </table>
