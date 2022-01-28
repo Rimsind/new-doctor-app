@@ -11,6 +11,7 @@ import useSWR from "swr";
 import { apiUrl } from "../config/api";
 import axios from "axios";
 import { useAuth } from "../context";
+import Ortho from "../components/assesments/Ortho";
 
 const Diagnosis = () => {
   const { appointmentId } = useRouter().query;
@@ -149,6 +150,7 @@ const Diagnosis = () => {
           <Rehab data={data} />
           <Medicine data={data} />
           <Reurology data={data} />
+          <Ortho data={data} />
         </div>
       </div>
     </>

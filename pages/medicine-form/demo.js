@@ -1969,72 +1969,24 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {abdomentList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                         <div className="text">
                           <input
@@ -2135,72 +2087,24 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {genitalList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                         <div className="text">
                           <input
@@ -2298,73 +2202,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {rectalList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"
@@ -2464,73 +2321,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {peripheralList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"
@@ -2630,73 +2440,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {muscoloList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"
@@ -2793,73 +2556,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {neurologicList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"
@@ -2959,73 +2675,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {hematologicList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"
@@ -3122,73 +2791,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {endocrineList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"
@@ -3288,73 +2910,26 @@ const Demo = () => {
                       </div>
                       <div className="modal-body">
                         <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
+                          {psychologicalList.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={item}
+                                  id="flexCheckChecked"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexCheckChecked"
+                                >
+                                  {item}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexCheckChecked"
-                              >
-                                Checked checkbox
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+
                         <div className="text">
                           <input
                             type="text"

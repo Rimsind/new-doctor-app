@@ -1,11 +1,12 @@
 import Link from "next/link";
-const Reurology = (props) => {
+
+const Ortho = (props) => {
   return (
     <>
       <div className="patient-subjective-info">
         <div className="mt-4 ms-3 pt-3">
           <h5 className="mt-3 mb-1" style={{ textAlign: "center" }}>
-            DOCTOR ASSESSMENT (Neurology)
+            DOCTOR ASSESSMENT (Orthopedic)
           </h5>
         </div>
         <div className="row">
@@ -14,7 +15,7 @@ const Reurology = (props) => {
               <Link
                 href={`/form/history-of-present-illness?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-success">
+                <a className="btn-custom btn btn-primary">
                   History Of Present Illness
                 </a>
               </Link>
@@ -23,9 +24,9 @@ const Reurology = (props) => {
           <div className="col-md-3">
             <div className="patient-user-panel-btn mt-3">
               <Link
-                href={`/neurology/clinical-examination?appointmentId=${props.data?.id}`}
+                href={`/ortho/clinical-examination?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-success">
+                <a className="btn-custom btn btn-primary">
                   Clinical Examination
                 </a>
               </Link>
@@ -34,7 +35,7 @@ const Reurology = (props) => {
           <div className="col-md-3">
             <div className="patient-user-panel-btn mt-3">
               <Link href={`/form/assesment?appointmentId=${props.data?.id}`}>
-                <a className="btn-custom btn btn-success">Assesment</a>
+                <a className="btn-custom btn btn-primary">Assesment</a>
               </Link>
             </div>
           </div>
@@ -44,7 +45,7 @@ const Reurology = (props) => {
               <Link
                 href={`/form/e-prescription?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-success">E-Prescription</a>
+                <a className="btn-custom btn btn-primary">E-Prescription</a>
               </Link>
             </div>
           </div>
@@ -54,4 +55,4 @@ const Reurology = (props) => {
   );
 };
 
-export default Reurology;
+export default Ortho;
