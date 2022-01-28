@@ -22,7 +22,7 @@ const MedicalHistory = () => {
       return result;
     }
   );
-  const { medicalHistory } = data?.patient;
+
   console.log(medicalHistory);
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
