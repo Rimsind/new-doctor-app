@@ -446,7 +446,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -611,7 +611,7 @@ const Demo = () => {
                     <tr>
                       <td>
                         <a href="#">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </a>
                       </td>
                       <td>xyz</td>
@@ -774,7 +774,7 @@ const Demo = () => {
                     <tr>
                       <td>
                         <a href="#">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </a>
                       </td>
                       <td>xyz</td>
@@ -937,7 +937,7 @@ const Demo = () => {
                     <tr>
                       <td>
                         <a href="#">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </a>
                       </td>
                       <td>xyz</td>
@@ -1100,7 +1100,7 @@ const Demo = () => {
                     <tr>
                       <td>
                         <a href="#">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </a>
                       </td>
                       <td>xyz</td>
@@ -1263,7 +1263,7 @@ const Demo = () => {
                     <tr>
                       <td>
                         <a href="#">
-                          <i class="ri-close-circle-line"></i>
+                          <i className="ri-close-circle-line"></i>
                         </a>
                       </td>
                       <td>xyz</td>
@@ -1427,7 +1427,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -1590,7 +1590,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -1753,7 +1753,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -1919,7 +1919,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -2085,7 +2085,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -2248,7 +2248,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -2411,7 +2411,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -2577,7 +2577,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -2740,7 +2740,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -2906,7 +2906,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -3072,7 +3072,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -3235,7 +3235,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -3401,7 +3401,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -3564,7 +3564,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
@@ -3730,7 +3730,7 @@ const Demo = () => {
                   <tr>
                     <td>
                       <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i className="ri-close-circle-line"></i>
                       </a>
                     </td>
                     <td>xyz</td>
