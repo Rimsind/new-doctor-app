@@ -219,6 +219,31 @@ const TimeTable = () => {
               </tbody>
             </table>
           </div>
+          <div className="doc_time mb-3">
+            <div className="card shadow">
+              <div className="card_item">
+                <p>Haldia Polyclinic</p>
+              </div>
+              <div className="card_item">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Day</th>
+                      <th>Start</th>
+                      <th>End</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>@mdo</td>
+                      <td>@twitter</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
