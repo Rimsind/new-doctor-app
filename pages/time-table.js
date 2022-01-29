@@ -18,8 +18,8 @@ const TimeTable = () => {
       return result;
     }
   );
-  const { timetable } = doctor;
-  console.log(timetable);
+  // const { timetable } = doctor;
+  // console.log(timetable);
   const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
 
   const [polyclinic, setPolyclinic] = useState();
@@ -196,7 +196,7 @@ const TimeTable = () => {
               </div>
             </div>
           </div>
-          <div className="doc_time_table mb-3">
+          {/* <div className="doc_time_table mb-3">
             <table className="table">
               <thead>
                 <tr>
@@ -220,29 +220,66 @@ const TimeTable = () => {
                 ))}
               </tbody>
             </table>
+          </div> */}
+          <div className="doc_time mb-3">
+            <div className="card card_list p-3 shadow">
+              <div className="row align-items-center">
+                <div className="col-md-4">
+                  <div className="card_item">
+                    <p className="fs-5 fw-bold">Haldia Polyclinic</p>
+                  </div>
+                </div>
+                <div className="col-md-8">
+                  <div className="card_item">
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th>Day</th>
+                          <th>Start</th>
+                          <th>End</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@mdo</td>
+                          <td>@twitter</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="doc_time mb-3">
-            <div className="card shadow">
-              <div className="card_item">
-                <p>Haldia Polyclinic</p>
-              </div>
-              <div className="card_item">
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th>Day</th>
-                      <th>Start</th>
-                      <th>End</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>@mdo</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div className="card card_list p-3 shadow">
+              <div className="row align-items-center">
+                <div className="col-md-4">
+                  <div className="card_item">
+                    <p className="fs-5 fw-bold">Tamluk Polyclinic</p>
+                  </div>
+                </div>
+                <div className="col-md-8">
+                  <div className="card_item">
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th>Day</th>
+                          <th>Start</th>
+                          <th>End</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@mdo</td>
+                          <td>@twitter</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
