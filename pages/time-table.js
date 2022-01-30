@@ -18,8 +18,10 @@ const TimeTable = () => {
       return result;
     }
   );
-  // const { timetable } = doctor;
-  // console.log(timetable);
+
+  const { timetable } = doctor;
+  console.log(timetable);
+
   const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
 
   const [polyclinic, setPolyclinic] = useState();
@@ -27,15 +29,15 @@ const TimeTable = () => {
   const [startTime, setStartTime] = useState();
   const [endTime, setEndTime] = useState();
   const [schedule, setSchedule] = useState([]);
-  const [allTimeTable, setAllTimetable] = useState([]);
+  // const [allTimeTable, setAllTimetable] = useState([]);
 
   const addSchedule = () => {
     setSchedule([
       ...schedule,
       {
         day: day,
-        startTime: startTime,
-        endTime: endTime,
+        start_time: startTime,
+        end_time: endTime,
       },
     ]);
     setDay("");
@@ -43,16 +45,30 @@ const TimeTable = () => {
     setEndTime("");
   };
 
-  const addTimeTable = () => {
-    setAllTimetable([
-      ...allTimeTable,
+  const addTimeTable = async () => {
+    const payload = {
+      timetable: [
+        ...timetable,
+        {
+          polyclinic: { id: polyclinic },
+          schedule: schedule,
+        },
+      ],
+    };
+    const res = await axios.put(
+      `${apiUrl}/doctors/${auth.user?.profileId}`,
+      payload,
       {
-        polyclinic: { id: polyclinic },
-        schedule: schedule,
-      },
-    ]);
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+
+    alert("Profile Updated Succesfully");
+    return result;
   };
-  // console.log(timetable);
 
   return (
     <>
@@ -63,10 +79,6 @@ const TimeTable = () => {
               <p className="fw-bold fs-5 text-dark">Time Table</p>
             </div>
             <div className="col-md-8">
-              {/* <div className="time_btn text-end">
-                <button className="btn btn-primary"> Add New Entry</button>
-              </div> */}
-
               <div className="time_btn text-end">
                 <button
                   type="button"
@@ -165,11 +177,13 @@ const TimeTable = () => {
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>@mdo</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                              </tr>
+                              {schedule.map((item, index) => (
+                                <tr key={index}>
+                                  <td>{item.day}</td>
+                                  <td>{item.start_time}</td>
+                                  <td>{item.end_time}</td>
+                                </tr>
+                              ))}
                             </tbody>
                           </table>
                         </div>
@@ -196,93 +210,42 @@ const TimeTable = () => {
               </div>
             </div>
           </div>
-          {/* <div className="doc_time_table mb-3">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th colspan="" className="text-center">
-                    Polyclinic
-                  </th>
-                  <th>Day</th>
-                  <th>Start</th>
-                  <th>End</th>
-                </tr>
-              </thead>
-              <tbody>
-                {timetable?.map((item, index) => (
-                  <tr key={index}>
-                    <td rowSpan="">{item?.polyclinic?.name}</td>
 
-                    <td>Otto</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div> */}
-          <div className="doc_time mb-3">
-            <div className="card card_list p-3 shadow">
-              <div className="row align-items-center">
-                <div className="col-md-4">
-                  <div className="card_item">
-                    <p className="fs-5 fw-bold">Haldia Polyclinic</p>
+          {doctor?.timetable?.map((item, index) => (
+            <div className="doc_time mb-3">
+              <div className="card card_list p-3 shadow">
+                <div className="row align-items-center">
+                  <div className="col-md-4">
+                    <div className="card_item">
+                      <p className="fs-5 fw-bold">{item?.polyclinic?.name}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-md-8">
-                  <div className="card_item">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>Day</th>
-                          <th>Start</th>
-                          <th>End</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>@mdo</td>
-                          <td>@twitter</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div className="col-md-8">
+                    <div className="card_item">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Day</th>
+                            <th>Start</th>
+                            <th>End</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {item?.schedule?.map((curelem, index) => (
+                            <tr>
+                              <td>{curelem?.day}</td>
+                              <td>{curelem?.start_time}</td>
+                              <td>{curelem?.end_time}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="doc_time mb-3">
-            <div className="card card_list p-3 shadow">
-              <div className="row align-items-center">
-                <div className="col-md-4">
-                  <div className="card_item">
-                    <p className="fs-5 fw-bold">Tamluk Polyclinic</p>
-                  </div>
-                </div>
-                <div className="col-md-8">
-                  <div className="card_item">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>Day</th>
-                          <th>Start</th>
-                          <th>End</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>@mdo</td>
-                          <td>@twitter</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

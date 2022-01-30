@@ -46,6 +46,14 @@ const NavBar = ({ details }) => {
               </Link>
             </li>
             <li>
+              <Link href="/time-table">
+                <a>
+                  <i className="ri-stethoscope-line me-2 d-inline-block"></i>
+                  Time Table
+                </a>
+              </Link>
+            </li>
+            <li>
               <Link href="/profile-setting">
                 <a>
                   <i className="ri-stethoscope-line me-2 d-inline-block"></i>
