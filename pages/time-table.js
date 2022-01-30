@@ -1,4 +1,59 @@
+import useSWR from "swr";
+import { useAuth } from "../context";
+import { apiUrl, fetcher } from "../config/api";
+import axios from "axios";
+import { useState } from "react";
+
 const TimeTable = () => {
+  const { auth } = useAuth();
+  const { data: doctor } = useSWR(
+    `${apiUrl}/doctors/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  const { timetable } = doctor;
+  console.log(timetable);
+  const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
+
+  const [polyclinic, setPolyclinic] = useState();
+  const [day, setDay] = useState();
+  const [startTime, setStartTime] = useState();
+  const [endTime, setEndTime] = useState();
+  const [schedule, setSchedule] = useState([]);
+  const [allTimeTable, setAllTimetable] = useState([]);
+
+  const addSchedule = () => {
+    setSchedule([
+      ...schedule,
+      {
+        day: day,
+        startTime: startTime,
+        endTime: endTime,
+      },
+    ]);
+    setDay("");
+    setStartTime("");
+    setEndTime("");
+  };
+
+  const addTimeTable = () => {
+    setAllTimetable([
+      ...allTimeTable,
+      {
+        polyclinic: { id: polyclinic },
+        schedule: schedule,
+      },
+    ]);
+  };
+  // console.log(timetable);
+
   return (
     <>
       <div className="doc_timetable">
@@ -45,16 +100,19 @@ const TimeTable = () => {
                     </div>
                     <div className="modal-body">
                       <div className="row align-items-end">
-                        <div className="col-md">
+                        <div className="col-md-12">
                           <label>Polyclinic</label>
                           <select
                             class="form-select"
                             aria-label="Default select example"
+                            onChange={(e) => setPolyclinic(e.target.value)}
                           >
                             <option selected>Select Polyclinic</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            {polyclinics?.map((item, index) => (
+                              <option value={item?.id} key={index}>
+                                {item?.name}
+                              </option>
+                            ))}
                           </select>
                         </div>
                         <div className="col-md">
@@ -62,35 +120,45 @@ const TimeTable = () => {
                           <select
                             class="form-select"
                             aria-label="Default select example"
+                            onChange={(e) => setDay(e.target.value)}
                           >
                             <option selected>Select Day</option>
-                            <option value="1">Monday</option>
-                            <option value="2">Tuesday</option>
-                            <option value="3">Wednesday</option>
-                            <option value="1">Thursday</option>
-                            <option value="2">Friday</option>
-                            <option value="3">Saturday</option>
-                            <option value="3">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
                           </select>
                         </div>
                         <div className="col-md">
                           <label>Start Time</label>
-                          <input type="time" className="form-control" id="" />
+                          <input
+                            type="time"
+                            className="form-control"
+                            value={startTime}
+                            onChange={(e) => setStartTime(e.target.value)}
+                          />
                         </div>
                         <div className="col-md">
                           <label>End Time</label>
-                          <input type="time" className="form-control" id="" />
+                          <input
+                            type="time"
+                            className="form-control"
+                            value={endTime}
+                            onChange={(e) => setEndTime(e.target.value)}
+                          />
                         </div>
                         <div className="col-md">
-                          <button type="btn btn-primary">Add</button>
+                          <button type="btn btn-primary" onClick={addSchedule}>
+                            Add
+                          </button>
                         </div>
                         <div className="time_modal_table mt-5">
                           <table className="table">
                             <thead>
                               <tr>
-                                <th colspan="2" className="text-center">
-                                  Polyclinic
-                                </th>
                                 <th>Day</th>
                                 <th>Start</th>
                                 <th>End</th>
@@ -98,13 +166,7 @@ const TimeTable = () => {
                             </thead>
                             <tbody>
                               <tr>
-                                <td className="text-center">
-                                  <a href="#">
-                                    <i class="ri-close-circle-line"></i>
-                                  </a>
-                                </td>
                                 <td>@mdo</td>
-                                <td>@twitter</td>
                                 <td>@twitter</td>
                                 <td>@twitter</td>
                               </tr>
@@ -121,7 +183,11 @@ const TimeTable = () => {
                       >
                         Close
                       </button>
-                      <button type="button" className="btn btn-primary">
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={addTimeTable}
+                      >
                         Save changes
                       </button>
                     </div>
@@ -134,7 +200,7 @@ const TimeTable = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th colspan="2" className="text-center">
+                  <th colspan="" className="text-center">
                     Polyclinic
                   </th>
                   <th>Day</th>
@@ -143,58 +209,13 @@ const TimeTable = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td rowSpan="4" className="text-center">
-                    <a href="#">
-                      <i class="ri-close-circle-line"></i>
-                    </a>
-                  </td>
-                  <td rowSpan="4">Mark</td>
-                  <td>Otto</td>
-                  <td>@twitter</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td rowSpan="4" className="text-center">
-                    <a href="#">
-                      <i class="ri-close-circle-line"></i>
-                    </a>
-                  </td>
-                  <td rowSpan="4">Mark</td>
-                  <td>Otto</td>
-                  <td>@twitter</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
+                {timetable?.map((item, index) => {
+                  return (
+                    <tr key={index}>
+                      <td rowSpan="">{item?.polyclinic?.name}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
