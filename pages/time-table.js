@@ -209,13 +209,15 @@ const TimeTable = () => {
                 </tr>
               </thead>
               <tbody>
-                {timetable?.map((item, index) => {
-                  return (
-                    <tr key={index}>
-                      <td rowSpan="">{item?.polyclinic?.name}</td>
-                    </tr>
-                  );
-                })}
+                {timetable?.map((item, index) => (
+                  <tr key={index}>
+                    <td rowSpan="">{item?.polyclinic?.name}</td>
+
+                    <td>Otto</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
