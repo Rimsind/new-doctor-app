@@ -93,7 +93,7 @@ const TimeTable = () => {
               <div
                 className="modal fade"
                 id="exampleModal"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
               >
@@ -115,7 +115,7 @@ const TimeTable = () => {
                         <div className="col-md-12">
                           <label>Polyclinic</label>
                           <select
-                            class="form-select"
+                            className="form-select"
                             aria-label="Default select example"
                             onChange={(e) => setPolyclinic(e.target.value)}
                           >
@@ -130,7 +130,7 @@ const TimeTable = () => {
                         <div className="col-md">
                           <label>Day</label>
                           <select
-                            class="form-select"
+                            className="form-select"
                             aria-label="Default select example"
                             onChange={(e) => setDay(e.target.value)}
                           >
@@ -212,7 +212,7 @@ const TimeTable = () => {
           </div>
 
           {doctor?.timetable?.map((item, index) => (
-            <div className="doc_time mb-3">
+            <div className="doc_time mb-3" key={index}>
               <div className="card card_list p-3 shadow">
                 <div className="row align-items-center">
                   <div className="col-md-4">
@@ -232,7 +232,7 @@ const TimeTable = () => {
                         </thead>
                         <tbody>
                           {item?.schedule?.map((curelem, index) => (
-                            <tr>
+                            <tr key={index}>
                               <td>{curelem?.day}</td>
                               <td>{curelem?.start_time}</td>
                               <td>{curelem?.end_time}</td>
