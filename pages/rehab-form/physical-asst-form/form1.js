@@ -60,18 +60,22 @@ const Form1 = () => {
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-8">
-                      <h3>
-                        Aerobic Capacity during standarized test includes ,step
-                        test,3,6,12 mint walk test, graded exercise test,
-                        treadmill test,w/c test
-                      </h3>
+                      <h3>Aerobic Capacity during standarized test includes</h3>
                     </div>
                     <div className="col-md-4">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Text Area"
-                      />
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option selected>Select Problem</option>
+                        <option value="1">3 Mint Walk Test</option>
+                        <option value="2">6 Mint Walk Test</option>
+                        <option value="3">9 Mint Walk Test</option>
+                        <option value="4">12 Mint Walk Test</option>
+                        <option value="5">Treadmill Test</option>
+                        <option value="6">WC Mobility Test</option>
+                        <option value="7">Step Test</option>
+                      </select>
                     </div>
                   </div>
                 </div>
