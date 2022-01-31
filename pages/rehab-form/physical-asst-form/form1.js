@@ -1,11 +1,6 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm";
+
 import { useRouter } from "next/router";
 const Form1 = () => {
   const { appointmentId } = useRouter().query;
@@ -522,10 +517,137 @@ const Form1 = () => {
                 </div>
               </div>
 
-              <IdentifiedProblem />
-              <ShortTermGoal />
-              <LongTermGoal />
-              <TreatmentPlan />
+              <div className="gen-form">
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-3">
+                    <h3>Identified Problems</h3>
+                  </div>
+                  <div className="col-md-9">
+                    <textarea
+                      className="form-control"
+                      rows="3"
+                      placeholder="Describe your problems here"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form">
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-3">
+                    <h3>Short Term Goals </h3>
+                  </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-4">
+                        <label className="mb-3">
+                          Patients will demonstrate aerobic capacity during
+                        </label>
+                      </div>
+                      <div className="col-md-8">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <textarea
+                      className="form-control"
+                      placeholder="Describe your problems here"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form">
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-3">
+                    <h3>Long Term Goals </h3>
+                  </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-4">
+                        <label className="mb-3">
+                          Patients will demonstrate aerobic capacity during
+                        </label>
+                      </div>
+                      <div className="col-md-8">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <textarea
+                      className="form-control"
+                      placeholder="Describe your problems here"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div className="gen-form">
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-3">
+                    <h3>Treatment Plan </h3>
+                  </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      <div className="col-md-4">
+                        <label className="mb-3">
+                          Aerobic capacity returning during
+                        </label>
+                      </div>
+                      <div className="col-md-8">
+                        <select
+                          className="form-select form-select-sm mb-3"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Task</option>
+                          <option value="1">Bed Mobility Task</option>
+                          <option value="2">Transfer Task</option>
+                          <option value="3">ADL Task</option>
+                          <option value="4">IADL Task</option>
+                          <option value="5">Ambulation Task</option>
+                          <option value="6">Treadmill Task</option>
+                          <option value="7">Step Test Task</option>
+                          <option value="3">Wheelchair Mobility Task</option>
+                        </select>
+                      </div>
+                    </div>
+                    <textarea
+                      className="form-control"
+                      rows="3"
+                      placeholder="Describe your problems here"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

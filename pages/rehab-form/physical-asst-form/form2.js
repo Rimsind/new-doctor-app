@@ -28,15 +28,72 @@ const Form2 = () => {
               </div>
               <div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
-                    <div className="col-md-8">
-                      <h3>
-                        Body composition assessment includes body mass
-                        index,impedence measure ment,skin fold thickness
-                        measurement
-                      </h3>
-                    </div>
+                  <h3>Body composition assessment includes</h3>
+                  <div className="row align-items-center mb-3">
                     <div className="col-md-4">
+                      <h3>Body Mass Index</h3>
+                    </div>
+                    <div className="col-md-8">
+                      <div className="row mt-3">
+                        <div className="col-md-4">
+                          <label>Height (cm)</label>
+                          <div className="row">
+                            <div className="col-md-12">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="cm"
+                                // onChange={(e) => setHeight(e.target.value)}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <label>Weight (Kg)</label>
+                          <div className="row">
+                            <div className="col-md-12">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="kg"
+                                // onChange={(e) => setWeight(e.target.value)}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <label>BMI</label>
+                          <div className="row">
+                            <div className="col-md-12">
+                              <input
+                                type="text"
+                                className="form-control"
+                                // value={BMI}
+                                contentEditable="false"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row align-items-center mb-3">
+                    <div className="col-md-4">
+                      <h3>Impedence Measurement</h3>
+                    </div>
+                    <div className="col-md-8">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Text Area"
+                      />
+                    </div>
+                  </div>
+                  <div className="row align-items-center mb-3">
+                    <div className="col-md-4">
+                      <h3>Skin Fold Thickness Measurement</h3>
+                    </div>
+                    <div className="col-md-8">
                       <input
                         type="text"
                         className="form-control"
@@ -46,14 +103,25 @@ const Form2 = () => {
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
-                    <div className="col-md-8">
-                      <h3>
-                        Body dimension includes girth measurement and length
-                        measurement
-                      </h3>
-                    </div>
+                  <h3>Body Dimension Includes</h3>
+
+                  <div className="row align-items-center mb-3">
                     <div className="col-md-4">
+                      <h3>Girth Measurement </h3>
+                    </div>
+                    <div className="col-md-8">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Text Area"
+                      />
+                    </div>
+                  </div>
+                  <div className="row align-items-center mb-3">
+                    <div className="col-md-4">
+                      <h3>Length Measurement</h3>
+                    </div>
+                    <div className="col-md-8">
                       <input
                         type="text"
                         className="form-control"
