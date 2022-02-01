@@ -26,8 +26,64 @@ const Form1 = () => {
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
                       <h3>
-                        Aerobic capacity during bed mobility task, transfer
-                        task,ADL and IADL task (modified borg RPE scale)
+                        Aerobic capacity during bed mobility (modified borg RPE
+                        scale)
+                      </h3>
+                    </div>
+                    <div className="col-md-3">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option selected>Select Score</option>
+                        <option value="1">0 – Nothing at all</option>
+                        <option value="2">0.5 – Just noticeable</option>
+                        <option value="3">1 – Very light</option>
+                        <option value="4">2 – Light</option>
+                        <option value="5">3 – Moderate</option>
+                        <option value="6">4 – Somewhat heavy</option>
+                        <option value="7">5 – Heavy</option>
+                        <option value="8">6</option>
+                        <option value="9">7 – Very heavy</option>
+                        <option value="10">8</option>
+                        <option value="11">9</option>
+                        <option value="12">10 – Very, very heavy</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="row justify-content-between align-items-start">
+                    <div className="col-md-9">
+                      <h3>
+                        Aerobic capacity during transfer task (modified borg RPE
+                        scale)
+                      </h3>
+                    </div>
+                    <div className="col-md-3">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option selected>Select Score</option>
+                        <option value="1">0 – Nothing at all</option>
+                        <option value="2">0.5 – Just noticeable</option>
+                        <option value="3">1 – Very light</option>
+                        <option value="4">2 – Light</option>
+                        <option value="5">3 – Moderate</option>
+                        <option value="6">4 – Somewhat heavy</option>
+                        <option value="7">5 – Heavy</option>
+                        <option value="8">6</option>
+                        <option value="9">7 – Very heavy</option>
+                        <option value="10">8</option>
+                        <option value="11">9</option>
+                        <option value="12">10 – Very, very heavy</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="row justify-content-between align-items-start">
+                    <div className="col-md-9">
+                      <h3>
+                        Aerobic capacity during Ambulation task (modified borg
+                        RPE scale)
                       </h3>
                     </div>
                     <div className="col-md-3">
@@ -538,12 +594,69 @@ const Form1 = () => {
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-4">
+                      <div className="col-md-7">
                         <label className="mb-3">
-                          Patients will demonstrate aerobic capacity during
+                          Patients will demonstrate aerobic capacity for bed
+                          mobility task
                         </label>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-5">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-7">
+                        <label className="mb-3">
+                          Patients will demonstrate aerobic capacity for
+                          transfer task
+                        </label>
+                      </div>
+                      <div className="col-md-5">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-7">
+                        <label className="mb-3">
+                          Patients will demonstrate aerobic capacity for
+                          ambulation task
+                        </label>
+                      </div>
+                      <div className="col-md-5">
                         <select
                           className="form-select form-select-sm"
                           aria-label=".form-select-sm example"
@@ -578,12 +691,69 @@ const Form1 = () => {
                   </div>
                   <div className="col-md-9">
                     <div className="row">
-                      <div className="col-md-4">
+                      <div className="col-md-7">
                         <label className="mb-3">
-                          Patients will demonstrate aerobic capacity during
+                          Patients will demonstrate aerobic capacity for bed
+                          mobility task
                         </label>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-5">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-7">
+                        <label className="mb-3">
+                          Patients will demonstrate aerobic capacity for
+                          transfer task
+                        </label>
+                      </div>
+                      <div className="col-md-5">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-7">
+                        <label className="mb-3">
+                          Patients will demonstrate aerobic capacity for
+                          ambulation task
+                        </label>
+                      </div>
+                      <div className="col-md-5">
                         <select
                           className="form-select form-select-sm"
                           aria-label=".form-select-sm example"
