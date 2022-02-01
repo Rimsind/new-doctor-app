@@ -23,7 +23,7 @@ const Form1 = () => {
               </div>
               <div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row justify-content-between align-items-start mb-3">
                     <div className="col-md-9">
                       <h3>
                         Aerobic capacity during bed mobility (modified borg RPE
@@ -51,7 +51,7 @@ const Form1 = () => {
                       </select>
                     </div>
                   </div>
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row justify-content-between align-items-start mb-3">
                     <div className="col-md-9">
                       <h3>
                         Aerobic capacity during transfer task (modified borg RPE
@@ -79,7 +79,7 @@ const Form1 = () => {
                       </select>
                     </div>
                   </div>
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row justify-content-between align-items-start mb-3">
                     <div className="col-md-9">
                       <h3>
                         Aerobic capacity during Ambulation task (modified borg
@@ -145,15 +145,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Blood pressure</p>
                               </div>
                             </div>
@@ -171,15 +163,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">
                                   Breath & voice sounds
                                 </p>
@@ -202,15 +186,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Heart Rate</p>
                               </div>
                             </div>
@@ -228,15 +204,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Cyanosis</p>
                               </div>
                             </div>
@@ -257,15 +225,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Rhythm</p>
                               </div>
                             </div>
@@ -286,15 +246,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Gas Exchange</p>
                               </div>
                             </div>
@@ -315,15 +267,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Sounds</p>
                               </div>
                             </div>
@@ -344,15 +288,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Respiratory pattern</p>
                               </div>
                             </div>
@@ -394,15 +330,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Angina</p>
                               </div>
                             </div>
@@ -423,15 +351,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Respiratory Rate</p>
                               </div>
                             </div>
@@ -449,15 +369,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Claudication</p>
                               </div>
                             </div>
@@ -478,15 +390,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Respiratory Rhythm</p>
                               </div>
                             </div>
@@ -507,15 +411,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Exertion Scale</p>
                               </div>
                             </div>
@@ -546,15 +442,7 @@ const Form1 = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
+                              <div className="col-md-12">
                                 <p className="space-x-4">Oximetry (%)</p>
                               </div>
                             </div>
@@ -597,7 +485,7 @@ const Form1 = () => {
                       <div className="col-md-7">
                         <label className="mb-3">
                           Patients will demonstrate aerobic capacity for bed
-                          mobility task
+                          mobility task to
                         </label>
                       </div>
                       <div className="col-md-5">
@@ -625,7 +513,7 @@ const Form1 = () => {
                       <div className="col-md-7">
                         <label className="mb-3">
                           Patients will demonstrate aerobic capacity for
-                          transfer task
+                          transfer task to
                         </label>
                       </div>
                       <div className="col-md-5">
@@ -653,7 +541,7 @@ const Form1 = () => {
                       <div className="col-md-7">
                         <label className="mb-3">
                           Patients will demonstrate aerobic capacity for
-                          ambulation task
+                          ambulation task to
                         </label>
                       </div>
                       <div className="col-md-5">
@@ -694,7 +582,7 @@ const Form1 = () => {
                       <div className="col-md-7">
                         <label className="mb-3">
                           Patients will demonstrate aerobic capacity for bed
-                          mobility task
+                          mobility task to
                         </label>
                       </div>
                       <div className="col-md-5">
@@ -722,7 +610,7 @@ const Form1 = () => {
                       <div className="col-md-7">
                         <label className="mb-3">
                           Patients will demonstrate aerobic capacity for
-                          transfer task
+                          transfer task to
                         </label>
                       </div>
                       <div className="col-md-5">
@@ -750,7 +638,7 @@ const Form1 = () => {
                       <div className="col-md-7">
                         <label className="mb-3">
                           Patients will demonstrate aerobic capacity for
-                          ambulation task
+                          ambulation task to
                         </label>
                       </div>
                       <div className="col-md-5">
