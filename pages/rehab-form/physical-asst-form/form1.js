@@ -790,7 +790,7 @@ const Form1 = () => {
                     <div className="row">
                       <div className="col-md-4">
                         <label className="mb-3">
-                          Aerobic capacity returning during
+                          Aerobic capacity retraining during
                         </label>
                       </div>
                       <div className="col-md-8">
