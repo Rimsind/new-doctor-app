@@ -110,10 +110,28 @@ const Form1 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-4">
+                    <div className="col-md-7">
                       <h3>Aerobic Capacity during standarized test includes</h3>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-2">
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option selected>Select Test</option>
+                        <option value="1">3 Mint Walk Test</option>
+                        <option value="2">6 Mint Walk Test</option>
+                        <option value="3">9 Mint Walk Test</option>
+                        <option value="4">12 Mint Walk Test</option>
+                        <option value="5">Treadmill Test</option>
+                        <option value="6">WC Mobility Test</option>
+                        <option value="7">Step Test</option>
+                      </select>
+                    </div>
+                    <div className="col-md-1">
+                      <p className="fs-6 fw-bold text-center">at RPE</p>
+                    </div>
+                    <div className="col-md-2">
                       <select
                         className="form-select form-select-sm"
                         aria-label=".form-select-sm example"
@@ -133,21 +151,6 @@ const Form1 = () => {
                         <option value="12">10 – Very, very heavy</option>
                       </select>
                     </div>
-                    <div className="col-md-4">
-                      <select
-                        className="form-select form-select-sm"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option selected>Select Problem</option>
-                        <option value="1">3 Mint Walk Test</option>
-                        <option value="2">6 Mint Walk Test</option>
-                        <option value="3">9 Mint Walk Test</option>
-                        <option value="4">12 Mint Walk Test</option>
-                        <option value="5">Treadmill Test</option>
-                        <option value="6">WC Mobility Test</option>
-                        <option value="7">Step Test</option>
-                      </select>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -161,7 +164,7 @@ const Form1 = () => {
                   </div>
                   <div className="col-md-8">
                     <div className="row">
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -179,7 +182,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -202,7 +205,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -220,7 +223,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -241,7 +244,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -262,7 +265,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -283,7 +286,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -304,7 +307,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -346,7 +349,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -367,7 +370,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -385,7 +388,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -406,7 +409,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -427,7 +430,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
@@ -458,7 +461,7 @@ const Form1 = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 mb-3">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="row">
