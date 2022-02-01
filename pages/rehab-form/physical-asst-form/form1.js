@@ -588,6 +588,51 @@ const Form1 = () => {
                         </select>
                       </div>
                     </div>
+                    <div className="row justify-content-between align-items-start">
+                      <div className="col-md-7">
+                        <label className="mb-3">
+                          Patients will demonstrate during standarized
+                        </label>
+                      </div>
+                      <div className="col-md-2">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Test</option>
+                          <option value="1">3 Mint Walk Test</option>
+                          <option value="2">6 Mint Walk Test</option>
+                          <option value="3">9 Mint Walk Test</option>
+                          <option value="4">12 Mint Walk Test</option>
+                          <option value="5">Treadmill Test</option>
+                          <option value="6">WC Mobility Test</option>
+                          <option value="7">Step Test</option>
+                        </select>
+                      </div>
+                      <div className="col-md-1">
+                        <p className="fs-6 fw-bold text-center">at RPE</p>
+                      </div>
+                      <div className="col-md-2">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
                     <textarea
                       className="form-control"
                       placeholder="Describe your problems here"
@@ -665,6 +710,51 @@ const Form1 = () => {
                         </label>
                       </div>
                       <div className="col-md-5">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Score</option>
+                          <option value="1">0 – Nothing at all</option>
+                          <option value="2">0.5 – Just noticeable</option>
+                          <option value="3">1 – Very light</option>
+                          <option value="4">2 – Light</option>
+                          <option value="5">3 – Moderate</option>
+                          <option value="6">4 – Somewhat heavy</option>
+                          <option value="7">5 – Heavy</option>
+                          <option value="8">6</option>
+                          <option value="9">7 – Very heavy</option>
+                          <option value="10">8</option>
+                          <option value="11">9</option>
+                          <option value="12">10 – Very, very heavy</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row justify-content-between align-items-start">
+                      <div className="col-md-7">
+                        <label className="mb-3">
+                          Patients will demonstrate during standarized
+                        </label>
+                      </div>
+                      <div className="col-md-2">
+                        <select
+                          className="form-select form-select-sm"
+                          aria-label=".form-select-sm example"
+                        >
+                          <option selected>Select Test</option>
+                          <option value="1">3 Mint Walk Test</option>
+                          <option value="2">6 Mint Walk Test</option>
+                          <option value="3">9 Mint Walk Test</option>
+                          <option value="4">12 Mint Walk Test</option>
+                          <option value="5">Treadmill Test</option>
+                          <option value="6">WC Mobility Test</option>
+                          <option value="7">Step Test</option>
+                        </select>
+                      </div>
+                      <div className="col-md-1">
+                        <p className="fs-6 fw-bold text-center">at RPE</p>
+                      </div>
+                      <div className="col-md-2">
                         <select
                           className="form-select form-select-sm"
                           aria-label=".form-select-sm example"
