@@ -132,11 +132,37 @@ const Form2 = () => {
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-content-between align-items-start">
-                  <div className="col-md-8">
-                    <h3>
-                      Edema Measurement includes girth,palpation,scales,volume
-                    </h3>
+                <div className="row align-items-start">
+                  <div className="col-md-4">
+                    <h3>Edema Measurement includes</h3>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="row mb-3">
+                      <div className="col-md-3">
+                        <div className="check-item">
+                          <input type="checkbox" className="form-check-input" />
+                          <label className="ps-2">Girth</label>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="check-item">
+                          <input type="checkbox" className="form-check-input" />
+                          <label className="ps-2">Palpation</label>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="check-item">
+                          <input type="checkbox" className="form-check-input" />
+                          <label className="ps-2">Scales</label>
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <div className="check-item">
+                          <input type="checkbox" className="form-check-input" />
+                          <label className="ps-2">Volume</label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div className="col-md-4">
                     <input

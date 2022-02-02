@@ -790,27 +790,89 @@ const Form1 = () => {
                     <h3>Treatment Plan </h3>
                   </div>
                   <div className="col-md-9">
-                    <div className="row">
+                    <div className="row align-items-center">
                       <div className="col-md-4">
                         <label className="mb-3">
                           Aerobic capacity retraining for
                         </label>
                       </div>
                       <div className="col-md-8">
-                        <select
-                          className="form-select form-select-sm mb-3"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select Task</option>
-                          <option value="1">Bed Mobility Task</option>
-                          <option value="2">Transfer Task</option>
-                          <option value="3">ADL Task</option>
-                          <option value="4">IADL Task</option>
-                          <option value="5">Ambulation Task</option>
-                          <option value="6">Treadmill Task</option>
-                          <option value="7">Step Test Task</option>
-                          <option value="3">Wheelchair Mobility Task</option>
-                        </select>
+                        <div className="row mb-3">
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">Bed Mobility Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">Transfer Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">ADL Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">IADL Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">Ambulation Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">Treadmill Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-3">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">Step Test Task</label>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="check-item">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                              />
+                              <label className="ps-2">
+                                Wheelchair Mobility Task
+                              </label>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <textarea
