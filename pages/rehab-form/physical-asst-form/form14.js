@@ -31,7 +31,7 @@ const Form14 = () => {
                   <h3>ORTHOTIC ASSESSMENT</h3>
 
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">*</div>
                         <div className="col-md-6">
@@ -53,7 +53,7 @@ const Form14 = () => {
                         <div className="col-md-5"></div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -75,7 +75,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -97,7 +97,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -119,7 +119,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -143,7 +143,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -185,7 +185,7 @@ const Form14 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">*</div>
                         <div className="col-md-6">
@@ -207,7 +207,7 @@ const Form14 = () => {
                         <div className="col-md-5"></div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -229,7 +229,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -251,7 +251,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -273,7 +273,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -297,7 +297,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -319,7 +319,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1"></div>
                         <div className="col-md-6"></div>
@@ -339,7 +339,7 @@ const Form14 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">*</div>
                         <div className="col-md-6">
@@ -361,7 +361,7 @@ const Form14 = () => {
                         <div className="col-md-5"></div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -383,7 +383,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -405,7 +405,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -427,7 +427,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -451,7 +451,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
                         <div className="col-md-1">
                           <input
@@ -538,7 +538,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>A: Shoulder Width</p>
@@ -552,7 +552,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>B: Chest Width</p>
@@ -566,7 +566,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>C: Chect Depth (Front-Back)</p>
@@ -580,7 +580,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>D1: Hip Width</p>
@@ -594,7 +594,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>D2: Degree of Hip Flexion</p>
@@ -608,7 +608,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>E: Between Knees</p>
@@ -622,7 +622,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>F: Top to Head</p>
@@ -636,7 +636,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>G: Occiput</p>
@@ -650,7 +650,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>H: Top To Shoulder</p>
@@ -664,7 +664,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>I: Acromium Process(Tip to Shoulder)</p>
@@ -678,7 +678,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>J: Infeior Angie of Scapula</p>
@@ -692,7 +692,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>K: Elbow</p>
@@ -706,7 +706,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>L: Liac Crest</p>
@@ -720,7 +720,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>M: Sacrum to Popliteal Fossa</p>
@@ -734,7 +734,7 @@ const Form14 = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <div className="row">
                         <div className="col-md-8">
                           <p>N: Knee to Heel</p>
