@@ -48,7 +48,7 @@ const Form10 = () => {
                             <div className="col-md-10">
                               <div className="row">
                                 <div className="col-md-4">
-                                  <p>Impared</p>
+                                  <p>Impaired</p>
                                 </div>
                                 <div className="col-md-8">
                                   <select
