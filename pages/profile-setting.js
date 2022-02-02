@@ -15,7 +15,7 @@ const ProfilSetting = () => {
     `${apiUrl}/doctors/${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
-        headers: {
+        headers: { 
           Authorization: `Bearer ${auth.token}`,
         },
       });
