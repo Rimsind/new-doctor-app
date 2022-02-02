@@ -15,7 +15,7 @@ const Form1 = () => {
                 <div className="col-md-8">
                   <div className="text-center pb-6">
                     <h3 className="general-information-form-title font-bold">
-                      Aerobic Capacity & Functional Mobility Skill Assessment
+                      Aerobic Capacity with Functional Mobility Skill Assessment
                     </h3>
                   </div>
                 </div>
@@ -36,18 +36,18 @@ const Form1 = () => {
                         aria-label=".form-select-sm example"
                       >
                         <option selected>Select Score</option>
-                        <option value="1">0 – Nothing at all</option>
-                        <option value="2">0.5 – Just noticeable</option>
-                        <option value="3">1 – Very light</option>
-                        <option value="4">2 – Light</option>
-                        <option value="5">3 – Moderate</option>
-                        <option value="6">4 – Somewhat heavy</option>
-                        <option value="7">5 – Heavy</option>
+                        <option value="1">0 - Nothing at all</option>
+                        <option value="2">0.5 - Just noticeable</option>
+                        <option value="3">1 - Very light</option>
+                        <option value="4">2 - Light</option>
+                        <option value="5">3 - Moderate</option>
+                        <option value="6">4 - Somewhat heavy</option>
+                        <option value="7">5 - Heavy</option>
                         <option value="8">6</option>
-                        <option value="9">7 – Very heavy</option>
+                        <option value="9">7 - Very heavy</option>
                         <option value="10">8</option>
                         <option value="11">9</option>
-                        <option value="12">10 – Very, very heavy</option>
+                        <option value="12">10 - Very, very heavy</option>
                       </select>
                     </div>
                   </div>
@@ -64,18 +64,18 @@ const Form1 = () => {
                         aria-label=".form-select-sm example"
                       >
                         <option selected>Select Score</option>
-                        <option value="1">0 – Nothing at all</option>
-                        <option value="2">0.5 – Just noticeable</option>
-                        <option value="3">1 – Very light</option>
-                        <option value="4">2 – Light</option>
-                        <option value="5">3 – Moderate</option>
-                        <option value="6">4 – Somewhat heavy</option>
-                        <option value="7">5 – Heavy</option>
+                        <option value="1">0 - Nothing at all</option>
+                        <option value="2">0.5 - Just noticeable</option>
+                        <option value="3">1 - Very light</option>
+                        <option value="4">2 - Light</option>
+                        <option value="5">3 - Moderate</option>
+                        <option value="6">4 - Somewhat heavy</option>
+                        <option value="7">5 - Heavy</option>
                         <option value="8">6</option>
-                        <option value="9">7 – Very heavy</option>
+                        <option value="9">7 - Very heavy</option>
                         <option value="10">8</option>
                         <option value="11">9</option>
-                        <option value="12">10 – Very, very heavy</option>
+                        <option value="12">10 - Very, very heavy</option>
                       </select>
                     </div>
                   </div>
@@ -92,18 +92,18 @@ const Form1 = () => {
                         aria-label=".form-select-sm example"
                       >
                         <option selected>Select Score</option>
-                        <option value="1">0 – Nothing at all</option>
-                        <option value="2">0.5 – Just noticeable</option>
-                        <option value="3">1 – Very light</option>
-                        <option value="4">2 – Light</option>
-                        <option value="5">3 – Moderate</option>
-                        <option value="6">4 – Somewhat heavy</option>
-                        <option value="7">5 – Heavy</option>
+                        <option value="1">0 - Nothing at all</option>
+                        <option value="2">0.5 - Just noticeable</option>
+                        <option value="3">1 - Very light</option>
+                        <option value="4">2 - Light</option>
+                        <option value="5">3 - Moderate</option>
+                        <option value="6">4 - Somewhat heavy</option>
+                        <option value="7">5 - Heavy</option>
                         <option value="8">6</option>
-                        <option value="9">7 – Very heavy</option>
+                        <option value="9">7 - Very heavy</option>
                         <option value="10">8</option>
                         <option value="11">9</option>
-                        <option value="12">10 – Very, very heavy</option>
+                        <option value="12">10 - Very, very heavy</option>
                       </select>
                     </div>
                   </div>
@@ -137,18 +137,18 @@ const Form1 = () => {
                         aria-label=".form-select-sm example"
                       >
                         <option selected>Select Score</option>
-                        <option value="1">0 – Nothing at all</option>
-                        <option value="2">0.5 – Just noticeable</option>
-                        <option value="3">1 – Very light</option>
-                        <option value="4">2 – Light</option>
-                        <option value="5">3 – Moderate</option>
-                        <option value="6">4 – Somewhat heavy</option>
-                        <option value="7">5 – Heavy</option>
+                        <option value="1">0 - Nothing at all</option>
+                        <option value="2">0.5 - Just noticeable</option>
+                        <option value="3">1 - Very light</option>
+                        <option value="4">2 - Light</option>
+                        <option value="5">3 - Moderate</option>
+                        <option value="6">4 - Somewhat heavy</option>
+                        <option value="7">5 - Heavy</option>
                         <option value="8">6</option>
-                        <option value="9">7 – Very heavy</option>
+                        <option value="9">7 - Very heavy</option>
                         <option value="10">8</option>
                         <option value="11">9</option>
-                        <option value="12">10 – Very, very heavy</option>
+                        <option value="12">10 - Very, very heavy</option>
                       </select>
                     </div>
                   </div>
@@ -447,18 +447,18 @@ const Form1 = () => {
                               aria-label=".form-select-sm example"
                             >
                               <option selected>Select Score</option>
-                              <option value="1">0 – Nothing at all</option>
-                              <option value="2">0.5 – Just noticeable</option>
-                              <option value="3">1 – Very light</option>
-                              <option value="4">2 – Light</option>
-                              <option value="5">3 – Moderate</option>
-                              <option value="6">4 – Somewhat heavy</option>
-                              <option value="7">5 – Heavy</option>
+                              <option value="0">0 - Nothing at all</option>
+                              <option value="2">0.5 - Just noticeable</option>
+                              <option value="3">1 - Very light</option>
+                              <option value="4">2 - Light</option>
+                              <option value="5">3 - Moderate</option>
+                              <option value="6">4 - Somewhat heavy</option>
+                              <option value="7">5 - Heavy</option>
                               <option value="8">6</option>
-                              <option value="9">7 – Very heavy</option>
+                              <option value="9">7 - Very heavy</option>
                               <option value="10">8</option>
                               <option value="11">9</option>
-                              <option value="12">10 – Very, very heavy</option>
+                              <option value="12">10 - Very, very heavy</option>
                             </select>
                           </div>
                         </div>
@@ -519,18 +519,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -547,18 +547,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -575,18 +575,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -620,18 +620,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -661,18 +661,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -689,18 +689,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -717,18 +717,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
@@ -762,18 +762,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 – Nothing at all</option>
-                          <option value="2">0.5 – Just noticeable</option>
-                          <option value="3">1 – Very light</option>
-                          <option value="4">2 – Light</option>
-                          <option value="5">3 – Moderate</option>
-                          <option value="6">4 – Somewhat heavy</option>
-                          <option value="7">5 – Heavy</option>
+                          <option value="1">0 - Nothing at all</option>
+                          <option value="2">0.5 - Just noticeable</option>
+                          <option value="3">1 - Very light</option>
+                          <option value="4">2 - Light</option>
+                          <option value="5">3 - Moderate</option>
+                          <option value="6">4 - Somewhat heavy</option>
+                          <option value="7">5 - Heavy</option>
                           <option value="8">6</option>
-                          <option value="9">7 – Very heavy</option>
+                          <option value="9">7 - Very heavy</option>
                           <option value="10">8</option>
                           <option value="11">9</option>
-                          <option value="12">10 – Very, very heavy</option>
+                          <option value="12">10 - Very, very heavy</option>
                         </select>
                       </div>
                     </div>
