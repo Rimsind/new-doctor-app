@@ -155,7 +155,7 @@ const Form1 = () => {
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-content-between align-items-center mb-5">
+                <div className="row justify-content-between align-items-center mb-4">
                   <div className="col-md-12">
                     <h3>
                       Cardiovascular and pulmonary signs and symptoms related to
