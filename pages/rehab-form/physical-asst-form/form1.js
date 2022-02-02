@@ -155,14 +155,16 @@ const Form1 = () => {
                 </div>
               </div>
               <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-4">
+                <div className="row justify-content-between align-items-center mb-5">
+                  <div className="col-md-12">
                     <h3>
                       Cardiovascular and pulmonary signs and symptoms related to
                       increase oxygen demand
                     </h3>
                   </div>
-                  <div className="col-md-8">
+                </div>
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-12">
                     <div className="row">
                       <div className="col-md-6 mb-3">
                         <div className="row">
@@ -791,7 +793,7 @@ const Form1 = () => {
                     <div className="row">
                       <div className="col-md-4">
                         <label className="mb-3">
-                          Aerobic capacity retraining during
+                          Aerobic capacity retraining for
                         </label>
                       </div>
                       <div className="col-md-8">
