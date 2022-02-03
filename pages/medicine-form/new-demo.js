@@ -318,12 +318,25 @@ const Demo = () => {
                       </div>
                     </div>
                   ))}
-                  <div className="text">
-                    <input
-                      type="text"
-                      placeholder="Others"
-                      className="form-control"
-                    />
+                  <div className="inner-item mt-3">
+                    <div className="row">
+                      <div className="col-md-8">
+                        <div className="text">
+                          <input
+                            type="text"
+                            placeholder="Others"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="add-btn text-end">
+                          <button className="btn-success" type="button">
+                            Add Items
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -361,6 +374,7 @@ const Demo = () => {
           </div>
           <div className="gen-form mt-5 mb-5 bg-light p-4">
             <h3>Head, Eyes, Ears, Nose, Throat (HEENT)</h3>
+
             <div className="gen-form">
               <div className="row justify-content-between align-items-end mt-3">
                 <div className="col-9 mb-2">
