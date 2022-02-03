@@ -60,6 +60,15 @@ const Medicine = (props) => {
               </Link>
             </div>
           </div>
+          <div className="col-md-3">
+            <div className="patient-user-panel-btn mt-3">
+              <Link
+                href={`/medicine-form/new-demo?appointmentId=${props.data?.id}`}
+              >
+                <a className="btn-custom btn btn-danger">Demo</a>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
