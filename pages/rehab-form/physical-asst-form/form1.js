@@ -239,9 +239,10 @@ const Form1 = () => {
                               className="form-control form-select form-select-sm"
                               aria-label=".form-select-sm example"
                             >
-                              <option selected>Select </option>
-                              <option value="1">Yes</option>
-                              <option value="2">No</option>
+                              <option selected>Select Cyanosis </option>
+                              <option value="1">Central Cyanosis</option>
+                              <option value="2">Peripheral Cyanosis</option>
+                              <option value="3">Differential Cyanosis</option>
                             </select>
                           </div>
                         </div>
