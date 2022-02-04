@@ -84,7 +84,7 @@ const ClinicalExamination = () => {
                         ))}
                       </select>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-7">
                       {/* <label className="form-label">Test:</label>
                       <select
                         className="form-select"
@@ -104,16 +104,6 @@ const ClinicalExamination = () => {
                         id=""
                         placeholder="Other"
                       />
-                    </div>
-                    <div className="col-md-2">
-                      <div className="prescription-add-btn">
-                        <span
-                          className="btn btn-primary prescription-btn"
-                          onClick={addData}
-                        >
-                          Add
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
