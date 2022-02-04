@@ -65,14 +65,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>Individual attitudes of immediate family members</h3>
                     </div>
@@ -87,14 +80,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>Individual attitudes of friends</h3>
                     </div>
@@ -109,14 +95,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>
                         Individual attitudes of personal care providers and
@@ -133,14 +112,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>personal assistants</h3>
                     </div>
@@ -155,14 +127,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>Individual attitudes of health professionals</h3>
                     </div>
@@ -177,14 +142,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>Societal attitudes</h3>
                     </div>
@@ -199,14 +157,7 @@ const Form13 = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-1">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                    </div>
+                    <div className="col-md-1"></div>
                     <div className="col-md-4">
                       <h3>Social norms, practices and ideologies</h3>
                     </div>

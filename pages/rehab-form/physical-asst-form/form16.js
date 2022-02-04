@@ -27,305 +27,80 @@ const Form16 = () => {
                 <FormCloseBtn id={appointmentId} />
               </div>
               <div>
-                <div className="gen-form-table mt-4">
-                  <table className="table table-bordered border-dark">
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th>WNL</th>
-                      <th>NA</th>
-                    </tr>
-
-                    <tr>
-                      <td>CHEST WALL AND RELATED STRUCTURES</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PHONATION</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PULMONARY RELATED SYMPTOMS</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PULMONARY VITAL SIGNS</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>THORACOABDOMINAL VENTILATORY PATTERNS</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PRESENCE AND LEVEL OF CYANOSIS</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ability to clear and protect airways</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Gas exchange and oxygen level/transport</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>pulmonary function and ventilatory mechanism</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>BREATH AND VOICE SOUNDS</td>
-
-                      <td>
-                        <p>
-                          <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                          />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                      </td>
-                    </tr>
+                <div className="gen-form">
+                  <div className="row">
+                    <div className="col-md-4">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select items</option>
+                        <option value="1">
+                          CHEST WALL AND RELATED STRUCTURES
+                        </option>
+                        <option value="2">PHONATION</option>
+                        <option value="3">PULMONARY RELATED SYMPTOMS</option>
+                        <option value="4">PULMONARY VITAL SIGNS</option>
+                        <option value="5">
+                          THORACOABDOMINAL VENTILATORY PATTERNS
+                        </option>
+                        <option value="6">
+                          PRESENCE AND LEVEL OF CYANOSIS
+                        </option>
+                        <option value="7">
+                          Ability to clear and protect airways
+                        </option>
+                        <option value="8">
+                          Gas exchange and oxygen level/transport
+                        </option>
+                        <option value="9">
+                          Pulmonary function and ventilatory mechanism
+                        </option>
+                        <option value="10">BREATH AND VOICE SOUNDS</option>
+                      </select>
+                    </div>
+                    <div className="col-md-4">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Text"
+                      ></input>
+                    </div>
+                    <div className="col-md-2">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select items</option>
+                        <option value="1">WNL</option>
+                        <option value="2">NA</option>
+                      </select>
+                    </div>
+                    <div className="col-md-2">
+                      <div className="add_btn text-end">
+                        <button className="btn btn-primary" type="button">
+                          Add Items
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form-table py-4 bg-light ps-2 pe-2">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Items</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
 

@@ -55,14 +55,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>ALIGNMENT AND FITTING OF ORTHOSIS</p>
                         </div>
@@ -77,14 +70,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>movement analysis with and without device</p>
                         </div>
@@ -99,14 +85,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>Patinet ability and care of the device</p>
                         </div>
@@ -121,14 +100,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>
                             Functional effect and benefits of use of the device
@@ -145,14 +117,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>Level of safety of the devices</p>
                         </div>
@@ -209,14 +174,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>ALIGNMENT AND FITTING OF ORTHOSIS</p>
                         </div>
@@ -231,14 +189,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>movement analysis with and without device</p>
                         </div>
@@ -253,14 +204,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>Patinet ability and care of the device</p>
                         </div>
@@ -275,14 +219,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>
                             Functional effect and benefits of use of the device
@@ -299,14 +236,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>Level of safety of the devices</p>
                         </div>
@@ -363,14 +293,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>ALIGNMENT AND FITTING OF ORTHOSIS</p>
                         </div>
@@ -385,14 +308,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>movement analysis with and without device</p>
                         </div>
@@ -407,14 +323,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>Patinet ability and care of the device</p>
                         </div>
@@ -429,14 +338,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>
                             Functional effect and benefits of use of the device
@@ -453,14 +355,7 @@ const Form14 = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-1">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
+                        <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <p>Level of safety of the devices</p>
                         </div>

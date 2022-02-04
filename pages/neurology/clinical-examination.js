@@ -93,6 +93,11 @@ const ClinicalExamination = () => {
       },
     ]);
   };
+  const [height, setHeight] = useState();
+  const [weight, setWeight] = useState();
+  let meter = height / 100;
+  let result = weight / (meter * meter);
+  let BMI = result.toFixed(1);
   return (
     <>
       <form>
@@ -112,6 +117,74 @@ const ClinicalExamination = () => {
                   <FormCloseBtn id={appointmentId} />
                 </div>
 
+                <div className="gen-form">
+                  <h3>Vital Signs</h3>
+                  <div className="row justify-content-between align-items-end mt-3">
+                    <div className="col-md-2">
+                      <label>Height (cm)</label>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="cm"
+                            onChange={(e) => setHeight(e.target.value)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-2">
+                      <label>Weight (Kg)</label>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="kg"
+                            onChange={(e) => setWeight(e.target.value)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-2">
+                      <label>BMI</label>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <input
+                            type="text"
+                            className="form-control"
+                            value={BMI}
+                            contentEditable="false"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-3">
+                      <label>BP (Right Arm)</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="col-md-3">
+                      <label>BP (Left Arm)</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="col-md-3 mt-4">
+                      <label>Heart Rate</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="col-md-3 mt-4">
+                      <label> Emter O2 Saturation</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="col-md-3 mt-4">
+                      <label>Respiratory Rate</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="col-md-3 mt-4">
+                      <label>Temperature (Oral)</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                  </div>
+                </div>
                 <div className="gen-form mt-3">
                   <h3>Examination category</h3>
                   <div className="row justify-content-between align-items-end mt-3">

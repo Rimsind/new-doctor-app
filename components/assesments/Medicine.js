@@ -35,10 +35,10 @@ const Medicine = (props) => {
           <div className="col-md-3">
             <div className="patient-user-panel-btn mt-3">
               <Link
-                href={`/medicine-form/demo?appointmentId=${props.data?.id}`}
+                href={`/medicine-form/clinical-examination?appointmentId=${props.data?.id}`}
               >
                 <a className="btn-custom btn btn-secondary">
-                  clinical Examination
+                  Clinical Examination
                 </a>
               </Link>
             </div>

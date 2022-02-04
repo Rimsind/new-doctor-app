@@ -140,7 +140,6 @@ const Form2 = () => {
                     <div className="row mb-3">
                       <div className="col-md-3 d-flex align-items-center">
                         <div className="check-item d-flex align-items-center ms-2">
-                          <input type="checkbox" className="form-check-input" />
                           <label className="ps-2">Girth</label>
                         </div>
                         <div className="checkitem">
@@ -153,7 +152,6 @@ const Form2 = () => {
                       </div>
                       <div className="col-md-3 d-flex align-items-center">
                         <div className="check-item d-flex align-items-center ms-2">
-                          <input type="checkbox" className="form-check-input" />
                           <label className="ps-2">Palpation</label>
                         </div>
                         <div className="checkitem">
@@ -166,7 +164,6 @@ const Form2 = () => {
                       </div>
                       <div className="col-md-3 d-flex align-items-center">
                         <div className="check-item d-flex align-items-center ms-2">
-                          <input type="checkbox" className="form-check-input" />
                           <label className="ps-2">Scales</label>
                         </div>
                         <div className="checkitem">
@@ -179,7 +176,6 @@ const Form2 = () => {
                       </div>
                       <div className="col-md-3 d-flex align-items-center">
                         <div className="check-item d-flex align-items-center ms-2">
-                          <input type="checkbox" className="form-check-input" />
                           <label className="ps-2">Volume</label>
                         </div>
                         <div className="checkitem">

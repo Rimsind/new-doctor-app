@@ -21,17 +21,22 @@ const Assesment = () => {
               </div>
 
               <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Problems List</h3>
-                  </div>
-                  <div className="col-md-9">
-                    <textarea
-                      className="form-control"
-                      rows="3"
-                      placeholder="Describe your problems here"
-                    ></textarea>
-                  </div>
+                <p className="fs-5 fw-bold">Problems List</p>
+                <div className="gen-form-table px-2 py-3 bg-light">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <div className="gen-form">
@@ -109,7 +114,7 @@ const Assesment = () => {
                   </div>
                 </div>
               </div>
-              <button>Next</button>
+              <button className="mt-2">Next</button>
             </div>
           </div>
         </div>
