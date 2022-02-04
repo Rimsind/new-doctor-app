@@ -62,7 +62,7 @@ const Form16 = () => {
                     <div className="col-md-4">
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         placeholder="Enter Text"
                       ></input>
                     </div>
@@ -86,7 +86,7 @@ const Form16 = () => {
                   </div>
                 </div>
                 <div className="gen-form-table py-4 bg-light ps-2 pe-2">
-                  <table class="table">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th scope="col">Title</th>

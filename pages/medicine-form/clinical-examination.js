@@ -1139,8 +1139,8 @@ const ClinicalExamination = () => {
                                 className="form-check-inline"
                               />
                               <label>
-                                Last chest x-ray, 1986, St. Mary's Hospital;
-                                unremarkable
+                                Last chest x-ray, 1986, St. Mary&apos;s
+                                Hospital; unremarkable
                               </label>
                             </div>
                             <div className="items">
