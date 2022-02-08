@@ -58,9 +58,7 @@ const SubjectiveInformation = (props) => {
               <Link
                 href={`/form/medical-history?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-success">
-                  Past Medical History
-                </a>
+                <a className="btn-custom btn btn-success">Medical History</a>
               </Link>
             </div>
           </div>
@@ -69,9 +67,7 @@ const SubjectiveInformation = (props) => {
               <Link
                 href={`/form/functional-status?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-success">
-                  Current Functional Status
-                </a>
+                <a className="btn-custom btn btn-success">Functional Status</a>
               </Link>
             </div>
           </div>
@@ -93,6 +89,15 @@ const SubjectiveInformation = (props) => {
               >
                 <a className="btn-custom btn btn-success">
                   Past Medical Records
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="patient-user-panel-btn mt-3">
+              <Link href={`/form/vitals?appointmentId=${props.data?.id}`}>
+                <a className="btn-custom btn btn-success">
+                  Vital Signs & Statistic
                 </a>
               </Link>
             </div>
