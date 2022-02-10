@@ -27,7 +27,7 @@ const ClinicalExamination = () => {
                     role="tablist"
                     className="nav nav-tabs card-header-tabs pt-3 ps-2 bg-info"
                   >
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a
                         href="#tab-1"
                         data-bs-toggle="tab"
@@ -35,12 +35,12 @@ const ClinicalExamination = () => {
                       >
                         Vital Sign
                       </a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a
                         href="#tab-2"
                         data-bs-toggle="tab"
-                        className="nav-link text-dark fs-6 fw-bold"
+                        className="nav-link active text-dark fs-6 fw-bold"
                       >
                         Skin
                       </a>
@@ -182,7 +182,7 @@ const ClinicalExamination = () => {
                     </li>
                   </ul>
                   <div className="tab-content">
-                    <div
+                    {/* <div
                       role="tabpanel"
                       id="tab-1"
                       className="tab-pane fade show active py-4"
@@ -275,11 +275,11 @@ const ClinicalExamination = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     <div
                       role="tabpanel"
                       id="tab-2"
-                      className="tab-pane fade py-4"
+                      className="tab-pane fade show active py-4"
                       style={{
                         background: "#0dcaf030",
                         paddingLeft: "20px",

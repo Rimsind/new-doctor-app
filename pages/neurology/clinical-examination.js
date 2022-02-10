@@ -117,7 +117,7 @@ const ClinicalExamination = () => {
                   <FormCloseBtn id={appointmentId} />
                 </div>
 
-                <div className="gen-form">
+                {/* <div className="gen-form">
                   <h3>Vital Signs</h3>
                   <div className="row justify-content-between align-items-end mt-3">
                     <div className="col-md-2">
@@ -184,7 +184,7 @@ const ClinicalExamination = () => {
                       <input type="text" className="form-control" />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="gen-form mt-3">
                   <h3>Examination category</h3>
                   <div className="row justify-content-between align-items-end mt-3">
