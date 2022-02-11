@@ -104,8 +104,6 @@ const Eprescription = () => {
         test: testList,
         followup: {
           days: data.days,
-          weeks: data.weeks,
-          months: data.months,
           type: data.type,
         },
       },
@@ -912,20 +910,12 @@ const Eprescription = () => {
           <div className="gen-form">
             <h3>Set Follow Time Period:</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-3" {...register("days")}>
-                <label className="form-label">Days</label>
-                <input type="number" className="form-control" name="days" />
+              <div className="col-md-6" {...register("days")}>
+                <label className="form-label">Date</label>
+                <input type="date" className="form-control" name="days" />
               </div>
 
-              <div className="col-md-3" {...register("weeks")}>
-                <label className="form-label">Weeks</label>
-                <input type="text" className="form-control" name="weeks" />
-              </div>
-              <div className="col-md-3" {...register("months")}>
-                <label className="form-label">Months</label>
-                <input type="text" className="form-control" name="months" />
-              </div>
-              <div className="col-md-3">
+              <div className="col-md-6">
                 <label className="form-label">Followup Type</label>
                 <select
                   className="form-control"
