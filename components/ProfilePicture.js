@@ -41,7 +41,7 @@ const ProfilePicture = ({ doctor }) => {
             <Image
               height="220"
               width="220"
-              src={doctor?.image?.url || "/images/profile.png"}
+              src={doctor?.image?.url || "/assets/images/profile.png"}
               className="avatar  rounded-pill shadow mx-auto d-block profile-pic"
               alt=""
             />

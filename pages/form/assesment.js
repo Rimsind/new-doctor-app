@@ -1,7 +1,9 @@
 import FormCloseBtn from "../../components/FormCloseBtn";
 import { useRouter } from "next/router";
+
 const Assesment = () => {
   const { appointmentId } = useRouter().query;
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -56,6 +58,7 @@ const Assesment = () => {
 
               <div className="gen-form">
                 <h3>Medical Diagnosis</h3>
+
                 <div className="row justify-content-between align-items-end mt-3">
                   <div className="col-md-10">
                     <input
