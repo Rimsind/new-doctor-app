@@ -88,9 +88,9 @@ const Assesment = () => {
                   <h3>Medical Diagnosis</h3>
 
                   <div className="row justify-content-between align-items-end mt-3">
-                    <div className="col-md-10">
+                    <div className="col-md-8">
                       <input
-                        type="search"
+                        type="text"
                         className="form-control"
                         id=""
                         placeholder=""
@@ -98,18 +98,27 @@ const Assesment = () => {
                         onChange={(e) => setIcd(e.target.value)}
                       />
                     </div>
-                    <div className="col-md-2">
-                      <div className="prescription-add-btn">
-                        <button className="btn btn-primary prescription-btn">
-                          Add
-                        </button>
-                      </div>
+                    <div className="col-md-4">
+                      <p className="text-muted">
+                        i.e.Type medicine name and select medicine.
+                      </p>
                     </div>
+
                     <div className="col-md-12">
-                      <ul>
+                      <ul
+                        className="bg-light"
+                        style={{ marginLeft: "1px", width: "700px" }}
+                      >
                         {data?.Search?.map((items, index) => (
-                          <li key={index}>
-                            {items?.Name} : {items?.Description}
+                          <li
+                            key={index}
+                            className="list-unstyled border-bottom"
+                          >
+                            <div className="d-grid gap-2">
+                              <button className="btn btn-outline-primary border-0 text-start">
+                                {items?.Name} : {items?.Description}
+                              </button>
+                            </div>
                           </li>
                         ))}
                       </ul>
