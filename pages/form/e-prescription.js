@@ -95,20 +95,21 @@ const Eprescription = () => {
   };
 
   const { register, handleSubmit } = useForm();
-  const submitPrescription = async (data) => {
+  const submitPrescription = async (data, event) => {
     const payload = {
       eprescription: {
         medicine: medicineList,
         patient_education: patientEducationList.toString(),
         restrictions: patientRestrictionList.toString(),
+        safetyMeasures: allPrecaution.toString(),
+        treatmentreferral: allReferral.toString(),
         test: testList,
         followup: {
-          days: data.days,
+          date: data.date,
           type: data.type,
         },
       },
     };
-    console.log(payload);
 
     const res = await axios.put(
       `${apiUrl}/appointments/${appointmentId}`,
@@ -910,7 +911,7 @@ const Eprescription = () => {
           <div className="gen-form">
             <h3>Set Follow Time Period:</h3>
             <div className="row justify-content-between align-items-end mt-3">
-              <div className="col-md-6" {...register("days")}>
+              <div className="col-md-6" {...register("date")}>
                 <label className="form-label">Date</label>
                 <input type="date" className="form-control" name="days" />
               </div>
