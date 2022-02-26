@@ -106,7 +106,7 @@ const HistoryOfPresentIllness = () => {
                     </div>
                     <div className="col-md-7">
                       {data?.patient?.first_name} {data?.patient?.last_name} is
-                      a {data?.patient?.dob} Year Old {data?.patient?.gender}
+                      a {data?.patient?.age} Year Old {data?.patient?.gender}
                     </div>
                   </div>
                   <div className="row align-items-center mt-2">
