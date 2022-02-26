@@ -5,11 +5,25 @@ import { useAuth } from "../../context";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { apiUrl } from "../../config/api";
+import useSWR from "swr";
 
 const Eprescription = () => {
   const { auth } = useAuth();
 
   const { appointmentId } = useRouter().query;
+  const { data: appointmentDetails } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  console.log(appointmentDetails);
 
   const [precaution, setPrecaution] = useState();
   const [allPrecaution, setAllPrecaution] = useState([]);
@@ -376,15 +390,13 @@ const Eprescription = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="col">ICD.10 Code</th>
-                        <th scope="col">Specification</th>
-                      </tr>
-
-                      <tr>
-                        <td>10.21</td>
-                        <td>hfgdfbdfgfdgbh</td>
-                      </tr>
+                      {appointmentDetails?.assesment?.diagnosis.map(
+                        (items, index) => (
+                          <tr key={index}>
+                            <th scope="col">{items?.description}</th>
+                          </tr>
+                        )
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -413,15 +425,18 @@ const Eprescription = () => {
                         <th scope="col">Type</th>
                         <th scope="col">Reason</th>
                       </tr>
-
-                      <tr>
-                        <td>ghdfghdfh</td>
-                        <td>hfgh</td>
-                        <td>fghgfh</td>
-                        <td>gfhgfh</td>
-                        <td>fghgfh</td>
-                        <td>jgfjhfgj</td>
-                      </tr>
+                      {appointmentDetails?.patient?.medicalHistory?.medicationHistory.map(
+                        (items, index) => (
+                          <tr key={index}>
+                            <td>{items?.medicineName}</td>
+                            <td>{items?.dose}</td>
+                            <td>{items?.startDate}</td>
+                            <td>{items?.status}</td>
+                            <td>{items?.type}</td>
+                            <td>no api</td>
+                          </tr>
+                        )
+                      )}
                     </tbody>
                   </table>
                 </div>

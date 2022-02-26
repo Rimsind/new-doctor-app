@@ -4,6 +4,8 @@ import FormCloseBtn from "../../components/FormCloseBtn";
 import { useAuth } from "../../context";
 import useSWR from "swr";
 import { apiUrl } from "../../config/api";
+import axios from "axios";
+import router from "next/router";
 
 const HistoryOfPresentIllness = () => {
   const { appointmentId } = useRouter().query;
@@ -29,10 +31,39 @@ const HistoryOfPresentIllness = () => {
       return result;
     }
   );
-  const { patient } = data;
-  console.log(patient);
 
-  console.log(patient);
+  const historyOfIllness = `${slautation}.${data?.patient?.first_name} ${data?.patient?.last_name} is a ${data?.patient?.dob} y.o ${data?.patient?.gender} came to the ${cameTo} with a problem of ${problem}. Patient stated ${stated}. Patient was done ${hasDone}. Patient current medication includes ${medication}. Other relevant factors are ${other}.`;
+  const submitForm = async (event) => {
+    event.preventDefault();
+    if (
+      !slautation ||
+      !cameTo ||
+      !problem ||
+      !stated ||
+      !hasDone ||
+      !medication ||
+      !other
+    ) {
+      alert("Fill all the data");
+    }
+
+    const payload = {
+      historyOfIllness: historyOfIllness,
+    };
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    router.push(`/diagnosis?appointmentId=${appointmentId}`);
+    return result;
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -74,8 +105,8 @@ const HistoryOfPresentIllness = () => {
                       Mrs.
                     </div>
                     <div className="col-md-7">
-                      {patient?.first_name} {patient?.last_name} is a{" "}
-                      {patient?.dob} Year Old {patient?.gender}
+                      {data?.patient?.first_name} {data?.patient?.last_name} is
+                      a {data?.patient?.dob} Year Old {data?.patient?.gender}
                     </div>
                   </div>
                   <div className="row align-items-center mt-2">
@@ -174,10 +205,10 @@ const HistoryOfPresentIllness = () => {
                 <p>
                   <strong>{slautation}</strong>.{" "}
                   <strong>
-                    {patient?.first_name} {patient?.last_name}
+                    {data?.patient?.first_name} {data?.patient?.last_name}
                   </strong>{" "}
-                  is a<strong> {patient?.dob}</strong> y.o{" "}
-                  <strong>{patient?.gender}</strong> came to the
+                  is a<strong> {data?.patient?.dob}</strong> y.o{" "}
+                  <strong>{data?.patient?.gender}</strong> came to the
                   <strong> {cameTo} </strong>
                   with a problem of
                   <strong> {problem}</strong>. Patient stated
@@ -224,9 +255,9 @@ const HistoryOfPresentIllness = () => {
             <div className="col-md-4"></div>
 
             <div className="col-md-4">
-              <a href="#" className="btn btn-success">
+              <button className="btn btn-success" onClick={submitForm}>
                 Save Changes
-              </a>
+              </button>
             </div>
             <div className="col-md-4"></div>
           </div>
