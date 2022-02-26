@@ -32,7 +32,7 @@ const HistoryOfPresentIllness = () => {
     }
   );
 
-  const historyOfIllness = `${slautation}.${data?.patient?.first_name} ${data?.patient?.last_name} is a ${data?.patient?.dob} y.o ${data?.patient?.gender} came to the ${cameTo} with a problem of ${problem}. Patient stated ${stated}. Patient was done ${hasDone}. Patient current medication includes ${medication}. Other relevant factors are ${other}.`;
+  const historyOfIllness = `${slautation}.${data?.patient?.first_name} ${data?.patient?.last_name} is a ${data?.patient?.age} y.o ${data?.patient?.gender} came to the ${cameTo} with a problem of ${problem}. Patient stated ${stated}. Patient was done ${hasDone}. Patient current medication includes ${medication}. Other relevant factors are ${other}.`;
   const submitForm = async (event) => {
     event.preventDefault();
     if (
@@ -207,7 +207,7 @@ const HistoryOfPresentIllness = () => {
                   <strong>
                     {data?.patient?.first_name} {data?.patient?.last_name}
                   </strong>{" "}
-                  is a<strong> {data?.patient?.dob}</strong> y.o{" "}
+                  is a<strong> {data?.patient?.age}</strong> y.o{" "}
                   <strong>{data?.patient?.gender}</strong> came to the
                   <strong> {cameTo} </strong>
                   with a problem of
