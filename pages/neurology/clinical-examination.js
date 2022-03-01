@@ -1,10 +1,10 @@
 import FormCloseBtn from "../../components/FormCloseBtn";
 import router, { useRouter } from "next/router";
 import { useState } from "react";
-// import { useAuth } from "../../context";
-// import { useForm } from "react-hook-form";
-// import axios from "axios";
-// import { apiUrl } from "../../config/api";
+import { useAuth } from "../../context";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { apiUrl } from "../../config/api";
 
 const catagoryList = [
   "Mental status examination",
@@ -79,28 +79,48 @@ const testList = [
 
 const ClinicalExamination = () => {
   const { appointmentId } = useRouter().query;
-
-  const [catagory, setCatagory] = useState();
+  const { auth } = useAuth();
+  const [category, setCategory] = useState();
   const [test, setTest] = useState();
-  const [data, setData] = useState([]);
+  const [examination, setExamination] = useState([]);
 
   const addData = () => {
-    setData([
-      ...data,
+    setExamination([
+      ...examination,
       {
-        catagory: catagory,
+        category: category,
         test: test,
       },
     ]);
   };
-  const [height, setHeight] = useState();
-  const [weight, setWeight] = useState();
-  let meter = height / 100;
-  let result = weight / (meter * meter);
-  let BMI = result.toFixed(1);
+  const { register, handleSubmit } = useForm();
+  const SubmitForm = async (data, event) => {
+    event.preventDefault();
+    const payload = {
+      neurology: {
+        assesment: data.assesment,
+        examination: examination,
+      },
+    };
+
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    router.push(`/diagnosis?appointmentId=${appointmentId}`);
+    return result;
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(SubmitForm)}>
         <div className="general-information-form relative p-6 flex-auto">
           <div className="max-w-6xl mx-auto md:py-10">
             <div className="space-y-5 border-2 p-10 rounded">
@@ -117,74 +137,6 @@ const ClinicalExamination = () => {
                   <FormCloseBtn id={appointmentId} />
                 </div>
 
-                {/* <div className="gen-form">
-                  <h3>Vital Signs</h3>
-                  <div className="row justify-content-between align-items-end mt-3">
-                    <div className="col-md-2">
-                      <label>Height (cm)</label>
-                      <div className="row">
-                        <div className="col-md-12">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="cm"
-                            onChange={(e) => setHeight(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-2">
-                      <label>Weight (Kg)</label>
-                      <div className="row">
-                        <div className="col-md-12">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="kg"
-                            onChange={(e) => setWeight(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-2">
-                      <label>BMI</label>
-                      <div className="row">
-                        <div className="col-md-12">
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={BMI}
-                            contentEditable="false"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <label>BP (Right Arm)</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="col-md-3">
-                      <label>BP (Left Arm)</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="col-md-3 mt-4">
-                      <label>Heart Rate</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="col-md-3 mt-4">
-                      <label> Emter O2 Saturation</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="col-md-3 mt-4">
-                      <label>Respiratory Rate</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="col-md-3 mt-4">
-                      <label>Temperature (Oral)</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                  </div>
-                </div> */}
                 <div className="gen-form mt-3">
                   <h3>Examination category</h3>
                   <div className="row justify-content-between align-items-end mt-3">
@@ -193,7 +145,7 @@ const ClinicalExamination = () => {
                       <select
                         className="form-select"
                         aria-label="Default select example"
-                        onChange={(e) => setCatagory(e.target.value)}
+                        onChange={(e) => setCategory(e.target.value)}
                       >
                         <option selected>Select Option</option>
                         {catagoryList.map((item, index) => (
@@ -248,7 +200,7 @@ const ClinicalExamination = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {data.map((item, index) => (
+                      {examination.map((item, index) => (
                         <tr key={index}>
                           <td>X</td>
                           <td>{item.catagory}</td>
@@ -261,36 +213,34 @@ const ClinicalExamination = () => {
                 <div className="gen-form mt-3">
                   <h3>Assessment</h3>
                   <div className="row justify-content-between align-items-end mt-3">
-                    <div className="col-md-5">
+                    {/* <div className="col-md-5" {...register("assesment")}>
                       <select
                         className="form-select"
                         aria-label="Default select example"
-                        // onChange={(e) => setPrecaution(e.target.value)}
                       >
-                        <option>Select</option>
-                        <option>One</option>
-                        <option>Two</option>
-                        <option>Three</option>
+                        <option value="one">Select</option>
+                        <option value="one">One</option>
+                        <option value="Two">Two</option>
+                        <option value="Three">Three</option>
                       </select>
-                    </div>
-                    <div className="col-md-5">
+                    </div> */}
+                    <div className="col-md-10">
                       <input
                         type="text"
                         className="form-control"
-                        name="patientEducation"
                         placeholder="Others:"
-                        // onChange={(e) => setPrecaution(e.target.value)}
+                        {...register("assesment")}
                       />
                     </div>
                     <div className="col-md-2">
-                      <div className="assessment-add-btn">
+                      {/* <div className="assessment-add-btn">
                         <span
                           className="btn btn-primary assessment-btn"
                           //   onClick={addPrecaution}
                         >
                           Add
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -300,10 +250,7 @@ const ClinicalExamination = () => {
 
           <div className="gen-form-btn mt-3">
             <div className="save-btn text-center">
-              <button
-                className="btn btn-success"
-                //   onClick={submitPrescription}
-              >
+              <button className="btn btn-success" type="submit">
                 Save Changes
               </button>
             </div>

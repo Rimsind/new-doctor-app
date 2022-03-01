@@ -104,8 +104,8 @@ const Diagnosis = () => {
                   <td>{data?.patient?.id}</td>
                 </tr>
                 <tr>
-                  <td>Date of Birth</td>
-                  <td>{data?.patient?.dob}</td>
+                  <td>Age</td>
+                  <td>{data?.patient?.age}</td>
                 </tr>
                 <tr>
                   <td>Email</td>
@@ -149,8 +149,35 @@ const Diagnosis = () => {
 
           <Rehab data={data} />
           <Medicine data={data} />
-          <Reurology data={data} />
-          <Ortho data={data} />
+
+          {/* {doctor?.specialty?.name === "Rehabilitation" ? (
+            <>
+              <Ortho data={data} />
+            </>
+          ) : (
+            <></>
+          )} */}
+          {/* {doctor?.specialty?.name === "Medicine" ? (
+            <>
+              <Ortho data={data} />
+            </>
+          ) : (
+            <></>
+          )} */}
+          {doctor?.specialty?.name === "Neurologist" ? (
+            <>
+              <Reurology data={data} />
+            </>
+          ) : (
+            <></>
+          )}
+          {doctor?.specialty?.name === "Orthopedic" ? (
+            <>
+              <Ortho data={data} />
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </>
