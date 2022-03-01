@@ -3,6 +3,154 @@ import FormCloseBtn from "../../components/FormCloseBtn";
 
 const ClinicalExamination = () => {
   const { appointmentId } = useRouter().query;
+
+  const skin = [
+    "No rashes or other changes",
+    "No cyanosis",
+    "No clubbing finger",
+    "No bruises",
+  ];
+  const head = ["Checkbox"];
+  const eyes = ["Checkbox"];
+  const ears = ["Checkbox"];
+  const nose = ["Checkbox"];
+  const throat = ["Checkbox"];
+  const neck = ["No lumps", "Goiter", "Pain", "No swollen glands"];
+  const lymph_nodes = [
+    "Small (less than 1 cm)",
+    "Nontender",
+    "Ns bilato axillary or epitrochlear nodes",
+    "Soft and nontender",
+    "Soft",
+    "And mobile tonsillar and posterior cervical nodeerally",
+    "Several small inguinal nodes bilateral",
+  ];
+  const respiratory_thorax_lungs = [
+    "No cough",
+    "Shortness of breath",
+    "Thorax symmetric with good excursion",
+    "Breath sounds vesicular with no added sounds",
+    "Wheezing",
+    "Last chest x-ray, 1986, St. Mary's Hospital; unremarkable",
+    "Lungs resonant",
+    "Diaphragms descend 4 cm bilaterally",
+  ];
+  const cardiovascular = [
+    "No Known heart disease or high blood pressure",
+    "No dyspnea",
+    "Chest pain palpitation",
+    "Jugular venous pressure 1 cm above the sternal angle",
+    "Carotid upstrokes brisks",
+    "Apical impulse discrete and tapping",
+    "A II/VI medium-pitched midsystolic murmur at the 2nd right interspace",
+    "Has never had an electrocardiogram (ECG)",
+    "With head of examining table raised to 30 degree",
+    "Without bruits",
+    "Barely palpable in the 5th left interspace",
+    "Good S1, S2; no S3 or S4",
+    "Does not radiate to the neck",
+    "Last blood pressure taken in 1998",
+  ];
+  const gastrointestinal = [
+    "Appetite good",
+    "Vomiting",
+    "Bowel movement about once dial",
+    "No diarrhea or bleeding",
+    "Jaundice",
+    "No nausea",
+    "Indigestion",
+    "Though sometimes has hard stools for 2 to 3 days when especially tense",
+    "No pain",
+    "Gallbladder or liver problems",
+  ];
+  const breast = [
+    "No lumps",
+    "Discharge",
+    "Pain",
+    "Does self-breast exam sporadically",
+  ];
+
+  const abdominal = [
+    "Obese",
+    "Right lower quadrant",
+    "No tenderness or masses Liver span 7 cm in right midclavicular line",
+    "Palpable 1 cm below right costal margin (RCM)",
+    "No costovertebral angle tenderness (CVAT)",
+    "Well-healed scar",
+    "Bowel sounds active",
+    "Edge smooth",
+    "Spleen and kidneys not felts",
+    "No hernia",
+  ];
+
+  const genitourinary = [
+    "And poor relaxation",
+    "Mild cystocele at introitus on straining",
+    "Cervix pink",
+    "And without dischandarge",
+    "Midline",
+    "Not enlarged",
+    "Pap smear taken",
+    "No cervical or adnexal tendernesExternal genitalia without lesions",
+    "Vaginal mucosa pink",
+    "Parous",
+    "Uterus anterior",
+    "Smooth",
+    "Adnexa not palpated due to obesity as",
+    "Rectovaginal wall intact",
+  ];
+  const rectal = [
+    "Rectal vault without masses",
+    "Negative for occult blood",
+    "Stool Brown",
+  ];
+  const peripheral_vascular = [
+    "Trace edema at both ankels",
+    "No stasis pigmentation or ulcer",
+    "Moderate varicosities of saphenous veins both lower extremities",
+    "Pulses (2+= brisks, or nornal)",
+  ];
+  const neurogenical = [
+    "Mental status",
+    "Thoughts coherent",
+    "Place",
+    "Cranial Nerves",
+    "Motor",
+    "Strength 5/5 throughout(see p.574 grading system)",
+    "Rapid alternating movements (RAMs)",
+    "Gait",
+    "Pinprick",
+    "Position sense",
+    "And stereognosis intact",
+    "Reflexes",
+    "Depending upon personal preference",
+    "As shown below and at right",
+    "See p",
+    "Tense but alrt and cooperative",
+    "Oriented to person",
+    "And time",
+    "II-XII intact",
+    "Good muscle bulk and tone",
+    "Cerebellar",
+    "Point-to-point movemstableents intact",
+    "Fluid Sensory",
+    "Light touch",
+    "Vibration",
+    "Romberg negativeg",
+    "Two methods of recording may be used",
+    "A tabular from or a stick picture diagram",
+    "2+= brisk or normal",
+    "587 for grading system",
+  ];
+  const hematological = ["No easy bleeding", "No anemia"];
+  const endocrinal = [
+    "No known thyroid problem or temperature intolerance",
+    "No symptoms or history of diabetes",
+  ];
+  const psychological_psychiatric_illness = [
+    "No history of depression or treatment for psychiatric disorders",
+  ];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -27,15 +175,6 @@ const ClinicalExamination = () => {
                     role="tablist"
                     className="nav nav-tabs card-header-tabs pt-3 ps-2 bg-info"
                   >
-                    {/* <li className="nav-item">
-                      <a
-                        href="#tab-1"
-                        data-bs-toggle="tab"
-                        className="nav-link active text-dark fs-6 fw-bold"
-                      >
-                        Vital Sign
-                      </a>
-                    </li> */}
                     <li className="nav-item">
                       <a
                         href="#tab-2"
@@ -47,11 +186,47 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-3"
+                        href="#tab-21"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
-                        Head, Eyes, Ears, Nose, Throat (HEENT)
+                        Head
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        href="#tab-22"
+                        data-bs-toggle="tab"
+                        className="nav-link text-dark fs-6 fw-bold"
+                      >
+                        Eyes
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        href="#tab-23"
+                        data-bs-toggle="tab"
+                        className="nav-link text-dark fs-6 fw-bold"
+                      >
+                        Ears
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        href="#tab-24"
+                        data-bs-toggle="tab"
+                        className="nav-link text-dark fs-6 fw-bold"
+                      >
+                        Nose
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        href="#tab-25"
+                        data-bs-toggle="tab"
+                        className="nav-link text-dark fs-6 fw-bold"
+                      >
+                        Throat
                       </a>
                     </li>
                     <li className="nav-item">
@@ -119,7 +294,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-11"
+                        href="#tab-51"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -128,7 +303,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-12"
+                        href="#tab-52"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -137,7 +312,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-13"
+                        href="#tab-53"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -146,7 +321,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-14"
+                        href="#tab-54"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -155,7 +330,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-15"
+                        href="#tab-55"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -164,7 +339,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-16"
+                        href="#tab-56"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -173,7 +348,7 @@ const ClinicalExamination = () => {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="#tab-17"
+                        href="#tab-57"
                         data-bs-toggle="tab"
                         className="nav-link text-dark fs-6 fw-bold"
                       >
@@ -197,58 +372,31 @@ const ClinicalExamination = () => {
                       <div className="section-content">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Skin</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No rashes or other changes</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {skin.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No cyanosis</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No clubbing finger</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No bruises</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -279,7 +427,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-3"
+                      id="tab-21"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -289,484 +437,312 @@ const ClinicalExamination = () => {
                         paddingRight: "20px",
                       }}
                     >
-                      <div className="section-content pb-3">
-                        <div className="section-item mt-3">
-                          <p className="fs-6 fw-bold mb-3">
-                            Head, Eyes, Ears, Nose, Throat (HEENT)
-                          </p>
-                          <ul
-                            role="tablist"
-                            className="nav nav-tabs card-header-tabs pt-3 ps-2 bg-info"
+                      <p className="fs-5 fw-bold">Head</p>
+                      <div className="row align-items-center mb-3">
+                        <div className="col-5">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
                           >
-                            <li className="nav-item">
-                              <a
-                                href="#tab-21"
-                                data-bs-toggle="tab"
-                                className="nav-link active text-dark fs-6 fw-bold"
-                              >
-                                Head
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                href="#tab-22"
-                                data-bs-toggle="tab"
-                                className="nav-link text-dark fs-6 fw-bold"
-                              >
-                                Eyes
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                href="#tab-23"
-                                data-bs-toggle="tab"
-                                className="nav-link text-dark fs-6 fw-bold"
-                              >
-                                Ears
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                href="#tab-24"
-                                data-bs-toggle="tab"
-                                className="nav-link text-dark fs-6 fw-bold"
-                              >
-                                Nose
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                href="#tab-25"
-                                data-bs-toggle="tab"
-                                className="nav-link text-dark fs-6 fw-bold"
-                              >
-                                Throat (HEENT)
-                              </a>
-                            </li>
-                          </ul>
-                          <div className="tab-content">
-                            <div
-                              role="tabpanel"
-                              id="tab-21"
-                              className="tab-pane fade show active py-4"
-                              style={{
-                                background: "#0dcaf030",
-                                paddingLeft: "20px",
-                                marginLeft: "-9px",
-                                marginRight: "-8px",
-                                paddingRight: "20px",
-                              }}
-                            >
-                              <p className="fs-5 fw-bold">Head</p>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                              </div>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Others</label>
-                                </div>
-                                <div className="items">
-                                  <input type="text" className="form-control" />
-                                </div>
-                                <div className="items">
-                                  <button className="btn btn-primary">
-                                    Add Items
-                                  </button>
-                                </div>
-                              </div>
-                              <div className="section-content-table p-2 bg-light">
-                                <table className="table table-borderless table-striped">
-                                  <thead className="table-primary">
-                                    <tr>
-                                      <th className="text-center" colSpan="2">
-                                        Title
-                                      </th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <a href="#">
-                                          <i className="far fa-window-close text-danger"></i>
-                                        </a>
-                                      </td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                            <div
-                              role="tabpanel"
-                              id="tab-22"
-                              className="tab-pane fade py-4"
-                              style={{
-                                background: "#0dcaf030",
-                                paddingLeft: "20px",
-                                marginLeft: "-9px",
-                                marginRight: "-8px",
-                                paddingRight: "20px",
-                              }}
-                            >
-                              <p className="fs-5 fw-bold">Eyes</p>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                              </div>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Others</label>
-                                </div>
-                                <div className="items">
-                                  <input type="text" className="form-control" />
-                                </div>
-                                <div className="items">
-                                  <button className="btn btn-primary">
-                                    Add Items
-                                  </button>
-                                </div>
-                              </div>
-                              <div className="section-content-table p-2 bg-light">
-                                <table className="table table-borderless table-striped">
-                                  <thead className="table-primary">
-                                    <tr>
-                                      <th className="text-center" colSpan="2">
-                                        Title
-                                      </th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <a href="#">
-                                          <i className="far fa-window-close text-danger"></i>
-                                        </a>
-                                      </td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                            <div
-                              role="tabpanel"
-                              id="tab-23"
-                              className="tab-pane fade py-4"
-                              style={{
-                                background: "#0dcaf030",
-                                paddingLeft: "20px",
-                                marginLeft: "-9px",
-                                marginRight: "-8px",
-                                paddingRight: "20px",
-                              }}
-                            >
-                              <p className="fs-5 fw-bold">Ears</p>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                              </div>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Others</label>
-                                </div>
-                                <div className="items">
-                                  <input type="text" className="form-control" />
-                                </div>
-                                <div className="items">
-                                  <button className="btn btn-primary">
-                                    Add Items
-                                  </button>
-                                </div>
-                              </div>
-                              <div className="section-content-table p-2 bg-light">
-                                <table className="table table-borderless table-striped">
-                                  <thead className="table-primary">
-                                    <tr>
-                                      <th className="text-center" colSpan="2">
-                                        Title
-                                      </th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <a href="#">
-                                          <i className="far fa-window-close text-danger"></i>
-                                        </a>
-                                      </td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                            <div
-                              role="tabpanel"
-                              id="tab-24"
-                              className="tab-pane fade py-4"
-                              style={{
-                                background: "#0dcaf030",
-                                paddingLeft: "20px",
-                                marginLeft: "-9px",
-                                marginRight: "-8px",
-                                paddingRight: "20px",
-                              }}
-                            >
-                              <p className="fs-5 fw-bold">Nose</p>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                              </div>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Others</label>
-                                </div>
-                                <div className="items">
-                                  <input type="text" className="form-control" />
-                                </div>
-                                <div className="items">
-                                  <button className="btn btn-primary">
-                                    Add Items
-                                  </button>
-                                </div>
-                              </div>
-                              <div className="section-content-table p-2 bg-light">
-                                <table className="table table-borderless table-striped">
-                                  <thead className="table-primary">
-                                    <tr>
-                                      <th className="text-center" colSpan="2">
-                                        Title
-                                      </th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <a href="#">
-                                          <i className="far fa-window-close text-danger"></i>
-                                        </a>
-                                      </td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                            <div
-                              role="tabpanel"
-                              id="tab-25"
-                              className="tab-pane fade py-4"
-                              style={{
-                                background: "#0dcaf030",
-                                paddingLeft: "20px",
-                                marginLeft: "-9px",
-                                marginRight: "-8px",
-                                paddingRight: "20px",
-                              }}
-                            >
-                              <p className="fs-5 fw-bold">Throat (HEENT)</p>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Checked Checkbox</label>
-                                </div>
-                              </div>
-                              <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                                <div className="items">
-                                  <input
-                                    type="checkbox"
-                                    className="form-check-inline"
-                                  />
-                                  <label>Others</label>
-                                </div>
-                                <div className="items">
-                                  <input type="text" className="form-control" />
-                                </div>
-                                <div className="items">
-                                  <button className="btn btn-primary">
-                                    Add Items
-                                  </button>
-                                </div>
-                              </div>
-                              <div className="section-content-table p-2 bg-light">
-                                <table className="table table-borderless table-striped">
-                                  <thead className="table-primary">
-                                    <tr>
-                                      <th className="text-center" colSpan="2">
-                                        Title
-                                      </th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <a href="#">
-                                          <i className="far fa-window-close text-danger"></i>
-                                        </a>
-                                      </td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
+                            <option selected>Select any one</option>
+                            {head.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-5">
+                          <div className="items">
+                            <input type="text" className="form-control" />
                           </div>
                         </div>
+                        <div className="col-2">
+                          <div className="items text-end">
+                            <button className="btn btn-primary">
+                              Add Items
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="section-content-table p-2 bg-light">
+                        <table className="table table-borderless table-striped">
+                          <thead className="table-primary">
+                            <tr>
+                              <th className="text-center" colSpan="2">
+                                Title
+                              </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#">
+                                  <i className="far fa-window-close text-danger"></i>
+                                </a>
+                              </td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div
+                      role="tabpanel"
+                      id="tab-22"
+                      className="tab-pane fade py-4"
+                      style={{
+                        background: "#0dcaf030",
+                        paddingLeft: "20px",
+                        marginLeft: "-9px",
+                        marginRight: "-8px",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      <p className="fs-5 fw-bold">Eyes</p>
+                      <div className="row align-items-center mb-3">
+                        <div className="col-5">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Select any one</option>
+                            {eyes.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-5">
+                          <div className="items">
+                            <input type="text" className="form-control" />
+                          </div>
+                        </div>
+                        <div className="col-2">
+                          <div className="items text-end">
+                            <button className="btn btn-primary">
+                              Add Items
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="section-content-table p-2 bg-light">
+                        <table className="table table-borderless table-striped">
+                          <thead className="table-primary">
+                            <tr>
+                              <th className="text-center" colSpan="2">
+                                Title
+                              </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#">
+                                  <i className="far fa-window-close text-danger"></i>
+                                </a>
+                              </td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div
+                      role="tabpanel"
+                      id="tab-23"
+                      className="tab-pane fade py-4"
+                      style={{
+                        background: "#0dcaf030",
+                        paddingLeft: "20px",
+                        marginLeft: "-9px",
+                        marginRight: "-8px",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      <p className="fs-5 fw-bold">Ears</p>
+                      <div className="row align-items-center mb-3">
+                        <div className="col-5">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Select any one</option>
+                            {ears.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-5">
+                          <div className="items">
+                            <input type="text" className="form-control" />
+                          </div>
+                        </div>
+                        <div className="col-2">
+                          <div className="items text-end">
+                            <button className="btn btn-primary">
+                              Add Items
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="section-content-table p-2 bg-light">
+                        <table className="table table-borderless table-striped">
+                          <thead className="table-primary">
+                            <tr>
+                              <th className="text-center" colSpan="2">
+                                Title
+                              </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#">
+                                  <i className="far fa-window-close text-danger"></i>
+                                </a>
+                              </td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div
+                      role="tabpanel"
+                      id="tab-24"
+                      className="tab-pane fade py-4"
+                      style={{
+                        background: "#0dcaf030",
+                        paddingLeft: "20px",
+                        marginLeft: "-9px",
+                        marginRight: "-8px",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      <p className="fs-5 fw-bold">Nose</p>
+                      <div className="row align-items-center mb-3">
+                        <div className="col-5">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Select any one</option>
+                            {nose.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-5">
+                          <div className="items">
+                            <input type="text" className="form-control" />
+                          </div>
+                        </div>
+                        <div className="col-2">
+                          <div className="items text-end">
+                            <button className="btn btn-primary">
+                              Add Items
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="section-content-table p-2 bg-light">
+                        <table className="table table-borderless table-striped">
+                          <thead className="table-primary">
+                            <tr>
+                              <th className="text-center" colSpan="2">
+                                Title
+                              </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#">
+                                  <i className="far fa-window-close text-danger"></i>
+                                </a>
+                              </td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div
+                      role="tabpanel"
+                      id="tab-25"
+                      className="tab-pane fade py-4"
+                      style={{
+                        background: "#0dcaf030",
+                        paddingLeft: "20px",
+                        marginLeft: "-9px",
+                        marginRight: "-8px",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      <p className="fs-5 fw-bold">Throat (HEENT)</p>
+                      <div className="row align-items-center mb-3">
+                        <div className="col-5">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Select any one</option>
+                            {throat.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-5">
+                          <div className="items">
+                            <input type="text" className="form-control" />
+                          </div>
+                        </div>
+                        <div className="col-2">
+                          <div className="items text-end">
+                            <button className="btn btn-primary">
+                              Add Items
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="section-content-table p-2 bg-light">
+                        <table className="table table-borderless table-striped">
+                          <thead className="table-primary">
+                            <tr>
+                              <th className="text-center" colSpan="2">
+                                Title
+                              </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#">
+                                  <i className="far fa-window-close text-danger"></i>
+                                </a>
+                              </td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                     <div
@@ -784,58 +760,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Neck</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No lumps</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {neck.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Goiter</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Pain</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No swollen glands</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -879,79 +828,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Lymph Nodes</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Small (less than 1 cm)</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {lymph_nodes.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Nontender</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Ns bilato axillary or epitrochlear nodes
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Soft and nontender</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Soft</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                And mobile tonsillar and posterior cervical
-                                nodeerally
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Several small inguinal nodes bilateral
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -997,86 +898,33 @@ const ClinicalExamination = () => {
                           <p className="fs-6 fw-bold">
                             Respiratory, Thorax & Lungs
                           </p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No cough</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {respiratory_thorax_lungs.map(
+                                  (items, index) => (
+                                    <option value={items} key={index}>
+                                      {items}
+                                    </option>
+                                  )
+                                )}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Shortness of breath.</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Thorax symmetric with good excursion
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Breath sounds vesicular with no added sounds
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Wheezing</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Last chest x-ray, 1986, St. Mary&apos;s
-                                Hospital; unremarkable
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Lungs resonant</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Diaphragms descend 4 cm bilaterally</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1120,141 +968,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Cardiovascular</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                No Known heart disease or high blood pressure
-                              </label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {cardiovascular.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No dyspnea</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Chest pain palpitation</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Jugular venous pressure 1 cm above the sternal
-                                angle
-                              </label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Carotid upstrokes brisks</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Apical impulse discrete and tapping</label>
-                            </div>
-
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                A II/VI medium-pitched midsystolic murmur at the
-                                2nd right interspace
-                              </label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Has never had an electrocardiogram (ECG)
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                With head of examining table raised to 30 degree
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Without bruits.</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Barely palpable in the 5th left interspace
-                              </label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Good S1, S2; no S3 or S4</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Does not radiate to the neck</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Last blood pressure taken in 1998</label>
-                            </div>
-
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1298,98 +1036,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Gastrointestinal</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Appetite good</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {gastrointestinal.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Vomiting</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Bowel movement about once dial</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No diarrhea or bleeding</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Jaundice</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No nausea</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Indigestion</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Though sometimes has hard stools for 2 to 3 days
-                                when especially tense
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No pain</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Gallbladder or liver problems</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1433,51 +1104,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Breasts</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No lumps</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {breast.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Discharge</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Pain</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Does self-breast exam sporadically</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1521,103 +1172,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Abdominal</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Obese</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {abdominal.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Right lower quadrant</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                No tenderness or masses Liver span 7 cm in right
-                                midclavicular line
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Palpable 1 cm below right costal margin (RCM)
-                              </label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                No costovertebral angle tenderness (CVAT)
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Well-healed scar</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Bowel sounds active</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Edge smooth</label>
-                            </div>
-                          </div>
-
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Spleen and kidneys not felts</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No hernia</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1648,7 +1227,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-11"
+                      id="tab-51"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -1661,134 +1240,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Genitourinary</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>And poor relaxation</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {genitourinary.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Mild cystocele at introitus on straining
-                              </label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Cervix pink</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>And without dischandarge</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Midline</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Not enlarged</label>
-                            </div>
-
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Pap smear taken</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                No cervical or adnexal tendernesExternal
-                                genitalia without lesions
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Vaginal mucosa pink</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Parous</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Uterus anterior</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Smooth</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Adnexa not palpated due to obesity as
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Rectovaginal wall intact</label>
-                            </div>
-
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1819,7 +1295,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-12"
+                      id="tab-52"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -1832,46 +1308,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Rectal</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Rectal vault without masses</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {rectal.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Negative for occult blood</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Stool Brown</label>
-                            </div>
-                          </div>
-
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1902,7 +1363,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-13"
+                      id="tab-53"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -1915,54 +1376,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Peripheral Vascular</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Trace edema at both ankels</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {peripheral_vascular.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No stasis pigmentation or ulcer</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Moderate varicosities of saphenous veins both
-                                lower extremities
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Pulses (2+= brisks, or nornal)</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -1993,7 +1431,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-14"
+                      id="tab-54"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -2006,248 +1444,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Neurological</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Mental status</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {neurogenical.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Thoughts coherent</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Place</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Cranial Nerves</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Motor</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Strength 5/5 throughout(see p.574 grading
-                                system)
-                              </label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Rapid alternating movements (RAMs)</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Gait</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Pinprick</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Position sense</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>And stereognosis intact</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Reflexes</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Depending upon personal preference</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>As shown below and at right</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>See p</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Tense but alrt and cooperative</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Oriented to person</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>And time</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>II-XII intact</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Good muscle bulk and tone</label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Cerebellar</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Point-to-point movemstableents intact
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Fluid Sensory</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Light touch</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Vibration</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Romberg negativeg</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                Two methods of recording may be used
-                              </label>
-                            </div>
-                          </div>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                A tabular from or a stick picture diagram
-                              </label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>2+= brisk or normal</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>587 for grading system</label>
-                            </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -2278,7 +1499,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-15"
+                      id="tab-55"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -2291,35 +1512,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Hematological</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No easy bleeding</label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {hematological.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No anemia</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -2350,7 +1567,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-16"
+                      id="tab-56"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -2363,48 +1580,31 @@ const ClinicalExamination = () => {
                       <div className="section-content pb-3 border-bottom">
                         <div className="section-item mt-3">
                           <p className="fs-6 fw-bold">Endocrinal</p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                No known thyroid problem or temperature
-                                intolerance
-                              </label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {endocrinal.map((items, index) => (
+                                  <option value={items} key={index}>
+                                    {items}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>No symptoms or history of diabetes</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Sweating average</label>
-                            </div>
-                          </div>
-
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
-                            </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
@@ -2435,7 +1635,7 @@ const ClinicalExamination = () => {
                     </div>
                     <div
                       role="tabpanel"
-                      id="tab-17"
+                      id="tab-57"
                       className="tab-pane fade py-4"
                       style={{
                         background: "#0dcaf030",
@@ -2450,31 +1650,33 @@ const ClinicalExamination = () => {
                           <p className="fs-6 fw-bold">
                             Psychological & Psychiatric Illness
                           </p>
-                          <div className="inner-item d-flex align-items-center justify-content-between mb-3">
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>
-                                No history of depression or treatment for
-                                psychiatric disorders
-                              </label>
+                          <div className="row align-items-center mb-3">
+                            <div className="col-5">
+                              <select
+                                class="form-select"
+                                aria-label="Default select example"
+                              >
+                                <option selected>Select any one</option>
+                                {psychological_psychiatric_illness.map(
+                                  (items, index) => (
+                                    <option value={items} key={index}>
+                                      {items}
+                                    </option>
+                                  )
+                                )}
+                              </select>
                             </div>
-                            <div className="items">
-                              <input
-                                type="checkbox"
-                                className="form-check-inline"
-                              />
-                              <label>Others</label>
+                            <div className="col-5">
+                              <div className="items">
+                                <input type="text" className="form-control" />
+                              </div>
                             </div>
-                            <div className="items">
-                              <input type="text" className="form-control" />
-                            </div>
-                            <div className="items">
-                              <button className="btn btn-primary">
-                                Add Items
-                              </button>
+                            <div className="col-2">
+                              <div className="items text-end">
+                                <button className="btn btn-primary">
+                                  Add Items
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div className="section-content-table">
