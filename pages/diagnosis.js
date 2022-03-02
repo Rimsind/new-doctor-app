@@ -147,15 +147,13 @@ const Diagnosis = () => {
 
           <SubjectiveInformation data={data} />
 
-          <Rehab data={data} />
-
-          {/* {doctor?.specialty?.name === "Rehabilitation" ? (
+          {doctor?.specialty?.name === "Rehabilitation" ? (
             <>
-              <Ortho data={data} />
+              <Rehab data={data} />
             </>
           ) : (
             <></>
-          )} */}
+          )}
           {doctor?.specialty?.name === "Medicine" ? (
             <>
               <Medicine data={data} />
