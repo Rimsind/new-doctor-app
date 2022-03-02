@@ -45,7 +45,7 @@ const Ears = ({ data }) => {
   const ears = ["Checkbox"];
   return (
     <>
-      <p className="fs-5 fw-bold">Ears</p>
+      <p className="fs-6 fw-bold">Ears</p>
       <div className="row align-items-center mb-3">
         <div className="col-5">
           <select

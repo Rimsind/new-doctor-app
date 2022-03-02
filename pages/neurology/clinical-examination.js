@@ -122,25 +122,25 @@ const ClinicalExamination = () => {
     <>
       <form onSubmit={handleSubmit(SubmitForm)}>
         <div className="general-information-form relative p-6 flex-auto">
-          <div className="max-w-6xl mx-auto md:py-10">
-            <div className="space-y-5 border-2 p-10 rounded">
-              <div className="space-y-2 pb-5">
-                <div className="gen-form-upper row">
-                  <div className="col-md-2"></div>
-                  <div className="col-md-8">
-                    <div className="text-center pb-6">
-                      <h3 className="general-information-form-title font-bold">
-                        Clinical Examination
-                      </h3>
-                    </div>
-                  </div>
-                  <FormCloseBtn id={appointmentId} />
-                </div>
+          <div className="gen-form-upper row align-items-center">
+            <div className="col-md-2"></div>
+            <div className="col-md-8">
+              <div className="text-center pb-6">
+                <h3 className="general-information-form-title font-bold">
+                  Clinical Examination
+                </h3>
+              </div>
+            </div>
+            <FormCloseBtn id={appointmentId} />
+          </div>
 
-                <div className="gen-form mt-3">
-                  <h3>Examination category</h3>
-                  <div className="row justify-content-between align-items-end mt-3">
-                    <div className="col-md-5">
+          <div className="gen-form mt-3">
+            <div className="row align-items-center mt-3">
+              <p className="fs-5 fw-bold">Examination category</p>
+              <div className="col-md-6">
+                <div className="row align-items-end mb-2">
+                  <div className="col-md-4">
+                    <div className="items">
                       <label className="form-label">Categories:</label>
                       <select
                         className="form-select"
@@ -155,43 +155,33 @@ const ClinicalExamination = () => {
                         ))}
                       </select>
                     </div>
-                    <div className="col-md-5">
-                      <label className="form-label">Test:</label>
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                        onChange={(e) => setTest(e.target.value)}
-                      >
-                        <option selected>Select Option</option>
-                        {testList.map((item, index) => (
-                          <option value={item} key={index}>
-                            {item}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="col-md-2">
-                      <div className="prescription-add-btn">
-                        <span
-                          className="btn btn-primary prescription-btn"
-                          onClick={addData}
-                        >
-                          Add
-                        </span>
-                      </div>
+                  </div>
+                  <div className="col-md-4">
+                    <label className="form-label">Test:</label>
+                    <select
+                      className="form-select"
+                      aria-label="Default select example"
+                      onChange={(e) => setTest(e.target.value)}
+                    >
+                      <option selected>Select Option</option>
+                      {testList.map((item, index) => (
+                        <option value={item} key={index}>
+                          {item}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="prescription-add-btn text-end">
+                      <span className="btn btn-primary" onClick={addData}>
+                        Add
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div
-                  className="rfa-gen-form-data-table mt-4"
-                  style={{
-                    background: "white",
-                    padding: "10px",
-                    borderRadius: "3px",
-                  }}
-                >
+                <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
                   <table className="table table-striped">
-                    <thead>
+                    <thead className="bg-info">
                       <tr>
                         <th className="text-center" colSpan="2" scope="col">
                           Categories
@@ -210,39 +200,16 @@ const ClinicalExamination = () => {
                     </tbody>
                   </table>
                 </div>
-                <div className="gen-form mt-3">
-                  <h3>Assessment</h3>
-                  <div className="row justify-content-between align-items-end mt-3">
-                    {/* <div className="col-md-5" {...register("assesment")}>
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="one">Select</option>
-                        <option value="one">One</option>
-                        <option value="Two">Two</option>
-                        <option value="Three">Three</option>
-                      </select>
-                    </div> */}
-                    <div className="col-md-10">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Others:"
-                        {...register("assesment")}
-                      />
-                    </div>
-                    <div className="col-md-2">
-                      {/* <div className="assessment-add-btn">
-                        <span
-                          className="btn btn-primary assessment-btn"
-                          //   onClick={addPrecaution}
-                        >
-                          Add
-                        </span>
-                      </div> */}
-                    </div>
-                  </div>
+              </div>
+              <div className="col-md-6">
+                <p className="fs-6 fw-bold">Assessment</p>
+                <div className="items">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Others:"
+                    {...register("assesment")}
+                  />
                 </div>
               </div>
             </div>

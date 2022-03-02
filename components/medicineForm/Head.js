@@ -45,7 +45,7 @@ const Head = ({ data }) => {
   const head = ["Checkbox"];
   return (
     <>
-      <p className="fs-5 fw-bold">Head</p>
+      <p className="fs-6 fw-bold">Head</p>
       <div className="row align-items-center mb-3">
         <div className="col-5">
           <select

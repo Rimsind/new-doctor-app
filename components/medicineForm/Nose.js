@@ -44,7 +44,7 @@ const Nose = ({ data }) => {
   const nose = ["Checkbox"];
   return (
     <>
-      <p className="fs-5 fw-bold">Nose</p>
+      <p className="fs-6 fw-bold">Nose</p>
       <div className="row align-items-center mb-3">
         <div className="col-5">
           <select

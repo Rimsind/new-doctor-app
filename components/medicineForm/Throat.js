@@ -44,7 +44,7 @@ const Throat = ({ data }) => {
   const throat = ["Checkbox"];
   return (
     <>
-      <p className="fs-5 fw-bold">Throat (HEENT)</p>
+      <p className="fs-6 fw-bold">Throat (HEENT)</p>
       <div className="row align-items-center mb-3">
         <div className="col-5">
           <select

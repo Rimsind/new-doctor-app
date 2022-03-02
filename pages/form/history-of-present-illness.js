@@ -57,176 +57,143 @@ const HistoryOfPresentIllness = () => {
   };
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
-        <div className="max-w-6xl mx-auto md:py-10">
-          <div className="space-y-5 border-2 p-10 rounded">
-            <div className="space-y-2 pb-5">
-              <div className="gen-form-upper row">
-                <div className="col-md-2"></div>
-                <div className="col-md-8">
-                  <div className="text-center pb-6">
-                    <h3 className="general-information-form-title font-bold">
-                      History of Present Illness
-                    </h3>
-                  </div>
-                </div>
-                <FormCloseBtn id={appointmentId} />
-              </div>
-              <div className="gen-form">
-                <div className="history-of-present-illness-content">
-                  <div className="row align-items-center">
-                    <div className="col-md-5">
-                      <p>
-                        {data?.patient?.title} {data?.patient?.first_name}{" "}
-                        {data?.patient?.last_name} is a {data?.patient?.age}{" "}
-                        Year Old {data?.patient?.gender}
-                      </p>
-                    </div>
-                    <div className="col-md-7">
-                      <div className="row align-items-center">
-                        <div className="col-md-4">came to the</div>
-                        <div className="col-md-8">
-                          <input
-                            type="text"
-                            className="form-control"
-                            onChange={(e) => setCameTo(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center mt-2">
-                    <div className="col-md-12">
-                      <div className="row align-items-center">
-                        <div className="col-md-3">with a problem of</div>
-                        <div className="col-md-9">
-                          <input
-                            type="text"
-                            className="form-control"
-                            onChange={(e) => setProblem(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row align-items-center mt-2">
-                    <div className="col-md-6">
-                      <div className="row align-items-center">
-                        <div className="col-md-3">Patient stated</div>
-                        <div className="col-md-9">
-                          <input
-                            type="text"
-                            className="form-control"
-                            onChange={(e) => setStated(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="row align-items-center">
-                        <div className="col-md-4">Patient was done</div>
-                        <div className="col-md-8">
-                          <input
-                            type="text"
-                            className="form-control"
-                            onChange={(e) => setHasDone(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center mt-2">
-                    <div className="col-md-12">
-                      <div className="row align-items-center">
-                        <div className="col-md-3">
-                          Patient current medication
-                        </div>
-                        <div className="col-md-9">
-                          <input
-                            type="text"
-                            className="form-control"
-                            onChange={(e) => setMedication(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center mt-2">
-                    <div className="col-md-12">
-                      <div className="row align-items-center">
-                        <div className="col-md-3">
-                          Other relevant factors are
-                        </div>
-                        <div className="col-md-9">
-                          <input
-                            type="text"
-                            className="form-control"
-                            onChange={(e) => setOther(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="gen-form-para gen-form"
-                style={{ marginTop: "10px" }}
-              >
-                <h3>Preview:</h3>
-
+      <div className="general-information-form ">
+        <div className="gen-form-upper row align-items-center">
+          <div className="col-md-2"></div>
+          <div className="col-md-8">
+            <div className="text-center pb-6">
+              <h3 className="general-information-form-title font-bold">
+                History of Present Illness
+              </h3>
+            </div>
+          </div>
+          <FormCloseBtn id={appointmentId} />
+        </div>
+        <div className="gen-form">
+          <div className="history-of-present-illness-content">
+            <div className="row align-items-center">
+              <div className="col-3">
                 <p>
-                  <strong>{data?.patient?.title}</strong>.{" "}
-                  <strong>
-                    {data?.patient?.first_name} {data?.patient?.last_name}
-                  </strong>{" "}
-                  is a<strong> {data?.patient?.age}</strong> y.o{" "}
-                  <strong>{data?.patient?.gender}</strong> came to the
-                  <strong> {cameTo} </strong>
-                  with a problem of
-                  <strong> {problem}</strong>. Patient stated
-                  <strong> {stated}</strong>. Patient was done
-                  <strong> {hasDone}</strong>. Patient current medication
-                  includes <strong>{medication}</strong>. Other relevant factors
-                  are <strong> {other}</strong>.
+                  <span className="fs-6 fw-bold">
+                    {data?.patient?.title} {data?.patient?.first_name}{" "}
+                    {data?.patient?.last_name}
+                  </span>{" "}
+                  is a{" "}
+                  <span className="fs-6 fw-bold">{data?.patient?.age}</span>{" "}
+                  Year Old{" "}
+                  <span className="fs-6 fw-bold">{data?.patient?.gender}</span>
                 </p>
               </div>
-
-              <div className="gen-form">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <h6>Allergies</h6>
-                  </div>
-                  <div className="col-md-8">
-                    <p>{data?.patient?.medicalHistory?.allergies}</p>
-                  </div>
-                </div>
+              <div className="col-1">
+                <p className="fs-6">came to the</p>
               </div>
-              <div className="gen-form">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <h6>Vaccination</h6>
-                  </div>
-                  <div className="col-md-8">
-                    <p>{data.patient.medicalHistory.vactions}</p>
-                  </div>
-                </div>
+              <div className="col-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setCameTo(e.target.value)}
+                />
+              </div>
+              <div className="col-2">
+                <p className="fs-6">with a problem of</p>
+              </div>
+              <div className="col-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setProblem(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="row align-items-center mt-2">
+              <div className="col">
+                <p className="fs-6">Patient stated</p>
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setStated(e.target.value)}
+                />
+              </div>
+              <div className="col">
+                <p className="fs-6">Patient was done</p>
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setHasDone(e.target.value)}
+                />
+              </div>
+              <div className="col">
+                <p className="fs-6">Patient current medication</p>
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setMedication(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="row align-items-center mt-2">
+              <div className="col-md-2">Other relevant factors are</div>
+              <div className="col-md-10">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setOther(e.target.value)}
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="gen-form-btn">
-          <div className="row">
-            <div className="col-md-4"></div>
+        <div className="gen-form-para gen-form mt-2">
+          <p className="fs-5 fw-bold">Preview:</p>
 
+          <p className="fs-6">
+            <strong>{data?.patient?.title}</strong>.{" "}
+            <strong>
+              {data?.patient?.first_name} {data?.patient?.last_name}
+            </strong>{" "}
+            is a<strong> {data?.patient?.age}</strong> y.o{" "}
+            <strong>{data?.patient?.gender}</strong> came to the
+            <strong> {cameTo} </strong>
+            with a problem of
+            <strong> {problem}</strong>. Patient stated
+            <strong> {stated}</strong>. Patient was done
+            <strong> {hasDone}</strong>. Patient current medication includes{" "}
+            <strong>{medication}</strong>. Other relevant factors are{" "}
+            <strong> {other}</strong>.
+          </p>
+        </div>
+
+        <div className="gen-form">
+          <div className="row align-items-center">
             <div className="col-md-4">
-              <button className="btn btn-success" onClick={submitForm}>
-                Save Changes
-              </button>
+              <p className="fs-5 fw-bold">Allergies</p>
             </div>
-            <div className="col-md-4"></div>
+            <div className="col-md-8">
+              <p className="fs-6">{data?.patient?.medicalHistory?.allergies}</p>
+            </div>
           </div>
+        </div>
+        <div className="gen-form">
+          <div className="row align-items-center">
+            <div className="col-md-4">
+              <p className="fs-5 fw-bold">Vaccination</p>
+            </div>
+            <div className="col-md-8">
+              <p className="fs-6">{data.patient.medicalHistory.vactions}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="gen-form-btn text-center mt-3">
+          <button className="btn btn-success" onClick={submitForm}>
+            Save Changes
+          </button>
         </div>
       </div>
     </>

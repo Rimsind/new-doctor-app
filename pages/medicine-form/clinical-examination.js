@@ -65,7 +65,8 @@ const ClinicalExamination = () => {
                 <div className="section-item mt-lg-5">
                   <ul
                     role="tablist"
-                    className="nav nav-tabs card-header-tabs pt-3 ps-2 bg-info"
+                    className="nav nav-tabs card-header-tabs pt-3 ps-2"
+                    style={{ backgroundColor: "aliceblue" }}
                   >
                     <li className="nav-item">
                       <a
@@ -254,11 +255,15 @@ const ClinicalExamination = () => {
                       id="tab-2"
                       className="tab-pane fade show active py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Skin data={appointmentDetails?.medicine} />
@@ -268,11 +273,15 @@ const ClinicalExamination = () => {
                       id="tab-21"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Head data={appointmentDetails?.medicine} />
@@ -282,11 +291,15 @@ const ClinicalExamination = () => {
                       id="tab-22"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Eyes data={appointmentDetails?.medicine} />
@@ -296,11 +309,15 @@ const ClinicalExamination = () => {
                       id="tab-23"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Ears data={appointmentDetails?.medicine} />
@@ -310,11 +327,15 @@ const ClinicalExamination = () => {
                       id="tab-24"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Nose data={appointmentDetails?.medicine} />
@@ -324,11 +345,15 @@ const ClinicalExamination = () => {
                       id="tab-25"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Throat data={appointmentDetails?.medicine} />
@@ -338,11 +363,15 @@ const ClinicalExamination = () => {
                       id="tab-4"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Neck data={appointmentDetails?.medicine} />
@@ -352,11 +381,15 @@ const ClinicalExamination = () => {
                       id="tab-5"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <LymphNodes data={appointmentDetails?.medicine} />
@@ -366,11 +399,15 @@ const ClinicalExamination = () => {
                       id="tab-6"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Respiratory data={appointmentDetails?.medicine} />
@@ -380,11 +417,15 @@ const ClinicalExamination = () => {
                       id="tab-7"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Cardiovascular data={appointmentDetails?.medicine} />
@@ -394,11 +435,15 @@ const ClinicalExamination = () => {
                       id="tab-8"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Gastrointestinal data={appointmentDetails?.medicine} />
@@ -408,11 +453,15 @@ const ClinicalExamination = () => {
                       id="tab-9"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Breasts data={appointmentDetails?.medicine} />
@@ -422,11 +471,15 @@ const ClinicalExamination = () => {
                       id="tab-10"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Abdominal data={appointmentDetails?.medicine} />
@@ -436,11 +489,15 @@ const ClinicalExamination = () => {
                       id="tab-51"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Genitourinary data={appointmentDetails?.medicine} />
@@ -450,11 +507,15 @@ const ClinicalExamination = () => {
                       id="tab-52"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Rectal data={appointmentDetails?.medicine} />
@@ -464,11 +525,15 @@ const ClinicalExamination = () => {
                       id="tab-53"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <PeripheralVascular data={appointmentDetails?.medicine} />
@@ -478,11 +543,15 @@ const ClinicalExamination = () => {
                       id="tab-54"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Neurological data={appointmentDetails?.medicine} />
@@ -492,11 +561,15 @@ const ClinicalExamination = () => {
                       id="tab-55"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Hematological data={appointmentDetails?.medicine} />
@@ -506,11 +579,15 @@ const ClinicalExamination = () => {
                       id="tab-56"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Endocrinal data={appointmentDetails?.medicine} />
@@ -520,11 +597,15 @@ const ClinicalExamination = () => {
                       id="tab-57"
                       className="tab-pane fade py-4"
                       style={{
-                        background: "#0dcaf030",
+                        background: "white",
                         paddingLeft: "20px",
                         marginLeft: "-9px",
                         marginRight: "-8px",
                         paddingRight: "20px",
+                        marginTop: "8px",
+                        borderTop: "5px solid #396cf0",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px",
                       }}
                     >
                       <Psychological data={appointmentDetails?.medicine} />
