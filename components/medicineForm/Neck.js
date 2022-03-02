@@ -50,7 +50,7 @@ const Neck = ({ data }) => {
           <div className="row align-items-center mb-3">
             <div className="col-5">
               <select
-                class="form-select"
+                className="form-select"
                 aria-label="Default select example"
                 onChange={(e) => setOption(e.target.value)}
               >
