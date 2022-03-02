@@ -123,9 +123,7 @@ const Assesment = () => {
                       onChange={(e) => setIcd(e.target.value)}
                     />
                   </div>
-                  <div className="col-md-4">
-                    <span className="btn btn-primary mb-2">Add Entry</span>
-                  </div>
+                  <div className="col-md-4"></div>
 
                   <div className="col-md-12">
                     <ul

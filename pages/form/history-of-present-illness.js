@@ -75,16 +75,14 @@ const HistoryOfPresentIllness = () => {
               <div className="gen-form">
                 <div className="history-of-present-illness-content">
                   <div className="row align-items-center">
-                    <div className="col-md-12">
+                    <div className="col-md-5">
                       <p>
                         {data?.patient?.title} {data?.patient?.first_name}{" "}
                         {data?.patient?.last_name} is a {data?.patient?.age}{" "}
                         Year Old {data?.patient?.gender}
                       </p>
                     </div>
-                  </div>
-                  <div className="row align-items-center mt-2">
-                    <div className="col-md-5">
+                    <div className="col-md-7">
                       <div className="row align-items-center">
                         <div className="col-md-4">came to the</div>
                         <div className="col-md-8">
@@ -96,10 +94,12 @@ const HistoryOfPresentIllness = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-7">
+                  </div>
+                  <div className="row align-items-center mt-2">
+                    <div className="col-md-12">
                       <div className="row align-items-center">
-                        <div className="col-md-4">with a problem of</div>
-                        <div className="col-md-8">
+                        <div className="col-md-3">with a problem of</div>
+                        <div className="col-md-9">
                           <input
                             type="text"
                             className="form-control"
@@ -199,11 +199,7 @@ const HistoryOfPresentIllness = () => {
                     <h6>Allergies</h6>
                   </div>
                   <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder=""
-                    />
+                    <p>{data?.patient?.medicalHistory?.allergies}</p>
                   </div>
                 </div>
               </div>
@@ -213,11 +209,7 @@ const HistoryOfPresentIllness = () => {
                     <h6>Vaccination</h6>
                   </div>
                   <div className="col-md-8">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder=""
-                    />
+                    <p>{data.patient.medicalHistory.vactions}</p>
                   </div>
                 </div>
               </div>

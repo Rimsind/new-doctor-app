@@ -3,17 +3,9 @@ import axios from "axios";
 import { apiUrl } from "../../config/api";
 import { useAuth } from "../../context";
 import { useRouter } from "next/router";
-
-const skin = [
-  "No rashes or other changes",
-  "No cyanosis",
-  "No clubbing finger",
-  "No bruises",
-];
-
-const Skin = ({ data }) => {
-  const { appointmentId } = useRouter().query;
+const Neurological = ({ data }) => {
   const { auth } = useAuth();
+  const { appointmentId } = useRouter().query;
   const [option, setOption] = useState();
   const [description, setDescription] = useState();
   const [allData, setAllData] = useState([]);
@@ -33,10 +25,9 @@ const Skin = ({ data }) => {
     const payload = {
       medicine: {
         ...data,
-        skin: allData,
+        neurological: allData,
       },
     };
-
     const res = await axios.put(
       `${apiUrl}/appointments/${appointmentId}`,
       payload,
@@ -50,12 +41,43 @@ const Skin = ({ data }) => {
     alert("Form Submitted Succesfully");
     return result;
   };
-
+  const neurogenical = [
+    "Mental status",
+    "Thoughts coherent",
+    "Place",
+    "Cranial Nerves",
+    "Motor",
+    "Strength 5/5 throughout(see p.574 grading system)",
+    "Rapid alternating movements (RAMs)",
+    "Gait",
+    "Pinprick",
+    "Position sense",
+    "And stereognosis intact",
+    "Reflexes",
+    "Depending upon personal preference",
+    "As shown below and at right",
+    "See p",
+    "Tense but alrt and cooperative",
+    "Oriented to person",
+    "And time",
+    "II-XII intact",
+    "Good muscle bulk and tone",
+    "Cerebellar",
+    "Point-to-point movemstableents intact",
+    "Fluid Sensory",
+    "Light touch",
+    "Vibration",
+    "Romberg negativeg",
+    "Two methods of recording may be used",
+    "A tabular from or a stick picture diagram",
+    "2+= brisk or normal",
+    "587 for grading system",
+  ];
   return (
     <>
-      <div className="section-content">
+      <div className="section-content pb-3 border-bottom">
         <div className="section-item mt-3">
-          <p className="fs-6 fw-bold">Skin</p>
+          <p className="fs-6 fw-bold">Neurological</p>
           <div className="row align-items-center mb-3">
             <div className="col-5">
               <select
@@ -64,7 +86,7 @@ const Skin = ({ data }) => {
                 onChange={(e) => setOption(e.target.value)}
               >
                 <option selected>Select any one</option>
-                {skin.map((items, index) => (
+                {neurogenical.map((items, index) => (
                   <option value={items} key={index}>
                     {items}
                   </option>
@@ -109,12 +131,12 @@ const Skin = ({ data }) => {
                 ))}
               </tbody>
             </table>
-            <button onClick={submitForm}>Save Changes</button>
           </div>
         </div>
+        <button onClick={submitForm}>Save Changes</button>
       </div>
     </>
   );
 };
 
-export default Skin;
+export default Neurological;

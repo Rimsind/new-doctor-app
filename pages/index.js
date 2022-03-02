@@ -60,8 +60,9 @@ const Login = () => {
           ? error.message
           : "Something went wrong, try agin",
       });
-      console.log(error.message);
+
       alert("login failed");
+      console.log(error.message);
     }
   };
 

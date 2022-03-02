@@ -3,17 +3,9 @@ import axios from "axios";
 import { apiUrl } from "../../config/api";
 import { useAuth } from "../../context";
 import { useRouter } from "next/router";
-
-const skin = [
-  "No rashes or other changes",
-  "No cyanosis",
-  "No clubbing finger",
-  "No bruises",
-];
-
-const Skin = ({ data }) => {
-  const { appointmentId } = useRouter().query;
+const Genitourinary = ({ data }) => {
   const { auth } = useAuth();
+  const { appointmentId } = useRouter().query;
   const [option, setOption] = useState();
   const [description, setDescription] = useState();
   const [allData, setAllData] = useState([]);
@@ -33,10 +25,9 @@ const Skin = ({ data }) => {
     const payload = {
       medicine: {
         ...data,
-        skin: allData,
+        genitourinary: allData,
       },
     };
-
     const res = await axios.put(
       `${apiUrl}/appointments/${appointmentId}`,
       payload,
@@ -51,11 +42,27 @@ const Skin = ({ data }) => {
     return result;
   };
 
+  const genitourinary = [
+    "And poor relaxation",
+    "Mild cystocele at introitus on straining",
+    "Cervix pink",
+    "And without dischandarge",
+    "Midline",
+    "Not enlarged",
+    "Pap smear taken",
+    "No cervical or adnexal tendernesExternal genitalia without lesions",
+    "Vaginal mucosa pink",
+    "Parous",
+    "Uterus anterior",
+    "Smooth",
+    "Adnexa not palpated due to obesity as",
+    "Rectovaginal wall intact",
+  ];
   return (
     <>
-      <div className="section-content">
+      <div className="section-content pb-3 border-bottom">
         <div className="section-item mt-3">
-          <p className="fs-6 fw-bold">Skin</p>
+          <p className="fs-6 fw-bold">Genitourinary</p>
           <div className="row align-items-center mb-3">
             <div className="col-5">
               <select
@@ -64,7 +71,7 @@ const Skin = ({ data }) => {
                 onChange={(e) => setOption(e.target.value)}
               >
                 <option selected>Select any one</option>
-                {skin.map((items, index) => (
+                {genitourinary.map((items, index) => (
                   <option value={items} key={index}>
                     {items}
                   </option>
@@ -109,12 +116,12 @@ const Skin = ({ data }) => {
                 ))}
               </tbody>
             </table>
-            <button onClick={submitForm}>Save Changes</button>
           </div>
         </div>
+        <button onClick={submitForm}>Save Changes</button>
       </div>
     </>
   );
 };
 
-export default Skin;
+export default Genitourinary;

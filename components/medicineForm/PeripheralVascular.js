@@ -3,17 +3,9 @@ import axios from "axios";
 import { apiUrl } from "../../config/api";
 import { useAuth } from "../../context";
 import { useRouter } from "next/router";
-
-const skin = [
-  "No rashes or other changes",
-  "No cyanosis",
-  "No clubbing finger",
-  "No bruises",
-];
-
-const Skin = ({ data }) => {
-  const { appointmentId } = useRouter().query;
+const PeripheralVascular = ({ data }) => {
   const { auth } = useAuth();
+  const { appointmentId } = useRouter().query;
   const [option, setOption] = useState();
   const [description, setDescription] = useState();
   const [allData, setAllData] = useState([]);
@@ -33,10 +25,9 @@ const Skin = ({ data }) => {
     const payload = {
       medicine: {
         ...data,
-        skin: allData,
+        peripheralVascular: allData,
       },
     };
-
     const res = await axios.put(
       `${apiUrl}/appointments/${appointmentId}`,
       payload,
@@ -50,12 +41,17 @@ const Skin = ({ data }) => {
     alert("Form Submitted Succesfully");
     return result;
   };
-
+  const peripheral_vascular = [
+    "Trace edema at both ankels",
+    "No stasis pigmentation or ulcer",
+    "Moderate varicosities of saphenous veins both lower extremities",
+    "Pulses (2+= brisks, or nornal)",
+  ];
   return (
     <>
-      <div className="section-content">
+      <div className="section-content pb-3 border-bottom">
         <div className="section-item mt-3">
-          <p className="fs-6 fw-bold">Skin</p>
+          <p className="fs-6 fw-bold">Peripheral Vascular</p>
           <div className="row align-items-center mb-3">
             <div className="col-5">
               <select
@@ -64,7 +60,7 @@ const Skin = ({ data }) => {
                 onChange={(e) => setOption(e.target.value)}
               >
                 <option selected>Select any one</option>
-                {skin.map((items, index) => (
+                {peripheral_vascular.map((items, index) => (
                   <option value={items} key={index}>
                     {items}
                   </option>
@@ -109,12 +105,12 @@ const Skin = ({ data }) => {
                 ))}
               </tbody>
             </table>
-            <button onClick={submitForm}>Save Changes</button>
           </div>
         </div>
+        <button onClick={submitForm}>Save Changes</button>
       </div>
     </>
   );
 };
 
-export default Skin;
+export default PeripheralVascular;

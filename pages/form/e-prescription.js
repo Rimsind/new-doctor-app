@@ -23,7 +23,6 @@ const Eprescription = () => {
       return result;
     }
   );
-  console.log(appointmentDetails);
 
   const [precaution, setPrecaution] = useState();
   const [allPrecaution, setAllPrecaution] = useState([]);
