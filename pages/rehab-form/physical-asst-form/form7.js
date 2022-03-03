@@ -132,11 +132,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {kneeList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -166,11 +163,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {pelvisList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -200,11 +194,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {lowBackList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -234,11 +225,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {upperBackList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -268,11 +256,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {thoraxList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -302,11 +287,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {spineList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -336,11 +318,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {abdomenList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -370,11 +349,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {shoulderList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -404,11 +380,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {headList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
