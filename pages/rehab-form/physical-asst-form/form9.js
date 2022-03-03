@@ -7,8 +7,39 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form9 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form9 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      postural_assesment: {
+        cognitive_impairment: data.cognitive_impairment,
+        neuromuscular_mpairment: data.neuromuscular_mpairment,
+        musculoskeletal_impairment: data.musculoskeletal_impairment,
+        sitting_large_movement: data.sitting_large_movement,
+        berge_balance_test: data.berge_balance_test,
+        standing_ankle_strategy: data.standing_ankle_strategy,
+        movement_sitting_standing: data.movement_sitting_standing,
+        short_term_goals: data.short_term_goals,
+        treatment_plan: data.treatment_plan,
+        long_term_goals: data.long_term_goals,
+        tinetti_test: data.tinetti_test,
+        stepping_strategy: data.stepping_strategy,
+        standing_hip_strategy: data.standing_hip_strategy,
+        identified_problems: data.identified_problems,
+        sitting_small_movement: data.sitting_small_movement,
+        functional_reach_test: data.functional_reach_test,
+        alignment_sitting_standing: data.alignment_sitting_standing,
+        ctsib: data.ctsib,
+        getup_go_test: data.getup_go_test,
+        perceptual_impairment: data.perceptual_impairment,
+      },
+    };
+    console.log(payload);
+  };
+  const optionList = ["Normal", "Impaired"];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,7 +57,7 @@ const Form9 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form9)}>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-8">
@@ -54,6 +85,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("getup_go_test")}
                           />
                         </div>
                       </div>
@@ -73,6 +105,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("functional_reach_test")}
                           />
                         </div>
                       </div>
@@ -92,6 +125,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("tinetti_test")}
                           />
                         </div>
                       </div>
@@ -111,6 +145,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("berge_balance_test")}
                           />
                         </div>
                       </div>
@@ -144,6 +179,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("alignment_sitting_standing")}
                           />
                         </div>
                       </div>
@@ -163,6 +199,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("movement_sitting_standing")}
                           />
                         </div>
                       </div>
@@ -199,6 +236,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("ctsib")}
                           />
                         </div>
                       </div>
@@ -234,6 +272,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("cognitive_impairment")}
                           />
                         </div>
                       </div>
@@ -253,6 +292,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("musculoskeletal_impairment")}
                           />
                         </div>
                       </div>
@@ -272,6 +312,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("neuromuscular_mpairment")}
                           />
                         </div>
                       </div>
@@ -291,6 +332,7 @@ const Form9 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text Area"
+                            {...register("perceptual_impairment")}
                           />
                         </div>
                       </div>
@@ -310,32 +352,23 @@ const Form9 = () => {
                           <td>Small Movement</td>
                           <td>
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Normal</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Impired</p>
-                              </div>
+                              {optionList.map((items, index) => (
+                                <div className="col-md-6" key={index}>
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value={items}
+                                        {...register("sitting_small_movement")}
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">{items}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
                           </td>
                         </tr>
@@ -343,32 +376,23 @@ const Form9 = () => {
                           <td>Large Movement</td>
                           <td>
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Normal</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Impired</p>
-                              </div>
+                              {optionList.map((items, index) => (
+                                <div className="col-md-6" key={index}>
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value={items}
+                                        {...register("sitting_large_movement")}
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">{items}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
                           </td>
                         </tr>
@@ -385,32 +409,23 @@ const Form9 = () => {
                           <td>Ankle Strategy</td>
                           <td>
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Normal</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Impired</p>
-                              </div>
+                              {optionList.map((items, index) => (
+                                <div className="col-md-6" key={index}>
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value={items}
+                                        {...register("standing_ankle_strategy")}
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">{items}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
                           </td>
                         </tr>
@@ -418,32 +433,23 @@ const Form9 = () => {
                           <td>Hip Strategy</td>
                           <td>
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Normal</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Impired</p>
-                              </div>
+                              {optionList.map((items, index) => (
+                                <div className="col-md-6" key={index}>
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value={items}
+                                        {...register("standing_hip_strategy")}
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">{items}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
                           </td>
                         </tr>
@@ -451,32 +457,23 @@ const Form9 = () => {
                           <td>Stepping Strategy</td>
                           <td>
                             <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Normal</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  name="flexRadioDefault"
-                                  id="flexRadioDefault1"
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p>Impired</p>
-                              </div>
+                              {optionList.map((items, index) => (
+                                <div className="col-md-6" key={index}>
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value={items}
+                                        {...register("stepping_strategy")}
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">{items}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
                           </td>
                         </tr>
@@ -489,7 +486,12 @@ const Form9 = () => {
                 <ShortTermGoal />
                 <LongTermGoal />
                 <TreatmentPlan />
-              </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name9="active" id={appointmentId} />

@@ -1,9 +1,67 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
+import { useForm } from "react-hook-form";
 
 import { useRouter } from "next/router";
 const Form1 = () => {
   const { appointmentId } = useRouter().query;
+
+  const { register, handleSubmit } = useForm();
+  const submit_form1 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      rehab: {
+        aerobicCapacity: {
+          angina: data.angina,
+          oximetry: data.oximetry,
+          describe_short_term_goals: data.describe_short_term_goals,
+          sounds: data.sounds,
+          shortTerm_transfer_task: data.shortTerm_transfer_task,
+          during_bed_mobility: data.during_bed_mobility,
+          gas_exchange: data.gas_exchange,
+          shortTerm_ambulation_task: data.shortTerm_ambulation_task,
+          blood_pressure: data.blood_pressure,
+          respiratory_rhythm: data.respiratory_rhythm,
+          shortTerm_standarized_test: data.shortTerm_standarized_test,
+          shortTerm_at_rpe: data.shortTerm_at_rpe,
+          breath_voice_sounds: data.breath_voice_sounds,
+          cyanosis: data.cyanosis,
+          claudication: data.claudication,
+          respiratory_rate: data.respiratory_rate,
+          rhythm: data.rhythm,
+          identified_problems: data.identified_problems,
+          during_standarized_test: data.during_standarized_test,
+          heart_rate: data.heart_rate,
+          respiratory_pattern: data.respiratory_pattern,
+          during_transfer_task: data.during_transfer_task,
+          at_rpe: data.at_rpe,
+          shortTerm_bed_mobility: data.shortTerm_bed_mobility,
+          during_ambulation_task: data.during_ambulation_task,
+          longTerm_bed_mobility: data.longTerm_bed_mobility,
+          longTerm_transfer_task: data.longTerm_transfer_task,
+          longTerm_Ambulation_task: data.longTerm_Ambulation_task,
+          longTerm_Standarized_test: data.longTerm_Standarized_test,
+          longTerm_at_rpe: data.longTerm_at_rpe,
+          longTerm_description: data.longTerm_description,
+          aerobic_capacity_retraining:
+            data.aerobic_capacity_retraining.toString(),
+          treatment_plan: data.treatment_plan,
+        },
+      },
+    };
+    console.log(payload);
+  };
+
+  const retrainingList = [
+    "Bed Mobility Task",
+    "Transfer Task",
+    "ADL Task",
+    "IADL Task",
+    "Ambulation Task",
+    "Treadmill Task",
+    "Step Test Task",
+    "Wheelchair Mobility Task",
+  ];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -21,565 +79,152 @@ const Form1 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
-                <div className="gen-form">
-                  <div className="row justify-content-between align-items-start mb-3">
-                    <div className="col-md-9">
-                      <h3>
-                        Aerobic capacity during bed mobility (modified borg RPE
-                        scale)
-                      </h3>
-                    </div>
-                    <div className="col-md-3">
-                      <select
-                        className="form-select form-select-sm"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option selected>Select Score</option>
-                        <option value="1">0 - Nothing at all</option>
-                        <option value="2">0.5 - Just noticeable</option>
-                        <option value="3">1 - Very light</option>
-                        <option value="4">2 - Light</option>
-                        <option value="5">3 - Moderate</option>
-                        <option value="6">4 - Somewhat heavy</option>
-                        <option value="7">5 - Heavy</option>
-                        <option value="8">6</option>
-                        <option value="9">7 - Very heavy</option>
-                        <option value="10">8</option>
-                        <option value="11">9</option>
-                        <option value="12">10 - Very, very heavy</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between align-items-start mb-3">
-                    <div className="col-md-9">
-                      <h3>
-                        Aerobic capacity during transfer task (modified borg RPE
-                        scale)
-                      </h3>
-                    </div>
-                    <div className="col-md-3">
-                      <select
-                        className="form-select form-select-sm"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option selected>Select Score</option>
-                        <option value="1">0 - Nothing at all</option>
-                        <option value="2">0.5 - Just noticeable</option>
-                        <option value="3">1 - Very light</option>
-                        <option value="4">2 - Light</option>
-                        <option value="5">3 - Moderate</option>
-                        <option value="6">4 - Somewhat heavy</option>
-                        <option value="7">5 - Heavy</option>
-                        <option value="8">6</option>
-                        <option value="9">7 - Very heavy</option>
-                        <option value="10">8</option>
-                        <option value="11">9</option>
-                        <option value="12">10 - Very, very heavy</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between align-items-start mb-3">
-                    <div className="col-md-9">
-                      <h3>
-                        Aerobic capacity during Ambulation task (modified borg
-                        RPE scale)
-                      </h3>
-                    </div>
-                    <div className="col-md-3">
-                      <select
-                        className="form-select form-select-sm"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option selected>Select Score</option>
-                        <option value="1">0 - Nothing at all</option>
-                        <option value="2">0.5 - Just noticeable</option>
-                        <option value="3">1 - Very light</option>
-                        <option value="4">2 - Light</option>
-                        <option value="5">3 - Moderate</option>
-                        <option value="6">4 - Somewhat heavy</option>
-                        <option value="7">5 - Heavy</option>
-                        <option value="8">6</option>
-                        <option value="9">7 - Very heavy</option>
-                        <option value="10">8</option>
-                        <option value="11">9</option>
-                        <option value="12">10 - Very, very heavy</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
-                    <div className="col-md-7">
-                      <h3>Aerobic Capacity during standarized test includes</h3>
-                    </div>
-                    <div className="col-md-2">
-                      <select
-                        className="form-select form-select-sm"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option selected>Select Test</option>
-                        <option value="1">3 Mint Walk Test</option>
-                        <option value="2">6 Mint Walk Test</option>
-                        <option value="3">9 Mint Walk Test</option>
-                        <option value="4">12 Mint Walk Test</option>
-                        <option value="5">Treadmill Test</option>
-                        <option value="6">WC Mobility Test</option>
-                        <option value="7">Step Test</option>
-                      </select>
-                    </div>
-                    <div className="col-md-1">
-                      <p className="fs-6 fw-bold text-center">at RPE</p>
-                    </div>
-                    <div className="col-md-2">
-                      <select
-                        className="form-select form-select-sm"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option selected>Select Score</option>
-                        <option value="1">0 - Nothing at all</option>
-                        <option value="2">0.5 - Just noticeable</option>
-                        <option value="3">1 - Very light</option>
-                        <option value="4">2 - Light</option>
-                        <option value="5">3 - Moderate</option>
-                        <option value="6">4 - Somewhat heavy</option>
-                        <option value="7">5 - Heavy</option>
-                        <option value="8">6</option>
-                        <option value="9">7 - Very heavy</option>
-                        <option value="10">8</option>
-                        <option value="11">9</option>
-                        <option value="12">10 - Very, very heavy</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-content-between align-items-center mb-4">
-                  <div className="col-md-12">
-                    <h3>
-                      Cardiovascular and pulmonary signs and symptoms related to
-                      increase oxygen demand
-                    </h3>
-                  </div>
-                </div>
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-12">
-                    <div className="row">
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Blood pressure</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Text Area"
-                            />
-                          </div>
-                        </div>
+              <form onSubmit={handleSubmit(submit_form1)}>
+                <div>
+                  <div className="gen-form">
+                    <div className="row align-items-start mb-3">
+                      <div className="col-md-9">
+                        <h3>
+                          Aerobic capacity during bed mobility (modified borg
+                          RPE scale)
+                        </h3>
                       </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">
-                                  Breath & voice sounds
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select </option>
-                              <option value="1">Normal</option>
-                              <option value="2">Abnormal</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Heart Rate</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Text Area"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Cyanosis</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select Cyanosis </option>
-                              <option value="1">Central Cyanosis</option>
-                              <option value="2">Peripheral Cyanosis</option>
-                              <option value="3">Differential Cyanosis</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Rhythm</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select</option>
-                              <option value="1">Normal</option>
-                              <option value="2">Abnormal</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Gas Exchange</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select</option>
-                              <option value="1">Normal</option>
-                              <option value="2">Abnormal</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Sounds</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select </option>
-                              <option value="1">Normal</option>
-                              <option value="2">Abnormal</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Respiratory pattern</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select </option>
-                              <option value="1">Apnea</option>
-                              <option value="2">Eupnea</option>
-                              <option value="3">Orthopnea</option>
-                              <option value="4">Dyspnea</option>
-                              <option value="5">Hyperpnea</option>
-                              <option value="6">Hyperventilation</option>
-                              <option value="7">Hypoventilation</option>
-                              <option value="8">
-                                TachypneaKussmaul&apos;s respiration
-                              </option>
-                              <option value="9">
-                                Cheyne-stokes respiration
-                              </option>
-                              <option value="10">
-                                Blot&apos;s respiration
-                              </option>
-                              <option value="11">Apneustic breathing</option>
-                              <option value="12">
-                                Central neurogenic hyperventilation
-                              </option>
-                              <option value="13">
-                                Central neurogenic hypoventilation
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Angina</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select </option>
-                              <option value="1">Yes</option>
-                              <option value="2">No</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Respiratory Rate</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <input
-                              type="number"
-                              className="form-control"
-                              placeholder="Text Area"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Claudication</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select </option>
-                              <option value="1">Yes</option>
-                              <option value="2">No</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Respiratory Rhythm</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <select
-                              className="form-control form-select form-select-sm"
-                              aria-label=".form-select-sm example"
-                            >
-                              <option selected>Select </option>
-                              <option value="1">Normal</option>
-                              <option value="2">Abnormal</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-md-6 mb-3">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="row">
-                              <div className="col-md-12">
-                                <p className="space-x-4">Oximetry (%)</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <input
-                              type="number"
-                              className="form-control"
-                              placeholder="Text Area"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Identified Problems</h3>
-                  </div>
-                  <div className="col-md-9">
-                    <textarea
-                      className="form-control"
-                      rows="3"
-                      placeholder="Describe your problems here"
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Short Term Goals </h3>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate aerobic capacity for bed
-                          mobility task to
-                        </label>
-                      </div>
-                      <div className="col-md-5">
+                      <div className="col-md-3">
                         <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
+                          className="form-select"
+                          aria-label="default example"
+                          {...register("during_bed_mobility")}
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
+                          <option value="0 - Nothing at all">
+                            0 - Nothing at all
+                          </option>
+                          <option value="0.5 - Just noticeable">
+                            0.5 - Just noticeable
+                          </option>
+                          <option value="1 - Very light">1 - Very light</option>
+                          <option value="2 - Light">2 - Light</option>
+                          <option value="3 - Moderate">3 - Moderate</option>
+                          <option value="4 - Somewhat heavy">
+                            4 - Somewhat heavy
+                          </option>
+                          <option value="5 - Heavy">5 - Heavy</option>
+                          <option value="6">6</option>
+                          <option value="7 - Very heavy">7 - Very heavy</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10 - Very, very heavy">
+                            10 - Very, very heavy
+                          </option>
                         </select>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate aerobic capacity for
-                          transfer task to
-                        </label>
+                    <div className="row justify-content-between align-items-start mb-3">
+                      <div className="col-md-9">
+                        <h3>
+                          Aerobic capacity during transfer task (modified borg
+                          RPE scale)
+                        </h3>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-md-3">
                         <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
+                          className="form-select"
+                          aria-label="default example"
+                          {...register("during_transfer_task")}
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
+                          <option value="0 - Nothing at all">
+                            0 - Nothing at all
+                          </option>
+                          <option value="0.5 - Just noticeable">
+                            0.5 - Just noticeable
+                          </option>
+                          <option value="1 - Very light">1 - Very light</option>
+                          <option value="2 - Light">2 - Light</option>
+                          <option value="3 - Moderate">3 - Moderate</option>
+                          <option value="4 - Somewhat heavy">
+                            4 - Somewhat heavy
+                          </option>
+                          <option value="5 - Heavy">5 - Heavy</option>
+                          <option value="6">6</option>
+                          <option value="7 - Very heavy">7 - Very heavy</option>
+                          <option value="7 - Very heavy">8</option>
+                          <option value="9">9</option>
+                          <option value="10 - Very, very heavy">
+                            10 - Very, very heavy
+                          </option>
                         </select>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate aerobic capacity for
-                          ambulation task to
-                        </label>
+                    <div className="row justify-content-between align-items-start mb-3">
+                      <div className="col-md-9">
+                        <h3>
+                          Aerobic capacity during Ambulation task (modified borg
+                          RPE scale)
+                        </h3>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-md-3">
                         <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
+                          className="form-select"
+                          aria-label="default example"
+                          {...register("during_ambulation_task")}
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
+                          <option value="0 - Nothing at all">
+                            0 - Nothing at all
+                          </option>
+                          <option value="0.5 - Just noticeable">
+                            0.5 - Just noticeable
+                          </option>
+                          <option value="1 - Very light">1 - Very light</option>
+                          <option value="2 - Light">2 - Light</option>
+                          <option value="3 - Moderate">3 - Moderate</option>
+                          <option value="4 - Somewhat heavy">
+                            4 - Somewhat heavy
+                          </option>
+                          <option value="5 - Heavy">5 - Heavy</option>
+                          <option value="6">6</option>
+                          <option value="7 - Very heavy">7 - Very heavy</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10 - Very, very heavy">
+                            10 - Very, very heavy
+                          </option>
                         </select>
                       </div>
                     </div>
+                  </div>
+                  <div className="gen-form">
                     <div className="row justify-content-between align-items-start">
                       <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate during standarized
-                        </label>
+                        <h3>
+                          Aerobic Capacity during standarized test includes
+                        </h3>
                       </div>
                       <div className="col-md-2">
                         <select
                           className="form-select form-select-sm"
                           aria-label=".form-select-sm example"
+                          {...register("during_standarized_test")}
                         >
                           <option selected>Select Test</option>
-                          <option value="1">3 Mint Walk Test</option>
-                          <option value="2">6 Mint Walk Test</option>
-                          <option value="3">9 Mint Walk Test</option>
-                          <option value="4">12 Mint Walk Test</option>
-                          <option value="5">Treadmill Test</option>
-                          <option value="6">WC Mobility Test</option>
-                          <option value="7">Step Test</option>
+                          <option value="3 Mint Walk Test">
+                            3 Mint Walk Test
+                          </option>
+                          <option value="6 Mint Walk Test">
+                            6 Mint Walk Test
+                          </option>
+                          <option value="9 Mint Walk Test">
+                            9 Mint Walk Test
+                          </option>
+                          <option value="12 Mint Walk Test">
+                            12 Mint Walk Test
+                          </option>
+                          <option value="Treadmill Test">Treadmill Test</option>
+                          <option value="WC Mobility Test">
+                            WC Mobility Test
+                          </option>
+                          <option value="Step Test">Step Test</option>
                         </select>
                       </div>
                       <div className="col-md-1">
@@ -589,271 +234,846 @@ const Form1 = () => {
                         <select
                           className="form-select form-select-sm"
                           aria-label=".form-select-sm example"
+                          {...register("at_rpe")}
                         >
                           <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
+                          <option value="0 - Nothing at all">
+                            0 - Nothing at all
+                          </option>
+                          <option value="0.5 - Just noticeable">
+                            0.5 - Just noticeable
+                          </option>
+                          <option value="1 - Very light">1 - Very light</option>
+                          <option value="2 - Light">2 - Light</option>
+                          <option value="3 - Moderate">3 - Moderate</option>
+                          <option value="4 - Somewhat heavy">
+                            4 - Somewhat heavy
+                          </option>
+                          <option value="5 - Heavy">5 - Heavy</option>
+                          <option value="6">6</option>
+                          <option value="7 - Very heavy">7 - Very heavy</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10 - Very, very heavy">
+                            10 - Very, very heavy
+                          </option>
                         </select>
                       </div>
                     </div>
-                    <textarea
-                      className="form-control"
-                      placeholder="Describe your problems here"
-                    ></textarea>
                   </div>
                 </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Long Term Goals </h3>
+                <div className="gen-form">
+                  <div className="row justify-content-between align-items-center mb-4">
+                    <div className="col-md-12">
+                      <h3>
+                        Cardiovascular and pulmonary signs and symptoms related
+                        to increase oxygen demand
+                      </h3>
+                    </div>
                   </div>
-                  <div className="col-md-9">
-                    <div className="row">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate aerobic capacity for bed
-                          mobility task to
-                        </label>
-                      </div>
-                      <div className="col-md-5">
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate aerobic capacity for
-                          transfer task to
-                        </label>
-                      </div>
-                      <div className="col-md-5">
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate aerobic capacity for
-                          ambulation task to
-                        </label>
-                      </div>
-                      <div className="col-md-5">
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="row justify-content-between align-items-start">
-                      <div className="col-md-7">
-                        <label className="mb-3">
-                          Patients will demonstrate during standarized
-                        </label>
-                      </div>
-                      <div className="col-md-2">
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select Test</option>
-                          <option value="1">3 Mint Walk Test</option>
-                          <option value="2">6 Mint Walk Test</option>
-                          <option value="3">9 Mint Walk Test</option>
-                          <option value="4">12 Mint Walk Test</option>
-                          <option value="5">Treadmill Test</option>
-                          <option value="6">WC Mobility Test</option>
-                          <option value="7">Step Test</option>
-                        </select>
-                      </div>
-                      <div className="col-md-1">
-                        <p className="fs-6 fw-bold text-center">at RPE</p>
-                      </div>
-                      <div className="col-md-2">
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label=".form-select-sm example"
-                        >
-                          <option selected>Select Score</option>
-                          <option value="1">0 - Nothing at all</option>
-                          <option value="2">0.5 - Just noticeable</option>
-                          <option value="3">1 - Very light</option>
-                          <option value="4">2 - Light</option>
-                          <option value="5">3 - Moderate</option>
-                          <option value="6">4 - Somewhat heavy</option>
-                          <option value="7">5 - Heavy</option>
-                          <option value="8">6</option>
-                          <option value="9">7 - Very heavy</option>
-                          <option value="10">8</option>
-                          <option value="11">9</option>
-                          <option value="12">10 - Very, very heavy</option>
-                        </select>
-                      </div>
-                    </div>
-                    <textarea
-                      className="form-control"
-                      placeholder="Describe your problems here"
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-centent-between align-items-center">
-                  <div className="col-md-3">
-                    <h3>Treatment Plan </h3>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="row align-items-center">
-                      <div className="col-md-4">
-                        <label className="mb-3">
-                          Aerobic capacity retraining for
-                        </label>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="row mb-3">
-                          <div className="col-md-3">
-                            <div className="check-item">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-12">
+                      <div className="row">
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Blood pressure</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
                               <input
-                                type="checkbox"
-                                className="form-check-input"
+                                type="text"
+                                className="form-control"
+                                placeholder="Text Area"
+                                name="blood_pressure"
+                                {...register("blood_pressure")}
                               />
-                              <label className="ps-2">Bed Mobility Task</label>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="check-item">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                              />
-                              <label className="ps-2">Transfer Task</label>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">
+                                    Breath & voice sounds
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("Breath_voice_sounds")}
+                              >
+                                <option selected>Select </option>
+                                <option value="Normal">Normal</option>
+                                <option value="Abnormal">Abnormal</option>
+                              </select>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="check-item">
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Heart Rate</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
                               <input
-                                type="checkbox"
-                                className="form-check-input"
+                                type="text"
+                                className="form-control"
+                                placeholder="Text Area"
+                                name="heart_rate"
+                                {...register("heart_rate")}
                               />
-                              <label className="ps-2">ADL Task</label>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="check-item">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                              />
-                              <label className="ps-2">IADL Task</label>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Cyanosis</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("cyanosis")}
+                              >
+                                <option selected>Select Cyanosis </option>
+                                <option value="Central Cyanosis">
+                                  Central Cyanosis
+                                </option>
+                                <option value="Peripheral Cyanosis">
+                                  Peripheral Cyanosis
+                                </option>
+                                <option value="Differential Cyanosis">
+                                  Differential Cyanosis
+                                </option>
+                              </select>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="check-item">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                              />
-                              <label className="ps-2">Ambulation Task</label>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Rhythm</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("rhythm")}
+                              >
+                                <option selected>Select</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Abnormal">Abnormal</option>
+                              </select>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="check-item">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                              />
-                              <label className="ps-2">Treadmill Task</label>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Gas Exchange</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("gas_exchange")}
+                              >
+                                <option selected>Select</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Abnormal">Abnormal</option>
+                              </select>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="check-item">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                              />
-                              <label className="ps-2">Step Test Task</label>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Sounds</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("sounds")}
+                              >
+                                <option selected>Select </option>
+                                <option value="Normal">Normal</option>
+                                <option value="Abnormal">Abnormal</option>
+                              </select>
                             </div>
                           </div>
-                          <div className="col-md-6">
-                            <div className="check-item">
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">
+                                    Respiratory pattern
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("respiratory_pattern")}
+                              >
+                                <option selected>Select </option>
+                                <option value="Apnea">Apnea</option>
+                                <option value="Eupnea">Eupnea</option>
+                                <option value="Orthopnea">Orthopnea</option>
+                                <option value="Dyspnea">Dyspnea</option>
+                                <option value="Hyperpnea">Hyperpnea</option>
+                                <option value="Hyperventilation">
+                                  Hyperventilation
+                                </option>
+                                <option value="Hypoventilation">
+                                  Hypoventilation
+                                </option>
+                                <option value="TachypneaKussmaul's respiration">
+                                  TachypneaKussmaul&apos;s respiration
+                                </option>
+                                <option value="Cheyne-stokes respiration">
+                                  Cheyne-stokes respiration
+                                </option>
+                                <option value="Blot's respiration">
+                                  Blot&apos;s respiration
+                                </option>
+                                <option value="Apneustic breathing">
+                                  Apneustic breathing
+                                </option>
+                                <option value="Central neurogenic hyperventilation">
+                                  Central neurogenic hyperventilation
+                                </option>
+                                <option value="Central neurogenic hypoventilation">
+                                  Central neurogenic hypoventilation
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Angina</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("angina")}
+                              >
+                                <option selected>Select </option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Respiratory Rate</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
                               <input
-                                type="checkbox"
-                                className="form-check-input"
+                                type="number"
+                                className="form-control"
+                                placeholder="Text Area"
+                                name="respiratory_rate"
+                                {...register("respiratory_rate")}
                               />
-                              <label className="ps-2">
-                                Wheelchair Mobility Task
-                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Claudication</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("claudication")}
+                              >
+                                <option selected>Select </option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">
+                                    Respiratory Rhythm
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <select
+                                className="form-control form-select form-select-sm"
+                                aria-label=".form-select-sm example"
+                                {...register("respiratory_rhythm")}
+                              >
+                                <option selected>Select </option>
+                                <option value="Normal">Normal</option>
+                                <option value="Abnormal">Abnormal</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="col-md-6 mb-3">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-12">
+                                  <p className="space-x-4">Oximetry (%)</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <input
+                                type="number"
+                                className="form-control"
+                                placeholder="Text Area"
+                                name="oximetry"
+                                {...register("oximetry")}
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <textarea
-                      className="form-control"
-                      rows="3"
-                      placeholder="Describe your problems here"
-                    ></textarea>
                   </div>
                 </div>
-              </div>
+
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <div className="row">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate aerobic capacity for bed
+                            mobility task to
+                          </label>
+                        </div>
+                        <div className="col-md-5">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("shortTerm_bed_mobility")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate aerobic capacity for
+                            transfer task to
+                          </label>
+                        </div>
+                        <div className="col-md-5">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("shortTerm_transfer_task")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate aerobic capacity for
+                            ambulation task to
+                          </label>
+                        </div>
+                        <div className="col-md-5">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("shortTerm_ambulation_task")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row justify-content-between align-items-start">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate during standarized
+                          </label>
+                        </div>
+                        <div className="col-md-2">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("shortTerm_standarized_test")}
+                          >
+                            <option selected>Select Test</option>
+                            <option value="3 Mint Walk Test">
+                              3 Mint Walk Test
+                            </option>
+                            <option value="6 Mint Walk Test">
+                              6 Mint Walk Test
+                            </option>
+                            <option value="9 Mint Walk Test">
+                              9 Mint Walk Test
+                            </option>
+                            <option value="12 Mint Walk Test">
+                              12 Mint Walk Test
+                            </option>
+                            <option value="Treadmill Test">
+                              Treadmill Test
+                            </option>
+                            <option value="WC Mobility Test">
+                              WC Mobility Test
+                            </option>
+                            <option value="Step Test">Step Test</option>
+                          </select>
+                        </div>
+                        <div className="col-md-1">
+                          <p className="fs-6 fw-bold text-center">at RPE</p>
+                        </div>
+                        <div className="col-md-2">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("shortTerm_at_rpe")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("describe_short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <div className="row">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate aerobic capacity for bed
+                            mobility task to
+                          </label>
+                        </div>
+                        <div className="col-md-5">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("longTerm_bed_mobility")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate aerobic capacity for
+                            transfer task to
+                          </label>
+                        </div>
+                        <div className="col-md-5">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("longTerm_transfer_task")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate aerobic capacity for
+                            ambulation task to
+                          </label>
+                        </div>
+                        <div className="col-md-5">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("longTerm_Ambulation_task")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row justify-content-between align-items-start">
+                        <div className="col-md-7">
+                          <label className="mb-3">
+                            Patients will demonstrate during standarized
+                          </label>
+                        </div>
+                        <div className="col-md-2">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("longTerm_Standarized_test")}
+                          >
+                            <option selected>Select Test</option>
+                            <option value="3 Mint Walk Test">
+                              3 Mint Walk Test
+                            </option>
+                            <option value="6 Mint Walk Test">
+                              6 Mint Walk Test
+                            </option>
+                            <option value="9 Mint Walk Test">
+                              9 Mint Walk Test
+                            </option>
+                            <option value="12 Mint Walk Test">
+                              12 Mint Walk Test
+                            </option>
+                            <option value="Treadmill Test">
+                              Treadmill Test
+                            </option>
+                            <option value="WC Mobility Test">
+                              WC Mobility Test
+                            </option>
+                            <option value="Step Test">Step Test</option>
+                          </select>
+                        </div>
+                        <div className="col-md-1">
+                          <p className="fs-6 fw-bold text-center">at RPE</p>
+                        </div>
+                        <div className="col-md-2">
+                          <select
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            {...register("longTerm_at_rpe")}
+                          >
+                            <option selected>Select Score</option>
+                            <option value="0 - Nothing at all">
+                              0 - Nothing at all
+                            </option>
+                            <option value="0.5 - Just noticeable">
+                              0.5 - Just noticeable
+                            </option>
+                            <option value="1 - Very light">
+                              1 - Very light
+                            </option>
+                            <option value="2 - Light">2 - Light</option>
+                            <option value="3 - Moderate">3 - Moderate</option>
+                            <option value="4 - Somewhat heavy">
+                              4 - Somewhat heavy
+                            </option>
+                            <option value="5 - Heavy">5 - Heavy</option>
+                            <option value="6">6</option>
+                            <option value="7 - Very heavy">
+                              7 - Very heavy
+                            </option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10 - Very, very heavy">
+                              10 - Very, very heavy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("longTerm_description")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <div className="row align-items-center">
+                        <div className="col-md-2">
+                          <label className="mb-3 fs-6 fw-bold">
+                            Aerobic capacity retraining for
+                          </label>
+                        </div>
+                        <div className="col-md-10">
+                          <div className="row mb-3">
+                            {retrainingList.map((items, index) => (
+                              <div className="col-md-3" key={index}>
+                                <div className="form check form-check-inline">
+                                  <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    value={items}
+                                    {...register("aerobic_capacity_retraining")}
+                                  />
+                                  <label className="ps-2">{items}</label>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

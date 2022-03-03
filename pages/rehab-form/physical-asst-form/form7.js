@@ -7,8 +7,71 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form7 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form7 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      postural_assessment: {
+        fett: data.fett,
+        knee: data.knee,
+        pelvis: data.pelvis,
+        lower_back: data.lower_back,
+        upper_back: data.upper_back,
+        thorax: data.thorax,
+        spine: data.spine,
+        abdomen: data.abdomen,
+        shoulder: data.shoulder,
+        head: data.head,
+        identified_problems: data.identified_problems,
+        short_term_goals: data.short_term_goals,
+        long_term_goals: data.long_term_goals,
+        treatment_plan: data.treatment_plan,
+      },
+    };
+    console.log(payload);
+  };
+  const feetList = [
+    "Hammer toes",
+    "Hallux valgus",
+    "Low ant arch",
+    "Ant foot varus",
+    "Pronated",
+    "Supinated",
+    "Flat Long arch",
+    "Pigeon toes",
+    "Medial Rotation",
+    "Lat rotation",
+    "Knock Knees",
+  ];
+  const kneeList = ["Hyperextension", "Flexion", "Bowlegs", "Tibial torsion"];
+  const pelvisList = [
+    "Leg in postural adduction",
+    "Rotation",
+    "Tilt",
+    "Deviation",
+  ];
+
+  const lowBackList = ["Lordosis", "Flat Back", "Kyphosis", "Operation"];
+  const upperBackList = [
+    "Kyphosis",
+    "Flat UP back",
+    "Scaulae abducted",
+    "Scalulae Elevated",
+  ];
+  const thoraxList = [
+    "Depressed chest",
+    "Elevated chest",
+    "Rotation",
+    "Deviation",
+  ];
+  const spineList = ["Total Curved", "Lumbar", "Thoracic", "Cervical"];
+  const abdomenList = ["Protruding", "Scars"];
+  const shoulderList = ["Low", "High", "Forward", "Med Rotated"];
+  const headList = ["Forward", "Torticollis", "Tilt", "Rotation"];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,795 +89,344 @@ const Form7 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form7)}>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Segmental Alignment:</h3>
-                  <div className="row justify-content-between align-items-start">
+                  <p className="fs-5 fw-bold mt-4 mb-4">Segmental Alignment:</p>
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Feet</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {feetList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("fett")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Hammer toes</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Hallux valgus</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Low ant arch</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Ant foot varus</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Pronated</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Supinated</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Flat Long arch</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Pigeon toes</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Medial Rotation</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Lat rotation</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Knock Knees</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Knee</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {kneeList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("knee")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Hyperextension</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Flexion</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Bowlegs</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Tibial torsion</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Pelvis</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {pelvisList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("pelvis")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">
-                                Leg in postural adduction
-                              </p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Rotation</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Tilt</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Deviation</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Lowback</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {lowBackList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("lower_back")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Lordosis</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Flat Back</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Kyphosis</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Operation</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Upperback</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {upperBackList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("upper_back")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Kyphosis</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Flat UP back</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Scaulae abducted</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Scalulae Elevated</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Thorax</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {thoraxList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("thorax")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Depressed chest</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Elevated chest</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Rotation</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Deviation</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Spine</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {spineList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("spine")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Total Curved</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Lumbar</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Thoracic</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Cervical</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Abdomen</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {abdomenList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("abdomen")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Protruding</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Scars</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Shoulder</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {shoulderList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("shoulder")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Low</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">High</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Forward</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Med Rotated</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <div className="row justify-content-between align-items-start">
+                  <div className="row align-items-center">
                     <div className="col-md-4">
                       <h3>Head</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
+                        {headList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div
+                              className="form-check form-check-inline"
+                              key={index}
+                            >
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value={items}
+                                {...register("head")}
                               />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Forward</p>
+                              <label
+                                className="form-check-label"
+                                for="inlineRadio1"
+                              >
+                                {items}
+                              </label>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Torticollis</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Tilt</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Rotation</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -824,7 +436,12 @@ const Form7 = () => {
                 <ShortTermGoal />
                 <LongTermGoal />
                 <TreatmentPlan />
-              </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name7="active" id={appointmentId} />

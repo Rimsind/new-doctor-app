@@ -7,9 +7,42 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 
 const Form4 = () => {
   const { appointmentId } = useRouter().query;
+
+  const { register, handleSubmit } = useForm();
+  const submit_form4 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      rehab: {
+        arousal_assesment: {
+          mini_mental_test: data.mini_mental_test,
+          sustained: data.sustained,
+          motivation_to_participate: data.motivation_to_participate,
+          ability_to_recognise: data.ability_to_recognise,
+          consciousness: data.consciousness,
+          orientation: data.orientation,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          judgement: data.judgement,
+          communication: data.communication,
+          preparation: data.preparation,
+          alternating: data.alternating,
+          identified_problems: data.identified_problems,
+          production: data.production,
+          focussed: data.focussed,
+          selective: data.selective,
+          attention: data.attention,
+        },
+      },
+    };
+    console.log(payload);
+  };
+
+  const optionList = ["Normal", "Impaired"];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -27,7 +60,7 @@ const Form4 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form4)}>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
@@ -35,36 +68,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("attention")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -76,36 +96,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("focussed")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -117,36 +124,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("sustained")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -158,36 +152,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("selective")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -199,36 +180,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("alternating")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -240,36 +208,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("orientation")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -281,36 +236,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("ability_to_recognise")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -328,8 +270,8 @@ const Form4 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="coma"
+                                {...register("consciousness")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -337,36 +279,23 @@ const Form4 = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="col-md-4">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-4" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("consciousness")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -378,36 +307,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("motivation_to_participate")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -419,78 +335,52 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("communication")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Problem Solving:</h3>
+                  <p className="fs-5 fw-bold mt-4 mb-4">Problem Solving:</p>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
                       <h3>Preparation</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("preparation")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -502,36 +392,23 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("production")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -543,78 +420,52 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("judgement")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Short Term Memory:</h3>
+                  <p className="fs-5 fw-bold mt-4 mb-4">Short Term Memory:</p>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
                       <h3>Mini Mental Test</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Normal</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Impaired</p>
+                        {optionList.map((items, index) => (
+                          <div className="col-md-6" key={index}>
+                            <div className="row">
+                              <div className="col-md-4">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  value={items}
+                                  {...register("mini_mental_test")}
+                                />
+                              </div>
+                              <div className="col-md-8">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -623,7 +474,12 @@ const Form4 = () => {
                 <ShortTermGoal />
                 <LongTermGoal />
                 <TreatmentPlan />
-              </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name4="active" id={appointmentId} />

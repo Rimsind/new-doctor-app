@@ -7,8 +7,23 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form3 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form3 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      rehab: {
+        circulatory_assesment: {
+          physiological_response: data.physiological_response,
+          peripheral_venous: data.peripheral_venous,
+          presence_of_bruits: data.presence_of_bruits,
+        },
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -27,7 +42,7 @@ const Form3 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form3)}>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-8">
@@ -38,6 +53,7 @@ const Form3 = () => {
                         type="text"
                         className="form-control"
                         placeholder="Text Area"
+                        {...register("physiological_response")}
                       />
                     </div>
                   </div>
@@ -55,32 +71,40 @@ const Form3 = () => {
                         type="text"
                         className="form-control"
                         placeholder="Text Area"
+                        {...register("peripheral_venous")}
                       />
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="gen-form">
-                <div className="row justify-content-between align-items-start">
-                  <div className="col-md-8">
-                    <h3>
-                      Presence of bruits, abnormal heart sounds, rate or
-                      rhytm,vital signs at rest
-                    </h3>
-                  </div>
-                  <div className="col-md-4">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Text Area"
-                    />
+
+                <div className="gen-form">
+                  <div className="row justify-content-between align-items-start">
+                    <div className="col-md-8">
+                      <h3>
+                        Presence of bruits, abnormal heart sounds, rate or
+                        rhytm,vital signs at rest
+                      </h3>
+                    </div>
+                    <div className="col-md-4">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Text Area"
+                        {...register("presence_of_bruits")}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <IdentifiedProblem />
-              <ShortTermGoal />
-              <LongTermGoal />
-              <TreatmentPlan />
+                <IdentifiedProblem />
+                <ShortTermGoal />
+                <LongTermGoal />
+                <TreatmentPlan />
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

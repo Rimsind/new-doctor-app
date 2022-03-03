@@ -7,8 +7,38 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form8 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form8 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      gait_assesment: {
+        foot_flat_ankle: data.foot_flat_ankle,
+        heel_strike_trunk: data.heel_strike_trunk,
+        acceleration_knee: data.acceleration_knee,
+        heel_of_hip: data.heel_of_hip,
+        heel_strike_ankle: data.heel_strike_ankle,
+        heel_of_trunk: data.heel_of_trunk,
+        heel_of_ankle: data.heel_of_ankle,
+        short_term_goals: data.short_term_goals,
+        treatment_plan: data.treatment_plan,
+        acceleration_hip: data.acceleration_hip,
+        heel_of_knee: data.heel_of_knee,
+        long_term_goals: data.long_term_goals,
+        heel_strike_knee: data.heel_strike_knee,
+        acceleration_trunk: data.acceleration_trunk,
+        identified_problems: data.identified_problems,
+        acceleration_ankle: data.acceleration_ankle,
+        foot_flat_knee: data.foot_flat_knee,
+        foot_flat_hip: data.foot_flat_hip,
+        heel_strike_hip: data.heel_strike_hip,
+        foot_flat_trunk: data.foot_flat_trunk,
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,534 +56,543 @@ const Form8 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div className="gen-form-table mt-4">
-                <table className="table table-bordered border-dark">
-                  <tr>
-                    <th></th>
-                    <th>Ankle</th>
-                    <th>Knee</th>
-                    <th>Hip</th>
-                    <th>Trunk</th>
-                  </tr>
-                  <tr>
-                    <td rowSpan="3">Heel Strike To Foot Flat</td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+              <form onSubmit={handleSubmit(submit_form8)}>
+                <div className="gen-form-table mt-4">
+                  <table className="table table-bordered border-dark">
+                    <tr>
+                      <th></th>
+                      <th>Ankle</th>
+                      <th>Knee</th>
+                      <th>Hip</th>
+                      <th>Trunk</th>
+                    </tr>
+                    <tr>
+                      <td rowSpan="3">Heel Strike To Foot Flat</td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Foot Slap"
+                              {...register("heel_strike_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Foot Slap</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Foot Slap</p>
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Knee Hyperextension"
+                              {...register("heel_strike_knee")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Knee Hyperextension</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Excessive Flexion"
+                              {...register("heel_strike_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Excessive Flexion</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Knee Hyperextension</p>
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Lateral Trunk Lean"
+                              {...register("heel_strike_trunk")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Lateral Trunk Lean</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Toes First"
+                              {...register("heel_strike_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Toes First</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Excessive Flexion</p>
+                      </td>
+                      <td></td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Limited Flexion"
+                              {...register("heel_strike_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Limited Flexion</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Backward Trunk Lean"
+                              {...register("heel_strike_trunk")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Backward Trunk Lean</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Lateral Trunk Lean</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Foot Flat"
+                              {...register("heel_strike_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Foot Flat</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Forward Trunk Lean"
+                              {...register("heel_strike_trunk")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Forward Trunk Lean</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Toes First</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowSpan="5">Foot Flat To Mid Stance</td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Excessive Positional"
+                              {...register("foot_flat_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Excessive Positional</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td></td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Knee Hyper Extension"
+                              {...register("foot_flat_knee")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Knee Hyper Extension</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Limited Flexion</p>
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Limited Hip Extension"
+                              {...register("foot_flat_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Limited Hip Extension</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Palnter Flexion"
+                              {...register("foot_flat_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Palnter Flexion</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Backward Trunk Lean</p>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Internal Rotation"
+                              {...register("foot_flat_trunk")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Internal Rotation</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Heel Lift in Mid Stance"
+                              {...register("foot_flat_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Heel Lift in Mid Stance</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Foot Flat</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Forward Trunk Lean</p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowSpan="5">Foot Flat To Mid Stance</td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Excessive Positional</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Knee Hyper Extension</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Limited Hip Extension</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Palnter Flexion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Internal Rotation</p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Heel Lift in Mid Stance</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
+                      </td>
+                      <td></td>
 
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="External Rotation"
+                              {...register("foot_flat_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>External Rotation</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>External Rotation</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Excessive Dorsiflexion"
+                              {...register("foot_flat_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Excessive Dorsiflexion</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Excessive Dorsiflexion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
+                      </td>
+                      <td></td>
 
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Abduction"
+                              {...register("foot_flat_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Abduction</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Abduction</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Toe Clawing"
+                              {...register("foot_flat_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Toe Clawing</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Toe Clawing</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
+                      </td>
+                      <td></td>
 
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Adduction"
+                              {...register("foot_flat_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Adduction</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Adduction</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td rowSpan="3">Heel Off To Toe Off</td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="No Roll Off"
+                              {...register("heel_of_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>No Roll Off</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td rowSpan="3">Heel Off To Toe Off</td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Insufficient Transfer of Excessive Knee Flexion"
+                              {...register("heel_of_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>
+                              Insufficient Transfer of Excessive Knee Flexion
+                            </p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>No Roll Off</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Insufficient Transfer of Excessive Knee Flexion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
+                      </td>
+                      <td></td>
 
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Weight From Lateral Heel to Medial Forefoot"
+                              {...register("heel_of_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Weight From Lateral Heel to Medial Forefoot</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Weight From Lateral Heel to Medial Forefoot</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
+                      </td>
+                      <td></td>
 
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td rowSpan="3">Acceleration To Mid Swing</td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td rowSpan="3">Acceleration To Mid Swing</td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Toe Drag Excessive Knee Flexion"
+                              {...register("acceleration_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Toe Drag Excessive Knee Flexion</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Toe Drag Excessive Knee Flexion</p>
+                      </td>
+                      <td></td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Circumduction"
+                              {...register("acceleration_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Circumduction</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td></td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Varus"
+                              {...register("acceleration_ankle")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Varus</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Circumduction</p>
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Limited Knee Flexion"
+                              {...register("acceleration_knee")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Limited Knee Flexion</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Hip Hiking"
+                              {...register("acceleration_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Hip Hiking</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Varus</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Limited Knee Flexion"
+                              {...register("acceleration_knee")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Limited Knee Flexion</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
+                      </td>
+                      <td>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value="Excessive Hip Flexion"
+                              {...register("acceleration_hip")}
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p>Excessive Hip Flexion</p>
+                          </div>
                         </div>
-                        <div className="col-md-10">
-                          <p>Limited Knee Flexion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Hip Hiking</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Limited Knee Flexion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="row">
-                        <div className="col-md-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                        </div>
-                        <div className="col-md-10">
-                          <p>Excessive Hip Flexion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                </table>
-              </div>
-              <IdentifiedProblem />
-              <ShortTermGoal />
-              <LongTermGoal />
-              <TreatmentPlan />
+                      </td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+                <IdentifiedProblem />
+                <ShortTermGoal />
+                <LongTermGoal />
+                <TreatmentPlan />
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name8="active" id={appointmentId} />
