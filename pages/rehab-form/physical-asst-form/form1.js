@@ -309,7 +309,7 @@ const Form1 = () => {
                               <select
                                 className="form-control form-select form-select-sm"
                                 aria-label=".form-select-sm example"
-                                {...register("Breath_voice_sounds")}
+                                {...register("breath_voice_sounds")}
                               >
                                 <option selected>Select </option>
                                 <option value="Normal">Normal</option>

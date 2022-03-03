@@ -1,11 +1,5 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 const Form8 = () => {
@@ -14,27 +8,25 @@ const Form8 = () => {
   const submit_form8 = (data, event) => {
     event.preventDefault();
     const payload = {
-      gait_assesment: {
-        foot_flat_ankle: data.foot_flat_ankle,
-        heel_strike_trunk: data.heel_strike_trunk,
-        acceleration_knee: data.acceleration_knee,
-        heel_of_hip: data.heel_of_hip,
-        heel_strike_ankle: data.heel_strike_ankle,
-        heel_of_trunk: data.heel_of_trunk,
-        heel_of_ankle: data.heel_of_ankle,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        acceleration_hip: data.acceleration_hip,
-        heel_of_knee: data.heel_of_knee,
-        long_term_goals: data.long_term_goals,
-        heel_strike_knee: data.heel_strike_knee,
-        acceleration_trunk: data.acceleration_trunk,
-        identified_problems: data.identified_problems,
-        acceleration_ankle: data.acceleration_ankle,
-        foot_flat_knee: data.foot_flat_knee,
-        foot_flat_hip: data.foot_flat_hip,
-        heel_strike_hip: data.heel_strike_hip,
-        foot_flat_trunk: data.foot_flat_trunk,
+      rehab: {
+        gait_assesment: {
+          foot_flat_ankle: data.foot_flat_ankle.toString(),
+          heel_strike_trunk: data.heel_strike_trunk.toString(),
+          acceleration_knee: data.acceleration_knee.toString(),
+          heel_strike_ankle: data.heel_strike_ankle.toString(),
+          heel_of_ankle: data.heel_of_ankle.toString(),
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          acceleration_hip: data.acceleration_hip.toString(),
+          long_term_goals: data.long_term_goals,
+          heel_strike_knee: data.heel_strike_knee.toString(),
+          identified_problems: data.identified_problems,
+          acceleration_ankle: data.acceleration_ankle.toString(),
+          foot_flat_knee: data.foot_flat_knee.toString(),
+          foot_flat_hip: data.foot_flat_hip.toString(),
+          heel_strike_hip: data.heel_strike_hip.toString(),
+          foot_flat_trunk: data.foot_flat_trunk.toString(),
+        },
       },
     };
     console.log(payload);
@@ -583,10 +575,64 @@ const Form8 = () => {
                     </tr>
                   </table>
                 </div>
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
                 <div className="submit-btn mt-2 text-center">
                   <button className="btn btn-primary" type="submit">
                     Save Changes

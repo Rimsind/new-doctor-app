@@ -14,24 +14,26 @@ const Form6 = () => {
   const submit_form6 = (data, event) => {
     event.preventDefault();
     const payload = {
-      reflex_sensory_assessment: {
-        cold: data.cold,
-        sharp: data.sharp,
-        joint_motion: data.joint_motion,
-        hot: data.hot,
-        stereognosis: data.stereognosis,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        two_point_discrimination: data.two_point_discrimination,
-        dull: data.dull,
-        touch_pressure_threshold: data.touch_pressure_threshold,
-        vibration: data.vibration,
-        touch_awareness: data.touch_awareness,
-        identified_problems: data.identified_problems,
-        touch_localization: data.touch_localization,
-        reflex_examination: data.reflex_examination,
-        joint_position: data.joint_position,
+      rehab: {
+        reflex_sensory_assessment: {
+          cold: data.cold,
+          sharp: data.sharp,
+          joint_motion: data.joint_motion,
+          hot: data.hot,
+          stereognosis: data.stereognosis,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          two_point_discrimination: data.two_point_discrimination,
+          dull: data.dull,
+          touch_pressure_threshold: data.touch_pressure_threshold,
+          vibration: data.vibration,
+          touch_awareness: data.touch_awareness,
+          identified_problems: data.identified_problems,
+          touch_localization: data.touch_localization,
+          reflex_examination: data.reflex_examination,
+          joint_position: data.joint_position,
+        },
       },
     };
     console.log(payload);
@@ -497,10 +499,64 @@ const Form6 = () => {
                     </div>
                   </div>
                 </div>
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
                 <div className="submit-btn mt-2 text-center">
                   <button className="btn btn-primary" type="submit">
                     Save Changes
