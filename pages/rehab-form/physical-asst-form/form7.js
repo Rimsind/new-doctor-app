@@ -101,11 +101,8 @@ const Form7 = () => {
                     <div className="col-md-8">
                       <div className="row">
                         {feetList.map((items, index) => (
-                          <div className="col-md-3">
-                            <div
-                              className="form-check form-check-inline"
-                              key={index}
-                            >
+                          <div className="col-md-3" key={index}>
+                            <div className="form-check form-check-inline">
                               <input
                                 className="form-check-input"
                                 type="checkbox"
@@ -116,7 +113,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -150,7 +147,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -184,7 +181,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -218,7 +215,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -252,7 +249,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -286,7 +283,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -320,7 +317,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -354,7 +351,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -388,7 +385,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
@@ -422,7 +419,7 @@ const Form7 = () => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 {items}
                               </label>
