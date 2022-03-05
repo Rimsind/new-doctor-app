@@ -7,8 +7,63 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form14 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form14 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      orthotic_assessment: {
+        type_of_device: data.type_of_device,
+        alignment_fitting: data.alignment_fitting,
+        patinet_ability: data.patinet_ability,
+        level_of_safety: data.level_of_safety,
+        movement_analysis: data.movement_analysis,
+        functional_effect: data.functional_effect,
+      },
+      prosthetic_assessment: {
+        type_of_device: data.type_of_device,
+        alignment_fitting: data.alignment_fitting,
+        patinet_ability: data.patinet_ability,
+        level_of_safety: data.level_of_safety,
+        movement_analysis: data.movement_analysis,
+        functional_effect: data.functional_effect,
+      },
+      adaptive_equipment_assessment: {
+        type_of_device: data.type_of_device,
+        alignment_fitting: data.alignment_fitting,
+        patinet_ability: data.patinet_ability,
+        level_of_safety: data.level_of_safety,
+        movement_analysis: data.movement_analysis,
+        functional_effect: data.functional_effect,
+      },
+      wheel_chair_assessment: {
+        A: data.A,
+        B: data.B,
+        C: data.C,
+        E: data.E,
+        F: data.F,
+        G: data.G,
+        H: data.H,
+        I: data.I,
+        J: data.J,
+        K: data.K,
+        L: data.L,
+        M: data.M,
+        D1: data.D1,
+        N: data.N,
+        D2: data.D2,
+        O: data.O,
+        short_term_goals: data.short_term_goals,
+        treatment_plan: data.treatment_plan,
+        long_term_goals: data.long_term_goals,
+        identified_problems: data.identified_problems,
+        type: data.type,
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,7 +81,7 @@ const Form14 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form14)}>
                 <div className="gen-form">
                   <h3>ORTHOTIC ASSESSMENT</h3>
 
@@ -42,6 +97,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("type_of_device")}
                           />
                         </div>
                       </div>
@@ -64,6 +120,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("alignment_fitting")}
                           />
                         </div>
                       </div>
@@ -79,6 +136,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("movement_analysis")}
                           />
                         </div>
                       </div>
@@ -94,6 +152,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("patinet_ability")}
                           />
                         </div>
                       </div>
@@ -111,6 +170,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("functional_effect")}
                           />
                         </div>
                       </div>
@@ -126,6 +186,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("level_of_safety")}
                           />
                         </div>
                       </div>
@@ -161,6 +222,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("type_of_device")}
                           />
                         </div>
                       </div>
@@ -183,6 +245,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("alignment_fitting")}
                           />
                         </div>
                       </div>
@@ -198,6 +261,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("movement_analysis")}
                           />
                         </div>
                       </div>
@@ -213,6 +277,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("patinet_ability")}
                           />
                         </div>
                       </div>
@@ -230,6 +295,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("functional_effect")}
                           />
                         </div>
                       </div>
@@ -245,6 +311,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("level_of_safety")}
                           />
                         </div>
                       </div>
@@ -280,6 +347,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("type_of_device")}
                           />
                         </div>
                       </div>
@@ -302,6 +370,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("alignment_fitting")}
                           />
                         </div>
                       </div>
@@ -317,6 +386,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("movement_analysis")}
                           />
                         </div>
                       </div>
@@ -332,6 +402,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("patinet_ability")}
                           />
                         </div>
                       </div>
@@ -349,6 +420,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("Functional_effect")}
                           />
                         </div>
                       </div>
@@ -364,6 +436,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("level_of_safety")}
                           />
                         </div>
                       </div>
@@ -394,8 +467,8 @@ const Form14 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Manual"
+                            {...register("type")}
                           />
                         </div>
                         <div className="col-md-11">
@@ -409,8 +482,8 @@ const Form14 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="MOTORIZED"
+                            {...register("type")}
                           />
                         </div>
                         <div className="col-md-11">
@@ -424,8 +497,8 @@ const Form14 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="None"
+                            {...register("type")}
                           />
                         </div>
                         <div className="col-md-11">
@@ -443,6 +516,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("A")}
                           />
                         </div>
                       </div>
@@ -457,6 +531,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("B")}
                           />
                         </div>
                       </div>
@@ -471,6 +546,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("C")}
                           />
                         </div>
                       </div>
@@ -485,6 +561,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("D1")}
                           />
                         </div>
                       </div>
@@ -499,6 +576,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("D2")}
                           />
                         </div>
                       </div>
@@ -513,6 +591,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("E")}
                           />
                         </div>
                       </div>
@@ -527,6 +606,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("F")}
                           />
                         </div>
                       </div>
@@ -541,6 +621,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("G")}
                           />
                         </div>
                       </div>
@@ -555,6 +636,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("H")}
                           />
                         </div>
                       </div>
@@ -569,6 +651,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("I")}
                           />
                         </div>
                       </div>
@@ -583,6 +666,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("J")}
                           />
                         </div>
                       </div>
@@ -597,6 +681,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("K")}
                           />
                         </div>
                       </div>
@@ -611,6 +696,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("L")}
                           />
                         </div>
                       </div>
@@ -625,6 +711,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("M")}
                           />
                         </div>
                       </div>
@@ -639,6 +726,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("N")}
                           />
                         </div>
                       </div>
@@ -653,17 +741,78 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
+                            {...register("O")}
                           />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
-              </div>
+
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name14="active" id={appointmentId} />

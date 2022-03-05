@@ -7,8 +7,41 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form12 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form12 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      pain_assessment: {
+        related_signs: data.related_signs,
+        onset_of_pain: data.onset_of_pain,
+        releiving_pain_medication: data.releiving_pain_medication,
+        vascular: data.vascular,
+        releiving_factor_of_pain: data.releiving_factor_of_pain,
+        aggravating_factor_of_pain: data.aggravating_factor_of_pain,
+        emotional: data.emotional,
+        severity_of_pain_scale: data.severity_of_pain_scale,
+        joint_irritability: data.joint_irritability,
+        progress_of_pain: data.progress_of_pain,
+        worse_problem: data.worse_problem,
+        pattern_of_joint_involvement: data.pattern_of_joint_involvement,
+        severity_of_pain_value: data.severity_of_pain_value,
+        neurogenic: data.neurogenic,
+        short_term_goals: data.short_term_goals,
+        treatment_plan: data.treatment_plan,
+        long_term_goals: data.long_term_goals,
+        duration_of_pain: data.duration_of_pain,
+        location_of_pain: data.location_of_pain,
+        identified_problems: data.identified_problems,
+        type_of_pain: data.type_of_pain,
+        musculoskeletal: data.musculoskeletal,
+        frequency_of_pain: data.frequency_of_pain,
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,7 +59,7 @@ const Form12 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form12)}>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
@@ -38,8 +71,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Gradual"
+                            {...register("onset_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -54,8 +87,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Sudden"
+                            {...register("onset_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -75,6 +108,7 @@ const Form12 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Box"
+                        {...register("location_of_pain")}
                       />
                     </div>
                   </div>
@@ -93,8 +127,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Throbbing"
+                                {...register("vascular")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -108,8 +142,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Pounding"
+                                {...register("vascular")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -123,8 +157,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Pulsing"
+                                {...register("vascular")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -138,8 +172,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Beating"
+                                {...register("vascular")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -165,8 +199,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Stabbing"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -180,8 +214,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Crushing"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -195,8 +229,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Pinching"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -210,8 +244,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Hot"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -225,8 +259,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Searing"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -240,8 +274,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Itchy"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -255,8 +289,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Stinging"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -270,8 +304,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Pulling"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -285,8 +319,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Jumping"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -300,8 +334,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Shooting"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -315,8 +349,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Pricking"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -330,8 +364,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Gnawing"
+                                {...register("neurogenic")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -357,8 +391,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Aching"
+                                {...register("musculoskeletal")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -372,8 +406,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Sore"
+                                {...register("musculoskeletal")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -387,8 +421,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Heavy"
+                                {...register("musculoskeletal")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -402,8 +436,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Hurting"
+                                {...register("musculoskeletal")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -418,8 +452,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Dull"
+                                {...register("musculoskeletal")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -445,8 +479,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Tiring"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -460,8 +494,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Miserable"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -475,8 +509,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Vicious"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -490,8 +524,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Agonizing"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -505,8 +539,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Nauseating"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -520,8 +554,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Frightful"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -535,8 +569,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Piercing"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -550,8 +584,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Dreadful"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -565,8 +599,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Punishing"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -580,8 +614,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Torturing"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -595,8 +629,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Killing"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -610,8 +644,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Unbearable"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -625,8 +659,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Annoying"
+                                {...register("emotional")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -651,8 +685,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="RADIATING"
+                                {...register("type_of_pain")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -666,8 +700,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="LOCALIZED"
+                                {...register("type_of_pain")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -681,8 +715,8 @@ const Form12 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="DIFFUSE"
+                                {...register("type_of_pain")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -705,8 +739,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="VISUAL ANALOG SCALE"
+                            {...register("severity_of_pain_value")}
                           />
                         </div>
                         <div className="col-md-8">
@@ -720,8 +754,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="FACIAL EXPRESSION"
+                            {...register("severity_of_pain_value")}
                           />
                         </div>
                         <div className="col-md-2">
@@ -733,11 +767,14 @@ const Form12 = () => {
                       <select
                         className="form-select form-select-sm"
                         aria-label=".form-select-sm example"
+                        {...register("severity_of_pain_scale")}
                       >
                         <option selected>Open this select menu</option>
-                        <option value="1">0 : No pain</option>
-                        <option value="2">1-3 : Mild pain</option>
-                        <option value="3">4-6 : Severe pain</option>
+                        <option value="0 : No pain">0 : No pain</option>
+                        <option value="1-3 : Mild pain">1-3 : Mild pain</option>
+                        <option value="4-6 : Severe pain">
+                          4-6 : Severe pain
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -753,8 +790,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Day Time"
+                            {...register("frequency_of_pain")}
                           />
                         </div>
                         <div className="col-md-8">
@@ -768,8 +805,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Night Time"
+                            {...register("frequency_of_pain")}
                           />
                         </div>
                         <div className="col-md-8">
@@ -783,8 +820,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="All Time"
+                            {...register("frequency_of_pain")}
                           />
                         </div>
                         <div className="col-md-8">
@@ -798,8 +835,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="During Activity"
+                            {...register("frequency_of_pain")}
                           />
                         </div>
                         <div className="col-md-8">
@@ -821,6 +858,7 @@ const Form12 = () => {
                         placeholder="Enter the Value in hours"
                         min="0"
                         max="24"
+                        {...register("duration_of_pain")}
                       />
                     </div>
                   </div>
@@ -836,6 +874,7 @@ const Form12 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("aggravating_factor_of_pain")}
                       />
                     </div>
                   </div>
@@ -851,8 +890,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Liquor"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -866,8 +905,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Sleep/rest"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -881,8 +920,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Stumilants (e.g caffine )"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -896,8 +935,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Eating"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -912,8 +951,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Heat"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -927,8 +966,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Cold"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -942,8 +981,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Weather changes"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -957,8 +996,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Massage"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -973,8 +1012,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Pressure"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -988,8 +1027,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="No movement"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1003,8 +1042,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Movement"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1018,8 +1057,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Sitting"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1034,8 +1073,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Lying down"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1049,8 +1088,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Distraction (e.g. television)"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1066,8 +1105,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Urination / Defecation"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1081,8 +1120,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Mild exercise"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1097,8 +1136,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Loude Noise"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1112,8 +1151,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Standing"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1127,8 +1166,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Medication"
+                            {...register("releiving_factor_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1152,6 +1191,7 @@ const Form12 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("releiving_pain_medication")}
                       />
                     </div>
                   </div>
@@ -1167,8 +1207,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="One joint"
+                            {...register("pattern_of_joint_involvement")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1182,8 +1222,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Multiple joint"
+                            {...register("pattern_of_joint_involvement")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1197,8 +1237,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Assymetrical"
+                            {...register("pattern_of_joint_involvement")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1212,8 +1252,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Symmetrical"
+                            {...register("pattern_of_joint_involvement")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1234,8 +1274,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Mild"
+                            {...register("joint_irritability")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1249,8 +1289,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="moderate"
+                            {...register("joint_irritability")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1264,8 +1304,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Seveir"
+                            {...register("joint_irritability")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1286,8 +1326,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Intermittently present"
+                            {...register("progress_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1301,8 +1341,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Constantly present"
+                            {...register("progress_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1316,8 +1356,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Present in recurrent attacks"
+                            {...register("progress_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1333,8 +1373,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Progressively worse"
+                            {...register("progress_of_pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1355,8 +1395,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Mild"
+                            {...register("worse_problem")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1370,8 +1410,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="moderate"
+                            {...register("worse_problem")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1385,8 +1425,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Seveir"
+                            {...register("worse_problem")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1407,8 +1447,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Stiffness"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1422,8 +1462,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Swelling"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1437,8 +1477,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Crepitus"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1452,8 +1492,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Locking"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1468,8 +1508,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Instability"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1483,8 +1523,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Weakness"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1498,8 +1538,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Muscle spasm"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1513,8 +1553,8 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Neurological symptoms"
+                            {...register("related_signs")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -1525,11 +1565,70 @@ const Form12 = () => {
                   </div>
                 </div>
 
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
-              </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name12="active" id={appointmentId} />

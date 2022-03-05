@@ -7,8 +7,45 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form17 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form17 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      wound_assessment: {
+        slough: data.slough,
+        size: data.size,
+        depth: data.depth,
+        color: data.color,
+        recucing_relieving_devices: data.recucing_relieving_devices,
+        undermining: data.undermining,
+        epitheliazation_in_process: data.epitheliazation_in_process,
+        describe_device: data.describe_device,
+        dressing_tobe_used: data.dressing_tobe_used,
+        barriers_to_progress: data.barriers_to_progress,
+        short_term_goals: data.short_term_goals,
+        treatment_plan: data.treatment_plan,
+        long_term_goals: data.long_term_goals,
+        describe_surrounding_tissue: data.describe_surrounding_tissue,
+        signs_of_infection: data.signs_of_infection,
+        location: data.location,
+        type_of_ulcer: data.type_of_ulcer,
+        pain: data.pain,
+        amount: data.amount,
+        identified_problems: data.identified_problems,
+        odor: data.odor,
+        positioning_concerns: data.positioning_concerns,
+        thickness_of_ulcer: data.thickness_of_ulcer,
+        tunnelling: data.tunnelling,
+        granulation_tissue: data.granulation_tissue,
+        stage: data.stage,
+        necrotic_tissue: data.necrotic_tissue,
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,7 +63,7 @@ const Form17 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form17)}>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-3">
@@ -39,6 +76,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("location")}
                           />
                         </div>
                       </div>
@@ -49,16 +87,22 @@ const Form17 = () => {
                           <p>Tyoe of Ulcer:</p>
                         </div>
                         <div className="col-md-6">
-                          <select
-                            className="form-select form-select-sm"
-                            aria-label=".form-select-sm example"
-                          >
+                          <select className="form-select" aria-label=" example">
+                            {...register("type_of_ulcer")}
                             <option selected>Select</option>
-                            <option value="1">Pressure ulcer</option>
-                            <option value="2">Stasis ulcer</option>
-                            <option value="3">Surgical wound</option>
-                            <option value="3">Wound due to trauma</option>
-                            <option value="3">Arterial ulcer</option>
+                            <option value="Pressure ulcer">
+                              Pressure ulcer
+                            </option>
+                            <option value="Stasis ulcer">Stasis ulcer</option>
+                            <option value="Surgical wound">
+                              Surgical wound
+                            </option>
+                            <option value="Wound due to trauma">
+                              Wound due to trauma
+                            </option>
+                            <option value="Arterial ulcer">
+                              Arterial ulcer
+                            </option>
                           </select>
                         </div>
                       </div>
@@ -73,6 +117,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("stage")}
                           />
                         </div>
                       </div>
@@ -87,6 +132,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("thickness_of_ulcer")}
                           />
                         </div>
                       </div>
@@ -105,6 +151,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("size")}
                           />
                         </div>
                       </div>
@@ -119,6 +166,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("depth")}
                           />
                         </div>
                       </div>
@@ -133,6 +181,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("tunnelling")}
                           />
                         </div>
                       </div>
@@ -147,6 +196,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("undermining")}
                           />
                         </div>
                       </div>
@@ -165,6 +215,7 @@ const Form17 = () => {
                             type="number"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("necrotic_tissue")}
                           />
                         </div>
                       </div>
@@ -179,6 +230,7 @@ const Form17 = () => {
                             type="number"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("slough")}
                           />
                         </div>
                       </div>
@@ -193,6 +245,7 @@ const Form17 = () => {
                             type="number"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("granulation_tissue")}
                           />
                         </div>
                       </div>
@@ -207,6 +260,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("epitheliazation_in_process")}
                           />
                         </div>
                       </div>
@@ -214,9 +268,7 @@ const Form17 = () => {
                   </div>
                 </div>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4" style={{ textAlign: "center" }}>
-                    Exudate
-                  </h3>
+                  <h3 className="mt-4 mb-4 text-center">Exudate</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
                       <div className="row">
@@ -228,6 +280,7 @@ const Form17 = () => {
                             type="number"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("amount")}
                           />
                         </div>
                       </div>
@@ -242,6 +295,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("color")}
                           />
                         </div>
                       </div>
@@ -256,6 +310,7 @@ const Form17 = () => {
                             type="text"
                             className="form-control"
                             placeholder="Text Area"
+                            {...register("odor")}
                           />
                         </div>
                       </div>
@@ -263,9 +318,7 @@ const Form17 = () => {
                   </div>
                 </div>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4" style={{ textAlign: "center" }}>
-                    PAIN
-                  </h3>
+                  <h3 className="mt-4 mb-4 text-center">PAIN</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
                       <div className="row">
@@ -273,8 +326,8 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="In Wound site?"
+                            {...register("pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -288,8 +341,8 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="In Surrounding Tissue?"
+                            {...register("pain")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -305,14 +358,13 @@ const Form17 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("describe_surrounding_tissue")}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4" style={{ textAlign: "center" }}>
-                    Signs of infection
-                  </h3>
+                  <h3 className="mt-4 mb-4 text-center">Signs of infection</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-3">
                       <div className="row">
@@ -320,12 +372,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Erythema"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Erythema:</p>
+                          <p>Erythema</p>
                         </div>
                       </div>
                     </div>
@@ -335,12 +387,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Induration"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Induration:</p>
+                          <p>Induration</p>
                         </div>
                       </div>
                     </div>
@@ -350,12 +402,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Cellulitis"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Cellulitis:</p>
+                          <p>Cellulitis</p>
                         </div>
                       </div>
                     </div>
@@ -365,12 +417,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Tenderness"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Tenderness:</p>
+                          <p>Tenderness</p>
                         </div>
                       </div>
                     </div>
@@ -382,12 +434,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Uncharacteristic odor"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Uncharacteristic odor:</p>
+                          <p>Uncharacteristic odor</p>
                         </div>
                       </div>
                     </div>
@@ -397,12 +449,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Increased Exudate"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Increased Exudate:</p>
+                          <p>Increased Exudate</p>
                         </div>
                       </div>
                     </div>
@@ -412,12 +464,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Edema"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Edema:</p>
+                          <p>Edema</p>
                         </div>
                       </div>
                     </div>
@@ -427,12 +479,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Increased Heart Rate"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Increased Heart Rate:</p>
+                          <p>Increased Heart Rate</p>
                         </div>
                       </div>
                     </div>
@@ -444,12 +496,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Bpm"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Bpm:</p>
+                          <p>Bpm</p>
                         </div>
                       </div>
                     </div>
@@ -459,12 +511,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="High blood pressure"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>High blood pressure:</p>
+                          <p>High blood pressure</p>
                         </div>
                       </div>
                     </div>
@@ -474,12 +526,12 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Other"
+                            {...register("signs_of_infection")}
                           />
                         </div>
                         <div className="col-md-10">
-                          <p>Other:</p>
+                          <p>Other</p>
                         </div>
                       </div>
                     </div>
@@ -487,7 +539,7 @@ const Form17 = () => {
                   </div>
                 </div>
                 <div className="gen-form">
-                  <h3 className="mt-4 mb-4" style={{ textAlign: "center" }}>
+                  <h3 className="mt-4 mb-4 text-center">
                     Presence of Pressure Recucing / Relieving Devices
                   </h3>
                   <div className="row justify-content-between align-items-start">
@@ -497,8 +549,8 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Bed"
+                            {...register("Recucing_relieving_devices")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -512,8 +564,8 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Wheelchair"
+                            {...register("Recucing_relieving_devices")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -527,8 +579,8 @@ const Form17 = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            value="Other"
+                            {...register("Recucing_relieving_devices")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -544,6 +596,7 @@ const Form17 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("describe_device")}
                       />
                     </div>
                   </div>
@@ -556,6 +609,7 @@ const Form17 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("positioning_concerns")}
                       />
                     </div>
                   </div>
@@ -568,6 +622,7 @@ const Form17 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("dressing_tobe_used")}
                       />
                     </div>
                   </div>
@@ -580,16 +635,76 @@ const Form17 = () => {
                         className="form-control"
                         type="text"
                         placeholder="Text Area"
+                        {...register("barriers_to_progress")}
                       />
                     </div>
                   </div>
                 </div>
 
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
-              </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name17="active" id={appointmentId} />

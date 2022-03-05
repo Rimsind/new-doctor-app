@@ -7,8 +7,104 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form11 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form11 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      manual_muscle_assesment: {
+        hip_flexion_score: data.hip_flexion_score,
+        hip_flexion_strength: data.hip_flexion_strength,
+        hip_extension_score: data.hip_extension_score,
+        hip_extension_strength: data.hip_extension_strength,
+        hip_abduction_score: data.hip_abduction_score,
+        hip_abduction_strength: data.hip_abduction_strength,
+        hip_externalRotation_score: data.hip_externalRotation_score,
+        hip_externalRotation_strength: data.hip_externalRotation_strength,
+        hip_internalRotation_score: data.hip_internalRotation_score,
+        hip_internalRotation_strength: data.hip_internalRotation_strength,
+        knee_flexion_score: data.knee_flexion_score,
+        knee_flexion_strength: data.knee_flexion_strength,
+        knee_extension_score: data.knee_extension_score,
+        knee_extension_strength: data.knee_extension_strength,
+        knee_straightLegRaise_score: data.knee_straightLegRaise_score,
+        ankle_dorsiflexion_score: data.ankle_dorsiflexion_score,
+        ankle_dorsiflexion_strength: data.ankle_dorsiflexion_strength,
+        knee_straightLegRaise_strength: data.knee_straightLegRaise_strength,
+        ankle_planterflexion_score: data.ankle_planterflexion_score,
+        ankle_planterflexion_strength: data.ankle_planterflexion_strength,
+        ankle_inversion_score: data.ankle_inversion_score,
+        ankle_inversion_strength: data.ankle_inversion_strength,
+        ankle_eversion_score: data.ankle_eversion_score,
+        ankle_eversion_strength: data.ankle_eversion_strength,
+        cervical_flexion_score: data.cervical_flexion_score,
+        cervical_flexion_strength: data.cervical_flexion_strength,
+        cervical_extension_score: data.cervical_extension_score,
+        cervical_extension_strength: data.cervical_extension_strength,
+        cervical_sideflexion_left_score: data.cervical_sideflexion_left_score,
+        cervical_sideflexion_left_strength:
+          data.cervical_sideflexion_left_strength,
+        cervical_sideflexion_rigth_score: data.cervical_sideflexion_rigth_score,
+        cervical_sideflexion_rigth_strength:
+          data.cervical_sideflexion_rigth_strength,
+        cervical_rotation_left_score: data.cervical_rotation_left_score,
+        cervical_rotation_left_strength: data.cervical_rotation_left_strength,
+        cervical_rotation_rigth_score: data.cervical_rotation_rigth_score,
+        cervical_rotation_rigth_strength: data.cervical_rotation_rigth_strength,
+        thoracic_flexion_score: data.thoracic_flexion_score,
+        thoracic_flexion_strength: data.thoracic_flexion_strength,
+        thoracic_extension_score: data.thoracic_extension_score,
+        thoracic_extension_strength: data.thoracic_extension_strength,
+        thoracic_sideFlexion_left_score: data.thoracic_sideFlexion_left_score,
+        thoracic_sideFlexion_left_strength:
+          data.thoracic_sideFlexion_left_strength,
+        thoracic_sideFlexion_right_score: data.thoracic_sideFlexion_right_score,
+        thoracic_sideFlexion_right_strength:
+          data.thoracic_sideFlexion_right_strength,
+        thoracic_rotation_left_score: data.thoracic_rotation_left_score,
+        thoracic_rotation_left_strength: data.thoracic_rotation_left_strength,
+        thoracic_rotation_right_score: data.thoracic_rotation_right_score,
+        thoracic_rotation_rigth_strength: data.thoracic_rotation_rigth_strength,
+        thoracic_kyposis_score: data.thoracic_kyposis_score,
+        thoracic_kyposis_strength: data.thoracic_kyposis_strength,
+        lumbar_sacralinclination_score: data.lumbar_sacralinclination_score,
+        lumbar_sacralinclination_strength:
+          data.lumbar_sacralinclination_strength,
+        lumbar_standinglordosis_score: data.lumbar_standinglordosis_score,
+        lumbar_standinglordosis_strength: data.lumbar_standinglordosis_strength,
+        lumbar_standinghipflexion_score: data.lumbar_standinghipflexion_score,
+        lumbar_standinghipflexion_strength:
+          data.lumbar_standinghipflexion_strength,
+        lumbar_flexionAMA_score: data.lumbar_flexionAMA_score,
+        lumbar_flexionAMA_strength: data.lumbar_flexionAMA_strength,
+        lumbar_extensionAMA_score: data.lumbar_extensionAMA_score,
+        lumbar_extensionAMA_strength: data.lumbar_extensionAMA_strength,
+        lumbar_flexion_curveangle_score: data.lumbar_flexion_curveangle_score,
+        lumbar_flexion_curveangle_strength:
+          data.lumbar_flexion_curveangle_strength,
+        lumbar_extention_curveangle_score:
+          data.lumbar_extention_curveangle_score,
+        lumbar_extention_curveangle_strength:
+          data.lumbar_extention_curveangle_strength,
+        lumbar_sideflexion_left_score: data.lumbar_sideflexion_left_score,
+        lumbar_sideflexion_left_strength: data.lumbar_sideflexion_left_strength,
+        lumbar_sideflexion_right_score: data.lumbar_sideflexion_right_score,
+        lumbar_sideflexion_right_strength:
+          data.lumbar_sideflexion_right_strength,
+        lumbar_rotation_left_score: data.lumbar_rotation_left_score,
+        lumbar_rotation_left_strength: data.lumbar_rotation_left_strength,
+        lumbar_rotation_right_score: data.lumbar_rotation_right_score,
+        lumbar_rotation_right_strength: data.lumbar_rotation_right_strength,
+        identified_problems: data.identified_problems,
+        short_term_goals: data.short_term_goals,
+        long_term_goals: data.long_term_goals,
+        treatment_plan: data.treatment_plan,
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -26,7 +122,7 @@ const Form11 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form11)}>
                 <div className="gen-form-table mt-4">
                   <table className="table table-bordered border-dark">
                     <tr>
@@ -40,7 +136,11 @@ const Form11 = () => {
                     </tr>
 
                     <tr>
-                      <td rowSpan="6" style={{ width: "70px" }}>
+                      <td
+                        className="fs-5 fw-bold"
+                        rowSpan="6"
+                        style={{ width: "70px" }}
+                      >
                         HIP
                       </td>
 
@@ -54,27 +154,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("hip_flexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("hip_flexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -89,27 +191,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("hip_extension_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("hip_extension_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -124,47 +228,47 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("hip_abduction_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("hip_abduction_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
                     <tr>
+                      <td>{/* <p>Adduction / Adductors</p> */}</td>
+                      <td>{/* <p>0-45</p> */}</td>
+                      <td>{/* <p>0-45</p> */}</td>
                       <td>
-                        <p>Adduction / Adductors</p>
-                      </td>
-                      <td>0-45</td>
-                      <td>0-45</td>
-                      <td>
-                        <input
+                        {/* <input
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
-                        />
+                        /> */}
                       </td>
                       <td>
-                        <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                        {/* <select
+                          className="form-select bg-light "
+                          aria-label=" example"
                         >
                           <option selected>Select</option>
                           <option value="1">0</option>
@@ -180,7 +284,7 @@ const Form11 = () => {
                           <option value="3">4</option>
                           <option value="3">4+</option>
                           <option value="3">5</option>
-                        </select>
+                        </select> */}
                       </td>
                     </tr>
                     <tr>
@@ -194,27 +298,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("hip_externalRotation_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("hip_externalRotation_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -230,33 +336,39 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("hip_internalRotation_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("hip_internalRotation_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
 
                     <tr>
-                      <td rowSpan="3" style={{ width: "70px" }}>
+                      <td
+                        className="fs-5 fw-bold"
+                        rowSpan="3"
+                        style={{ width: "70px" }}
+                      >
                         KNEE
                       </td>
 
@@ -270,27 +382,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("knee_flexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("knee_flexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -305,27 +419,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("knee_extension_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("knee_extension_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -340,33 +456,39 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("knee_straightLegRaise_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("knee_straightLegRaise_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
 
                     <tr>
-                      <td rowSpan="4" style={{ width: "70px" }}>
+                      <td
+                        className="fs-5 fw-bold"
+                        rowSpan="4"
+                        style={{ width: "70px" }}
+                      >
                         ANKLE
                       </td>
 
@@ -380,27 +502,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("ankle_dorsiflexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("ankle_dorsiflexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -416,27 +540,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("ankle_planterflexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("ankle_planterflexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -451,27 +577,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("ankle_inversion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("ankle_inversion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -486,32 +614,38 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("ankle_eversion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("ankle_eversion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
                     <tr>
-                      <td rowSpan="6" style={{ width: "70px" }}>
+                      <td
+                        className="fs-5 fw-bold"
+                        rowSpan="6"
+                        style={{ width: "70px" }}
+                      >
                         CERVICAL
                       </td>
 
@@ -525,27 +659,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("cervical_flexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("cervical_flexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -561,27 +697,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("cervical_extension_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm example"
+                          className="form-select bg-light "
+                          aria-label=" example"
+                          {...register("cervical_extension_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -596,27 +734,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("cervical_sideflexion_left_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("cervical_sideflexion_left_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -631,27 +771,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("cervical_sideflexion_rigth_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("cervical_sideflexion_rigth_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -666,27 +808,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("cervical_rotation_left_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("cervical_rotation_left_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -701,32 +845,38 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("cervical_rotation_rigth_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("cervical_rotation_rigth_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
                     <tr>
-                      <td rowSpan="7" style={{ width: "70px" }}>
+                      <td
+                        className="fs-5 fw-bold"
+                        rowSpan="7"
+                        style={{ width: "70px" }}
+                      >
                         THORACIC
                       </td>
 
@@ -740,27 +890,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_flexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_flexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -776,27 +928,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_extension_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_extension_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -811,27 +965,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_sideFlexion_left_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_sideFlexion_left_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -846,27 +1002,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_sideFlexion_right_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_sideFlexion_right_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -881,27 +1039,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_rotation_left_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_rotation_left_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -916,27 +1076,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_rotation_right_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_rotation_rigth_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -951,32 +1113,38 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("thoracic_kyposis_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("thoracic_kyposis_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
                     <tr>
-                      <td rowSpan="11" style={{ width: "70px" }}>
+                      <td
+                        className="fs-5 fw-bold"
+                        rowSpan="11"
+                        style={{ width: "70px" }}
+                      >
                         LUMBAR
                       </td>
 
@@ -990,27 +1158,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_sacralinclination_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_sacralinclination_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1026,27 +1196,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_standinglordosis_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_standinglordosis_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1062,27 +1234,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_standinghipflexion_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_standinghipflexion_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1097,27 +1271,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_flexionAMA_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_flexionAMA_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1132,27 +1308,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_extensionAMA_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_extensionAMA_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1167,27 +1345,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_flexion_curveangle_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_flexion_curveangle_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1202,27 +1382,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_extention_curveangle_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_extention_curveangle_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1237,27 +1419,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_sideflexion_left_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_sideflexion_left_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1272,27 +1456,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_sideflexion_right_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_sideflexion_right_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1307,27 +1493,29 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_rotation_left_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_rotation_left_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
@@ -1342,38 +1530,98 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          {...register("lumbar_rotation_right_score")}
                         />
                       </td>
                       <td>
                         <select
-                          className="form-select form-select-sm"
-                          aria-label="form-select-sm"
+                          className="form-select bg-light "
+                          aria-label="example"
+                          {...register("lumbar_rotation_right_strength")}
                         >
                           <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="1+">1+</option>
+                          <option value="2-">2-</option>
+                          <option value="2">2</option>
+                          <option value="2+">2+</option>
+                          <option value="3-">3-</option>
                           <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
+                          <option value="3+">3+</option>
+                          <option value="4-">4-</option>
+                          <option value="4">4</option>
+                          <option value="4+">4+</option>
+                          <option value="5">5</option>
                         </select>
                       </td>
                     </tr>
                   </table>
                 </div>
-
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
-              </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name11="active" id={appointmentId} />

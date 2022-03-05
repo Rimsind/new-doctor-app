@@ -7,8 +7,27 @@ import {
   TreatmentPlan,
 } from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const Form10 = () => {
   const { appointmentId } = useRouter().query;
+  const { register, handleSubmit } = useForm();
+  const submit_form10 = (data, event) => {
+    event.preventDefault();
+    const payload = {
+      motor_function_assesment: {
+        muscle_tone_ifImpared: data.muscle_tone_ifImpared,
+        muscle_tone: data.muscle_tone,
+        involuntory_movement: data.involuntory_movement,
+        short_term_goals: data.short_term_goals,
+        treatment_plan: data.treatment_plan,
+        long_term_goals: data.long_term_goals,
+        coordination_test: data.coordination_test,
+        identified_problems: data.identified_problems,
+        modified_ashworth_scale: data.modified_ashworth_scale,
+      },
+    };
+    console.log(payload);
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -27,7 +46,7 @@ const Form10 = () => {
                 </div>
                 <FormCloseBtn id={appointmentId} />
               </div>
-              <div>
+              <form onSubmit={handleSubmit(submit_form10)}>
                 <div className="gen-form">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
@@ -41,8 +60,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Impaired"
+                                {...register("muscle_tone")}
                               />
                             </div>
                             <div className="col-md-10">
@@ -54,11 +73,12 @@ const Form10 = () => {
                                   <select
                                     className="form-select form-select-sm"
                                     aria-label=".form-select-sm example"
+                                    {...register("muscle_tone_ifImpared")}
                                   >
                                     <option selected>Select</option>
-                                    <option value="1">Hypertone</option>
-                                    <option value="2">Hypotone</option>
-                                    <option value="3">Rigidity</option>
+                                    <option value="Hypertone">Hypertone</option>
+                                    <option value="Hypotone">Hypotone</option>
+                                    <option value="Rigidity">Rigidity</option>
                                   </select>
                                 </div>
                               </div>
@@ -71,8 +91,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Normal"
+                                {...register("muscle_tone")}
                               />
                             </div>
                             <div className="col-md-10">
@@ -86,8 +106,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="N/A"
+                                {...register("muscle_tone")}
                               />
                             </div>
                             <div className="col-md-10">
@@ -115,8 +135,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="0= NO increasenin muscle tone"
+                                {...register("modified_ashworth_scale")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -132,8 +152,12 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value=" 1=Slight increase in muscle tone ,manifested by
+                                a slight catch and release or by minimal
+                                resistance at the end of the range of motion
+                                when the affected parts is moved in flexion and
+                                extension."
+                                {...register("modified_ashworth_scale")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -155,8 +179,11 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value=" 1+= Slight increase in muscle tone, manifested
+                                by a catch followed by minimal resistance
+                                throughout the remainder (less than half) of the
+                                range of motion(ROM)."
+                                {...register("modified_ashworth_scale")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -175,8 +202,10 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="2=More marked increase in muscle tone through
+                                most of range of motion but affected parts
+                                easily moved."
+                                {...register("modified_ashworth_scale")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -196,8 +225,9 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value=" 3= Considerable increase in muscle tone ,passive
+                                movement difficult"
+                                {...register("modified_ashworth_scale")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -214,8 +244,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="4= Affected parts rigid in flexion or extension."
+                                {...register("modified_ashworth_scale")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -242,8 +272,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Finger to nose"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -257,8 +287,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Tapping hands"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -274,8 +304,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Finger to therapist finger"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -291,8 +321,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Tapping foot"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -308,8 +338,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Pronation Supination"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -323,8 +353,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Alternate heel to knee"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -342,8 +372,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Rebound Test"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -357,8 +387,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Heel to Toe"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -374,8 +404,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Heel to Shin"
+                                {...register("coordination_test")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -401,8 +431,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Dystonia"
+                                {...register("involuntory_movement")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -416,8 +446,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Termor"
+                                {...register("involuntory_movement")}
                               />
                             </div>
                             <div className="col-md-8">
@@ -431,8 +461,8 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
+                                value="Choreiform And Antheoid Movement"
+                                {...register("involuntory_movement")}
                               />
                             </div>
                             <div className="col-md-10">
@@ -447,11 +477,70 @@ const Form10 = () => {
                   </div>
                 </div>
 
-                <IdentifiedProblem />
-                <ShortTermGoal />
-                <LongTermGoal />
-                <TreatmentPlan />
-              </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3>Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plan")}
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <Pagination2 name10="active" id={appointmentId} />
