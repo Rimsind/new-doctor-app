@@ -1,7 +1,7 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -22,6 +22,8 @@ const Form7 = () => {
       return result;
     }
   );
+  const { postural_assessment } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form7 = async (data, event) => {
     event.preventDefault();
@@ -57,6 +59,9 @@ const Form7 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form8?appointmentId=${appointmentId}`
+    );
     return result;
   };
   const feetList = [
@@ -98,6 +103,16 @@ const Form7 = () => {
   const shoulderList = ["Low", "High", "Forward", "Med Rotated"];
   const headList = ["Forward", "Torticollis", "Tilt", "Rotation"];
 
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
+  };
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -134,6 +149,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("feet")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.fett
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -165,6 +186,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("knee")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.knee
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -196,6 +223,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("pelvis")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.pelvis
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -227,6 +260,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("lower_back")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.lower_back
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -258,6 +297,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("upper_back")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.upper_back
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -289,6 +334,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("thorax")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.thorax
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -320,6 +371,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("spine")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.spine
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -351,6 +408,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("abdomen")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.abdomen
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -382,6 +445,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("shoulder")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.shoulder
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -413,6 +482,12 @@ const Form7 = () => {
                                 id="inlineRadio1"
                                 value={items}
                                 {...register("head")}
+                                defaultChecked={
+                                  !!postural_assessment &&
+                                  makeArrfromString(
+                                    postural_assessment.head
+                                  )?.includes(items)
+                                }
                               />
                               <label
                                 className="form-check-label"
@@ -439,6 +514,12 @@ const Form7 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!postural_assessment &&
+                          !!postural_assessment.identified_problems
+                            ? postural_assessment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -453,6 +534,12 @@ const Form7 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!postural_assessment &&
+                          !!postural_assessment.short_term_goals
+                            ? postural_assessment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -467,6 +554,12 @@ const Form7 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!postural_assessment &&
+                          !!postural_assessment.long_term_goals
+                            ? postural_assessment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -482,6 +575,12 @@ const Form7 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!postural_assessment &&
+                          !!postural_assessment.treatment_plan
+                            ? postural_assessment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

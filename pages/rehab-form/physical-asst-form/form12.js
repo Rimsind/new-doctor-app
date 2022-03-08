@@ -22,6 +22,7 @@ const Form12 = () => {
       return result;
     }
   );
+  // const { pain_assessment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form12 = async (data, event) => {
     event.preventDefault();

@@ -1,7 +1,7 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "../../../context/index";
@@ -21,6 +21,9 @@ const Form2 = () => {
       return result;
     }
   );
+
+  const { abthropometric } = appointment?.rehab;
+  console.log(abthropometric);
   const { register, handleSubmit } = useForm();
   const submit_form2 = async (data, event) => {
     event.preventDefault();
@@ -57,6 +60,9 @@ const Form2 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form3?appointmentId=${appointmentId}`
+    );
     return result;
   };
   return (
@@ -94,6 +100,11 @@ const Form2 = () => {
                                 className="form-control"
                                 placeholder="cm"
                                 {...register("height")}
+                                defaultValue={
+                                  !!abthropometric && !!abthropometric.height
+                                    ? abthropometric.height
+                                    : ""
+                                }
                                 // onChange={(e) => setHeight(e.target.value)}
                               />
                             </div>
@@ -108,6 +119,11 @@ const Form2 = () => {
                                 className="form-control"
                                 placeholder="kg"
                                 {...register("weight")}
+                                defaultValue={
+                                  !!abthropometric && !!abthropometric.weight
+                                    ? abthropometric.weight
+                                    : ""
+                                }
                                 // onChange={(e) => setWeight(e.target.value)}
                               />
                             </div>
@@ -123,6 +139,11 @@ const Form2 = () => {
                                 // value={BMI}
                                 contentEditable="false"
                                 {...register("bmi")}
+                                defaultValue={
+                                  !!abthropometric && !!abthropometric.bmi
+                                    ? abthropometric.bmi
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -140,6 +161,11 @@ const Form2 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("impedence")}
+                        defaultValue={
+                          !!abthropometric && !!abthropometric.impedence
+                            ? abthropometric.impedence
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -153,6 +179,11 @@ const Form2 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("skin_fold")}
+                        defaultValue={
+                          !!abthropometric && !!abthropometric.skin_fold
+                            ? abthropometric.skin_fold
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -170,6 +201,12 @@ const Form2 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("body_dimension_grith")}
+                        defaultValue={
+                          !!abthropometric &&
+                          !!abthropometric.body_dimension_grith
+                            ? abthropometric.body_dimension_grith
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -183,6 +220,12 @@ const Form2 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("body_dimension_length")}
+                        defaultValue={
+                          !!abthropometric &&
+                          !!abthropometric.body_dimension_length
+                            ? abthropometric.body_dimension_length
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -205,6 +248,11 @@ const Form2 = () => {
                               className="form-control ms-2"
                               placeholder="Text Area"
                               {...register("edema_grith")}
+                              defaultValue={
+                                !!abthropometric && !!abthropometric.edema_grith
+                                  ? abthropometric.edema_grith
+                                  : ""
+                              }
                             />
                           </div>
                         </div>
@@ -218,6 +266,12 @@ const Form2 = () => {
                               className="form-control ms-2"
                               placeholder="Text Area"
                               {...register("edema_palpation")}
+                              defaultValue={
+                                !!abthropometric &&
+                                !!abthropometric.edema_palpation
+                                  ? abthropometric.edema_palpation
+                                  : ""
+                              }
                             />
                           </div>
                         </div>
@@ -231,6 +285,12 @@ const Form2 = () => {
                               className="form-control ms-2"
                               placeholder="Text Area"
                               {...register("edema_scales")}
+                              defaultValue={
+                                !!abthropometric &&
+                                !!abthropometric.edema_scales
+                                  ? abthropometric.edema_scales
+                                  : ""
+                              }
                             />
                           </div>
                         </div>
@@ -244,6 +304,12 @@ const Form2 = () => {
                               className="form-control ms-2"
                               placeholder="Text Area"
                               {...register("edema_volume")}
+                              defaultValue={
+                                !!abthropometric &&
+                                !!abthropometric.edema_volume
+                                  ? abthropometric.edema_volume
+                                  : ""
+                              }
                             />
                           </div>
                         </div>
@@ -262,6 +328,12 @@ const Form2 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!abthropometric &&
+                          !!abthropometric.identified_problems
+                            ? abthropometric.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -276,6 +348,11 @@ const Form2 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!abthropometric && !!abthropometric.short_term_goals
+                            ? abthropometric.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -290,6 +367,11 @@ const Form2 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!abthropometric && !!abthropometric.long_term_goals
+                            ? abthropometric.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -305,6 +387,11 @@ const Form2 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!abthropometric && !!abthropometric.treatment_plan
+                            ? abthropometric.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

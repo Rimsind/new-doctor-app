@@ -4,7 +4,7 @@ import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "../../../context/index";
 import { apiUrl } from "../../../config/api";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 const Form3 = () => {
   const { appointmentId } = useRouter().query;
@@ -21,6 +21,7 @@ const Form3 = () => {
       return result;
     }
   );
+  const { circulatory_assesment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form3 = async (data, event) => {
     event.preventDefault();
@@ -49,6 +50,9 @@ const Form3 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form4?appointmentId=${appointmentId}`
+    );
     return result;
   };
   return (
@@ -81,6 +85,12 @@ const Form3 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("physiological_response")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.physiological_response
+                            ? circulatory_assesment.physiological_response
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -99,6 +109,12 @@ const Form3 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("peripheral_venous")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.peripheral_venous
+                            ? circulatory_assesment.peripheral_venous
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -118,6 +134,12 @@ const Form3 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("presence_of_bruits")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.presence_of_bruits
+                            ? circulatory_assesment.presence_of_bruits
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -133,6 +155,12 @@ const Form3 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.identified_problems
+                            ? circulatory_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -147,6 +175,12 @@ const Form3 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.short_term_goals
+                            ? circulatory_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -161,6 +195,12 @@ const Form3 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.long_term_goals
+                            ? circulatory_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -176,6 +216,12 @@ const Form3 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("traetment_plan")}
+                        defaultValue={
+                          !!circulatory_assesment &&
+                          !!circulatory_assesment.traetment_plan
+                            ? circulatory_assesment.traetment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

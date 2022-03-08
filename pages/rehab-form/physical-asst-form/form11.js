@@ -22,6 +22,7 @@ const Form11 = () => {
       return result;
     }
   );
+  const { manual_muscle_assesment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form11 = async (data, event) => {
     event.preventDefault();

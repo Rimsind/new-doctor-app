@@ -6,7 +6,7 @@ import axios from "axios";
 import { useAuth } from "../../../context/index";
 import { apiUrl } from "../../../config/api";
 
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 const Form1 = () => {
   const { appointmentId } = useRouter().query;
   const { auth } = useAuth();
@@ -22,6 +22,8 @@ const Form1 = () => {
       return result;
     }
   );
+
+  const { aerobicCapacity } = appointment.rehab;
 
   const { register, handleSubmit } = useForm();
   const submit_form1 = async (data, event) => {
@@ -79,6 +81,9 @@ const Form1 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form2?appointmentId=${appointmentId}`
+    );
     return result;
   };
 
@@ -92,6 +97,16 @@ const Form1 = () => {
     "Step Test Task",
     "Wheelchair Mobility Task",
   ];
+
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -125,7 +140,18 @@ const Form1 = () => {
                           aria-label="default example"
                           {...register("during_bed_mobility")}
                         >
-                          <option selected>Select Score</option>
+                          <option
+                            name="language"
+                            defaultValue={
+                              !!aerobicCapacity &&
+                              aerobicCapacity.during_bed_mobility
+                            }
+                          >
+                            {!!aerobicCapacity &&
+                            aerobicCapacity.during_bed_mobility
+                              ? aerobicCapacity.during_bed_mobility
+                              : ""}
+                          </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
                           </option>
@@ -162,7 +188,18 @@ const Form1 = () => {
                           aria-label="default example"
                           {...register("during_transfer_task")}
                         >
-                          <option selected>Select Score</option>
+                          <option
+                            name="language"
+                            defaultValue={
+                              !!aerobicCapacity &&
+                              aerobicCapacity.during_transfer_task
+                            }
+                          >
+                            {!!aerobicCapacity &&
+                            aerobicCapacity.during_transfer_task
+                              ? aerobicCapacity.during_transfer_task
+                              : ""}
+                          </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
                           </option>
@@ -199,7 +236,18 @@ const Form1 = () => {
                           aria-label="default example"
                           {...register("during_ambulation_task")}
                         >
-                          <option selected>Select Score</option>
+                          <option
+                            name="language"
+                            defaultValue={
+                              !!aerobicCapacity &&
+                              aerobicCapacity.during_ambulation_task
+                            }
+                          >
+                            {!!aerobicCapacity &&
+                            aerobicCapacity.during_ambulation_task
+                              ? aerobicCapacity.during_ambulation_task
+                              : ""}
+                          </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
                           </option>
@@ -237,7 +285,18 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                           {...register("during_standarized_test")}
                         >
-                          <option selected>Select Test</option>
+                          <option
+                            name="language"
+                            defaultValue={
+                              !!aerobicCapacity &&
+                              aerobicCapacity.during_standarized_test
+                            }
+                          >
+                            {!!aerobicCapacity &&
+                            aerobicCapacity.during_standarized_test
+                              ? aerobicCapacity.during_standarized_test
+                              : ""}
+                          </option>
                           <option value="3 Mint Walk Test">
                             3 Mint Walk Test
                           </option>
@@ -266,7 +325,16 @@ const Form1 = () => {
                           aria-label=".form-select-sm example"
                           {...register("at_rpe")}
                         >
-                          <option selected>Select Score</option>
+                          <option
+                            name="language"
+                            defaultValue={
+                              !!aerobicCapacity && aerobicCapacity.at_rpe
+                            }
+                          >
+                            {!!aerobicCapacity && aerobicCapacity.at_rpe
+                              ? aerobicCapacity.at_rpe
+                              : ""}
+                          </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
                           </option>
@@ -320,6 +388,12 @@ const Form1 = () => {
                                 placeholder="Text Area"
                                 name="blood_pressure"
                                 {...register("blood_pressure")}
+                                defaultValue={
+                                  !!aerobicCapacity &&
+                                  !!aerobicCapacity.blood_pressure
+                                    ? aerobicCapacity.blood_pressure
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -341,7 +415,18 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("breath_voice_sounds")}
                               >
-                                <option selected>Select </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity &&
+                                    aerobicCapacity.breath_voice_sounds
+                                  }
+                                >
+                                  {!!aerobicCapacity &&
+                                  aerobicCapacity.breath_voice_sounds
+                                    ? aerobicCapacity.breath_voice_sounds
+                                    : ""}
+                                </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
                               </select>
@@ -364,6 +449,12 @@ const Form1 = () => {
                                 placeholder="Text Area"
                                 name="heart_rate"
                                 {...register("heart_rate")}
+                                defaultValue={
+                                  !!aerobicCapacity &&
+                                  !!aerobicCapacity.heart_rate
+                                    ? aerobicCapacity.heart_rate
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -383,7 +474,17 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("cyanosis")}
                               >
-                                <option selected>Select Cyanosis </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity &&
+                                    aerobicCapacity.cyanosis
+                                  }
+                                >
+                                  {!!aerobicCapacity && aerobicCapacity.cyanosis
+                                    ? aerobicCapacity.cyanosis
+                                    : ""}
+                                </option>
                                 <option value="Central Cyanosis">
                                   Central Cyanosis
                                 </option>
@@ -412,7 +513,16 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("rhythm")}
                               >
-                                <option selected>Select</option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity && aerobicCapacity.rhythm
+                                  }
+                                >
+                                  {!!aerobicCapacity && aerobicCapacity.rhythm
+                                    ? aerobicCapacity.rhythm
+                                    : ""}
+                                </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
                               </select>
@@ -434,7 +544,18 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("gas_exchange")}
                               >
-                                <option selected>Select</option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity &&
+                                    aerobicCapacity.gas_exchange
+                                  }
+                                >
+                                  {!!aerobicCapacity &&
+                                  aerobicCapacity.gas_exchange
+                                    ? aerobicCapacity.gas_exchange
+                                    : ""}
+                                </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
                               </select>
@@ -456,7 +577,16 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("sounds")}
                               >
-                                <option selected>Select </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity && aerobicCapacity.sounds
+                                  }
+                                >
+                                  {!!aerobicCapacity && aerobicCapacity.sounds
+                                    ? aerobicCapacity.sounds
+                                    : ""}
+                                </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
                               </select>
@@ -480,7 +610,18 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("respiratory_pattern")}
                               >
-                                <option selected>Select </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity &&
+                                    aerobicCapacity.respiratory_pattern
+                                  }
+                                >
+                                  {!!aerobicCapacity &&
+                                  aerobicCapacity.respiratory_pattern
+                                    ? aerobicCapacity.respiratory_pattern
+                                    : ""}
+                                </option>
                                 <option value="Apnea">Apnea</option>
                                 <option value="Eupnea">Eupnea</option>
                                 <option value="Orthopnea">Orthopnea</option>
@@ -529,7 +670,16 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("angina")}
                               >
-                                <option selected>Select </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity && aerobicCapacity.angina
+                                  }
+                                >
+                                  {!!aerobicCapacity && aerobicCapacity.angina
+                                    ? aerobicCapacity.angina
+                                    : ""}
+                                </option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
@@ -552,6 +702,12 @@ const Form1 = () => {
                                 placeholder="Text Area"
                                 name="respiratory_rate"
                                 {...register("respiratory_rate")}
+                                defaultValue={
+                                  !!aerobicCapacity &&
+                                  !!aerobicCapacity.respiratory_rate
+                                    ? aerobicCapacity.respiratory_rate
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -571,7 +727,18 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("claudication")}
                               >
-                                <option selected>Select </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity &&
+                                    aerobicCapacity.claudication
+                                  }
+                                >
+                                  {!!aerobicCapacity &&
+                                  aerobicCapacity.claudication
+                                    ? aerobicCapacity.claudication
+                                    : ""}
+                                </option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
@@ -595,7 +762,18 @@ const Form1 = () => {
                                 aria-label=".form-select-sm example"
                                 {...register("respiratory_rhythm")}
                               >
-                                <option selected>Select </option>
+                                <option
+                                  name="language"
+                                  defaultValue={
+                                    !!aerobicCapacity &&
+                                    aerobicCapacity.respiratory_rhythm
+                                  }
+                                >
+                                  {!!aerobicCapacity &&
+                                  aerobicCapacity.respiratory_rhythm
+                                    ? aerobicCapacity.respiratory_rhythm
+                                    : ""}
+                                </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
                               </select>
@@ -619,6 +797,12 @@ const Form1 = () => {
                                 placeholder="Text Area"
                                 name="oximetry"
                                 {...register("oximetry")}
+                                defaultValue={
+                                  !!aerobicCapacity &&
+                                  !!aerobicCapacity.oximetry
+                                    ? aerobicCapacity.oximetry
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -639,6 +823,12 @@ const Form1 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!aerobicCapacity &&
+                          !!aerobicCapacity.identified_problems
+                            ? aerobicCapacity.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -662,7 +852,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("shortTerm_bed_mobility")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.shortTerm_bed_mobility
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.shortTerm_bed_mobility
+                                ? aerobicCapacity.shortTerm_bed_mobility
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -703,7 +904,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("shortTerm_transfer_task")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.shortTerm_transfer_task
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.shortTerm_transfer_task
+                                ? aerobicCapacity.shortTerm_transfer_task
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -744,7 +956,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("shortTerm_ambulation_task")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.shortTerm_ambulation_task
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.shortTerm_ambulation_task
+                                ? aerobicCapacity.shortTerm_ambulation_task
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -784,7 +1007,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("shortTerm_standarized_test")}
                           >
-                            <option selected>Select Test</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.shortTerm_standarized_test
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.shortTerm_standarized_test
+                                ? aerobicCapacity.shortTerm_standarized_test
+                                : ""}
+                            </option>
                             <option value="3 Mint Walk Test">
                               3 Mint Walk Test
                             </option>
@@ -815,7 +1049,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("shortTerm_at_rpe")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.shortTerm_at_rpe
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.shortTerm_at_rpe
+                                ? aerobicCapacity.shortTerm_at_rpe
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -847,6 +1092,12 @@ const Form1 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("describe_short_term_goals")}
+                        defaultValue={
+                          !!aerobicCapacity &&
+                          !!aerobicCapacity.describe_short_term_goals
+                            ? aerobicCapacity.describe_short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -870,7 +1121,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("longTerm_bed_mobility")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.longTerm_bed_mobility
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.longTerm_bed_mobility
+                                ? aerobicCapacity.longTerm_bed_mobility
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -911,7 +1173,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("longTerm_transfer_task")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.longTerm_transfer_task
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.longTerm_transfer_task
+                                ? aerobicCapacity.longTerm_transfer_task
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -952,7 +1225,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("longTerm_Ambulation_task")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.longTerm_Ambulation_task
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.longTerm_Ambulation_task
+                                ? aerobicCapacity.longTerm_Ambulation_task
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -992,7 +1276,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("longTerm_Standarized_test")}
                           >
-                            <option selected>Select Test</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.longTerm_Standarized_test
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.longTerm_Standarized_test
+                                ? aerobicCapacity.longTerm_Standarized_test
+                                : ""}
+                            </option>
                             <option value="3 Mint Walk Test">
                               3 Mint Walk Test
                             </option>
@@ -1023,7 +1318,18 @@ const Form1 = () => {
                             aria-label=".form-select-sm example"
                             {...register("longTerm_at_rpe")}
                           >
-                            <option selected>Select Score</option>
+                            <option
+                              name="language"
+                              defaultValue={
+                                !!aerobicCapacity &&
+                                aerobicCapacity.longTerm_at_rpe
+                              }
+                            >
+                              {!!aerobicCapacity &&
+                              aerobicCapacity.longTerm_at_rpe
+                                ? aerobicCapacity.longTerm_at_rpe
+                                : ""}
+                            </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
                             </option>
@@ -1055,6 +1361,12 @@ const Form1 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("longTerm_description")}
+                        defaultValue={
+                          !!aerobicCapacity &&
+                          !!aerobicCapacity.longTerm_description
+                            ? aerobicCapacity.longTerm_description
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1080,6 +1392,12 @@ const Form1 = () => {
                                     type="checkbox"
                                     className="form-check-input"
                                     value={items}
+                                    defaultChecked={
+                                      !!aerobicCapacity &&
+                                      makeArrfromString(
+                                        aerobicCapacity.aerobic_capacity_retraining
+                                      )?.includes(items)
+                                    }
                                     {...register("aerobic_capacity_retraining")}
                                   />
                                   <label className="ps-2">{items}</label>
@@ -1094,6 +1412,11 @@ const Form1 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!aerobicCapacity && !!aerobicCapacity.treatment_plan
+                            ? aerobicCapacity.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

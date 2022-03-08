@@ -1,12 +1,12 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "../../../context/index";
 import { apiUrl } from "../../../config/api";
+
 const Form6 = () => {
   const { appointmentId } = useRouter().query;
   const { auth } = useAuth();
@@ -22,6 +22,8 @@ const Form6 = () => {
       return result;
     }
   );
+  const { reflex_sensory_assessment } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form6 = async (data, event) => {
     event.preventDefault();
@@ -60,6 +62,9 @@ const Form6 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form7?appointmentId=${appointmentId}`
+    );
     return result;
   };
   const optionList = ["Normal", "Impaired"];
@@ -74,8 +79,7 @@ const Form6 = () => {
                 <div className="col-md-8">
                   <div className="text-center pb-6">
                     <h3 className="general-information-form-title font-bold">
-                      Cranial And Peripheral Nerve Assessment Includes Reflex
-                      And Sensory Assessment
+                      Reflex And Sensory Assessment
                     </h3>
                   </div>
                 </div>
@@ -95,6 +99,12 @@ const Form6 = () => {
                         className="form-control"
                         placeholder="Text Area"
                         {...register("reflex_examination")}
+                        defaultValue={
+                          !!reflex_sensory_assessment &&
+                          !!reflex_sensory_assessment.reflex_examination
+                            ? reflex_sensory_assessment.reflex_examination
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -114,26 +124,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("touch_awareness")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.touch_awareness ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("touch_awareness")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.touch_awareness ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -144,26 +174,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("touch_localization")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.touch_localization ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("touch_localization")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.touch_localization ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -173,26 +223,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("touch_pressure_threshold")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.touch_pressure_threshold ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("touch_pressure_threshold")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.touch_pressure_threshold ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -202,26 +272,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("two_point_discrimination")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.two_point_discrimination ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("two_point_discrimination")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.two_point_discrimination ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -240,26 +330,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("sharp")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.sharp ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("sharp")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.sharp ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -269,26 +379,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("dull")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.dull ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("dull")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.dull ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -307,26 +437,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("vibration")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.vibration ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("vibration")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.vibration ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -336,26 +486,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("joint_position")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.joint_position ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("joint_position")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.joint_position ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -365,26 +535,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("joint_motion")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.joint_motion ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("joint_motion")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.joint_motion ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -394,26 +584,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("stereognosis")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.stereognosis ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("stereognosis")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.stereognosis ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -432,26 +642,45 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("hot")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.hot === "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("hot")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.hot ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -461,26 +690,46 @@ const Form6 = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="row">
-                            {optionList.map((items, index) => (
-                              <div className="col-md-6" key={index}>
-                                <div className="form-check form-check-inline">
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
                                   <input
                                     className="form-check-input"
                                     type="radio"
-                                    name="inlineRadioOptions"
-                                    id="inlineRadio1"
-                                    value={items}
+                                    value="Normal"
                                     {...register("cold")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.cold ===
+                                        "Normal"
+                                    }
                                   />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineRadio1"
-                                  >
-                                    {items}
-                                  </label>
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Normal</p>
                                 </div>
                               </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    value="Impared"
+                                    {...register("cold")}
+                                    defaultChecked={
+                                      !!reflex_sensory_assessment &&
+                                      reflex_sensory_assessment.cold ===
+                                        "Impared"
+                                    }
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <p className="space-x-4">Impared</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -498,6 +747,12 @@ const Form6 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!reflex_sensory_assessment &&
+                          !!reflex_sensory_assessment.identified_problems
+                            ? reflex_sensory_assessment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -512,6 +767,12 @@ const Form6 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!reflex_sensory_assessment &&
+                          !!reflex_sensory_assessment.short_term_goals
+                            ? reflex_sensory_assessment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -526,6 +787,12 @@ const Form6 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!reflex_sensory_assessment &&
+                          !!reflex_sensory_assessment.long_term_goals
+                            ? reflex_sensory_assessment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -541,6 +808,12 @@ const Form6 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!reflex_sensory_assessment &&
+                          !!reflex_sensory_assessment.treatment_plan
+                            ? reflex_sensory_assessment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

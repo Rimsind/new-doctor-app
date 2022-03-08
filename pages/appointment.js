@@ -8,7 +8,7 @@ import { useAuth } from "../context";
 const Appointment = () => {
   const { auth } = useAuth();
 
-  const { data, error } = useSWR(
+  const { data } = useSWR(
     `${apiUrl}/appointments?doctor=${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
@@ -88,9 +88,15 @@ const Appointment = () => {
 
                       <td>efef</td>
                       <td>
-                        <span className="badge rounded-md bg-success">
-                          Confirmed
-                        </span>
+                        {!!item.appointment_status === false ? (
+                          <span className="badge rounded-md bg-warning">
+                            Pending
+                          </span>
+                        ) : (
+                          <span className="badge rounded-md bg-success">
+                            Completed
+                          </span>
+                        )}
                       </td>
                     </tr>
                   ))}

@@ -1,7 +1,7 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -23,6 +23,8 @@ const Form4 = () => {
       return result;
     }
   );
+  const { arousal_assesment } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form4 = async (data, event) => {
     event.preventDefault();
@@ -62,6 +64,9 @@ const Form4 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form5?appointmentId=${appointmentId}`
+    );
     return result;
   };
 
@@ -91,23 +96,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("attention")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("attention")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.attention === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("attention")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.attention === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -119,23 +145,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("focussed")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("focussed")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.focussed === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("focussed")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.focussed === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -147,23 +194,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("sustained")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("sustained")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.sustained === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("sustained")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.sustained === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -175,23 +243,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("selective")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("selective")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.selective === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("selective")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.selective === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -203,23 +292,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("alternating")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("alternating")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.alternating === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("alternating")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.alternating === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -231,23 +341,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("orientation")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("orientation")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.orientation === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("orientation")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.orientation === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -259,23 +390,46 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("ability_to_recognise")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("ability_to_recognise")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.ability_to_recognise ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("ability_to_recognise")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.ability_to_recognise ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -295,6 +449,10 @@ const Form4 = () => {
                                 type="radio"
                                 value="coma"
                                 {...register("consciousness")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.consciousness === "coma"
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -302,23 +460,44 @@ const Form4 = () => {
                             </div>
                           </div>
                         </div>
-                        {optionList.map((items, index) => (
-                          <div className="col-md-4" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("consciousness")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-4">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("consciousness")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.consciousness === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-4">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("consciousness")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.consciousness === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -330,23 +509,46 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("motivation_to_participate")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("motivation_to_participate")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.motivation_to_participate ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("motivation_to_participate")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.motivation_to_participate ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -358,23 +560,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("communication")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("communication")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.communication === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("communication")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.communication === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -387,23 +610,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("preparation")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("preparation")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.preparation === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("preparation")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.preparation === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -415,23 +659,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("production")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("production")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.production === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("production")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.production === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -443,23 +708,44 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("judgement")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("judgement")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.judgement === "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("judgement")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.judgement === "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -472,23 +758,46 @@ const Form4 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("mini_mental_test")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("mini_mental_test")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.mini_mental_test ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("mini_mental_test")}
+                                defaultChecked={
+                                  !!arousal_assesment &&
+                                  arousal_assesment.mini_mental_test ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -504,6 +813,12 @@ const Form4 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!arousal_assesment &&
+                          !!arousal_assesment.identified_problems
+                            ? arousal_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -518,6 +833,12 @@ const Form4 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!arousal_assesment &&
+                          !!arousal_assesment.short_term_goals
+                            ? arousal_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -532,6 +853,12 @@ const Form4 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!arousal_assesment &&
+                          !!arousal_assesment.long_term_goals
+                            ? arousal_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -547,6 +874,12 @@ const Form4 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!arousal_assesment &&
+                          !!arousal_assesment.treatment_plan
+                            ? arousal_assesment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

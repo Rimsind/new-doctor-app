@@ -44,7 +44,6 @@ const GeneralInformation = () => {
       });
       const result = res.data;
       alert("General Information Updated Succesfully");
-      console.log(result);
       return result;
     } catch (err) {
       console.log(err.message);

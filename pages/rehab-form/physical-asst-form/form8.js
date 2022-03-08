@@ -1,6 +1,6 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -21,6 +21,8 @@ const Form8 = () => {
       return result;
     }
   );
+  const { gait_assesment } = appointment?.rehab;
+  console.log(gait_assesment);
   const { register, handleSubmit } = useForm();
   const submit_form8 = async (data, event) => {
     event.preventDefault();
@@ -58,7 +60,19 @@ const Form8 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form9?appointmentId=${appointmentId}`
+    );
     return result;
+  };
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
   };
   return (
     <>
@@ -97,6 +111,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Foot Slap"
                               {...register("heel_strike_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_ankle
+                                )?.includes("Foot Slap")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -112,6 +132,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Knee Hyperextension"
                               {...register("heel_strike_knee")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -127,6 +153,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Excessive Flexion"
                               {...register("heel_strike_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_hip
+                                )?.includes("Excessive Flexion")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -142,6 +174,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Lateral Trunk Lean"
                               {...register("heel_strike_trunk")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_trunk
+                                )?.includes("Lateral Trunk Lean")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -159,6 +197,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Toes First"
                               {...register("heel_strike_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_ankle
+                                )?.includes("Toes First")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -175,6 +219,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Limited Flexion"
                               {...register("heel_strike_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_hip
+                                )?.includes("Limited Flexion")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -190,6 +240,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Backward Trunk Lean"
                               {...register("heel_strike_trunk")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_trunk
+                                )?.includes("Backward Trunk Lean")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -207,6 +263,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Foot Flat"
                               {...register("heel_strike_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_ankle
+                                )?.includes("Foot Flat")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -224,6 +286,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Forward Trunk Lean"
                               {...register("heel_strike_trunk")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_trunk
+                                )?.includes("Forward Trunk Lean")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -242,6 +310,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Excessive Positional"
                               {...register("foot_flat_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_ankle
+                                )?.includes("Excessive Positional")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -257,6 +331,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Knee Hyper Extension"
                               {...register("foot_flat_knee")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_knee
+                                )?.includes("Knee Hyper Extension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -272,6 +352,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Limited Hip Extension"
                               {...register("foot_flat_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_hip
+                                )?.includes("Limited Hip Extension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -290,6 +376,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Palnter Flexion"
                               {...register("foot_flat_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_ankle
+                                )?.includes("Palnter Flexion")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -307,6 +399,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Internal Rotation"
                               {...register("foot_flat_trunk")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_trunk
+                                )?.includes("Internal Rotation")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -324,6 +422,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Heel Lift in Mid Stance"
                               {...register("foot_flat_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_ankle
+                                )?.includes("Heel Lift in Mid Stance")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -341,6 +445,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="External Rotation"
                               {...register("foot_flat_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_hip
+                                )?.includes("External Rotation")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -359,6 +469,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Excessive Dorsiflexion"
                               {...register("foot_flat_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_ankle
+                                )?.includes("Excessive Dorsiflexion")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -376,6 +492,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Abduction"
                               {...register("foot_flat_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_hip
+                                )?.includes("Abduction")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -394,6 +516,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Toe Clawing"
                               {...register("foot_flat_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -411,6 +539,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Adduction"
                               {...register("foot_flat_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.foot_flat_hip
+                                )?.includes("Adduction")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -430,6 +564,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="No Roll Off"
                               {...register("heel_of_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_of_ankle
+                                )?.includes("No Roll Off")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -450,6 +590,14 @@ const Form8 = () => {
                               type="checkbox"
                               value="Insufficient Transfer of Excessive Knee Flexion"
                               {...register("heel_of_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_of_ankle
+                                )?.includes(
+                                  "Insufficient Transfer of Excessive Knee Flexion"
+                                )
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -473,6 +621,14 @@ const Form8 = () => {
                               type="checkbox"
                               value="Weight From Lateral Heel to Medial Forefoot"
                               {...register("heel_of_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_of_ankle
+                                )?.includes(
+                                  "Weight From Lateral Heel to Medial Forefoot"
+                                )
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -495,6 +651,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Toe Drag Excessive Knee Flexion"
                               {...register("acceleration_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.acceleration_ankle
+                                )?.includes("Toe Drag Excessive Knee Flexion")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -511,6 +673,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Circumduction"
                               {...register("acceleration_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.acceleration_hip
+                                )?.includes("Circumduction")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -529,6 +697,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Varus"
                               {...register("acceleration_ankle")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -544,6 +718,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Limited Knee Flexion"
                               {...register("acceleration_knee")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -559,6 +739,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Hip Hiking"
                               {...register("acceleration_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -578,6 +764,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Limited Knee Flexion"
                               {...register("acceleration_knee")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -593,6 +785,12 @@ const Form8 = () => {
                               type="checkbox"
                               value="Excessive Hip Flexion"
                               {...register("acceleration_hip")}
+                              defaultChecked={
+                                !!gait_assesment &&
+                                makeArrfromString(
+                                  gait_assesment.heel_strike_knee
+                                )?.includes("Knee Hyperextension")
+                              }
                             />
                           </div>
                           <div className="col-md-10">
@@ -615,6 +813,12 @@ const Form8 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!gait_assesment &&
+                          !!gait_assesment.identified_problems
+                            ? gait_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -629,6 +833,11 @@ const Form8 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!gait_assesment && !!gait_assesment.short_term_goals
+                            ? gait_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -643,6 +852,11 @@ const Form8 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!gait_assesment && !!gait_assesment.long_term_goals
+                            ? gait_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -658,6 +872,11 @@ const Form8 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!gait_assesment && !!gait_assesment.treatment_plan
+                            ? gait_assesment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

@@ -22,6 +22,7 @@ const Form9 = () => {
       return result;
     }
   );
+  const { postural_control_assesment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form9 = async (data, event) => {
     event.preventDefault();

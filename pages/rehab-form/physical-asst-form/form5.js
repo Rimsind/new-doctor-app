@@ -1,6 +1,6 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -21,6 +21,9 @@ const Form5 = () => {
       return result;
     }
   );
+
+  const { cranial_peripheral_assesment } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form5 = async (data, event) => {
     event.preventDefault();
@@ -59,9 +62,12 @@ const Form5 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form6?appointmentId=${appointmentId}`
+    );
     return result;
   };
-  const optionList = ["Normal", "Impaired"];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -90,23 +96,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("olfactory")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("olfactory")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.olfactory ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("olfactory")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.olfactory ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -118,23 +147,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("optic")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("optic")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.optic ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("optic")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.optic ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -146,23 +198,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("occulomotor")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("occulomotor")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.occulomotor ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("occulomotor")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.occulomotor ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -174,23 +249,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("trochlear")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("trochlear")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.trochlear ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("trochlear")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.trochlear ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -202,23 +300,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("trigeminal")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("trigeminal")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.trigeminal ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("trigeminal")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.trigeminal ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -230,23 +351,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("abducens")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("abducens")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.abducens ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("abducens")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.abducens ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -258,23 +402,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("facial_nerve")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("facial_nerve")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.facial_nerve ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("facial_nerve")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.facial_nerve ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -286,23 +453,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("vestibulocohlear")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("vestibulocohlear")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.vestibulocohlear ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("vestibulocohlear")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.vestibulocohlear ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -314,23 +504,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("glossophoryngeal")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("glossophoryngeal")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.glossophoryngeal ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("glossophoryngeal")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.glossophoryngeal ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -342,23 +555,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("vagus")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("vagus")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.vagus ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("vagus")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.vagus ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -370,23 +606,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("accessory")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("accessory")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.accessory ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("accessory")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.accessory ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -398,23 +657,46 @@ const Form5 = () => {
                     </div>
                     <div className="col-md-3">
                       <div className="row">
-                        {optionList.map((items, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div className="row">
-                              <div className="col-md-4">
-                                <input
-                                  className="form-check-input"
-                                  type="radio"
-                                  value={items}
-                                  {...register("hypoglossal")}
-                                />
-                              </div>
-                              <div className="col-md-8">
-                                <p className="space-x-4">{items}</p>
-                              </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Normal"
+                                {...register("hypoglossal")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.hypoglossal ===
+                                    "Normal"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Normal</p>
                             </div>
                           </div>
-                        ))}
+                        </div>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-4">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                value="Impared"
+                                {...register("hypoglossal")}
+                                defaultChecked={
+                                  !!cranial_peripheral_assesment &&
+                                  cranial_peripheral_assesment.hypoglossal ===
+                                    "Impared"
+                                }
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="space-x-4">Impared</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -430,6 +712,12 @@ const Form5 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("peripheral_nerve_nxamination")}
+                        defaultValue={
+                          !!cranial_peripheral_assesment &&
+                          !!cranial_peripheral_assesment.peripheral_nerve_nxamination
+                            ? cranial_peripheral_assesment.peripheral_nerve_nxamination
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -445,6 +733,12 @@ const Form5 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!cranial_peripheral_assesment &&
+                          !!cranial_peripheral_assesment.identified_problems
+                            ? cranial_peripheral_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -459,6 +753,12 @@ const Form5 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!cranial_peripheral_assesment &&
+                          !!cranial_peripheral_assesment.short_term_goals
+                            ? cranial_peripheral_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -473,6 +773,12 @@ const Form5 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!cranial_peripheral_assesment &&
+                          !!cranial_peripheral_assesment.long_term_goals
+                            ? cranial_peripheral_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -488,6 +794,12 @@ const Form5 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!cranial_peripheral_assesment &&
+                          !!cranial_peripheral_assesment.treatment_plan
+                            ? cranial_peripheral_assesment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
