@@ -1,32 +1,58 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form10 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form10 = (data, event) => {
+  const submit_form10 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      motor_function_assesment: {
-        muscle_tone_ifImpared: data.muscle_tone_ifImpared,
-        muscle_tone: data.muscle_tone,
-        involuntory_movement: data.involuntory_movement,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        coordination_test: data.coordination_test,
-        identified_problems: data.identified_problems,
-        modified_ashworth_scale: data.modified_ashworth_scale,
+      rehab: {
+        ...appointment.rehab,
+        motor_function_assesment: {
+          muscle_tone_ifImpared: data.muscle_tone_ifImpared,
+          muscle_tone: data.muscle_tone,
+          involuntory_movement: data.involuntory_movement.toString(),
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          coordination_test: data.coordination_test.toString(),
+          identified_problems: data.identified_problems,
+          modified_ashworth_scale: data.modified_ashworth_scale.toString(),
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>

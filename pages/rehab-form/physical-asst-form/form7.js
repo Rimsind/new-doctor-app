@@ -1,22 +1,35 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form7 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form7 = (data, event) => {
+  const submit_form7 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
+        ...appointment.rehab,
         postural_assessment: {
-          feet: data.feet.toString(),
+          fett: data.feet.toString(),
           knee: data.knee.toString(),
           pelvis: data.pelvis.toString(),
           lower_back: data.lower_back.toString(),
@@ -33,7 +46,18 @@ const Form7 = () => {
         },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   const feetList = [
     "Hammer toes",

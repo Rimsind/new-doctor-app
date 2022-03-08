@@ -1,11 +1,6 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 const Form16 = () => {

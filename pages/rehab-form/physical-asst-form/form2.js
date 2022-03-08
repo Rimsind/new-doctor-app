@@ -1,38 +1,63 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 import { useForm } from "react-hook-form";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm";
 import { useRouter } from "next/router";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form2 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form2 = (data, event) => {
+  const submit_form2 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      abthropometric: {
-        skin_fold: data.skin_fold,
-        height: data.height,
-        edema_grith: data.edema_grith,
-        edema_scales: data.edema_scales,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        impedence: data.impedence,
-        identified_problems: data.identified_problems,
-        weight: data.weight,
-        edema_palpation: data.edema_palpation,
-        body_dimension_length: data.body_dimension_length,
-        body_dimension_grith: data.body_dimension_grith,
-        bmi: data.bmi,
-        edema_volume: data.edema_volume,
+      rehab: {
+        ...appointment.rehab,
+        abthropometric: {
+          skin_fold: data.skin_fold,
+          height: data.height,
+          edema_grith: data.edema_grith,
+          edema_scales: data.edema_scales,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          impedence: data.impedence,
+          identified_problems: data.identified_problems,
+          weight: data.weight,
+          edema_palpation: data.edema_palpation,
+          body_dimension_length: data.body_dimension_length,
+          body_dimension_grith: data.body_dimension_grith,
+          bmi: data.bmi,
+          edema_volume: data.edema_volume,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>

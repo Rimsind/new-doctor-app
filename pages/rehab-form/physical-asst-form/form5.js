@@ -1,20 +1,32 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form5 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form5 = (data, event) => {
+  const submit_form5 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
+        ...appointment.rehab,
         cranial_peripheral_assesment: {
           trochlear: data.trochlear,
           peripheral_nerve_nxamination: data.peripheral_nerve_nxamination,
@@ -36,7 +48,18 @@ const Form5 = () => {
         },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   const optionList = ["Normal", "Impaired"];
   return (
@@ -50,8 +73,7 @@ const Form5 = () => {
                 <div className="col-md-8">
                   <div className="text-center pb-6">
                     <h3 className="general-information-form-title font-bold">
-                      Cranial And Peripheral Nerve Assessment Includes Reflex
-                      And Sensory Assessment
+                      Cranial And Peripheral Nerve Assessment
                     </h3>
                   </div>
                 </div>

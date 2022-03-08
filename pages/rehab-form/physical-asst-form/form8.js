@@ -2,13 +2,31 @@ import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form8 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form8 = (data, event) => {
+  const submit_form8 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
+        ...appointment.rehab,
         gait_assesment: {
           foot_flat_ankle: data.foot_flat_ankle.toString(),
           heel_strike_trunk: data.heel_strike_trunk.toString(),
@@ -29,7 +47,18 @@ const Form8 = () => {
         },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>

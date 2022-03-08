@@ -1,37 +1,63 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form13 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form13 = (data, event) => {
+  const submit_form13 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      environmental_barrier_assessmnet: {
-        personal_care_provider: data.personal_care_provider,
-        social_norms: data.social_norms,
-        societal_attitudes: data.societal_attitudes,
-        health_professionals: data.health_professionals,
-        facilitators_assessmnet: data.facilitators_assessmnet,
-        personal_assistants: data.personal_assistants,
-        friends: data.friends,
-        environmental_barriers: data.environmental_barriers,
-        family_members: data.family_members,
-        home_work_barrier: data.home_work_barrier,
-        identified_problems: data.identified_problems,
-        short_term_goals: data.short_term_goals,
-        long_term_goals: data.long_term_goals,
-        treatment_plans: data.treatment_plans,
+      rehab: {
+        ...appointment.rehab,
+        environmental_barrier_assessmnet: {
+          personal_care_provider: data.personal_care_provider,
+          social_norms: data.social_norms,
+          societal_attitudes: data.societal_attitudes,
+          health_professionals: data.health_professionals,
+          facilitators_assessmnet: data.facilitators_assessmnet,
+          personal_assistants: data.personal_assistants,
+          friends: data.friends,
+          environmental_barriers: data.environmental_barriers,
+          family_members: data.family_members,
+          home_work_barrier: data.home_work_barrier.toString(),
+          identified_problems: data.identified_problems,
+          short_term_goals: data.short_term_goals,
+          long_term_goals: data.long_term_goals,
+          treatment_plans: data.treatment_plans,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>

@@ -1,68 +1,94 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form14 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form14 = (data, event) => {
+  const submit_form14 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      orthotic_assessment: {
-        type_of_device: data.type_of_device,
-        alignment_fitting: data.alignment_fitting,
-        patinet_ability: data.patinet_ability,
-        level_of_safety: data.level_of_safety,
-        movement_analysis: data.movement_analysis,
-        functional_effect: data.functional_effect,
-      },
-      prosthetic_assessment: {
-        type_of_device: data.type_of_device,
-        alignment_fitting: data.alignment_fitting,
-        patinet_ability: data.patinet_ability,
-        level_of_safety: data.level_of_safety,
-        movement_analysis: data.movement_analysis,
-        functional_effect: data.functional_effect,
-      },
-      adaptive_equipment_assessment: {
-        type_of_device: data.type_of_device,
-        alignment_fitting: data.alignment_fitting,
-        patinet_ability: data.patinet_ability,
-        level_of_safety: data.level_of_safety,
-        movement_analysis: data.movement_analysis,
-        functional_effect: data.functional_effect,
-      },
-      wheel_chair_assessment: {
-        A: data.A,
-        B: data.B,
-        C: data.C,
-        E: data.E,
-        F: data.F,
-        G: data.G,
-        H: data.H,
-        I: data.I,
-        J: data.J,
-        K: data.K,
-        L: data.L,
-        M: data.M,
-        D1: data.D1,
-        N: data.N,
-        D2: data.D2,
-        O: data.O,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        identified_problems: data.identified_problems,
-        type: data.type,
+      rehab: {
+        ...appointment.rehab,
+        orthotic_assessment: {
+          type_of_device: data.type_of_device,
+          alignment_fitting: data.alignment_fitting,
+          patinet_ability: data.patinet_ability,
+          level_of_safety: data.level_of_safety,
+          movement_analysis: data.movement_analysis,
+          functional_effect: data.functional_effect,
+        },
+        prosthetic_assessment: {
+          type_of_device: data.type_of_device,
+          alignment_fitting: data.alignment_fitting,
+          patinet_ability: data.patinet_ability,
+          level_of_safety: data.level_of_safety,
+          movement_analysis: data.movement_analysis,
+          functional_effect: data.functional_effect,
+        },
+        adaptive_equipment_assessment: {
+          type_of_device: data.type_of_device,
+          alignment_fitting: data.alignment_fitting,
+          patinet_ability: data.patinet_ability,
+          level_of_safety: data.level_of_safety,
+          movement_analysis: data.movement_analysis,
+          functional_effect: data.functional_effect,
+        },
+        wheel_chair_assessment: {
+          A: data.A,
+          B: data.B,
+          C: data.C,
+          E: data.E,
+          F: data.F,
+          G: data.G,
+          H: data.H,
+          I: data.I,
+          J: data.J,
+          K: data.K,
+          L: data.L,
+          M: data.M,
+          D1: data.D1,
+          N: data.N,
+          D2: data.D2,
+          O: data.O,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          identified_problems: data.identified_problems,
+          type: data.type,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>

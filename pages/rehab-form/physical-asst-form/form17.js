@@ -1,50 +1,76 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form17 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form17 = (data, event) => {
+  const submit_form17 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      wound_assessment: {
-        slough: data.slough,
-        size: data.size,
-        depth: data.depth,
-        color: data.color,
-        recucing_relieving_devices: data.recucing_relieving_devices,
-        undermining: data.undermining,
-        epitheliazation_in_process: data.epitheliazation_in_process,
-        describe_device: data.describe_device,
-        dressing_tobe_used: data.dressing_tobe_used,
-        barriers_to_progress: data.barriers_to_progress,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        describe_surrounding_tissue: data.describe_surrounding_tissue,
-        signs_of_infection: data.signs_of_infection,
-        location: data.location,
-        type_of_ulcer: data.type_of_ulcer,
-        pain: data.pain,
-        amount: data.amount,
-        identified_problems: data.identified_problems,
-        odor: data.odor,
-        positioning_concerns: data.positioning_concerns,
-        thickness_of_ulcer: data.thickness_of_ulcer,
-        tunnelling: data.tunnelling,
-        granulation_tissue: data.granulation_tissue,
-        stage: data.stage,
-        necrotic_tissue: data.necrotic_tissue,
+      rehab: {
+        ...appointment.rehab,
+        wound_assessment: {
+          slough: data.slough,
+          size: data.size,
+          depth: data.depth,
+          color: data.color,
+          recucing_relieving_devices: data.recucing_relieving_devices,
+          undermining: data.undermining,
+          epitheliazation_in_process: data.epitheliazation_in_process,
+          describe_device: data.describe_device,
+          dressing_tobe_used: data.dressing_tobe_used,
+          barriers_to_progress: data.barriers_to_progress,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          describe_surrounding_tissue: data.describe_surrounding_tissue,
+          signs_of_infection: data.signs_of_infection,
+          location: data.location,
+          type_of_ulcer: data.type_of_ulcer,
+          pain: data.pain,
+          amount: data.amount,
+          identified_problems: data.identified_problems,
+          odor: data.odor,
+          positioning_concerns: data.positioning_concerns,
+          thickness_of_ulcer: data.thickness_of_ulcer,
+          tunnelling: data.tunnelling,
+          granulation_tissue: data.granulation_tissue,
+          stage: data.stage,
+          necrotic_tissue: data.necrotic_tissue,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>
@@ -87,8 +113,11 @@ const Form17 = () => {
                           <p>Tyoe of Ulcer:</p>
                         </div>
                         <div className="col-md-6">
-                          <select className="form-select" aria-label=" example">
+                          <select
+                            className="form-select"
+                            aria-label=" example"
                             {...register("type_of_ulcer")}
+                          >
                             <option selected>Select</option>
                             <option value="Pressure ulcer">
                               Pressure ulcer
@@ -550,7 +579,7 @@ const Form17 = () => {
                             className="form-check-input"
                             type="radio"
                             value="Bed"
-                            {...register("Recucing_relieving_devices")}
+                            {...register("recucing_relieving_devices")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -565,7 +594,7 @@ const Form17 = () => {
                             className="form-check-input"
                             type="radio"
                             value="Wheelchair"
-                            {...register("Recucing_relieving_devices")}
+                            {...register("recucing_relieving_devices")}
                           />
                         </div>
                         <div className="col-md-10">
@@ -580,7 +609,7 @@ const Form17 = () => {
                             className="form-check-input"
                             type="radio"
                             value="Other"
-                            {...register("Recucing_relieving_devices")}
+                            {...register("recucing_relieving_devices")}
                           />
                         </div>
                         <div className="col-md-10">

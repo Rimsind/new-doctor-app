@@ -1,43 +1,69 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form9 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form9 = (data, event) => {
+  const submit_form9 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      postural_assesment: {
-        cognitive_impairment: data.cognitive_impairment,
-        neuromuscular_mpairment: data.neuromuscular_mpairment,
-        musculoskeletal_impairment: data.musculoskeletal_impairment,
-        sitting_large_movement: data.sitting_large_movement,
-        berge_balance_test: data.berge_balance_test,
-        standing_ankle_strategy: data.standing_ankle_strategy,
-        movement_sitting_standing: data.movement_sitting_standing,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        tinetti_test: data.tinetti_test,
-        stepping_strategy: data.stepping_strategy,
-        standing_hip_strategy: data.standing_hip_strategy,
-        identified_problems: data.identified_problems,
-        sitting_small_movement: data.sitting_small_movement,
-        functional_reach_test: data.functional_reach_test,
-        alignment_sitting_standing: data.alignment_sitting_standing,
-        ctsib: data.ctsib,
-        getup_go_test: data.getup_go_test,
-        perceptual_impairment: data.perceptual_impairment,
+      rehab: {
+        ...appointment.rehab,
+        postural_control_assesment: {
+          cognitive_impairment: data.cognitive_impairment,
+          neuromuscular_mpairment: data.neuromuscular_mpairment,
+          musculoskeletal_impairment: data.musculoskeletal_impairment,
+          sitting_large_movement: data.sitting_large_movement,
+          berge_balance_test: data.berge_balance_test,
+          standing_ankle_strategy: data.standing_ankle_strategy,
+          movement_sitting_standing: data.movement_sitting_standing,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          tinetti_test: data.tinetti_test,
+          stepping_strategy: data.stepping_strategy,
+          standing_hip_strategy: data.standing_hip_strategy,
+          identified_problems: data.identified_problems,
+          sitting_small_movement: data.sitting_small_movement,
+          functional_reach_test: data.functional_reach_test,
+          alignment_sitting_standing: data.alignment_sitting_standing,
+          ctsib: data.ctsib,
+          getup_go_test: data.getup_go_test,
+          perceptual_impairment: data.perceptual_impairment,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   const optionList = ["Normal", "Impaired"];
   return (

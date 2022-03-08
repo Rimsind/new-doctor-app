@@ -1,16 +1,34 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 
 import { useRouter } from "next/router";
 const Form1 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
 
   const { register, handleSubmit } = useForm();
-  const submit_form1 = (data, event) => {
+  const submit_form1 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
+        ...appointment.rehab,
         aerobicCapacity: {
           angina: data.angina,
           oximetry: data.oximetry,
@@ -49,7 +67,19 @@ const Form1 = () => {
         },
       },
     };
-    console.log(payload);
+
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
 
   const retrainingList = [

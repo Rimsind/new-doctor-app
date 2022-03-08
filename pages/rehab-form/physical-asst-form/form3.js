@@ -1,32 +1,55 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 const Form3 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form3 = (data, event) => {
+  const submit_form3 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
+        ...appointment.rehab,
         circulatory_assesment: {
           physiological_response: data.physiological_response,
           peripheral_venous: data.peripheral_venous,
           presence_of_bruits: data.presence_of_bruits,
           identified_problems: data.identified_problems,
           short_term_goals: data.short_term_goals,
-          treatment_plan: data.treatment_plan,
+          traetment_plan: data.traetment_plan,
           long_term_goals: data.long_term_goals,
         },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>
@@ -152,7 +175,7 @@ const Form3 = () => {
                         className="form-control"
                         rows="3"
                         placeholder="Describe your problems here"
-                        {...register("treatment_plan")}
+                        {...register("traetment_plan")}
                       ></textarea>
                     </div>
                   </div>

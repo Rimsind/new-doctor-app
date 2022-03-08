@@ -1,35 +1,61 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form15 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form15 = (data, event) => {
+  const submit_form15 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      joint_integrety_mobility_assessmnet: {
-        palpation: data.palpation,
-        drawer_test: data.drawer_test,
-        shear_tests: data.shear_tests,
-        impingement_test: data.impingement_test,
-        valgus_varus_stress_test: data.valgus_varus_stress_test,
-        compression_distraction_test: data.compression_distraction_test,
-        glide_test: data.glide_test,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        identified_problems: data.identified_problems,
-        apprehension_test: data.apprehension_test,
+      rehab: {
+        ...appointment.rehab,
+        joint_integrety_mobility_assessmnet: {
+          palpation: data.palpation,
+          drawer_test: data.drawer_test,
+          shear_tests: data.shear_tests,
+          impingement_test: data.impingement_test,
+          valgus_varus_stress_test: data.valgus_varus_stress_test,
+          compression_distraction_test: data.compression_distraction_test,
+          glide_test: data.glide_test,
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          identified_problems: data.identified_problems,
+          apprehension_test: data.apprehension_test,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>

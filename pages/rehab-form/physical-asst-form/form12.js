@@ -1,46 +1,73 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
-import {
-  IdentifiedProblem,
-  LongTermGoal,
-  ShortTermGoal,
-  TreatmentPlan,
-} from "../../../components/AssestmentForm/index";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form12 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form12 = (data, event) => {
+  const submit_form12 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      pain_assessment: {
-        related_signs: data.related_signs,
-        onset_of_pain: data.onset_of_pain,
-        releiving_pain_medication: data.releiving_pain_medication,
-        vascular: data.vascular,
-        releiving_factor_of_pain: data.releiving_factor_of_pain,
-        aggravating_factor_of_pain: data.aggravating_factor_of_pain,
-        emotional: data.emotional,
-        severity_of_pain_scale: data.severity_of_pain_scale,
-        joint_irritability: data.joint_irritability,
-        progress_of_pain: data.progress_of_pain,
-        worse_problem: data.worse_problem,
-        pattern_of_joint_involvement: data.pattern_of_joint_involvement,
-        severity_of_pain_value: data.severity_of_pain_value,
-        neurogenic: data.neurogenic,
-        short_term_goals: data.short_term_goals,
-        treatment_plan: data.treatment_plan,
-        long_term_goals: data.long_term_goals,
-        duration_of_pain: data.duration_of_pain,
-        location_of_pain: data.location_of_pain,
-        identified_problems: data.identified_problems,
-        type_of_pain: data.type_of_pain,
-        musculoskeletal: data.musculoskeletal,
-        frequency_of_pain: data.frequency_of_pain,
+      rehab: {
+        ...appointment.rehab,
+        pain_assessment: {
+          related_signs: data.related_signs.toString(),
+          onset_of_pain: data.onset_of_pain,
+          releiving_pain_medication: data.releiving_pain_medication,
+          vascular: data.vascular.toString(),
+          releiving_factor_of_pain: data.releiving_factor_of_pain.toString(),
+          aggravating_factor_of_pain: data.aggravating_factor_of_pain,
+          emotional: data.emotional.toString(),
+          severity_of_pain_scale: data.severity_of_pain_scale,
+          joint_irritability: data.joint_irritability,
+          progress_of_pain: data.progress_of_pain,
+          worse_problem: data.worse_problem,
+          pattern_of_joint_involvement:
+            data.pattern_of_joint_involvement.toString(),
+          severity_of_pain_value: data.severity_of_pain_value,
+          neurogenic: data.neurogenic.toString(),
+          short_term_goals: data.short_term_goals,
+          treatment_plan: data.treatment_plan,
+          long_term_goals: data.long_term_goals,
+          duration_of_pain: data.duration_of_pain,
+          location_of_pain: data.location_of_pain,
+          identified_problems: data.identified_problems,
+          type_of_pain: data.type_of_pain,
+          musculoskeletal: data.musculoskeletal.toString(),
+          frequency_of_pain: data.frequency_of_pain,
+        },
       },
     };
-    console.log(payload);
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
   return (
     <>
