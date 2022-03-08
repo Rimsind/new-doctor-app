@@ -3,24 +3,75 @@ import FormCloseBtn from "../../../components/FormCloseBtn";
 
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
+import axios from "axios";
+import { useAuth } from "../../../context/index";
+import { apiUrl } from "../../../config/api";
 const Form16 = () => {
   const { appointmentId } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   const { register, handleSubmit } = useForm();
-  const submit_form16 = (data, event) => {
+  const submit_form16 = async (data, event) => {
     event.preventDefault();
     const payload = {
-      ventilation_respiration_gas_exchange: {
-        name: data.name,
-        description: data.description,
-        status: data.status,
-        identified_problems: data.identified_problems,
-        short_term_goals: data.short_term_goals,
-        long_term_goals: data.long_term_goals,
-        treatment_plan: data.treatment_plan,
+      rehab: {
+        ...appointment.rehab,
+        ventilation_respiration_gas_exchange: {
+          identified_problems: data.identified_problems,
+          short_term_goals: data.short_term_goals,
+          long_term_goals: data.long_term_goals,
+          treatment_plan: data.treatment_plan,
+          chest_wall_text: data.chest_wall_text,
+          chest_wall_value: data.chest_wall_value,
+          phonation_text: data.phonation_text,
+          phonation_value: data.phonation_value,
+          pulmonary_related_text: data.pulmonary_related_text,
+          pulmonary_related_value: data.pulmonary_related_value,
+          pulmonary_vital_text: data.pulmonary_vital_text,
+          pulmonary_vital_value: data.pulmonary_vital_value,
+          thoracoabdominal_text: data.thoracoabdominal_text,
+          thoracoabdominal_value: data.thoracoabdominal_value,
+          presence_level_text: data.presence_level_text,
+          presence_level_value: data.presence_level_value,
+          protect_airways_text: data.protect_airways_text,
+          protect_airways_value: data.protect_airways_value,
+          gas_exchange_text: data.gas_exchange_text,
+          gas_exchange_value: data.gas_exchange_value,
+          ventilatory_mechanism_text: data.ventilatory_mechanism_text,
+          ventilatory_mechanism_value: data.ventilatory_mechanism_value,
+          breath_voice_text: data.breath_voice_text,
+          breath_voice_value: data.breath_voice_value,
+        },
       },
     };
-    console.log(payload);
+
+    const res = await axios.put(
+      `${apiUrl}/appointments/${appointmentId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Form Submitted Succesfully");
+    return result;
   };
+
+  const optionsList = ["WNL", "NA"];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -39,89 +90,255 @@ const Form16 = () => {
                 <FormCloseBtn id={appointmentId} />
               </div>
               <form onSubmit={handleSubmit(submit_form16)}>
-                <div className="gen-form">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                        {...register("name")}
-                      >
-                        <option selected>Select items</option>
-                        <option value="1">
-                          CHEST WALL AND RELATED STRUCTURES
-                        </option>
-                        <option value="PHONATION">PHONATION</option>
-                        <option value="PULMONARY RELATED SYMPTOMS">
-                          PULMONARY RELATED SYMPTOMS
-                        </option>
-                        <option value="PULMONARY VITAL SIGNS">
-                          PULMONARY VITAL SIGNS
-                        </option>
-                        <option value="THORACOABDOMINAL VENTILATORY PATTERNS">
-                          THORACOABDOMINAL VENTILATORY PATTERNS
-                        </option>
-                        <option value=" PRESENCE AND LEVEL OF CYANOSIS">
-                          PRESENCE AND LEVEL OF CYANOSIS
-                        </option>
-                        <option value="Ability to clear and protect airways">
-                          Ability to clear and protect airways
-                        </option>
-                        <option value="Gas exchange and oxygen level/transport">
-                          Gas exchange and oxygen level/transport
-                        </option>
-                        <option value="Pulmonary function and ventilatory mechanism">
-                          Pulmonary function and ventilatory mechanism
-                        </option>
-                        <option value="BREATH AND VOICE SOUNDS">
-                          BREATH AND VOICE SOUNDS
-                        </option>
-                      </select>
-                    </div>
-                    <div className="col-md-4">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Text"
-                        {...register("description")}
-                      ></input>
-                    </div>
-                    <div className="col-md-2">
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                        {...register("status")}
-                      >
-                        <option selected>Select items</option>
-                        <option value="WNL">WNL</option>
-                        <option value="NA">NA</option>
-                      </select>
-                    </div>
-                    <div className="col-md-2">
-                      <div className="add_btn text-end">
-                        <button className="btn btn-primary" type="button">
-                          Add Items
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="gen-form-table py-4 bg-light ps-2 pe-2">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Items</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                    </tbody>
+                <div className="gen-form-table mt-4">
+                  <table className="table table-bordered">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th>WNL</th>
+                      <th>NA</th>
+                    </tr>
+
+                    <tr>
+                      <td>CHEST WALL AND RELATED STRUCTURES</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("chest_wall_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("chest_wall_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>PHONATION</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("phonation_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("phonation_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>PULMONARY RELATED SYMPTOMS</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("pulmonary_related_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("pulmonary_related_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>PULMONARY VITAL SIGNS</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("pulmonary_vital_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("pulmonary_vital_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>THORACOABDOMINAL VENTILATORY PATTERNS</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("thoracoabdominal_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("thoracoabdominal_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>PRESENCE AND LEVEL OF CYANOSIS</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("presence_level_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("presence_level_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>Ability to clear and protect airways</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("protect_airways_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("protect_airways_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>Gas exchange and oxygen level/transport</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("gas_exchange_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("gas_exchange_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>pulmonary function and ventilatory mechanism</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("ventilatory_mechanism_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("ventilatory_mechanism_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>BREATH AND VOICE SOUNDS</td>
+
+                      <td>
+                        <p>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Area"
+                            {...register("breath_voice_text")}
+                          />
+                        </p>
+                      </td>
+                      {optionsList.map((items, index) => (
+                        <td key={index}>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value={items}
+                            {...register("breath_voice_value")}
+                          />
+                        </td>
+                      ))}
+                    </tr>
                   </table>
                 </div>
 
@@ -191,7 +408,7 @@ const Form16 = () => {
               </form>
             </div>
           </div>
-          <Pagination2 name16="active" id={appointmentId} />
+          <Pagination2 name15="active" id={appointmentId} />
         </div>
       </div>
     </>
