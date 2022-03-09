@@ -345,7 +345,7 @@ const Form13 = () => {
                     <div className="gen-form">
                       <div className="row justify-content-between align-items-start">
                         {workBarrierList.map((items, index) => (
-                          <div className="col-md-3">
+                          <div className="col-md-3" key={index}>
                             <div className="row">
                               <div className="col-md-2">
                                 <input

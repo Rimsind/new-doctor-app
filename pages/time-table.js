@@ -183,7 +183,7 @@ const TimeTable = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   {item}
                                 </label>
