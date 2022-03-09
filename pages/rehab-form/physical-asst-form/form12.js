@@ -22,7 +22,9 @@ const Form12 = () => {
       return result;
     }
   );
-  // const { pain_assessment } = appointment?.rehab;
+
+  const { pain_assessment } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form12 = async (data, event) => {
     event.preventDefault();
@@ -73,6 +75,16 @@ const Form12 = () => {
     );
     return result;
   };
+
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
+  };
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -104,6 +116,10 @@ const Form12 = () => {
                             type="radio"
                             value="Gradual"
                             {...register("onset_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.onset_of_pain === "Gradual"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -120,6 +136,10 @@ const Form12 = () => {
                             type="radio"
                             value="Sudden"
                             {...register("onset_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.onset_of_pain === "Sudden"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -140,6 +160,12 @@ const Form12 = () => {
                         type="text"
                         placeholder="Text Box"
                         {...register("location_of_pain")}
+                        defaultValue={
+                          !!pain_assessment &&
+                          !!pain_assessment.location_of_pain
+                            ? pain_assessment.location_of_pain
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -160,6 +186,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Throbbing"
                                 {...register("vascular")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.vascular
+                                  )?.includes("Throbbing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -175,6 +207,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Pounding"
                                 {...register("vascular")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.vascular
+                                  )?.includes("Pounding")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -190,6 +228,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Pulsing"
                                 {...register("vascular")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.vascular
+                                  )?.includes("Pulsing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -205,6 +249,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Beating"
                                 {...register("vascular")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.vascular
+                                  )?.includes("Beating")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -232,6 +282,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Stabbing"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Stabbing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -247,6 +303,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Crushing"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Crushing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -262,6 +324,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Pinching"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Pinching")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -277,6 +345,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Hot"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Hot")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -292,6 +366,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Searing"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Searing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -307,6 +387,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Itchy"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Itchy")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -322,6 +408,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Stinging"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Stinging")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -337,6 +429,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Pulling"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Pulling")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -352,6 +450,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Jumping"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Jumping")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -367,6 +471,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Shooting"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Shooting")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -382,6 +492,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Pricking"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Pricking")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -397,6 +513,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Gnawing"
                                 {...register("neurogenic")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.neurogenic
+                                  )?.includes("Gnawing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -424,6 +546,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Aching"
                                 {...register("musculoskeletal")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.musculoskeletal
+                                  )?.includes("Aching")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -439,6 +567,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Sore"
                                 {...register("musculoskeletal")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.musculoskeletal
+                                  )?.includes("Sore")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -454,6 +588,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Heavy"
                                 {...register("musculoskeletal")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.musculoskeletal
+                                  )?.includes("Heavy")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -469,6 +609,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Hurting"
                                 {...register("musculoskeletal")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.musculoskeletal
+                                  )?.includes("Hurting")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -485,6 +631,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Dull"
                                 {...register("musculoskeletal")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.musculoskeletal
+                                  )?.includes("Dull")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -512,6 +664,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Tiring"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Tiring")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -527,6 +685,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Miserable"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Miserable")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -542,6 +706,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Vicious"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Vicious")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -557,6 +727,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Agonizing"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Agonizing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -572,6 +748,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Nauseating"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Nauseating")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -587,6 +769,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Frightful"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Frightful")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -602,6 +790,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Piercing"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Piercing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -617,6 +811,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Dreadful"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Dreadful")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -632,6 +832,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Punishing"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Punishing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -647,6 +853,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Torturing"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Torturing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -662,6 +874,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Killing"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Killing")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -677,6 +895,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Unbearable"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Unbearable")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -692,6 +916,12 @@ const Form12 = () => {
                                 type="checkbox"
                                 value="Annoying"
                                 {...register("emotional")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  makeArrfromString(
+                                    pain_assessment.emotional
+                                  )?.includes("Annoying")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -718,6 +948,10 @@ const Form12 = () => {
                                 type="radio"
                                 value="RADIATING"
                                 {...register("type_of_pain")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  pain_assessment.type_of_pain === "RADIATING"
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -733,6 +967,10 @@ const Form12 = () => {
                                 type="radio"
                                 value="LOCALIZED"
                                 {...register("type_of_pain")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  pain_assessment.type_of_pain === "LOCALIZED"
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -748,6 +986,10 @@ const Form12 = () => {
                                 type="radio"
                                 value="DIFFUSE"
                                 {...register("type_of_pain")}
+                                defaultChecked={
+                                  !!pain_assessment &&
+                                  pain_assessment.type_of_pain === "DIFFUSE"
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -772,6 +1014,11 @@ const Form12 = () => {
                             type="radio"
                             value="VISUAL ANALOG SCALE"
                             {...register("severity_of_pain_value")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.severity_of_pain_value ===
+                                "VISUAL ANALOG SCALE"
+                            }
                           />
                         </div>
                         <div className="col-md-8">
@@ -787,6 +1034,11 @@ const Form12 = () => {
                             type="radio"
                             value="FACIAL EXPRESSION"
                             {...register("severity_of_pain_value")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.severity_of_pain_value ===
+                                "FACIAL EXPRESSION"
+                            }
                           />
                         </div>
                         <div className="col-md-2">
@@ -800,7 +1052,18 @@ const Form12 = () => {
                         aria-label=".form-select-sm example"
                         {...register("severity_of_pain_scale")}
                       >
-                        <option selected>Open this select menu</option>
+                        <option
+                          name="language"
+                          defaultValue={
+                            !!pain_assessment &&
+                            pain_assessment.severity_of_pain_scale
+                          }
+                        >
+                          {!!pain_assessment &&
+                          pain_assessment.severity_of_pain_scale
+                            ? pain_assessment.severity_of_pain_scale
+                            : ""}
+                        </option>
                         <option value="0 : No pain">0 : No pain</option>
                         <option value="1-3 : Mild pain">1-3 : Mild pain</option>
                         <option value="4-6 : Severe pain">
@@ -823,6 +1086,10 @@ const Form12 = () => {
                             type="radio"
                             value="Day Time"
                             {...register("frequency_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.frequency_of_pain === "Day Time"
+                            }
                           />
                         </div>
                         <div className="col-md-8">
@@ -838,6 +1105,10 @@ const Form12 = () => {
                             type="radio"
                             value="Night Time"
                             {...register("frequency_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.frequency_of_pain === "Night Time"
+                            }
                           />
                         </div>
                         <div className="col-md-8">
@@ -853,6 +1124,10 @@ const Form12 = () => {
                             type="radio"
                             value="All Time"
                             {...register("frequency_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.frequency_of_pain === "All Time"
+                            }
                           />
                         </div>
                         <div className="col-md-8">
@@ -868,6 +1143,11 @@ const Form12 = () => {
                             type="radio"
                             value="During Activity"
                             {...register("frequency_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.frequency_of_pain ===
+                                "During Activity"
+                            }
                           />
                         </div>
                         <div className="col-md-8">
@@ -890,6 +1170,12 @@ const Form12 = () => {
                         min="0"
                         max="24"
                         {...register("duration_of_pain")}
+                        defaultValue={
+                          !!pain_assessment &&
+                          !!pain_assessment.duration_of_pain
+                            ? pain_assessment.duration_of_pain
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -906,6 +1192,12 @@ const Form12 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("aggravating_factor_of_pain")}
+                        defaultValue={
+                          !!pain_assessment &&
+                          !!pain_assessment.aggravating_factor_of_pain
+                            ? pain_assessment.aggravating_factor_of_pain
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -923,6 +1215,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Liquor"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Liquor"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -938,6 +1235,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Sleep/rest"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Sleep/rest"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -951,12 +1253,17 @@ const Form12 = () => {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            value="Stumilants (e.g caffine )"
+                            value="Stumilants (e.g caffine)"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Stumilants (e.g caffine)"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
-                          <p className="space-x-4">Stumilants (e.g caffine )</p>
+                          <p className="space-x-4">Stumilants (e.g caffine)</p>
                         </div>
                       </div>
                     </div>
@@ -968,6 +1275,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Eating"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Eating"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -984,6 +1296,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Heat"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Heat"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -999,6 +1316,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Cold"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Cold"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1014,6 +1336,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Weather changes"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Weather changes"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1029,6 +1356,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Massage"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Massage"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1045,6 +1377,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Pressure"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Pressure"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1060,6 +1397,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="No movement"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "No movement"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1075,6 +1417,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Movement"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Movement"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1090,6 +1437,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Sitting"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Sitting"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1106,6 +1458,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Lying down"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Lying down"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1121,6 +1478,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Distraction (e.g. television)"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Distraction (e.g. television)"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1138,6 +1500,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Urination / Defecation"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Urination / Defecation"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1153,6 +1520,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Mild exercise"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Mild exercise"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1169,6 +1541,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Loude Noise"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Loude Noise"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1184,6 +1561,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Standing"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Standing"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1199,6 +1581,11 @@ const Form12 = () => {
                             type="checkbox"
                             value="Medication"
                             {...register("releiving_factor_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.releiving_factor_of_pain ===
+                                "Medication"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1223,6 +1610,12 @@ const Form12 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("releiving_pain_medication")}
+                        defaultValue={
+                          !!pain_assessment &&
+                          !!pain_assessment.releiving_pain_medication
+                            ? pain_assessment.releiving_pain_medication
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -1240,6 +1633,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="One joint"
                             {...register("pattern_of_joint_involvement")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.pattern_of_joint_involvement
+                              )?.includes("One joint")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1255,6 +1654,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Multiple joint"
                             {...register("pattern_of_joint_involvement")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.pattern_of_joint_involvement
+                              )?.includes("Multiple joint")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1270,6 +1675,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Assymetrical"
                             {...register("pattern_of_joint_involvement")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.pattern_of_joint_involvement
+                              )?.includes("Assymetrical")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1285,6 +1696,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Symmetrical"
                             {...register("pattern_of_joint_involvement")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.pattern_of_joint_involvement
+                              )?.includes("Symmetrical")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1307,6 +1724,10 @@ const Form12 = () => {
                             type="radio"
                             value="Mild"
                             {...register("joint_irritability")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.joint_irritability === "Mild"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1322,6 +1743,10 @@ const Form12 = () => {
                             type="radio"
                             value="moderate"
                             {...register("joint_irritability")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.joint_irritability === "moderate"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1337,6 +1762,10 @@ const Form12 = () => {
                             type="radio"
                             value="Seveir"
                             {...register("joint_irritability")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.joint_irritability === "Seveir"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1359,6 +1788,11 @@ const Form12 = () => {
                             type="radio"
                             value="Intermittently present"
                             {...register("progress_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.progress_of_pain ===
+                                "Intermittently present"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1374,6 +1808,11 @@ const Form12 = () => {
                             type="radio"
                             value="Constantly present"
                             {...register("progress_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.progress_of_pain ===
+                                "Constantly present"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1389,6 +1828,11 @@ const Form12 = () => {
                             type="radio"
                             value="Present in recurrent attacks"
                             {...register("progress_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.progress_of_pain ===
+                                "Present in recurrent attacks"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1406,6 +1850,11 @@ const Form12 = () => {
                             type="radio"
                             value="Progressively worse"
                             {...register("progress_of_pain")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.progress_of_pain ===
+                                "Progressively worse"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1420,6 +1869,7 @@ const Form12 = () => {
                     <div className="col-md-6">
                       <h3>Worse problem (loss of function)</h3>
                     </div>
+
                     <div className="col-md-2">
                       <div className="row">
                         <div className="col-md-2">
@@ -1428,6 +1878,10 @@ const Form12 = () => {
                             type="radio"
                             value="Mild"
                             {...register("worse_problem")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.worse_problem === "Mild"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1443,6 +1897,10 @@ const Form12 = () => {
                             type="radio"
                             value="moderate"
                             {...register("worse_problem")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.worse_problem === "moderate"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1458,6 +1916,10 @@ const Form12 = () => {
                             type="radio"
                             value="Seveir"
                             {...register("worse_problem")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              pain_assessment.worse_problem === "Seveir"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1480,6 +1942,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Stiffness"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Stiffness")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1495,6 +1963,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Swelling"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Swelling")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1510,6 +1984,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Crepitus"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Crepitus")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1525,6 +2005,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Locking"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Locking")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1541,6 +2027,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Instability"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Instability")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1556,6 +2048,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Weakness"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Weakness")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1571,6 +2069,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Muscle spasm"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Muscle spasm")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1586,6 +2090,12 @@ const Form12 = () => {
                             type="checkbox"
                             value="Neurological symptoms"
                             {...register("related_signs")}
+                            defaultChecked={
+                              !!pain_assessment &&
+                              makeArrfromString(
+                                pain_assessment.related_signs
+                              )?.includes("Neurological symptoms")
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -1607,6 +2117,12 @@ const Form12 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!pain_assessment &&
+                          !!pain_assessment.identified_problems
+                            ? pain_assessment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1621,6 +2137,12 @@ const Form12 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!pain_assessment &&
+                          !!pain_assessment.short_term_goals
+                            ? pain_assessment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1635,6 +2157,11 @@ const Form12 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!pain_assessment && !!pain_assessment.long_term_goals
+                            ? pain_assessment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1650,6 +2177,11 @@ const Form12 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!pain_assessment && !!pain_assessment.treatment_plan
+                            ? pain_assessment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

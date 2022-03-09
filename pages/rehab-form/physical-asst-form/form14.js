@@ -22,6 +22,13 @@ const Form14 = () => {
       return result;
     }
   );
+  const {
+    orthotic_assessment,
+    prosthetic_assessment,
+    adaptive_equipment_assessment,
+    wheel_chair_assessment,
+  } = appointment?.rehab;
+  console.log(adaptive_equipment_assessment);
   const { register, handleSubmit } = useForm();
   const submit_form14 = async (data, event) => {
     event.preventDefault();
@@ -377,6 +384,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("type_of_device")}
+                            defaultValue={
+                              !!adaptive_equipment_assessment &&
+                              !!adaptive_equipment_assessment.type_of_device
+                                ? adaptive_equipment_assessment.type_of_device
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -400,6 +413,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("alignment_fitting")}
+                            defaultValue={
+                              !!adaptive_equipment_assessment &&
+                              !!adaptive_equipment_assessment.alignment_fitting
+                                ? adaptive_equipment_assessment.alignment_fitting
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -416,6 +435,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("movement_analysis")}
+                            defaultValue={
+                              !!adaptive_equipment_assessment &&
+                              !!adaptive_equipment_assessment.movement_analysis
+                                ? adaptive_equipment_assessment.movement_analysis
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -432,6 +457,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("patinet_ability")}
+                            defaultValue={
+                              !!adaptive_equipment_assessment &&
+                              !!adaptive_equipment_assessment.patinet_ability
+                                ? adaptive_equipment_assessment.patinet_ability
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -450,6 +481,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("Functional_effect")}
+                            defaultValue={
+                              !!adaptive_equipment_assessment &&
+                              !!adaptive_equipment_assessment.Functional_effect
+                                ? adaptive_equipment_assessment.Functional_effect
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -466,6 +503,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("level_of_safety")}
+                            defaultValue={
+                              !!adaptive_equipment_assessment &&
+                              !!adaptive_equipment_assessment.level_of_safety
+                                ? adaptive_equipment_assessment.level_of_safety
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -498,6 +541,10 @@ const Form14 = () => {
                             type="radio"
                             value="Manual"
                             {...register("type")}
+                            defaultChecked={
+                              !!wheel_chair_assessment &&
+                              wheel_chair_assessment.type === "Manual"
+                            }
                           />
                         </div>
                         <div className="col-md-11">
@@ -513,6 +560,10 @@ const Form14 = () => {
                             type="radio"
                             value="MOTORIZED"
                             {...register("type")}
+                            defaultChecked={
+                              !!wheel_chair_assessment &&
+                              wheel_chair_assessment.type === "MOTORIZED"
+                            }
                           />
                         </div>
                         <div className="col-md-11">
@@ -528,6 +579,10 @@ const Form14 = () => {
                             type="radio"
                             value="None"
                             {...register("type")}
+                            defaultChecked={
+                              !!wheel_chair_assessment &&
+                              wheel_chair_assessment.type === "None"
+                            }
                           />
                         </div>
                         <div className="col-md-11">
@@ -546,6 +601,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("A")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.A
+                                ? wheel_chair_assessment.A
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -561,6 +622,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("B")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.B
+                                ? wheel_chair_assessment.B
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -576,6 +643,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("C")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.C
+                                ? wheel_chair_assessment.C
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -591,6 +664,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("D1")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.D1
+                                ? wheel_chair_assessment.D1
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -606,6 +685,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("D2")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.D2
+                                ? wheel_chair_assessment.D2
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -621,6 +706,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("E")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.E
+                                ? wheel_chair_assessment.E
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -636,6 +727,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("F")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.F
+                                ? wheel_chair_assessment.F
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -651,6 +748,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("G")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.G
+                                ? wheel_chair_assessment.G
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -666,6 +769,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("H")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.H
+                                ? wheel_chair_assessment.H
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -681,6 +790,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("I")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.I
+                                ? wheel_chair_assessment.I
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -696,6 +811,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("J")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.J
+                                ? wheel_chair_assessment.J
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -711,6 +832,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("K")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.K
+                                ? wheel_chair_assessment.K
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -726,6 +853,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("L")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.L
+                                ? wheel_chair_assessment.L
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -741,6 +874,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("M")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.M
+                                ? wheel_chair_assessment.M
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -756,6 +895,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("N")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.N
+                                ? wheel_chair_assessment.N
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -771,6 +916,12 @@ const Form14 = () => {
                             type="text"
                             placeholder="Text box"
                             {...register("O")}
+                            defaultValue={
+                              !!wheel_chair_assessment &&
+                              !!wheel_chair_assessment.O
+                                ? wheel_chair_assessment.O
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -789,6 +940,12 @@ const Form14 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!wheel_chair_assessment &&
+                          !!wheel_chair_assessment.identified_problems
+                            ? wheel_chair_assessment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -803,6 +960,12 @@ const Form14 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!wheel_chair_assessment &&
+                          !!wheel_chair_assessment.long_term_goals
+                            ? wheel_chair_assessment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -817,6 +980,12 @@ const Form14 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!wheel_chair_assessment &&
+                          !!wheel_chair_assessment.long_term_goals
+                            ? wheel_chair_assessment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -832,6 +1001,12 @@ const Form14 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!wheel_chair_assessment &&
+                          !!wheel_chair_assessment.treatment_plan
+                            ? wheel_chair_assessment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

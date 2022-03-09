@@ -22,6 +22,8 @@ const Form13 = () => {
       return result;
     }
   );
+  const { environmental_barrier_assessmnet } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form13 = async (data, event) => {
     event.preventDefault();
@@ -61,6 +63,44 @@ const Form13 = () => {
       `/rehab-form/physical-asst-form/form14?appointmentId=${appointmentId}`
     );
     return result;
+  };
+
+  const workBarrierList = [
+    "NONE",
+    "STAIRS WITH HANDRAILS",
+    "STAIRS WITHOUT HANDRAILS",
+    "NO GRAB BARS IN BATHROOM",
+    "NARROW DOORWAYS OR ACCESS POINTS",
+    "INADEQUATE LIGHTING",
+    "CROWDED/CLUTTERED ENVIRONMENT",
+    "POOR FLOORING",
+    "LACK OF RAMPS",
+    "UNSAFE STRUCTURAL ENVIRONMENT",
+    "NO ELECTRICITY",
+    "NO RUNNING WATER",
+    "CONTAMINATES WATER",
+    "NO TOILETING FACILITY",
+    "INADEQUATE SEWAGE DISPOSAL",
+    "INADEQUATE/IMPROPER FOOD STORAGE",
+    "INADEQUATE/NO FOOD REFRIGRATION",
+    "NO COOKING FACILITY",
+    "INSECTS/RODENTS",
+    "NARROW OR OBSTRUCTED DOORWAYS",
+    "STAIRS LEADING FROM INSIDE HOUSE TO OUTSIDE",
+    "STAIRS INSIDE HOUSE WHICH MUST BE USED",
+    "STAIRS INSIDE HOUSE WHICH ARE USED OPTIONALLY",
+    "CLUTTERED SOILED LIVING AREA",
+    "OTHERS",
+  ];
+
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
   };
   return (
     <>
@@ -146,6 +186,12 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("family_members")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.family_members
+                            ? environmental_barrier_assessmnet.family_members
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -162,6 +208,12 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("friends")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.friends
+                            ? environmental_barrier_assessmnet.friends
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -180,6 +232,12 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("personal_care_provider")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.personal_care_provider
+                            ? environmental_barrier_assessmnet.personal_care_provider
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -196,6 +254,12 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("personal_assistants")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.personal_assistants
+                            ? environmental_barrier_assessmnet.personal_assistants
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -212,6 +276,12 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("health_professionals")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.health_professionals
+                            ? environmental_barrier_assessmnet.health_professionals
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -228,6 +298,12 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("societal_attitudes")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.societal_attitudes
+                            ? environmental_barrier_assessmnet.societal_attitudes
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -244,21 +320,13 @@ const Form13 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("social_norms")}
+                        defaultValue={
+                          !!environmental_barrier_assessmnet &&
+                          !!environmental_barrier_assessmnet.social_norms
+                            ? environmental_barrier_assessmnet.social_norms
+                            : ""
+                        }
                       />
-                    </div>
-                  </div>
-                </div>
-                <div className="gen-form">
-                  <div className="row justify-centent-between align-items-center">
-                    <div className="col-md-3">
-                      <h3>Identified Problems</h3>
-                    </div>
-                    <div className="col-md-9">
-                      <textarea
-                        className="form-control"
-                        rows="3"
-                        placeholder="Describe your problems here"
-                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -276,408 +344,29 @@ const Form13 = () => {
                   <div>
                     <div className="gen-form">
                       <div className="row justify-content-between align-items-start">
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NONE"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">NONE</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="STAIRS WITH HANDRAILS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">STAIRS WITH HANDRAILS</p>
+                        {workBarrierList.map((items, index) => (
+                          <div className="col-md-3">
+                            <div className="row">
+                              <div className="col-md-2">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={items}
+                                  {...register("home_work_barrier")}
+                                  defaultChecked={
+                                    !!environmental_barrier_assessmnet &&
+                                    makeArrfromString(
+                                      environmental_barrier_assessmnet.home_work_barrier
+                                    )?.includes(items)
+                                  }
+                                />
+                              </div>
+                              <div className="col-md-10">
+                                <p className="space-x-4">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="STAIRS WITHOUT HANDRAILS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                STAIRS WITHOUT HANDRAILS
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NO GRAB BARS IN BATHROOM"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                NO GRAB BARS IN BATHROOM
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value=" NARROW DOORWAYS OR ACCESS POINTS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                NARROW DOORWAYS OR ACCESS POINTS
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="INADEQUATE LIGHTING"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">INADEQUATE LIGHTING</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="CROWDED/CLUTTERED ENVIRONMENT"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                CROWDED/CLUTTERED ENVIRONMENT
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="POOR FLOORING"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">POOR FLOORING</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="LACK OF RAMPS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">LACK OF RAMPS</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="UNSAFE STRUCTURAL ENVIRONMENT"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                UNSAFE STRUCTURAL ENVIRONMENT
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NO ELECTRICITY"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">NO ELECTRICITY</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NO RUNNING WATER"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">NO RUNNING WATER</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="CONTAMINATES WATER"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">CONTAMINATES WATER</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NO TOILETING FACILITY"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">NO TOILETING FACILITY</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="INADEQUATE SEWAGE DISPOSAL"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                INADEQUATE SEWAGE DISPOSAL
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="INADEQUATE/IMPROPER FOOD STORAGE"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                INADEQUATE/IMPROPER FOOD STORAGE
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="INADEQUATE/NO FOOD REFRIGRATION"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                INADEQUATE/NO FOOD REFRIGRATION
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NO COOKING FACILITY"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">NO COOKING FACILITY</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="INSECTS/RODENTS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">INSECTS/RODENTS</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="NARROW OR OBSTRUCTED DOORWAYS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                NARROW OR OBSTRUCTED DOORWAYS
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="STAIRS LEADING FROM INSIDE HOUSE TO OUTSIDE"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                STAIRS LEADING FROM INSIDE HOUSE TO OUTSIDE
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="STAIRS INSIDE HOUSE WHICH MUST BE USED"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                STAIRS INSIDE HOUSE WHICH MUST BE USED
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="STAIRS INSIDE HOUSE WHICH ARE USED OPTIONALLY"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                STAIRS INSIDE HOUSE WHICH ARE USED OPTIONALLY
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="CLUTTERED SOILED LIVING AREA"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                CLUTTERED SOILED LIVING AREA
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-3">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="OTHERS"
-                                {...register("home_work_barrier")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">OTHERS</p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
 
@@ -692,6 +381,12 @@ const Form13 = () => {
                             rows="3"
                             placeholder="Describe your problems here"
                             {...register("identified_problems")}
+                            defaultValue={
+                              !!environmental_barrier_assessmnet &&
+                              !!environmental_barrier_assessmnet.identified_problems
+                                ? environmental_barrier_assessmnet.identified_problems
+                                : ""
+                            }
                           ></textarea>
                         </div>
                       </div>
@@ -706,6 +401,12 @@ const Form13 = () => {
                             className="form-control"
                             placeholder="Describe your problems here"
                             {...register("short_term_goals")}
+                            defaultValue={
+                              !!environmental_barrier_assessmnet &&
+                              !!environmental_barrier_assessmnet.short_term_goals
+                                ? environmental_barrier_assessmnet.short_term_goals
+                                : ""
+                            }
                           ></textarea>
                         </div>
                       </div>
@@ -720,6 +421,12 @@ const Form13 = () => {
                             className="form-control"
                             placeholder="Describe your problems here"
                             {...register("long_term_goals")}
+                            defaultValue={
+                              !!environmental_barrier_assessmnet &&
+                              !!environmental_barrier_assessmnet.long_term_goals
+                                ? environmental_barrier_assessmnet.long_term_goals
+                                : ""
+                            }
                           ></textarea>
                         </div>
                       </div>
@@ -735,6 +442,12 @@ const Form13 = () => {
                             rows="3"
                             placeholder="Describe your problems here"
                             {...register("treatment_plans")}
+                            defaultValue={
+                              !!environmental_barrier_assessmnet &&
+                              !!environmental_barrier_assessmnet.treatment_plans
+                                ? environmental_barrier_assessmnet.treatment_plans
+                                : ""
+                            }
                           ></textarea>
                         </div>
                       </div>
