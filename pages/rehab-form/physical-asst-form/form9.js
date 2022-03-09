@@ -1,7 +1,7 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -23,6 +23,7 @@ const Form9 = () => {
     }
   );
   const { postural_control_assesment } = appointment?.rehab;
+  console.log(postural_control_assesment);
   const { register, handleSubmit } = useForm();
   const submit_form9 = async (data, event) => {
     event.preventDefault();
@@ -50,6 +51,10 @@ const Form9 = () => {
           ctsib: data.ctsib,
           getup_go_test: data.getup_go_test,
           perceptual_impairment: data.perceptual_impairment,
+          functional_performance_score: data.functional_performance_score,
+          motor_strategy_score: data.motor_strategy_score,
+          sensory_strategy_score: data.sensory_strategy_score,
+          factors_impacted_score: data.factors_impacted_score,
         },
       },
     };
@@ -64,9 +69,12 @@ const Form9 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form10?appointmentId=${appointmentId}`
+    );
     return result;
   };
-  const optionList = ["Normal", "Impaired"];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -95,6 +103,13 @@ const Form9 = () => {
                         className="form-control"
                         type="number"
                         placeholder="Score"
+                        {...register("functional_performance_score")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.functional_performance_score
+                            ? postural_control_assesment.functional_performance_score
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -113,6 +128,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("getup_go_test")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.getup_go_test
+                                ? postural_control_assesment.getup_go_test
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -133,6 +154,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("functional_reach_test")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.functional_reach_test
+                                ? postural_control_assesment.functional_reach_test
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -153,6 +180,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("tinetti_test")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.tinetti_test
+                                ? postural_control_assesment.tinetti_test
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -173,6 +206,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("berge_balance_test")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.berge_balance_test
+                                ? postural_control_assesment.berge_balance_test
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -189,6 +228,13 @@ const Form9 = () => {
                         className="form-control"
                         type="number"
                         placeholder="Score"
+                        {...register("motor_strategy_score")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.motor_strategy_score
+                            ? postural_control_assesment.motor_strategy_score
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -207,6 +253,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("alignment_sitting_standing")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.alignment_sitting_standing
+                                ? postural_control_assesment.alignment_sitting_standing
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -227,6 +279,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("movement_sitting_standing")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.movement_sitting_standing
+                                ? postural_control_assesment.movement_sitting_standing
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -243,6 +301,7 @@ const Form9 = () => {
                         className="form-control"
                         type="number"
                         placeholder="Score"
+                        {...register("sensory_strategy_score")}
                       />
                     </div>
                   </div>
@@ -264,6 +323,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("ctsib")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.ctsib
+                                ? postural_control_assesment.ctsib
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -282,6 +347,13 @@ const Form9 = () => {
                         className="form-control"
                         type="number"
                         placeholder="Score"
+                        {...register("factors_impacted_score")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.factors_impacted_score
+                            ? postural_control_assesment.factors_impacted_score
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -300,6 +372,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("cognitive_impairment")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.cognitive_impairment
+                                ? postural_control_assesment.cognitive_impairment
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -320,6 +398,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("musculoskeletal_impairment")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.musculoskeletal_impairment
+                                ? postural_control_assesment.musculoskeletal_impairment
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -340,6 +424,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("neuromuscular_mpairment")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.neuromuscular_mpairment
+                                ? postural_control_assesment.neuromuscular_mpairment
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -360,6 +450,12 @@ const Form9 = () => {
                             type="text"
                             placeholder="Text Area"
                             {...register("perceptual_impairment")}
+                            defaultValue={
+                              !!postural_control_assesment &&
+                              !!postural_control_assesment.perceptual_impairment
+                                ? postural_control_assesment.perceptual_impairment
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -379,23 +475,46 @@ const Form9 = () => {
                           <td>Small Movement</td>
                           <td>
                             <div className="row">
-                              {optionList.map((items, index) => (
-                                <div className="col-md-6" key={index}>
-                                  <div className="row">
-                                    <div className="col-md-4">
-                                      <input
-                                        className="form-check-input"
-                                        type="radio"
-                                        value={items}
-                                        {...register("sitting_small_movement")}
-                                      />
-                                    </div>
-                                    <div className="col-md-8">
-                                      <p className="space-x-4">{items}</p>
-                                    </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Normal"
+                                      {...register("sitting_small_movement")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.sitting_small_movement ===
+                                          "Normal"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Normal</p>
                                   </div>
                                 </div>
-                              ))}
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Impared"
+                                      {...register("sitting_small_movement")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.sitting_small_movement ===
+                                          "Impared"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Impared</p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </td>
                         </tr>
@@ -403,23 +522,46 @@ const Form9 = () => {
                           <td>Large Movement</td>
                           <td>
                             <div className="row">
-                              {optionList.map((items, index) => (
-                                <div className="col-md-6" key={index}>
-                                  <div className="row">
-                                    <div className="col-md-4">
-                                      <input
-                                        className="form-check-input"
-                                        type="radio"
-                                        value={items}
-                                        {...register("sitting_large_movement")}
-                                      />
-                                    </div>
-                                    <div className="col-md-8">
-                                      <p className="space-x-4">{items}</p>
-                                    </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Normal"
+                                      {...register("sitting_large_movement")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.sitting_large_movement ===
+                                          "Normal"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Normal</p>
                                   </div>
                                 </div>
-                              ))}
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Impared"
+                                      {...register("sitting_large_movement")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.sitting_large_movement ===
+                                          "Impared"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Impared</p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </td>
                         </tr>
@@ -436,23 +578,46 @@ const Form9 = () => {
                           <td>Ankle Strategy</td>
                           <td>
                             <div className="row">
-                              {optionList.map((items, index) => (
-                                <div className="col-md-6" key={index}>
-                                  <div className="row">
-                                    <div className="col-md-4">
-                                      <input
-                                        className="form-check-input"
-                                        type="radio"
-                                        value={items}
-                                        {...register("standing_ankle_strategy")}
-                                      />
-                                    </div>
-                                    <div className="col-md-8">
-                                      <p className="space-x-4">{items}</p>
-                                    </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Normal"
+                                      {...register("standing_ankle_strategy")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.standing_ankle_strategy ===
+                                          "Normal"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Normal</p>
                                   </div>
                                 </div>
-                              ))}
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Impared"
+                                      {...register("standing_ankle_strategy")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.standing_ankle_strategy ===
+                                          "Impared"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Impared</p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </td>
                         </tr>
@@ -460,23 +625,46 @@ const Form9 = () => {
                           <td>Hip Strategy</td>
                           <td>
                             <div className="row">
-                              {optionList.map((items, index) => (
-                                <div className="col-md-6" key={index}>
-                                  <div className="row">
-                                    <div className="col-md-4">
-                                      <input
-                                        className="form-check-input"
-                                        type="radio"
-                                        value={items}
-                                        {...register("standing_hip_strategy")}
-                                      />
-                                    </div>
-                                    <div className="col-md-8">
-                                      <p className="space-x-4">{items}</p>
-                                    </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Normal"
+                                      {...register("standing_hip_strategy")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.standing_hip_strategy ===
+                                          "Normal"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Normal</p>
                                   </div>
                                 </div>
-                              ))}
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Impared"
+                                      {...register("standing_hip_strategy")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.standing_hip_strategy ===
+                                          "Impared"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Impared</p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </td>
                         </tr>
@@ -484,23 +672,46 @@ const Form9 = () => {
                           <td>Stepping Strategy</td>
                           <td>
                             <div className="row">
-                              {optionList.map((items, index) => (
-                                <div className="col-md-6" key={index}>
-                                  <div className="row">
-                                    <div className="col-md-4">
-                                      <input
-                                        className="form-check-input"
-                                        type="radio"
-                                        value={items}
-                                        {...register("stepping_strategy")}
-                                      />
-                                    </div>
-                                    <div className="col-md-8">
-                                      <p className="space-x-4">{items}</p>
-                                    </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Normal"
+                                      {...register("stepping_strategy")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.stepping_strategy ===
+                                          "Normal"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Normal</p>
                                   </div>
                                 </div>
-                              ))}
+                              </div>
+                              <div className="col-md-6">
+                                <div className="row">
+                                  <div className="col-md-4">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="Impared"
+                                      {...register("stepping_strategy")}
+                                      defaultChecked={
+                                        !!postural_control_assesment &&
+                                        postural_control_assesment.stepping_strategy ===
+                                          "Impared"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="col-md-8">
+                                    <p className="space-x-4">Impared</p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </td>
                         </tr>
@@ -520,6 +731,12 @@ const Form9 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.identified_problems
+                            ? postural_control_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -534,6 +751,12 @@ const Form9 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.short_term_goals
+                            ? postural_control_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -548,6 +771,12 @@ const Form9 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.long_term_goals
+                            ? postural_control_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -563,6 +792,12 @@ const Form9 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!postural_control_assesment &&
+                          !!postural_control_assesment.treatment_plan
+                            ? postural_control_assesment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

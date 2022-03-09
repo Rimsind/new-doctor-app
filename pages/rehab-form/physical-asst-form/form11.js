@@ -1,7 +1,7 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -136,6 +136,9 @@ const Form11 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form12?appointmentId=${appointmentId}`
+    );
     return result;
   };
   return (

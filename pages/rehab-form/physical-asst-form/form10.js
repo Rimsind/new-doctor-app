@@ -1,7 +1,7 @@
 import Pagination2 from "../../../components/Pagination2";
 import FormCloseBtn from "../../../components/FormCloseBtn";
 
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import axios from "axios";
@@ -53,7 +53,26 @@ const Form10 = () => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
+    router.push(
+      `/rehab-form/physical-asst-form/form11?appointmentId=${appointmentId}`
+    );
     return result;
+  };
+
+  const involuntoryList = [
+    "Dystonia",
+    "Termor",
+    "Choreiform And Antheoid Movement",
+  ];
+
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
   };
   return (
     <>
@@ -164,6 +183,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="0= NO increasenin muscle tone"
                                 {...register("modified_ashworth_scale")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.modified_ashworth_scale
+                                  )?.includes("0= NO increasenin muscle tone")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -179,12 +204,16 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                value=" 1=Slight increase in muscle tone ,manifested by
-                                a slight catch and release or by minimal
-                                resistance at the end of the range of motion
-                                when the affected parts is moved in flexion and
-                                extension."
+                                value="1=Slight increase in muscle tone ,manifested b a slight catch and release or by minima resistance at the end of the range of motio when the affected parts is moved in flexion an extension"
                                 {...register("modified_ashworth_scale")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.modified_ashworth_scale
+                                  )?.includes(
+                                    "1=Slight increase in muscle tone ,manifested b a slight catch and release or by minima resistance at the end of the range of motio when the affected parts is moved in flexion an extension"
+                                  )
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -206,11 +235,19 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                value=" 1+= Slight increase in muscle tone, manifested
+                                value="1+= Slight increase in muscle tone, manifested
                                 by a catch followed by minimal resistance
                                 throughout the remainder (less than half) of the
-                                range of motion(ROM)."
+                                range of motion(ROM)"
                                 {...register("modified_ashworth_scale")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.modified_ashworth_scale
+                                  )?.includes(
+                                    "1+= Slight increase in muscle tone, manifested by a catch followed by minimal resistance throughout the remainder (less than half) of the range of motion(ROM)"
+                                  )
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -231,8 +268,16 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="2=More marked increase in muscle tone through
                                 most of range of motion but affected parts
-                                easily moved."
+                                easily moved"
                                 {...register("modified_ashworth_scale")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.modified_ashworth_scale
+                                  )?.includes(
+                                    "2=More marked increase in muscle tone through most of range of motion but affected parts easily moved"
+                                  )
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -252,9 +297,17 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                value=" 3= Considerable increase in muscle tone ,passive
+                                value="3= Considerable increase in muscle tone ,passive
                                 movement difficult"
                                 {...register("modified_ashworth_scale")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.modified_ashworth_scale
+                                  )?.includes(
+                                    "3= Considerable increase in muscle tone ,passive movement difficult"
+                                  )
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -271,8 +324,16 @@ const Form10 = () => {
                               <input
                                 className="form-check-input"
                                 type="checkbox"
-                                value="4= Affected parts rigid in flexion or extension."
+                                value="4= Affected parts rigid in flexion or extension"
                                 {...register("modified_ashworth_scale")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.modified_ashworth_scale
+                                  )?.includes(
+                                    "4= Affected parts rigid in flexion or extension"
+                                  )
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -301,6 +362,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Finger to nose"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Finger to nose")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -316,6 +383,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Tapping hands"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Tapping hands")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -333,6 +406,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Finger to therapist finger"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Finger to therapist finger")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -350,6 +429,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Tapping foot"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Tapping foot")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -367,6 +452,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Pronation Supination"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Pronation Supination")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -382,6 +473,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Alternate heel to knee"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Alternate heel to knee")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -401,6 +498,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Rebound Test"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Rebound Test")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -416,6 +519,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Heel to Toe"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Heel to Toe")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -433,6 +542,12 @@ const Form10 = () => {
                                 type="checkbox"
                                 value="Heel to Shin"
                                 {...register("coordination_test")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  makeArrfromString(
+                                    motor_function_assesment.coordination_test
+                                  )?.includes("Heel to Shin")
+                                }
                               />
                             </div>
                             <div className="col-md-8">
@@ -452,53 +567,29 @@ const Form10 = () => {
                     </div>
                     <div className="col-md-8">
                       <div className="row">
-                        <div className="col-md-4">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="Dystonia"
-                                {...register("involuntory_movement")}
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Dystonia</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4">
-                          <div className="row">
-                            <div className="col-md-4">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="Termor"
-                                {...register("involuntory_movement")}
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <p className="space-x-4">Termor</p>
+                        {involuntoryList.map((items, index) => (
+                          <div className="col-md-4" key={index}>
+                            <div className="row">
+                              <div className="col-md-2">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={items}
+                                  {...register("involuntory_movement")}
+                                  defaultChecked={
+                                    !!motor_function_assesment &&
+                                    makeArrfromString(
+                                      motor_function_assesment.involuntory_movement
+                                    )?.includes(items)
+                                  }
+                                />
+                              </div>
+                              <div className="col-md-10">
+                                <p className="">{items}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-4">
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="Choreiform And Antheoid Movement"
-                                {...register("involuntory_movement")}
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">
-                                Choreiform And Antheoid Movement
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -515,6 +606,12 @@ const Form10 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!motor_function_assesment &&
+                          !!motor_function_assesment.identified_problems
+                            ? motor_function_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -529,6 +626,12 @@ const Form10 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!motor_function_assesment &&
+                          !!motor_function_assesment.short_term_goals
+                            ? motor_function_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -543,6 +646,12 @@ const Form10 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!motor_function_assesment &&
+                          !!motor_function_assesment.long_term_goals
+                            ? motor_function_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -558,6 +667,12 @@ const Form10 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!motor_function_assesment &&
+                          !!motor_function_assesment.treatment_plan
+                            ? motor_function_assesment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
