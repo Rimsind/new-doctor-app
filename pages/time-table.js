@@ -98,7 +98,7 @@ const TimeTable = () => {
   return (
     <>
       <div className="doc_timetable">
-        <div className="gen-form">
+        <div className="new-gen-form">
           <div className="row mb-3">
             <div className="col-md-4">
               <p className="fw-bold fs-5 text-dark">Time Table</p>
@@ -330,15 +330,129 @@ const TimeTable = () => {
             </div>
           </div>
           <div className="doc_time mb-3">
-            <div className="card card_list p-3 shadow">
-              <div className="row align-items-center">
-                <div className="col-md-4">
-                  <div className="card_item">
-                    <p className="fs-5 fw-bold">dfgfdh</p>
+            <div className="card mt-3 shadow">
+              <div className="card-body">
+                <div className="time_table_modal_table">
+                  <div className="time_table_poly_name text-center">
+                    <p
+                      className="fs-5 fw-bold border-bottom
+                    "
+                    >
+                      Mediland Nursing Home
+                    </p>
+                  </div>
+                  <div className="row align-items-center">
+                    <div className="col-2">
+                      <p className="fs-6 fw-bold">Day</p>
+                    </div>
+                    <div className="col-10">
+                      <div className="row">
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="col-md-8">
-                  <div className="card_item"></div>
+              </div>
+            </div>
+            <div className="card mt-3 shadow">
+              <div className="card-body">
+                <div className="time_table_modal_table">
+                  <div className="time_table_poly_name text-center">
+                    <p
+                      className="fs-5 fw-bold border-bottom
+                    "
+                    >
+                      Kathi Polyclinic
+                    </p>
+                  </div>
+                  <div className="row align-items-center">
+                    <div className="col-2">
+                      <p className="fs-6 fw-bold">Day</p>
+                    </div>
+                    <div className="col-10">
+                      <div className="row">
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                        <div className="col-3">
+                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                            <span>12:00 AM - 01:00 AM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
