@@ -141,6 +141,22 @@ const Form11 = () => {
     );
     return result;
   };
+
+  const scoreList = [
+    "0",
+    "1",
+    "1+",
+    "2-",
+    "2",
+    "2+",
+    "3-",
+    "3",
+    "3+",
+    "4-",
+    "4",
+    "4+",
+    "5",
+  ];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -174,7 +190,7 @@ const Form11 = () => {
                     <tr>
                       <td
                         className="fs-5 fw-bold"
-                        rowSpan="6"
+                        rowSpan="5"
                         style={{ width: "70px" }}
                       >
                         HIP
@@ -190,6 +206,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.hip_flexion_score
+                              ? manual_muscle_assesment.hip_flexion_score
+                              : ""
+                          }
                           {...register("hip_flexion_score")}
                         />
                       </td>
@@ -199,20 +221,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("hip_flexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -227,6 +251,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.hip_extension_score
+                              ? manual_muscle_assesment.hip_extension_score
+                              : ""
+                          }
                           {...register("hip_extension_score")}
                         />
                       </td>
@@ -236,20 +266,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("hip_extension_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_extension_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_extension_strength
+                              ? manual_muscle_assesment.hip_extension_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -264,6 +296,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.hip_abduction_score
+                              ? manual_muscle_assesment.hip_abduction_score
+                              : ""
+                          }
                           {...register("hip_abduction_score")}
                         />
                       </td>
@@ -273,56 +311,26 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("hip_abduction_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_abduction_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_abduction_strength
+                              ? manual_muscle_assesment.hip_abduction_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
-                    <tr>
-                      <td>{/* <p>Adduction / Adductors</p> */}</td>
-                      <td>{/* <p>0-45</p> */}</td>
-                      <td>{/* <p>0-45</p> */}</td>
-                      <td>
-                        {/* <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                        /> */}
-                      </td>
-                      <td>
-                        {/* <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                        >
-                          <option selected>Select</option>
-                          <option value="1">0</option>
-                          <option value="2">1</option>
-                          <option value="3">1+</option>
-                          <option value="3">2-</option>
-                          <option value="3">2</option>
-                          <option value="3">2+</option>
-                          <option value="3">3-</option>
-                          <option value="3">3</option>
-                          <option value="3">3+</option>
-                          <option value="3">4-</option>
-                          <option value="3">4</option>
-                          <option value="3">4+</option>
-                          <option value="3">5</option>
-                        </select> */}
-                      </td>
-                    </tr>
+
                     <tr>
                       <td>
                         <p>External Rotation / External Rotators</p>
@@ -334,6 +342,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.hip_externalRotation_score
+                              ? manual_muscle_assesment.hip_externalRotation_score
+                              : ""
+                          }
                           {...register("hip_externalRotation_score")}
                         />
                       </td>
@@ -343,20 +357,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("hip_externalRotation_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_externalRotation_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_externalRotation_strength
+                              ? manual_muscle_assesment.hip_externalRotation_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -372,6 +388,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.hip_internalRotation_score
+                              ? manual_muscle_assesment.hip_internalRotation_score
+                              : ""
+                          }
                           {...register("hip_internalRotation_score")}
                         />
                       </td>
@@ -381,20 +403,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("hip_internalRotation_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_internalRotation_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_internalRotation_strength
+                              ? manual_muscle_assesment.hip_internalRotation_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -418,6 +442,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.knee_flexion_score
+                              ? manual_muscle_assesment.knee_flexion_score
+                              : ""
+                          }
                           {...register("knee_flexion_score")}
                         />
                       </td>
@@ -427,20 +457,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("knee_flexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.knee_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.knee_flexion_strength
+                              ? manual_muscle_assesment.knee_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -455,6 +487,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.knee_extension_score
+                              ? manual_muscle_assesment.knee_extension_score
+                              : ""
+                          }
                           {...register("knee_extension_score")}
                         />
                       </td>
@@ -464,20 +502,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("knee_extension_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.knee_extension_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.knee_extension_strength
+                              ? manual_muscle_assesment.knee_extension_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -492,6 +532,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.knee_straightLegRaise_score
+                              ? manual_muscle_assesment.knee_straightLegRaise_score
+                              : ""
+                          }
                           {...register("knee_straightLegRaise_score")}
                         />
                       </td>
@@ -501,20 +547,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("knee_straightLegRaise_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.knee_straightLegRaise_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.knee_straightLegRaise_strength
+                              ? manual_muscle_assesment.knee_straightLegRaise_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -538,6 +586,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.ankle_dorsiflexion_score
+                              ? manual_muscle_assesment.ankle_dorsiflexion_score
+                              : ""
+                          }
                           {...register("ankle_dorsiflexion_score")}
                         />
                       </td>
@@ -547,20 +601,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("ankle_dorsiflexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.ankle_dorsiflexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.ankle_dorsiflexion_strength
+                              ? manual_muscle_assesment.ankle_dorsiflexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -576,6 +632,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.ankle_planterflexion_score
+                              ? manual_muscle_assesment.ankle_planterflexion_score
+                              : ""
+                          }
                           {...register("ankle_planterflexion_score")}
                         />
                       </td>
@@ -585,20 +647,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("ankle_planterflexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.ankle_planterflexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.ankle_planterflexion_strength
+                              ? manual_muscle_assesment.ankle_planterflexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -613,6 +677,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.ankle_inversion_score
+                              ? manual_muscle_assesment.ankle_inversion_score
+                              : ""
+                          }
                           {...register("ankle_inversion_score")}
                         />
                       </td>
@@ -622,20 +692,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("ankle_inversion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.ankle_inversion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.ankle_inversion_strength
+                              ? manual_muscle_assesment.ankle_inversion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -650,6 +722,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.ankle_eversion_score
+                              ? manual_muscle_assesment.ankle_eversion_score
+                              : ""
+                          }
                           {...register("ankle_eversion_score")}
                         />
                       </td>
@@ -659,20 +737,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("ankle_eversion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.ankle_eversion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.ankle_eversion_strength
+                              ? manual_muscle_assesment.ankle_eversion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -695,6 +775,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.cervical_flexion_score
+                              ? manual_muscle_assesment.cervical_flexion_score
+                              : ""
+                          }
                           {...register("cervical_flexion_score")}
                         />
                       </td>
@@ -704,20 +790,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("cervical_flexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.cervical_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.cervical_flexion_strength
+                              ? manual_muscle_assesment.cervical_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -733,6 +821,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.cervical_extension_score
+                              ? manual_muscle_assesment.cervical_extension_score
+                              : ""
+                          }
                           {...register("cervical_extension_score")}
                         />
                       </td>
@@ -742,20 +836,22 @@ const Form11 = () => {
                           aria-label=" example"
                           {...register("cervical_extension_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.cervical_extension_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.cervical_extension_strength
+                              ? manual_muscle_assesment.cervical_extension_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -770,6 +866,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.cervical_sideflexion_left_score
+                              ? manual_muscle_assesment.cervical_sideflexion_left_score
+                              : ""
+                          }
                           {...register("cervical_sideflexion_left_score")}
                         />
                       </td>
@@ -779,20 +881,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("cervical_sideflexion_left_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.cervical_sideflexion_left_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.cervical_sideflexion_left_strength
+                              ? manual_muscle_assesment.cervical_sideflexion_left_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -807,6 +911,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.cervical_sideflexion_rigth_score
+                              ? manual_muscle_assesment.cervical_sideflexion_rigth_score
+                              : ""
+                          }
                           {...register("cervical_sideflexion_rigth_score")}
                         />
                       </td>
@@ -816,20 +926,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("cervical_sideflexion_rigth_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.cervical_sideflexion_rigth_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.cervical_sideflexion_rigth_strength
+                              ? manual_muscle_assesment.cervical_sideflexion_rigth_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -844,6 +956,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.cervical_rotation_left_strength
+                              ? manual_muscle_assesment.cervical_rotation_left_strength
+                              : ""
+                          }
                           {...register("cervical_rotation_left_score")}
                         />
                       </td>
@@ -853,20 +971,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("cervical_rotation_left_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.cervical_rotation_left_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.cervical_rotation_left_strength
+                              ? manual_muscle_assesment.cervical_rotation_left_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -881,6 +1001,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.cervical_rotation_rigth_score
+                              ? manual_muscle_assesment.cervical_rotation_rigth_score
+                              : ""
+                          }
                           {...register("cervical_rotation_rigth_score")}
                         />
                       </td>
@@ -890,20 +1016,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("cervical_rotation_rigth_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.cervical_rotation_rigth_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.cervical_rotation_rigth_strength
+                              ? manual_muscle_assesment.cervical_rotation_rigth_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -926,6 +1054,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_flexion_score
+                              ? manual_muscle_assesment.thoracic_flexion_score
+                              : ""
+                          }
                           {...register("thoracic_flexion_score")}
                         />
                       </td>
@@ -935,20 +1069,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_flexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_flexion_strength
+                              ? manual_muscle_assesment.thoracic_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -964,6 +1100,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_extension_score
+                              ? manual_muscle_assesment.thoracic_extension_score
+                              : ""
+                          }
                           {...register("thoracic_extension_score")}
                         />
                       </td>
@@ -973,20 +1115,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_extension_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_extension_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_extension_strength
+                              ? manual_muscle_assesment.thoracic_extension_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1001,6 +1145,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_sideFlexion_left_score
+                              ? manual_muscle_assesment.thoracic_sideFlexion_left_score
+                              : ""
+                          }
                           {...register("thoracic_sideFlexion_left_score")}
                         />
                       </td>
@@ -1010,20 +1160,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_sideFlexion_left_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_sideFlexion_left_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_sideFlexion_left_strength
+                              ? manual_muscle_assesment.thoracic_sideFlexion_left_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1038,6 +1190,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_sideFlexion_right_strength
+                              ? manual_muscle_assesment.thoracic_sideFlexion_right_strength
+                              : ""
+                          }
                           {...register("thoracic_sideFlexion_right_score")}
                         />
                       </td>
@@ -1047,20 +1205,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_sideFlexion_right_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_sideFlexion_right_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_sideFlexion_right_strength
+                              ? manual_muscle_assesment.thoracic_sideFlexion_right_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1075,6 +1235,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_rotation_left_score
+                              ? manual_muscle_assesment.thoracic_rotation_left_score
+                              : ""
+                          }
                           {...register("thoracic_rotation_left_score")}
                         />
                       </td>
@@ -1084,20 +1250,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_rotation_left_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_rotation_left_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_rotation_left_strength
+                              ? manual_muscle_assesment.thoracic_rotation_left_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1112,6 +1280,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_rotation_right_score
+                              ? manual_muscle_assesment.thoracic_rotation_right_score
+                              : ""
+                          }
                           {...register("thoracic_rotation_right_score")}
                         />
                       </td>
@@ -1121,20 +1295,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_rotation_rigth_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_rotation_rigth_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_rotation_rigth_strength
+                              ? manual_muscle_assesment.thoracic_rotation_rigth_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1149,6 +1325,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.thoracic_kyposis_score
+                              ? manual_muscle_assesment.thoracic_kyposis_score
+                              : ""
+                          }
                           {...register("thoracic_kyposis_score")}
                         />
                       </td>
@@ -1158,20 +1340,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("thoracic_kyposis_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.thoracic_kyposis_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.thoracic_kyposis_strength
+                              ? manual_muscle_assesment.thoracic_kyposis_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1194,6 +1378,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.lumbar_sacralinclination_score
+                              ? manual_muscle_assesment.lumbar_sacralinclination_score
+                              : ""
+                          }
                           {...register("lumbar_sacralinclination_score")}
                         />
                       </td>
@@ -1203,20 +1393,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_sacralinclination_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.lumbar_sacralinclination_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.lumbar_sacralinclination_strength
+                              ? manual_muscle_assesment.lumbar_sacralinclination_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1232,6 +1424,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.lumbar_standinglordosis_score
+                              ? manual_muscle_assesment.lumbar_standinglordosis_score
+                              : ""
+                          }
                           {...register("lumbar_standinglordosis_score")}
                         />
                       </td>
@@ -1241,20 +1439,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_standinglordosis_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.lumbar_standinglordosis_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.lumbar_standinglordosis_strength
+                              ? manual_muscle_assesment.lumbar_standinglordosis_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1270,6 +1470,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.lumbar_standinghipflexion_score
+                              ? manual_muscle_assesment.lumbar_standinghipflexion_score
+                              : ""
+                          }
                           {...register("lumbar_standinghipflexion_score")}
                         />
                       </td>
@@ -1279,20 +1485,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_standinghipflexion_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.lumbar_standinghipflexion_strength
+                              ? manual_muscle_assesment.lumbar_standinghipflexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1307,6 +1515,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.lumbar_flexionAMA_score
+                              ? manual_muscle_assesment.lumbar_flexionAMA_score
+                              : ""
+                          }
                           {...register("lumbar_flexionAMA_score")}
                         />
                       </td>
@@ -1316,20 +1530,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_flexionAMA_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1344,6 +1560,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.lumbar_extensionAMA_score
+                              ? manual_muscle_assesment.lumbar_extensionAMA_score
+                              : ""
+                          }
                           {...register("lumbar_extensionAMA_score")}
                         />
                       </td>
@@ -1353,20 +1575,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_extensionAMA_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1381,6 +1605,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.lumbar_flexion_curveangle_score
+                              ? manual_muscle_assesment.lumbar_flexion_curveangle_score
+                              : ""
+                          }
                           {...register("lumbar_flexion_curveangle_score")}
                         />
                       </td>
@@ -1390,20 +1620,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_flexion_curveangle_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1418,6 +1650,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.identified_problems
+                              ? manual_muscle_assesment.identified_problems
+                              : ""
+                          }
                           {...register("lumbar_extention_curveangle_score")}
                         />
                       </td>
@@ -1427,20 +1665,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_extention_curveangle_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1455,6 +1695,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.identified_problems
+                              ? manual_muscle_assesment.identified_problems
+                              : ""
+                          }
                           {...register("lumbar_sideflexion_left_score")}
                         />
                       </td>
@@ -1464,20 +1710,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_sideflexion_left_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1492,6 +1740,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.identified_problems
+                              ? manual_muscle_assesment.identified_problems
+                              : ""
+                          }
                           {...register("lumbar_sideflexion_right_score")}
                         />
                       </td>
@@ -1501,20 +1755,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_sideflexion_right_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1529,6 +1785,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.identified_problems
+                              ? manual_muscle_assesment.identified_problems
+                              : ""
+                          }
                           {...register("lumbar_rotation_left_score")}
                         />
                       </td>
@@ -1538,20 +1800,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_rotation_left_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1566,6 +1830,12 @@ const Form11 = () => {
                           className="form-control"
                           type="text"
                           placeholder="Text Box"
+                          defaultValue={
+                            !!manual_muscle_assesment &&
+                            !!manual_muscle_assesment.identified_problems
+                              ? manual_muscle_assesment.identified_problems
+                              : ""
+                          }
                           {...register("lumbar_rotation_right_score")}
                         />
                       </td>
@@ -1575,20 +1845,22 @@ const Form11 = () => {
                           aria-label="example"
                           {...register("lumbar_rotation_right_strength")}
                         >
-                          <option selected>Select</option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="1+">1+</option>
-                          <option value="2-">2-</option>
-                          <option value="2">2</option>
-                          <option value="2+">2+</option>
-                          <option value="3-">3-</option>
-                          <option value="3">3</option>
-                          <option value="3+">3+</option>
-                          <option value="4-">4-</option>
-                          <option value="4">4</option>
-                          <option value="4+">4+</option>
-                          <option value="5">5</option>
+                          <option
+                            defaultValue={
+                              !!manual_muscle_assesment &&
+                              manual_muscle_assesment.hip_flexion_strength
+                            }
+                          >
+                            {!!manual_muscle_assesment &&
+                            manual_muscle_assesment.hip_flexion_strength
+                              ? manual_muscle_assesment.hip_flexion_strength
+                              : ""}
+                          </option>
+                          {scoreList.map((items, index) => (
+                            <option value={items} key={index}>
+                              {items}
+                            </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -1605,6 +1877,12 @@ const Form11 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!manual_muscle_assesment &&
+                          !!manual_muscle_assesment.identified_problems
+                            ? manual_muscle_assesment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1619,6 +1897,12 @@ const Form11 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!manual_muscle_assesment &&
+                          !!manual_muscle_assesment.short_term_goals
+                            ? manual_muscle_assesment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1633,6 +1917,12 @@ const Form11 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!manual_muscle_assesment &&
+                          !!manual_muscle_assesment.long_term_goals
+                            ? manual_muscle_assesment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -1648,6 +1938,12 @@ const Form11 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!manual_muscle_assesment &&
+                          !!manual_muscle_assesment.treatment_plan
+                            ? manual_muscle_assesment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>

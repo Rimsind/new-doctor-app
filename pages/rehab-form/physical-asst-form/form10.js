@@ -7,6 +7,7 @@ import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "../../../context/index";
 import { apiUrl } from "../../../config/api";
+import { useState } from "react";
 const Form10 = () => {
   const { appointmentId } = useRouter().query;
   const { auth } = useAuth();
@@ -22,6 +23,8 @@ const Form10 = () => {
       return result;
     }
   );
+  const [status, setStatus] = useState(false);
+
   const { motor_function_assesment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form10 = async (data, event) => {
@@ -42,6 +45,7 @@ const Form10 = () => {
         },
       },
     };
+
     const res = await axios.put(
       `${apiUrl}/appointments/${appointmentId}`,
       payload,
@@ -107,26 +111,50 @@ const Form10 = () => {
                                 className="form-check-input"
                                 type="radio"
                                 value="Impaired"
+                                onClick={(e) => setStatus(true)}
                                 {...register("muscle_tone")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  motor_function_assesment.muscle_tone ===
+                                    "Impaired"
+                                }
                               />
                             </div>
+
                             <div className="col-md-10">
                               <div className="row">
                                 <div className="col-md-4">
                                   <p>Impaired</p>
                                 </div>
-                                <div className="col-md-8">
-                                  <select
-                                    className="form-select form-select-sm"
-                                    aria-label=".form-select-sm example"
-                                    {...register("muscle_tone_ifImpared")}
-                                  >
-                                    <option selected>Select</option>
-                                    <option value="Hypertone">Hypertone</option>
-                                    <option value="Hypotone">Hypotone</option>
-                                    <option value="Rigidity">Rigidity</option>
-                                  </select>
-                                </div>
+                                {!!status === true ? (
+                                  <div className="col-md-8">
+                                    <select
+                                      className="form-select form-select-sm"
+                                      aria-label=".form-select-sm example"
+                                      {...register("muscle_tone_ifImpared")}
+                                    >
+                                      <option
+                                        name="language"
+                                        defaultValue={
+                                          !!motor_function_assesment &&
+                                          motor_function_assesment.muscle_tone_ifImpared
+                                        }
+                                      >
+                                        {!!motor_function_assesment &&
+                                        motor_function_assesment.muscle_tone_ifImpared
+                                          ? motor_function_assesment.muscle_tone_ifImpared
+                                          : ""}
+                                      </option>
+                                      <option value="Hypertone">
+                                        Hypertone
+                                      </option>
+                                      <option value="Hypotone">Hypotone</option>
+                                      <option value="Rigidity">Rigidity</option>
+                                    </select>
+                                  </div>
+                                ) : (
+                                  <></>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -139,6 +167,12 @@ const Form10 = () => {
                                 type="radio"
                                 value="Normal"
                                 {...register("muscle_tone")}
+                                onClick={(e) => setStatus(false)}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  motor_function_assesment.muscle_tone ===
+                                    "Normal"
+                                }
                               />
                             </div>
                             <div className="col-md-10">
@@ -154,6 +188,10 @@ const Form10 = () => {
                                 type="radio"
                                 value="N/A"
                                 {...register("muscle_tone")}
+                                defaultChecked={
+                                  !!motor_function_assesment &&
+                                  motor_function_assesment.muscle_tone === "N/A"
+                                }
                               />
                             </div>
                             <div className="col-md-10">
