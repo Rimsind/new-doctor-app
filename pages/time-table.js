@@ -69,7 +69,32 @@ const TimeTable = () => {
     alert("Profile Updated Succesfully");
     return result;
   };
-
+  const timeslot = [
+    "12:00 AM - 01:00 AM",
+    "01:00 AM - 02:00 AM",
+    "02:00 AM - 03:00 AM",
+    "03:00 AM - 04:00 AM",
+    "04:00 AM - 05:00 AM",
+    "05:00 AM - 06:00 AM",
+    "06:00 AM - 07:00 AM",
+    "07:00 AM - 08:00 AM",
+    "08:00 AM - 09:00 AM",
+    "09:00 AM - 10:00 AM",
+    "10:00 AM - 11:00 AM",
+    "11:00 AM - 12:00 PM",
+    "12:00 PM - 01:00 PM",
+    "01:00 PM - 02:00 PM",
+    "02:00 PM - 03:00 PM",
+    "03:00 PM - 04:00 PM",
+    "04:00 PM - 05:00 PM",
+    "05:00 PM - 06:00 PM",
+    "06:00 PM - 07:00 PM",
+    "07:00 PM - 08:00 PM",
+    "08:00 PM - 09:00 PM",
+    "09:00 PM - 10:00 PM",
+    "10:00 PM - 11:00 PM",
+    "11:00 PM - 12:00 AM",
+  ];
   return (
     <>
       <div className="doc_timetable">
@@ -112,7 +137,7 @@ const TimeTable = () => {
                     </div>
                     <div className="modal-body">
                       <div className="row align-items-end">
-                        <div className="col-md-12">
+                        <div className="col-12 col-md-12">
                           <label>Polyclinic</label>
                           <select
                             className="form-select"
@@ -127,7 +152,7 @@ const TimeTable = () => {
                             ))}
                           </select>
                         </div>
-                        <div className="col-md">
+                        <div className="col-12 col-md-12">
                           <label>Day</label>
                           <select
                             className="form-select"
@@ -144,48 +169,142 @@ const TimeTable = () => {
                             <option value="Sunday">Sunday</option>
                           </select>
                         </div>
-                        <div className="col-md">
-                          <label>Start Time</label>
-                          <input
-                            type="time"
-                            className="form-control"
-                            value={startTime}
-                            onChange={(e) => setStartTime(e.target.value)}
-                          />
+                      </div>
+                      <div className="time_slot_list py-4">
+                        <div className="row">
+                          {timeslot.map((item, index) => (
+                            <div className="col-4" key={index}>
+                              <div className="form-check form-check-inline d-flex justify-content-center align-items-baseline bg-success mb-2 py-2 rounded text-light">
+                                <input
+                                  className="form-check-input me-2"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value={item}
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  {item}
+                                </label>
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                        <div className="col-md">
-                          <label>End Time</label>
-                          <input
-                            type="time"
-                            className="form-control"
-                            value={endTime}
-                            onChange={(e) => setEndTime(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md">
-                          <button type="btn btn-primary" onClick={addSchedule}>
-                            Add
-                          </button>
-                        </div>
-                        <div className="time_modal_table mt-5">
-                          <table className="table">
-                            <thead>
-                              <tr>
-                                <th>Day</th>
-                                <th>Start</th>
-                                <th>End</th>
+                      </div>
+                      <div className="time_table_add_btn text-end">
+                        <button type="btn btn-primary" onClick={addSchedule}>
+                          Add
+                        </button>
+                      </div>
+                      {/* <div className="time_modal_table mt-5">
+                        <table className="table">
+                          <thead>
+                            <tr>
+                              <th>Day</th>
+                              <th>Start</th>
+                              <th>End</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {schedule.map((item, index) => (
+                              <tr key={index}>
+                                <td>{item.day}</td>
+                                <td>{item.start_time}</td>
+                                <td>{item.end_time}</td>
                               </tr>
-                            </thead>
-                            <tbody>
-                              {schedule.map((item, index) => (
-                                <tr key={index}>
-                                  <td>{item.day}</td>
-                                  <td>{item.start_time}</td>
-                                  <td>{item.end_time}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div> */}
+                      <div className="card mt-3 shadow">
+                        <div className="card-body">
+                          <div className="time_table_modal_table">
+                            <div className="row align-items-center">
+                              <div className="col-2">
+                                <p className="fs-6 fw-bold">Day</p>
+                              </div>
+                              <div className="col-10">
+                                <div className="row">
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="card mt-3 shadow">
+                        <div className="card-body">
+                          <div className="time_table_modal_table">
+                            <div className="row align-items-center">
+                              <div className="col-2">
+                                <p className="fs-6 fw-bold">Day</p>
+                              </div>
+                              <div className="col-10">
+                                <div className="row">
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                  <div className="col-4">
+                                    <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                      <span>12:00 AM - 01:00 AM</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
