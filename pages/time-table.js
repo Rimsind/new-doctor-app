@@ -329,42 +329,20 @@ const TimeTable = () => {
               </div>
             </div>
           </div>
-
-          {doctor?.timetable?.map((item, index) => (
-            <div className="doc_time mb-3" key={index}>
-              <div className="card card_list p-3 shadow">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="card_item">
-                      <p className="fs-5 fw-bold">{item?.polyclinic?.name}</p>
-                    </div>
+          <div className="doc_time mb-3">
+            <div className="card card_list p-3 shadow">
+              <div className="row align-items-center">
+                <div className="col-md-4">
+                  <div className="card_item">
+                    <p className="fs-5 fw-bold">dfgfdh</p>
                   </div>
-                  <div className="col-md-8">
-                    <div className="card_item">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th>Day</th>
-                            <th>Start</th>
-                            <th>End</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {item?.schedule?.map((curelem, index) => (
-                            <tr key={index}>
-                              <td>{curelem?.day}</td>
-                              <td>{curelem?.start_time}</td>
-                              <td>{curelem?.end_time}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                </div>
+                <div className="col-md-8">
+                  <div className="card_item"></div>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </>
