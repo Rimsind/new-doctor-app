@@ -28,7 +28,7 @@ const Form14 = () => {
     adaptive_equipment_assessment,
     wheel_chair_assessment,
   } = appointment?.rehab;
-  console.log(adaptive_equipment_assessment);
+
   const { register, handleSubmit } = useForm();
   const submit_form14 = async (data, event) => {
     event.preventDefault();
@@ -36,28 +36,28 @@ const Form14 = () => {
       rehab: {
         ...appointment.rehab,
         orthotic_assessment: {
-          type_of_device: data.type_of_device,
-          alignment_fitting: data.alignment_fitting,
-          patinet_ability: data.patinet_ability,
-          level_of_safety: data.level_of_safety,
-          movement_analysis: data.movement_analysis,
-          functional_effect: data.functional_effect,
+          type_of_device: data.orthotic_type_of_device,
+          alignment_fitting: data.orthotic_alignment_fitting,
+          patinet_ability: data.orthotic_patinet_ability,
+          level_of_safety: data.orthotic_level_of_safety,
+          movement_analysis: data.orthotic_movement_analysis,
+          functional_effect: data.orthotic_functional_effect,
         },
         prosthetic_assessment: {
-          type_of_device: data.type_of_device,
-          alignment_fitting: data.alignment_fitting,
-          patinet_ability: data.patinet_ability,
-          level_of_safety: data.level_of_safety,
-          movement_analysis: data.movement_analysis,
-          functional_effect: data.functional_effect,
+          type_of_device: data.prosthetic_type_of_device,
+          alignment_fitting: data.prosthetic_alignment_fitting,
+          patinet_ability: data.prosthetic_patinet_ability,
+          level_of_safety: data.prosthetic_level_of_safety,
+          movement_analysis: data.prosthetic_movement_analysis,
+          functional_effect: data.prosthetic_functional_effect,
         },
         adaptive_equipment_assessment: {
-          type_of_device: data.type_of_device,
-          alignment_fitting: data.alignment_fitting,
-          patinet_ability: data.patinet_ability,
-          level_of_safety: data.level_of_safety,
-          movement_analysis: data.movement_analysis,
-          functional_effect: data.functional_effect,
+          type_of_device: data.adaptive_type_of_device,
+          alignment_fitting: data.adaptive_alignment_fitting,
+          patinet_ability: data.adaptive_patinet_ability,
+          level_of_safety: data.adaptive_level_of_safety,
+          movement_analysis: data.adaptive_movement_analysis,
+          functional_effect: data.adaptive_functional_effect,
         },
         wheel_chair_assessment: {
           A: data.A,
@@ -133,7 +133,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("type_of_device")}
+                            {...register("orthotic_type_of_device")}
+                            defaultValue={
+                              !!orthotic_assessment &&
+                              !!orthotic_assessment.type_of_device
+                                ? orthotic_assessment.type_of_device
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -156,7 +162,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("alignment_fitting")}
+                            {...register("orthotic_alignment_fitting")}
+                            defaultValue={
+                              !!orthotic_assessment &&
+                              !!orthotic_assessment.alignment_fitting
+                                ? orthotic_assessment.alignment_fitting
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -172,7 +184,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("movement_analysis")}
+                            {...register("orthotic_movement_analysis")}
+                            defaultValue={
+                              !!orthotic_assessment &&
+                              !!orthotic_assessment.movement_analysis
+                                ? orthotic_assessment.movement_analysis
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -188,7 +206,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("patinet_ability")}
+                            {...register("orthotic_patinet_ability")}
+                            defaultValue={
+                              !!orthotic_assessment &&
+                              !!orthotic_assessment.patinet_ability
+                                ? orthotic_assessment.patinet_ability
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -206,7 +230,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("functional_effect")}
+                            {...register("orthotic_functional_effect")}
+                            defaultValue={
+                              !!orthotic_assessment &&
+                              !!orthotic_assessment.functional_effect
+                                ? orthotic_assessment.functional_effect
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -222,7 +252,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("level_of_safety")}
+                            {...register("orthotic_level_of_safety")}
+                            defaultValue={
+                              !!orthotic_assessment &&
+                              !!orthotic_assessment.level_of_safety
+                                ? orthotic_assessment.level_of_safety
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -258,7 +294,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("type_of_device")}
+                            {...register("prosthetic_type_of_device")}
+                            defaultValue={
+                              !!prosthetic_assessment &&
+                              !!prosthetic_assessment.type_of_device
+                                ? prosthetic_assessment.type_of_device
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -281,7 +323,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("alignment_fitting")}
+                            {...register("prosthetic_alignment_fitting")}
+                            defaultValue={
+                              !!prosthetic_assessment &&
+                              !!prosthetic_assessment.alignment_fitting
+                                ? prosthetic_assessment.alignment_fitting
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -297,7 +345,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("movement_analysis")}
+                            {...register("prosthetic_movement_analysis")}
+                            defaultValue={
+                              !!prosthetic_assessment &&
+                              !!prosthetic_assessment.movement_analysis
+                                ? prosthetic_assessment.movement_analysis
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -313,7 +367,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("patinet_ability")}
+                            {...register("prosthetic_patinet_ability")}
+                            defaultValue={
+                              !!prosthetic_assessment &&
+                              !!prosthetic_assessment.patinet_ability
+                                ? prosthetic_assessment.patinet_ability
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -331,7 +391,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("functional_effect")}
+                            {...register("prosthetic_functional_effect")}
+                            defaultValue={
+                              !!prosthetic_assessment &&
+                              !!prosthetic_assessment.functional_effect
+                                ? prosthetic_assessment.functional_effect
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -347,7 +413,13 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("level_of_safety")}
+                            {...register("prosthetic_level_of_safety")}
+                            defaultValue={
+                              !!prosthetic_assessment &&
+                              !!prosthetic_assessment.level_of_safety
+                                ? prosthetic_assessment.level_of_safety
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -383,7 +455,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("type_of_device")}
+                            {...register("adaptive_type_of_device")}
                             defaultValue={
                               !!adaptive_equipment_assessment &&
                               !!adaptive_equipment_assessment.type_of_device
@@ -412,7 +484,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("alignment_fitting")}
+                            {...register("adaptive_alignment_fitting")}
                             defaultValue={
                               !!adaptive_equipment_assessment &&
                               !!adaptive_equipment_assessment.alignment_fitting
@@ -434,7 +506,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("movement_analysis")}
+                            {...register("adaptive_movement_analysis")}
                             defaultValue={
                               !!adaptive_equipment_assessment &&
                               !!adaptive_equipment_assessment.movement_analysis
@@ -456,7 +528,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("patinet_ability")}
+                            {...register("adaptive_patinet_ability")}
                             defaultValue={
                               !!adaptive_equipment_assessment &&
                               !!adaptive_equipment_assessment.patinet_ability
@@ -480,11 +552,11 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("Functional_effect")}
+                            {...register("adaptive_functional_effect")}
                             defaultValue={
                               !!adaptive_equipment_assessment &&
-                              !!adaptive_equipment_assessment.Functional_effect
-                                ? adaptive_equipment_assessment.Functional_effect
+                              !!adaptive_equipment_assessment.functional_effect
+                                ? adaptive_equipment_assessment.functional_effect
                                 : ""
                             }
                           />
@@ -502,7 +574,7 @@ const Form14 = () => {
                             className="form-control"
                             type="text"
                             placeholder="Text box"
-                            {...register("level_of_safety")}
+                            {...register("adaptive_level_of_safety")}
                             defaultValue={
                               !!adaptive_equipment_assessment &&
                               !!adaptive_equipment_assessment.level_of_safety

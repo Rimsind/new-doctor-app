@@ -22,6 +22,7 @@ const Form17 = () => {
       return result;
     }
   );
+  const { wound_assessment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form17 = async (data, event) => {
     event.preventDefault();
@@ -104,6 +105,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("location")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.location
+                                ? wound_assessment.location
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -148,6 +154,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("stage")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.stage
+                                ? wound_assessment.stage
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -163,6 +174,12 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("thickness_of_ulcer")}
+                            defaultValue={
+                              !!wound_assessment &&
+                              !!wound_assessment.thickness_of_ulcer
+                                ? wound_assessment.thickness_of_ulcer
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -182,6 +199,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("size")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.size
+                                ? wound_assessment.size
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -197,6 +219,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("depth")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.depth
+                                ? wound_assessment.depth
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -212,6 +239,12 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("tunnelling")}
+                            defaultValue={
+                              !!wound_assessment &&
+                              !!wound_assessment.tunnelling
+                                ? wound_assessment.tunnelling
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -227,6 +260,12 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("undermining")}
+                            defaultValue={
+                              !!wound_assessment &&
+                              !!wound_assessment.undermining
+                                ? wound_assessment.undermining
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -246,6 +285,12 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("necrotic_tissue")}
+                            defaultValue={
+                              !!wound_assessment &&
+                              !!wound_assessment.necrotic_tissue
+                                ? wound_assessment.necrotic_tissue
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -261,6 +306,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("slough")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.slough
+                                ? wound_assessment.slough
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -276,6 +326,12 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("granulation_tissue")}
+                            defaultValue={
+                              !!wound_assessment &&
+                              !!wound_assessment.granulation_tissue
+                                ? wound_assessment.granulation_tissue
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -291,6 +347,12 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("epitheliazation_in_process")}
+                            defaultValue={
+                              !!wound_assessment &&
+                              !!wound_assessment.epitheliazation_in_process
+                                ? wound_assessment.epitheliazation_in_process
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -311,6 +373,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("amount")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.amount
+                                ? wound_assessment.amount
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -326,6 +393,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("color")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.color
+                                ? wound_assessment.color
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -341,6 +413,11 @@ const Form17 = () => {
                             className="form-control"
                             placeholder="Text Area"
                             {...register("odor")}
+                            defaultValue={
+                              !!wound_assessment && !!wound_assessment.odor
+                                ? wound_assessment.odor
+                                : ""
+                            }
                           />
                         </div>
                       </div>
@@ -358,6 +435,10 @@ const Form17 = () => {
                             type="radio"
                             value="In Wound site?"
                             {...register("pain")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.pain === "In Wound site?"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -373,6 +454,10 @@ const Form17 = () => {
                             type="radio"
                             value="In Surrounding Tissue?"
                             {...register("pain")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.pain === "In Surrounding Tissue?"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -389,6 +474,12 @@ const Form17 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("describe_surrounding_tissue")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.describe_surrounding_tissue
+                            ? wound_assessment.describe_surrounding_tissue
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -404,6 +495,10 @@ const Form17 = () => {
                             type="radio"
                             value="Erythema"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection === "Erythema"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -419,6 +514,11 @@ const Form17 = () => {
                             type="radio"
                             value="Induration"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "Induration"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -434,6 +534,11 @@ const Form17 = () => {
                             type="radio"
                             value="Cellulitis"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "Cellulitis"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -449,6 +554,11 @@ const Form17 = () => {
                             type="radio"
                             value="Tenderness"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "Tenderness"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -466,6 +576,11 @@ const Form17 = () => {
                             type="radio"
                             value="Uncharacteristic odor"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "Uncharacteristic odor"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -481,6 +596,11 @@ const Form17 = () => {
                             type="radio"
                             value="Increased Exudate"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "Increased Exudate"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -496,6 +616,10 @@ const Form17 = () => {
                             type="radio"
                             value="Edema"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection === "Edema"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -511,6 +635,11 @@ const Form17 = () => {
                             type="radio"
                             value="Increased Heart Rate"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "Increased Heart Rate"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -528,6 +657,10 @@ const Form17 = () => {
                             type="radio"
                             value="Bpm"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection === "Bpm"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -543,6 +676,11 @@ const Form17 = () => {
                             type="radio"
                             value="High blood pressure"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection ===
+                                "High blood pressure"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -558,6 +696,10 @@ const Form17 = () => {
                             type="radio"
                             value="Other"
                             {...register("signs_of_infection")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.signs_of_infection === "Other"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -581,6 +723,11 @@ const Form17 = () => {
                             type="radio"
                             value="Bed"
                             {...register("recucing_relieving_devices")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.recucing_relieving_devices ===
+                                "Bed"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -596,6 +743,11 @@ const Form17 = () => {
                             type="radio"
                             value="Wheelchair"
                             {...register("recucing_relieving_devices")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.recucing_relieving_devices ===
+                                "Wheelchair"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -611,6 +763,11 @@ const Form17 = () => {
                             type="radio"
                             value="Other"
                             {...register("recucing_relieving_devices")}
+                            defaultChecked={
+                              !!wound_assessment &&
+                              wound_assessment.recucing_relieving_devices ===
+                                "Other"
+                            }
                           />
                         </div>
                         <div className="col-md-10">
@@ -627,6 +784,12 @@ const Form17 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("describe_device")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.describe_device
+                            ? wound_assessment.describe_device
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -640,6 +803,12 @@ const Form17 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("positioning_concerns")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.positioning_concerns
+                            ? wound_assessment.positioning_concerns
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -653,6 +822,12 @@ const Form17 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("dressing_tobe_used")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.dressing_tobe_used
+                            ? wound_assessment.dressing_tobe_used
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -666,6 +841,12 @@ const Form17 = () => {
                         type="text"
                         placeholder="Text Area"
                         {...register("barriers_to_progress")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.barriers_to_progress
+                            ? wound_assessment.barriers_to_progress
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -682,6 +863,12 @@ const Form17 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.identified_problems
+                            ? wound_assessment.identified_problems
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -696,6 +883,12 @@ const Form17 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.short_term_goals
+                            ? wound_assessment.short_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -710,6 +903,12 @@ const Form17 = () => {
                         className="form-control"
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.long_term_goals
+                            ? wound_assessment.long_term_goals
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
@@ -725,6 +924,12 @@ const Form17 = () => {
                         rows="3"
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
+                        defaultValue={
+                          !!wound_assessment &&
+                          !!wound_assessment.treatment_plan
+                            ? wound_assessment.treatment_plan
+                            : ""
+                        }
                       ></textarea>
                     </div>
                   </div>
