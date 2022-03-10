@@ -95,6 +95,13 @@ const Psychological = ({ data }) => {
               <tbody>
                 {allData.map((items, index) => (
                   <tr key={index}>
+                    <td>x</td>
+                    <td>{items?.option}</td>
+                    <td>{items?.description}</td>
+                  </tr>
+                ))}
+                {data?.psychological.map((items, index) => (
+                  <tr key={index}>
                     <td>*</td>
                     <td>{items?.option}</td>
                     <td>{items?.description}</td>

@@ -105,6 +105,13 @@ const Breasts = ({ data }) => {
                     <td>{items?.description}</td>
                   </tr>
                 ))}
+                {data?.breasts.map((items, index) => (
+                  <tr key={index}>
+                    <td>x</td>
+                    <td>{items?.option}</td>
+                    <td>{items?.description}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

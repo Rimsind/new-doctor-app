@@ -5,6 +5,7 @@ import { useAuth } from "../../context";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { apiUrl } from "../../config/api";
+import useSWR from "swr";
 
 const catagoryList = [
   "Mental status examination",
@@ -93,7 +94,21 @@ const ClinicalExamination = () => {
       },
     ]);
   };
-  console.log(examination);
+
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${appointmentId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  console.log(appointment);
+
   const { register, handleSubmit } = useForm();
   const SubmitForm = async (data, event) => {
     event.preventDefault();
@@ -198,6 +213,15 @@ const ClinicalExamination = () => {
                           <td>{item.test}</td>
                         </tr>
                       ))}
+                      {appointment?.neurology?.examination.map(
+                        (item, index) => (
+                          <tr key={index}>
+                            <td>*</td>
+                            <td>{item.category}</td>
+                            <td>{item.test}</td>
+                          </tr>
+                        )
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -210,6 +234,12 @@ const ClinicalExamination = () => {
                     className="form-control"
                     placeholder="Others:"
                     {...register("assesment")}
+                    defaultValue={
+                      !!appointment?.neurology &&
+                      !!appointment?.neurology?.assesment
+                        ? appointment?.neurology?.assesment
+                        : ""
+                    }
                   />
                 </div>
               </div>

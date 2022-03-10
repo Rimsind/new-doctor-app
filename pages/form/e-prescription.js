@@ -108,9 +108,11 @@ const Eprescription = () => {
   };
 
   const { register, handleSubmit } = useForm();
-  const submitPrescription = async (data, event) => {
+  const submitPrescription = async (data, e) => {
+    e.preventDefault();
     const payload = {
       eprescription: {
+        ...appointmentDetails.eprescription,
         medicine: medicineList,
         patient_education: patientEducationList.toString(),
         restrictions: patientRestrictionList.toString(),
@@ -118,8 +120,8 @@ const Eprescription = () => {
         treatmentreferral: allReferral.toString(),
         test: testList,
         followup: {
-          date: data.date,
-          type: data.type,
+          date: data.revisitDate,
+          type: data.revisitType,
         },
       },
     };
@@ -564,6 +566,23 @@ const Eprescription = () => {
                     <td>{item?.sideEffects} </td>
                   </tr>
                 ))}
+                {appointmentDetails?.eprescription?.medicine.map(
+                  (item, index) => (
+                    <tr key={index}>
+                      <th scope="row">
+                        <i className="ri-close-circle-line"></i>
+                      </th>
+                      <td>{item?.name}</td>
+                      <td>{item?.mg}</td>
+                      <td>{item?.route}</td>
+                      <td>{item?.duration}</td>
+                      <td>{item?.frequency}</td>
+                      <td>{item?.reasons}</td>
+                      <td>{item?.instruction}</td>
+                      <td>{item?.sideEffects} </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -631,6 +650,17 @@ const Eprescription = () => {
                           <td>{item?.specification}</td>
                         </tr>
                       ))}
+                      {appointmentDetails?.eprescription?.test.map(
+                        (item, index) => (
+                          <tr key={index}>
+                            <th scope="row">
+                              <i className="ri-close-circle-line"></i>
+                            </th>
+                            <td>{item?.name}</td>
+                            <td>{item?.specification}</td>
+                          </tr>
+                        )
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -690,6 +720,9 @@ const Eprescription = () => {
                           <td>{item}</td>
                         </tr>
                       ))}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.safetyMeasures}
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -757,6 +790,9 @@ const Eprescription = () => {
                           <td>{item}</td>
                         </tr>
                       ))}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.restrictions}
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -819,6 +855,9 @@ const Eprescription = () => {
                           <td>{item}</td>
                         </tr>
                       ))}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.patient_education}
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -882,7 +921,10 @@ const Eprescription = () => {
                           </th>
                           <td>{item}</td>
                         </tr>
-                      ))}
+                      ))}{" "}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.treatmentreferral}
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -890,18 +932,38 @@ const Eprescription = () => {
               <div className="col-md-6">
                 <p className="fs-5 fw-bold">Set Follow Time Period</p>
                 <div className="row align-items-end">
-                  <div className="col-md-6" {...register("date")}>
+                  <div className="col-md-6">
                     <label className="form-label">Date</label>
-                    <input type="date" className="form-control" name="days" />
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="days"
+                      value={
+                        !!appointmentDetails?.eprescription &&
+                        appointmentDetails?.eprescription?.followup?.date
+                      }
+                      {...register("revisitDate")}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Followup Type</label>
                     <select
                       className="form-control"
                       aria-label="Default select example"
-                      {...register("type")}
+                      {...register("revisitType")}
                     >
-                      <option selected>Select an Option</option>
+                      <option
+                        name="language"
+                        defaultValue={
+                          !!appointmentDetails?.eprescription &&
+                          appointmentDetails?.eprescription?.followup?.type
+                        }
+                      >
+                        {!!appointmentDetails?.eprescription &&
+                        appointmentDetails?.eprescription?.followup?.type
+                          ? appointmentDetails?.eprescription?.followup?.type
+                          : "Select"}
+                      </option>
                       <option value="Regular Visit">Regular Visit</option>
                       <option value="Annual Exam">Annual Exam</option>
                     </select>

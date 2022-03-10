@@ -12,6 +12,7 @@ const skin = [
 ];
 
 const Skin = ({ data }) => {
+  console.log(data);
   const { appointmentId } = useRouter().query;
   const { auth } = useAuth();
   const [option, setOption] = useState();
@@ -101,6 +102,13 @@ const Skin = ({ data }) => {
               </thead>
               <tbody>
                 {allData.map((items, index) => (
+                  <tr key={index}>
+                    <td>X</td>
+                    <td>{items?.option}</td>
+                    <td>{items?.description}</td>
+                  </tr>
+                ))}
+                {data?.skin.map((items, index) => (
                   <tr key={index}>
                     <td>*</td>
                     <td>{items?.option}</td>
