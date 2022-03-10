@@ -5,6 +5,7 @@ import {
   Rehab,
   Reurology,
   SubjectiveInformation,
+  Regular,
 } from "../components/assesments/index";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -171,6 +172,16 @@ const Diagnosis = () => {
           {doctor?.specialty?.name === "Orthopedic" ? (
             <>
               <Ortho data={data} />
+            </>
+          ) : (
+            <></>
+          )}
+          {doctor?.specialty?.name !== "Orthopedic" &&
+          doctor?.specialty?.name !== "Neurologist" &&
+          doctor?.specialty?.name !== "Medicine" &&
+          doctor?.specialty?.name !== "Rehabilitation" ? (
+            <>
+              <Regular data={data} />
             </>
           ) : (
             <></>

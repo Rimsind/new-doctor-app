@@ -76,7 +76,6 @@ const Form16 = () => {
     return result;
   };
 
-  const optionsList = ["WNL", "NA"];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">

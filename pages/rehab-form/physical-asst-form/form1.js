@@ -22,9 +22,8 @@ const Form1 = () => {
       return result;
     }
   );
-
-  const { aerobicCapacity } = appointment.rehab;
-
+  console.log(appointment);
+  const { aerobicCapacity } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form1 = async (data, event) => {
     event.preventDefault();
@@ -150,7 +149,7 @@ const Form1 = () => {
                             {!!aerobicCapacity &&
                             aerobicCapacity.during_bed_mobility
                               ? aerobicCapacity.during_bed_mobility
-                              : ""}
+                              : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
@@ -198,7 +197,7 @@ const Form1 = () => {
                             {!!aerobicCapacity &&
                             aerobicCapacity.during_transfer_task
                               ? aerobicCapacity.during_transfer_task
-                              : ""}
+                              : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
@@ -246,7 +245,7 @@ const Form1 = () => {
                             {!!aerobicCapacity &&
                             aerobicCapacity.during_ambulation_task
                               ? aerobicCapacity.during_ambulation_task
-                              : ""}
+                              : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
@@ -295,7 +294,7 @@ const Form1 = () => {
                             {!!aerobicCapacity &&
                             aerobicCapacity.during_standarized_test
                               ? aerobicCapacity.during_standarized_test
-                              : ""}
+                              : "Select"}
                           </option>
                           <option value="3 Mint Walk Test">
                             3 Mint Walk Test
@@ -333,7 +332,7 @@ const Form1 = () => {
                           >
                             {!!aerobicCapacity && aerobicCapacity.at_rpe
                               ? aerobicCapacity.at_rpe
-                              : ""}
+                              : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
                             0 - Nothing at all
@@ -425,7 +424,7 @@ const Form1 = () => {
                                   {!!aerobicCapacity &&
                                   aerobicCapacity.breath_voice_sounds
                                     ? aerobicCapacity.breath_voice_sounds
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
@@ -483,7 +482,7 @@ const Form1 = () => {
                                 >
                                   {!!aerobicCapacity && aerobicCapacity.cyanosis
                                     ? aerobicCapacity.cyanosis
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Central Cyanosis">
                                   Central Cyanosis
@@ -521,7 +520,7 @@ const Form1 = () => {
                                 >
                                   {!!aerobicCapacity && aerobicCapacity.rhythm
                                     ? aerobicCapacity.rhythm
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
@@ -554,7 +553,7 @@ const Form1 = () => {
                                   {!!aerobicCapacity &&
                                   aerobicCapacity.gas_exchange
                                     ? aerobicCapacity.gas_exchange
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
@@ -585,7 +584,7 @@ const Form1 = () => {
                                 >
                                   {!!aerobicCapacity && aerobicCapacity.sounds
                                     ? aerobicCapacity.sounds
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
@@ -620,7 +619,7 @@ const Form1 = () => {
                                   {!!aerobicCapacity &&
                                   aerobicCapacity.respiratory_pattern
                                     ? aerobicCapacity.respiratory_pattern
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Apnea">Apnea</option>
                                 <option value="Eupnea">Eupnea</option>
@@ -678,7 +677,7 @@ const Form1 = () => {
                                 >
                                   {!!aerobicCapacity && aerobicCapacity.angina
                                     ? aerobicCapacity.angina
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -737,7 +736,7 @@ const Form1 = () => {
                                   {!!aerobicCapacity &&
                                   aerobicCapacity.claudication
                                     ? aerobicCapacity.claudication
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -772,7 +771,7 @@ const Form1 = () => {
                                   {!!aerobicCapacity &&
                                   aerobicCapacity.respiratory_rhythm
                                     ? aerobicCapacity.respiratory_rhythm
-                                    : ""}
+                                    : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
                                 <option value="Abnormal">Abnormal</option>
@@ -862,7 +861,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.shortTerm_bed_mobility
                                 ? aerobicCapacity.shortTerm_bed_mobility
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -914,7 +913,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.shortTerm_transfer_task
                                 ? aerobicCapacity.shortTerm_transfer_task
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -966,7 +965,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.shortTerm_ambulation_task
                                 ? aerobicCapacity.shortTerm_ambulation_task
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -1017,7 +1016,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.shortTerm_standarized_test
                                 ? aerobicCapacity.shortTerm_standarized_test
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="3 Mint Walk Test">
                               3 Mint Walk Test
@@ -1059,7 +1058,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.shortTerm_at_rpe
                                 ? aerobicCapacity.shortTerm_at_rpe
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -1131,7 +1130,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.longTerm_bed_mobility
                                 ? aerobicCapacity.longTerm_bed_mobility
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -1183,7 +1182,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.longTerm_transfer_task
                                 ? aerobicCapacity.longTerm_transfer_task
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -1235,7 +1234,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.longTerm_Ambulation_task
                                 ? aerobicCapacity.longTerm_Ambulation_task
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all
@@ -1286,7 +1285,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.longTerm_Standarized_test
                                 ? aerobicCapacity.longTerm_Standarized_test
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="3 Mint Walk Test">
                               3 Mint Walk Test
@@ -1328,7 +1327,7 @@ const Form1 = () => {
                               {!!aerobicCapacity &&
                               aerobicCapacity.longTerm_at_rpe
                                 ? aerobicCapacity.longTerm_at_rpe
-                                : ""}
+                                : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
                               0 - Nothing at all

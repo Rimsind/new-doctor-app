@@ -197,26 +197,7 @@ const TimeTable = () => {
                           Add
                         </button>
                       </div>
-                      {/* <div className="time_modal_table mt-5">
-                        <table className="table">
-                          <thead>
-                            <tr>
-                              <th>Day</th>
-                              <th>Start</th>
-                              <th>End</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {schedule.map((item, index) => (
-                              <tr key={index}>
-                                <td>{item.day}</td>
-                                <td>{item.start_time}</td>
-                                <td>{item.end_time}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div> */}
+
                       <div className="card mt-3 shadow">
                         <div className="card-body">
                           <div className="time_table_modal_table">
@@ -330,132 +311,73 @@ const TimeTable = () => {
             </div>
           </div>
           <div className="doc_time mb-3">
-            <div className="card mt-3 shadow">
-              <div className="card-body">
-                <div className="time_table_modal_table">
-                  <div className="time_table_poly_name text-center">
-                    <p
-                      className="fs-5 fw-bold border-bottom
+            {timetable?.map((items, index) => (
+              <div className="card mt-3 shadow" key={index}>
+                <div className="card-body">
+                  <div className="time_table_modal_table">
+                    <div className="time_table_poly_name text-center">
+                      <p
+                        className="fs-5 fw-bold border-bottom
                     "
-                    >
-                      Mediland Nursing Home
-                    </p>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-2">
-                      <p className="fs-6 fw-bold">Day</p>
+                      >
+                        {items?.polyclinic?.name}
+                      </p>
                     </div>
-                    <div className="col-10">
-                      <div className="row">
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
+                    {items?.schedule?.map((items, index) => (
+                      <div className="row align-items-center" key={index}>
+                        <div className="col-2">
+                          <p className="fs-6 fw-bold">{items?.day}</p>
                         </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
+                        <div className="col-10">
+                          <div className="row">
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
+                            <div className="col-3">
+                              <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
+                                <span>12:00 AM - 01:00 AM</span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="card mt-3 shadow">
-              <div className="card-body">
-                <div className="time_table_modal_table">
-                  <div className="time_table_poly_name text-center">
-                    <p
-                      className="fs-5 fw-bold border-bottom
-                    "
-                    >
-                      Kathi Polyclinic
-                    </p>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-2">
-                      <p className="fs-6 fw-bold">Day</p>
-                    </div>
-                    <div className="col-10">
-                      <div className="row">
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                        <div className="col-3">
-                          <div className="d-flex justify-content-center bg-success px-1 py-2 rounded text-light mb-2">
-                            <span>12:00 AM - 01:00 AM</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

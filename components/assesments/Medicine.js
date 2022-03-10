@@ -15,38 +15,26 @@ const Medicine = (props) => {
               <Link
                 href={`/form/history-of-present-illness?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-secondary">
+                <a className="btn-custom btn btn-info">
                   History Of Present Illness
                 </a>
               </Link>
             </div>
           </div>
-          {/* <div className="col-md-3">
-            <div className="patient-user-panel-btn mt-3">
-              <Link
-                href={`/medicine-form/clinical-examination?appointmentId=${props.data?.id}`}
-              >
-                <a className="btn-custom btn btn-secondary">
-                  Clinical Examination
-                </a>
-              </Link>
-            </div>
-          </div> */}
+
           <div className="col-md-3">
             <div className="patient-user-panel-btn mt-3">
               <Link
                 href={`/medicine-form/clinical-examination?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-secondary">
-                  Clinical Examination
-                </a>
+                <a className="btn-custom btn btn-info">Clinical Examination</a>
               </Link>
             </div>
           </div>
           <div className="col-md-3">
             <div className="patient-user-panel-btn mt-3">
               <Link href={`/form/assesment?appointmentId=${props.data?.id}`}>
-                <a className="btn-custom btn btn-secondary">Assesment</a>
+                <a className="btn-custom btn btn-info">Assesment</a>
               </Link>
             </div>
           </div>
@@ -56,19 +44,10 @@ const Medicine = (props) => {
               <Link
                 href={`/form/e-prescription?appointmentId=${props.data?.id}`}
               >
-                <a className="btn-custom btn btn-secondary">E-Prescription</a>
+                <a className="btn-custom btn btn-info">E-Prescription</a>
               </Link>
             </div>
           </div>
-          {/* <div className="col-md-3">
-            <div className="patient-user-panel-btn mt-3">
-              <Link
-                href={`/medicine-form/new-demo?appointmentId=${props.data?.id}`}
-              >
-                <a className="btn-custom btn btn-danger">Demo</a>
-              </Link>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

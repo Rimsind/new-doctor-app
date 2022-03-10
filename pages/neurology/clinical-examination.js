@@ -93,6 +93,7 @@ const ClinicalExamination = () => {
       },
     ]);
   };
+  console.log(examination);
   const { register, handleSubmit } = useForm();
   const SubmitForm = async (data, event) => {
     event.preventDefault();
@@ -137,9 +138,9 @@ const ClinicalExamination = () => {
           <div className="gen-form mt-3">
             <div className="row align-items-center mt-3">
               <p className="fs-5 fw-bold">Examination category</p>
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <div className="row align-items-end mb-2">
-                  <div className="col-md-4">
+                  <div className="col-md-5">
                     <div className="items">
                       <label className="form-label">Categories:</label>
                       <select
@@ -156,7 +157,7 @@ const ClinicalExamination = () => {
                       </select>
                     </div>
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-md-5">
                     <label className="form-label">Test:</label>
                     <select
                       className="form-select"
@@ -171,7 +172,7 @@ const ClinicalExamination = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-md-2">
                     <div className="prescription-add-btn text-end">
                       <span className="btn btn-primary" onClick={addData}>
                         Add
@@ -193,7 +194,7 @@ const ClinicalExamination = () => {
                       {examination.map((item, index) => (
                         <tr key={index}>
                           <td>X</td>
-                          <td>{item.catagory}</td>
+                          <td>{item.category}</td>
                           <td>{item.test}</td>
                         </tr>
                       ))}
@@ -201,7 +202,7 @@ const ClinicalExamination = () => {
                   </table>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <p className="fs-6 fw-bold">Assessment</p>
                 <div className="items">
                   <input
