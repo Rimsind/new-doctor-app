@@ -1,33 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { apiUrl } from "../../config/api";
 import axios from "axios";
 import useSWR from "swr";
-import { parseCookies } from "nookies";
 import Head from "next/head";
 import Script from "next/script";
-import Router from "next/router";
 
+import { useAuth } from "../../context";
 const Layout1 = ({ children }) => {
-  const [token, setToken] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
-
-  useEffect(() => {
-    const { token, user } = parseCookies();
-    if (token && user) {
-      setToken(token);
-      const userData = JSON.parse(user);
-      setCurrentUser(userData);
-    }
-  }, []);
+  const { logOut, auth } = useAuth();
 
   const { data, loading, error } = useSWR(
-    `${apiUrl}/doctors/${currentUser?.profileId}`,
+    `${apiUrl}/doctors/${auth?.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${auth.token}`,
         },
       });
       const result = res.data;
@@ -42,10 +30,6 @@ const Layout1 = ({ children }) => {
       </div>
     );
   }
-
-  const logOutHandler = () => {
-    Router.push("/");
-  };
 
   return (
     <>
@@ -137,33 +121,11 @@ const Layout1 = ({ children }) => {
                 </Link>
               </li>
 
-              {/* <li className="sidebar-dropdown">
-                <a href="javascript:void(0)">
-                  <i className=" ri-user-settings-line me-2 d-inline-block"></i>
-                  Profile
-                </a>
-                <div className="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <Link href="/profile-setting">
-                        <a>Profile Settings</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/password-setting">
-                        <a>Password Settings</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li> */}
               <li>
-                <Link href="/">
-                  <a>
-                    <i className="ri-logout-circle-r-line me-2 d-inline-block"></i>
-                    Logout
-                  </a>
-                </Link>
+                <button onClick={logOut}>
+                  <i className="ri-logout-circle-r-line me-2 d-inline-block"></i>
+                  Logout
+                </button>
               </li>
             </ul>
           </div>
@@ -257,7 +219,7 @@ const Layout1 = ({ children }) => {
 
                       <button
                         className="dropdown-item text-dark"
-                        onClick={logOutHandler}
+                        onClick={logOut}
                       >
                         <span className="mb-0 d-inline-block me-1">
                           <i className="ri-logout-circle-r-line align-middle h6"></i>

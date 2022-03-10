@@ -17,7 +17,12 @@ import GlobalProvider from "../context";
 
 export default function MyApp({ Component, pageProps }) {
   const getLayout =
-    Component.getLayout || ((page) => <Layout1>{page}</Layout1>);
+    Component.getLayout ||
+    ((page) => (
+      <GlobalProvider>
+        <Layout1>{page}</Layout1>
+      </GlobalProvider>
+    ));
 
   return getLayout(
     <GlobalProvider>

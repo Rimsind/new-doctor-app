@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "../context";
 const NavBar = ({ details }) => {
-  const logOutHandler = () => {};
+  const { logOut } = useAuth();
   return (
     <>
       <nav id="sidebar" className="sidebar-wrapper">
@@ -69,27 +70,6 @@ const NavBar = ({ details }) => {
                 </a>
               </Link>
             </li>
-
-            {/* <li className="sidebar-dropdown">
-                <a href="javascript:void(0)">
-                  <i className=" ri-user-settings-line me-2 d-inline-block"></i>
-                  Profile
-                </a>
-                <div className="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <Link href="/profile-setting">
-                        <a>Profile Settings</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/password-setting">
-                        <a>Password Settings</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li> */}
             <li>
               <button
                 style={{
@@ -97,14 +77,10 @@ const NavBar = ({ details }) => {
                   border: " none",
                   marginLeft: "-6px",
                 }}
-                onClick={logOutHandler}
+                onClick={logOut}
               >
-                <Link href="/">
-                  <a>
-                    <i className="ri-logout-circle-r-line me-2 d-inline-block"></i>
-                    Logout
-                  </a>
-                </Link>
+                <i className="ri-logout-circle-r-line me-2 d-inline-block"></i>
+                Logout
               </button>
             </li>
           </ul>
