@@ -21,7 +21,7 @@ const Form3 = () => {
       return result;
     }
   );
-  const { circulatory_assesment } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form3 = async (data, event) => {
     event.preventDefault();
@@ -86,9 +86,11 @@ const Form3 = () => {
                         placeholder="Text Area"
                         {...register("physiological_response")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.physiological_response
-                            ? circulatory_assesment.physiological_response
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .physiological_response
+                            ? appointment?.rehab?.circulatory_assesment
+                                .physiological_response
                             : ""
                         }
                       />
@@ -110,9 +112,11 @@ const Form3 = () => {
                         placeholder="Text Area"
                         {...register("peripheral_venous")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.peripheral_venous
-                            ? circulatory_assesment.peripheral_venous
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .peripheral_venous
+                            ? appointment?.rehab?.circulatory_assesment
+                                .peripheral_venous
                             : ""
                         }
                       />
@@ -135,9 +139,11 @@ const Form3 = () => {
                         placeholder="Text Area"
                         {...register("presence_of_bruits")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.presence_of_bruits
-                            ? circulatory_assesment.presence_of_bruits
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .presence_of_bruits
+                            ? appointment?.rehab?.circulatory_assesment
+                                .presence_of_bruits
                             : ""
                         }
                       />
@@ -156,9 +162,11 @@ const Form3 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.identified_problems
-                            ? circulatory_assesment.identified_problems
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .identified_problems
+                            ? appointment?.rehab?.circulatory_assesment
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -176,9 +184,11 @@ const Form3 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.short_term_goals
-                            ? circulatory_assesment.short_term_goals
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .short_term_goals
+                            ? appointment?.rehab?.circulatory_assesment
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -196,9 +206,11 @@ const Form3 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.long_term_goals
-                            ? circulatory_assesment.long_term_goals
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .long_term_goals
+                            ? appointment?.rehab?.circulatory_assesment
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -217,9 +229,11 @@ const Form3 = () => {
                         placeholder="Describe your problems here"
                         {...register("traetment_plan")}
                         defaultValue={
-                          !!circulatory_assesment &&
-                          !!circulatory_assesment.traetment_plan
-                            ? circulatory_assesment.traetment_plan
+                          !!appointment?.rehab?.circulatory_assesment &&
+                          !!appointment?.rehab?.circulatory_assesment
+                            .traetment_plan
+                            ? appointment?.rehab?.circulatory_assesment
+                                .traetment_plan
                             : ""
                         }
                       ></textarea>

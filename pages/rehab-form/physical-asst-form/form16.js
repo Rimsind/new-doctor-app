@@ -22,8 +22,7 @@ const Form16 = () => {
       return result;
     }
   );
-  const { ventilation_respiration_gas_exchange } = appointment?.rehab;
-  console.log(ventilation_respiration_gas_exchange);
+
   const { register, handleSubmit } = useForm();
   const submit_form16 = async (data, event) => {
     event.preventDefault();
@@ -114,9 +113,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("chest_wall_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.chest_wall_text
-                                ? ventilation_respiration_gas_exchange.chest_wall_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .chest_wall_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .chest_wall_text
                                 : ""
                             }
                           />
@@ -129,9 +133,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("chest_wall_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.chest_wall_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .chest_wall_value === "WNL"
                           }
                         />
                       </td>
@@ -142,9 +148,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("chest_wall_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.chest_wall_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .chest_wall_value === "NA"
                           }
                         />
                       </td>
@@ -160,9 +168,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("phonation_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.phonation_text
-                                ? ventilation_respiration_gas_exchange.phonation_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .phonation_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .phonation_text
                                 : ""
                             }
                           />
@@ -176,9 +189,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("phonation_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.phonation_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .phonation_value === "WNL"
                           }
                         />
                       </td>
@@ -189,9 +204,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("phonation_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.phonation_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .phonation_value === "NA"
                           }
                         />
                       </td>
@@ -207,9 +224,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("pulmonary_related_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.pulmonary_related_text
-                                ? ventilation_respiration_gas_exchange.pulmonary_related_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .pulmonary_related_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .pulmonary_related_text
                                 : ""
                             }
                           />
@@ -223,9 +245,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("pulmonary_related_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.pulmonary_related_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .pulmonary_related_value === "WNL"
                           }
                         />
                       </td>
@@ -236,9 +260,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("pulmonary_related_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.pulmonary_related_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .pulmonary_related_value === "NA"
                           }
                         />
                       </td>
@@ -254,9 +280,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("pulmonary_vital_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.pulmonary_vital_text
-                                ? ventilation_respiration_gas_exchange.pulmonary_vital_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .pulmonary_vital_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .pulmonary_vital_text
                                 : ""
                             }
                           />
@@ -270,9 +301,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("pulmonary_vital_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.pulmonary_vital_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .pulmonary_vital_value === "WNL"
                           }
                         />
                       </td>
@@ -283,9 +316,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("pulmonary_vital_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.pulmonary_vital_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .pulmonary_vital_value === "NA"
                           }
                         />
                       </td>
@@ -301,9 +336,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("thoracoabdominal_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.thoracoabdominal_text
-                                ? ventilation_respiration_gas_exchange.thoracoabdominal_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .thoracoabdominal_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .thoracoabdominal_text
                                 : ""
                             }
                           />
@@ -317,9 +357,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("thoracoabdominal_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.thoracoabdominal_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .thoracoabdominal_value === "WNL"
                           }
                         />
                       </td>
@@ -330,9 +372,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("thoracoabdominal_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.thoracoabdominal_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .thoracoabdominal_value === "NA"
                           }
                         />
                       </td>
@@ -348,9 +392,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("presence_level_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.presence_level_text
-                                ? ventilation_respiration_gas_exchange.presence_level_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .presence_level_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .presence_level_text
                                 : ""
                             }
                           />
@@ -364,9 +413,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("presence_level_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.presence_level_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .presence_level_value === "WNL"
                           }
                         />
                       </td>
@@ -377,9 +428,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("presence_level_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.presence_level_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .presence_level_value === "NA"
                           }
                         />
                       </td>
@@ -395,9 +448,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("protect_airways_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.protect_airways_text
-                                ? ventilation_respiration_gas_exchange.protect_airways_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .protect_airways_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .protect_airways_text
                                 : ""
                             }
                           />
@@ -411,9 +469,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("protect_airways_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.protect_airways_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .protect_airways_value === "WNL"
                           }
                         />
                       </td>
@@ -424,9 +484,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("protect_airways_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.protect_airways_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .protect_airways_value === "NA"
                           }
                         />
                       </td>
@@ -442,9 +504,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("gas_exchange_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.gas_exchange_text
-                                ? ventilation_respiration_gas_exchange.gas_exchange_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .gas_exchange_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .gas_exchange_text
                                 : ""
                             }
                           />
@@ -458,9 +525,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("gas_exchange_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.gas_exchange_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .gas_exchange_value === "WNL"
                           }
                         />
                       </td>
@@ -471,9 +540,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("gas_exchange_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.gas_exchange_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .gas_exchange_value === "NA"
                           }
                         />
                       </td>
@@ -489,9 +560,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("ventilatory_mechanism_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.ventilatory_mechanism_text
-                                ? ventilation_respiration_gas_exchange.ventilatory_mechanism_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .ventilatory_mechanism_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .ventilatory_mechanism_text
                                 : ""
                             }
                           />
@@ -505,9 +581,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("ventilatory_mechanism_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.ventilatory_mechanism_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .ventilatory_mechanism_value === "WNL"
                           }
                         />
                       </td>
@@ -518,9 +596,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("ventilatory_mechanism_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.ventilatory_mechanism_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .ventilatory_mechanism_value === "NA"
                           }
                         />
                       </td>
@@ -536,9 +616,14 @@ const Form16 = () => {
                             placeholder="Text Area"
                             {...register("breath_voice_text")}
                             defaultValue={
-                              !!ventilation_respiration_gas_exchange &&
-                              !!ventilation_respiration_gas_exchange.breath_voice_text
-                                ? ventilation_respiration_gas_exchange.breath_voice_text
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .breath_voice_text
+                                ? appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    .breath_voice_text
                                 : ""
                             }
                           />
@@ -552,9 +637,11 @@ const Form16 = () => {
                           value="WNL"
                           {...register("breath_voice_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.breath_voice_value ===
-                              "WNL"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .breath_voice_value === "WNL"
                           }
                         />
                       </td>
@@ -565,9 +652,11 @@ const Form16 = () => {
                           value="NA"
                           {...register("breath_voice_value")}
                           defaultChecked={
-                            !!ventilation_respiration_gas_exchange &&
-                            ventilation_respiration_gas_exchange.breath_voice_value ===
-                              "NA"
+                            !!appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange &&
+                            appointment?.rehab
+                              ?.ventilation_respiration_gas_exchange
+                              .breath_voice_value === "NA"
                           }
                         />
                       </td>
@@ -587,9 +676,14 @@ const Form16 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!ventilation_respiration_gas_exchange &&
-                          !!ventilation_respiration_gas_exchange.identified_problems
-                            ? ventilation_respiration_gas_exchange.identified_problems
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange &&
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange
+                            .identified_problems
+                            ? appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -607,9 +701,14 @@ const Form16 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!ventilation_respiration_gas_exchange &&
-                          !!ventilation_respiration_gas_exchange.short_term_goals
-                            ? ventilation_respiration_gas_exchange.short_term_goals
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange &&
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange
+                            .short_term_goals
+                            ? appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -627,9 +726,14 @@ const Form16 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!ventilation_respiration_gas_exchange &&
-                          !!ventilation_respiration_gas_exchange.long_term_goals
-                            ? ventilation_respiration_gas_exchange.long_term_goals
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange &&
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange
+                            .long_term_goals
+                            ? appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -648,9 +752,14 @@ const Form16 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!ventilation_respiration_gas_exchange &&
-                          !!ventilation_respiration_gas_exchange.treatment_plan
-                            ? ventilation_respiration_gas_exchange.treatment_plan
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange &&
+                          !!appointment?.rehab
+                            ?.ventilation_respiration_gas_exchange
+                            .treatment_plan
+                            ? appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .treatment_plan
                             : ""
                         }
                       ></textarea>
@@ -665,7 +774,7 @@ const Form16 = () => {
               </form>
             </div>
           </div>
-          <Pagination2 name15="active" id={appointmentId} />
+          <Pagination2 name16="active" id={appointmentId} />
         </div>
       </div>
     </>

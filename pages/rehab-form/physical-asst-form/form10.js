@@ -25,7 +25,6 @@ const Form10 = () => {
   );
   const [status, setStatus] = useState(false);
 
-  const { motor_function_assesment } = appointment?.rehab;
   const { register, handleSubmit } = useForm();
   const submit_form10 = async (data, event) => {
     event.preventDefault();
@@ -114,9 +113,10 @@ const Form10 = () => {
                                 onClick={(e) => setStatus(true)}
                                 {...register("muscle_tone")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
-                                  motor_function_assesment.muscle_tone ===
-                                    "Impaired"
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
+                                  appointment?.rehab?.motor_function_assesment
+                                    .muscle_tone === "Impaired"
                                 }
                               />
                             </div>
@@ -136,13 +136,21 @@ const Form10 = () => {
                                       <option
                                         name="language"
                                         defaultValue={
-                                          !!motor_function_assesment &&
-                                          motor_function_assesment.muscle_tone_ifImpared
+                                          !!appointment?.rehab
+                                            ?.motor_function_assesment &&
+                                          appointment?.rehab
+                                            ?.motor_function_assesment
+                                            .muscle_tone_ifImpared
                                         }
                                       >
-                                        {!!motor_function_assesment &&
-                                        motor_function_assesment.muscle_tone_ifImpared
-                                          ? motor_function_assesment.muscle_tone_ifImpared
+                                        {!!appointment?.rehab
+                                          ?.motor_function_assesment &&
+                                        appointment?.rehab
+                                          ?.motor_function_assesment
+                                          .muscle_tone_ifImpared
+                                          ? appointment?.rehab
+                                              ?.motor_function_assesment
+                                              .muscle_tone_ifImpared
                                           : ""}
                                       </option>
                                       <option value="Hypertone">
@@ -169,9 +177,10 @@ const Form10 = () => {
                                 {...register("muscle_tone")}
                                 onClick={(e) => setStatus(false)}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
-                                  motor_function_assesment.muscle_tone ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
+                                  appointment?.rehab?.motor_function_assesment
+                                    .muscle_tone === "Normal"
                                 }
                               />
                             </div>
@@ -189,8 +198,10 @@ const Form10 = () => {
                                 value="N/A"
                                 {...register("muscle_tone")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
-                                  motor_function_assesment.muscle_tone === "N/A"
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
+                                  appointment?.rehab?.motor_function_assesment
+                                    .muscle_tone === "N/A"
                                 }
                               />
                             </div>
@@ -222,9 +233,11 @@ const Form10 = () => {
                                 value="0= NO increasenin muscle tone"
                                 {...register("modified_ashworth_scale")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.modified_ashworth_scale
+                                    appointment?.rehab?.motor_function_assesment
+                                      .modified_ashworth_scale
                                   )?.includes("0= NO increasenin muscle tone")
                                 }
                               />
@@ -245,9 +258,11 @@ const Form10 = () => {
                                 value="1=Slight increase in muscle tone ,manifested b a slight catch and release or by minima resistance at the end of the range of motio when the affected parts is moved in flexion an extension"
                                 {...register("modified_ashworth_scale")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.modified_ashworth_scale
+                                    appointment?.rehab?.motor_function_assesment
+                                      .modified_ashworth_scale
                                   )?.includes(
                                     "1=Slight increase in muscle tone ,manifested b a slight catch and release or by minima resistance at the end of the range of motio when the affected parts is moved in flexion an extension"
                                   )
@@ -279,9 +294,11 @@ const Form10 = () => {
                                 range of motion(ROM)"
                                 {...register("modified_ashworth_scale")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.modified_ashworth_scale
+                                    appointment?.rehab?.motor_function_assesment
+                                      .modified_ashworth_scale
                                   )?.includes(
                                     "1+= Slight increase in muscle tone, manifested by a catch followed by minimal resistance throughout the remainder (less than half) of the range of motion(ROM)"
                                   )
@@ -309,9 +326,11 @@ const Form10 = () => {
                                 easily moved"
                                 {...register("modified_ashworth_scale")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.modified_ashworth_scale
+                                    appointment?.rehab?.motor_function_assesment
+                                      .modified_ashworth_scale
                                   )?.includes(
                                     "2=More marked increase in muscle tone through most of range of motion but affected parts easily moved"
                                   )
@@ -339,9 +358,11 @@ const Form10 = () => {
                                 movement difficult"
                                 {...register("modified_ashworth_scale")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.modified_ashworth_scale
+                                    appointment?.rehab?.motor_function_assesment
+                                      .modified_ashworth_scale
                                   )?.includes(
                                     "3= Considerable increase in muscle tone ,passive movement difficult"
                                   )
@@ -365,9 +386,11 @@ const Form10 = () => {
                                 value="4= Affected parts rigid in flexion or extension"
                                 {...register("modified_ashworth_scale")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.modified_ashworth_scale
+                                    appointment?.rehab?.motor_function_assesment
+                                      .modified_ashworth_scale
                                   )?.includes(
                                     "4= Affected parts rigid in flexion or extension"
                                   )
@@ -401,9 +424,11 @@ const Form10 = () => {
                                 value="Finger to nose"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Finger to nose")
                                 }
                               />
@@ -422,9 +447,11 @@ const Form10 = () => {
                                 value="Tapping hands"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Tapping hands")
                                 }
                               />
@@ -445,9 +472,11 @@ const Form10 = () => {
                                 value="Finger to therapist finger"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Finger to therapist finger")
                                 }
                               />
@@ -468,9 +497,11 @@ const Form10 = () => {
                                 value="Tapping foot"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Tapping foot")
                                 }
                               />
@@ -491,9 +522,11 @@ const Form10 = () => {
                                 value="Pronation Supination"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Pronation Supination")
                                 }
                               />
@@ -512,9 +545,11 @@ const Form10 = () => {
                                 value="Alternate heel to knee"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Alternate heel to knee")
                                 }
                               />
@@ -537,9 +572,11 @@ const Form10 = () => {
                                 value="Rebound Test"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Rebound Test")
                                 }
                               />
@@ -558,9 +595,11 @@ const Form10 = () => {
                                 value="Heel to Toe"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Heel to Toe")
                                 }
                               />
@@ -581,9 +620,11 @@ const Form10 = () => {
                                 value="Heel to Shin"
                                 {...register("coordination_test")}
                                 defaultChecked={
-                                  !!motor_function_assesment &&
+                                  !!appointment?.rehab
+                                    ?.motor_function_assesment &&
                                   makeArrfromString(
-                                    motor_function_assesment.coordination_test
+                                    appointment?.rehab?.motor_function_assesment
+                                      .coordination_test
                                   )?.includes("Heel to Shin")
                                 }
                               />
@@ -615,9 +656,12 @@ const Form10 = () => {
                                   value={items}
                                   {...register("involuntory_movement")}
                                   defaultChecked={
-                                    !!motor_function_assesment &&
+                                    !!appointment?.rehab
+                                      ?.motor_function_assesment &&
                                     makeArrfromString(
-                                      motor_function_assesment.involuntory_movement
+                                      appointment?.rehab
+                                        ?.motor_function_assesment
+                                        .involuntory_movement
                                     )?.includes(items)
                                   }
                                 />
@@ -645,9 +689,11 @@ const Form10 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!motor_function_assesment &&
-                          !!motor_function_assesment.identified_problems
-                            ? motor_function_assesment.identified_problems
+                          !!appointment?.rehab?.motor_function_assesment &&
+                          !!appointment?.rehab?.motor_function_assesment
+                            .identified_problems
+                            ? appointment?.rehab?.motor_function_assesment
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -665,9 +711,11 @@ const Form10 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!motor_function_assesment &&
-                          !!motor_function_assesment.short_term_goals
-                            ? motor_function_assesment.short_term_goals
+                          !!appointment?.rehab?.motor_function_assesment &&
+                          !!appointment?.rehab?.motor_function_assesment
+                            .short_term_goals
+                            ? appointment?.rehab?.motor_function_assesment
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -685,9 +733,11 @@ const Form10 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!motor_function_assesment &&
-                          !!motor_function_assesment.long_term_goals
-                            ? motor_function_assesment.long_term_goals
+                          !!appointment?.rehab?.motor_function_assesment &&
+                          !!appointment?.rehab?.motor_function_assesment
+                            .long_term_goals
+                            ? appointment?.rehab?.motor_function_assesment
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -706,9 +756,11 @@ const Form10 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!motor_function_assesment &&
-                          !!motor_function_assesment.treatment_plan
-                            ? motor_function_assesment.treatment_plan
+                          !!appointment?.rehab?.motor_function_assesment &&
+                          !!appointment?.rehab?.motor_function_assesment
+                            .treatment_plan
+                            ? appointment?.rehab?.motor_function_assesment
+                                .treatment_plan
                             : ""
                         }
                       ></textarea>

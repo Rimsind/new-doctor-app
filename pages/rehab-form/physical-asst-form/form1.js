@@ -22,8 +22,7 @@ const Form1 = () => {
       return result;
     }
   );
-  console.log(appointment);
-  const { aerobicCapacity } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form1 = async (data, event) => {
     event.preventDefault();
@@ -142,13 +141,16 @@ const Form1 = () => {
                           <option
                             name="language"
                             defaultValue={
-                              !!aerobicCapacity &&
-                              aerobicCapacity.during_bed_mobility
+                              !!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .during_bed_mobility
                             }
                           >
-                            {!!aerobicCapacity &&
-                            aerobicCapacity.during_bed_mobility
-                              ? aerobicCapacity.during_bed_mobility
+                            {!!appointment?.rehab?.aerobicCapacity &&
+                            appointment?.rehab?.aerobicCapacity
+                              .during_bed_mobility
+                              ? appointment?.rehab?.aerobicCapacity
+                                  .during_bed_mobility
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -190,13 +192,16 @@ const Form1 = () => {
                           <option
                             name="language"
                             defaultValue={
-                              !!aerobicCapacity &&
-                              aerobicCapacity.during_transfer_task
+                              !!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .during_transfer_task
                             }
                           >
-                            {!!aerobicCapacity &&
-                            aerobicCapacity.during_transfer_task
-                              ? aerobicCapacity.during_transfer_task
+                            {!!appointment?.rehab?.aerobicCapacity &&
+                            appointment?.rehab?.aerobicCapacity
+                              .during_transfer_task
+                              ? appointment?.rehab?.aerobicCapacity
+                                  .during_transfer_task
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -238,13 +243,16 @@ const Form1 = () => {
                           <option
                             name="language"
                             defaultValue={
-                              !!aerobicCapacity &&
-                              aerobicCapacity.during_ambulation_task
+                              !!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .during_ambulation_task
                             }
                           >
-                            {!!aerobicCapacity &&
-                            aerobicCapacity.during_ambulation_task
-                              ? aerobicCapacity.during_ambulation_task
+                            {!!appointment?.rehab?.aerobicCapacity &&
+                            appointment?.rehab?.aerobicCapacity
+                              .during_ambulation_task
+                              ? appointment?.rehab?.aerobicCapacity
+                                  .during_ambulation_task
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -287,13 +295,16 @@ const Form1 = () => {
                           <option
                             name="language"
                             defaultValue={
-                              !!aerobicCapacity &&
-                              aerobicCapacity.during_standarized_test
+                              !!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .during_standarized_test
                             }
                           >
-                            {!!aerobicCapacity &&
-                            aerobicCapacity.during_standarized_test
-                              ? aerobicCapacity.during_standarized_test
+                            {!!appointment?.rehab?.aerobicCapacity &&
+                            appointment?.rehab?.aerobicCapacity
+                              .during_standarized_test
+                              ? appointment?.rehab?.aerobicCapacity
+                                  .during_standarized_test
                               : "Select"}
                           </option>
                           <option value="3 Mint Walk Test">
@@ -327,11 +338,13 @@ const Form1 = () => {
                           <option
                             name="language"
                             defaultValue={
-                              !!aerobicCapacity && aerobicCapacity.at_rpe
+                              !!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity.at_rpe
                             }
                           >
-                            {!!aerobicCapacity && aerobicCapacity.at_rpe
-                              ? aerobicCapacity.at_rpe
+                            {!!appointment?.rehab?.aerobicCapacity &&
+                            appointment?.rehab?.aerobicCapacity.at_rpe
+                              ? appointment?.rehab?.aerobicCapacity.at_rpe
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -388,9 +401,11 @@ const Form1 = () => {
                                 name="blood_pressure"
                                 {...register("blood_pressure")}
                                 defaultValue={
-                                  !!aerobicCapacity &&
-                                  !!aerobicCapacity.blood_pressure
-                                    ? aerobicCapacity.blood_pressure
+                                  !!appointment?.rehab?.aerobicCapacity &&
+                                  !!appointment?.rehab?.aerobicCapacity
+                                    .blood_pressure
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .blood_pressure
                                     : ""
                                 }
                               />
@@ -417,13 +432,16 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity &&
-                                    aerobicCapacity.breath_voice_sounds
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity
+                                      .breath_voice_sounds
                                   }
                                 >
-                                  {!!aerobicCapacity &&
-                                  aerobicCapacity.breath_voice_sounds
-                                    ? aerobicCapacity.breath_voice_sounds
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity
+                                    .breath_voice_sounds
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .breath_voice_sounds
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -449,9 +467,11 @@ const Form1 = () => {
                                 name="heart_rate"
                                 {...register("heart_rate")}
                                 defaultValue={
-                                  !!aerobicCapacity &&
-                                  !!aerobicCapacity.heart_rate
-                                    ? aerobicCapacity.heart_rate
+                                  !!appointment?.rehab?.aerobicCapacity &&
+                                  !!appointment?.rehab?.aerobicCapacity
+                                    .heart_rate
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .heart_rate
                                     : ""
                                 }
                               />
@@ -476,12 +496,14 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity &&
-                                    aerobicCapacity.cyanosis
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity.cyanosis
                                   }
                                 >
-                                  {!!aerobicCapacity && aerobicCapacity.cyanosis
-                                    ? aerobicCapacity.cyanosis
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity.cyanosis
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .cyanosis
                                     : "Select"}
                                 </option>
                                 <option value="Central Cyanosis">
@@ -515,11 +537,13 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity && aerobicCapacity.rhythm
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity.rhythm
                                   }
                                 >
-                                  {!!aerobicCapacity && aerobicCapacity.rhythm
-                                    ? aerobicCapacity.rhythm
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity.rhythm
+                                    ? appointment?.rehab?.aerobicCapacity.rhythm
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -546,13 +570,16 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity &&
-                                    aerobicCapacity.gas_exchange
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity
+                                      .gas_exchange
                                   }
                                 >
-                                  {!!aerobicCapacity &&
-                                  aerobicCapacity.gas_exchange
-                                    ? aerobicCapacity.gas_exchange
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity
+                                    .gas_exchange
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .gas_exchange
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -579,11 +606,13 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity && aerobicCapacity.sounds
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity.sounds
                                   }
                                 >
-                                  {!!aerobicCapacity && aerobicCapacity.sounds
-                                    ? aerobicCapacity.sounds
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity.sounds
+                                    ? appointment?.rehab?.aerobicCapacity.sounds
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -612,13 +641,16 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity &&
-                                    aerobicCapacity.respiratory_pattern
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity
+                                      .respiratory_pattern
                                   }
                                 >
-                                  {!!aerobicCapacity &&
-                                  aerobicCapacity.respiratory_pattern
-                                    ? aerobicCapacity.respiratory_pattern
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity
+                                    .respiratory_pattern
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .respiratory_pattern
                                     : "Select"}
                                 </option>
                                 <option value="Apnea">Apnea</option>
@@ -672,11 +704,13 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity && aerobicCapacity.angina
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity.angina
                                   }
                                 >
-                                  {!!aerobicCapacity && aerobicCapacity.angina
-                                    ? aerobicCapacity.angina
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity.angina
+                                    ? appointment?.rehab?.aerobicCapacity.angina
                                     : "Select"}
                                 </option>
                                 <option value="Yes">Yes</option>
@@ -702,9 +736,11 @@ const Form1 = () => {
                                 name="respiratory_rate"
                                 {...register("respiratory_rate")}
                                 defaultValue={
-                                  !!aerobicCapacity &&
-                                  !!aerobicCapacity.respiratory_rate
-                                    ? aerobicCapacity.respiratory_rate
+                                  !!appointment?.rehab?.aerobicCapacity &&
+                                  !!appointment?.rehab?.aerobicCapacity
+                                    .respiratory_rate
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .respiratory_rate
                                     : ""
                                 }
                               />
@@ -729,13 +765,16 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity &&
-                                    aerobicCapacity.claudication
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity
+                                      .claudication
                                   }
                                 >
-                                  {!!aerobicCapacity &&
-                                  aerobicCapacity.claudication
-                                    ? aerobicCapacity.claudication
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity
+                                    .claudication
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .claudication
                                     : "Select"}
                                 </option>
                                 <option value="Yes">Yes</option>
@@ -764,13 +803,16 @@ const Form1 = () => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!aerobicCapacity &&
-                                    aerobicCapacity.respiratory_rhythm
+                                    !!appointment?.rehab?.aerobicCapacity &&
+                                    appointment?.rehab?.aerobicCapacity
+                                      .respiratory_rhythm
                                   }
                                 >
-                                  {!!aerobicCapacity &&
-                                  aerobicCapacity.respiratory_rhythm
-                                    ? aerobicCapacity.respiratory_rhythm
+                                  {!!appointment?.rehab?.aerobicCapacity &&
+                                  appointment?.rehab?.aerobicCapacity
+                                    .respiratory_rhythm
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .respiratory_rhythm
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -797,9 +839,10 @@ const Form1 = () => {
                                 name="oximetry"
                                 {...register("oximetry")}
                                 defaultValue={
-                                  !!aerobicCapacity &&
-                                  !!aerobicCapacity.oximetry
-                                    ? aerobicCapacity.oximetry
+                                  !!appointment?.rehab?.aerobicCapacity &&
+                                  !!appointment?.rehab?.aerobicCapacity.oximetry
+                                    ? appointment?.rehab?.aerobicCapacity
+                                        .oximetry
                                     : ""
                                 }
                               />
@@ -823,9 +866,11 @@ const Form1 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!aerobicCapacity &&
-                          !!aerobicCapacity.identified_problems
-                            ? aerobicCapacity.identified_problems
+                          !!appointment?.rehab?.aerobicCapacity &&
+                          !!appointment?.rehab?.aerobicCapacity
+                            .identified_problems
+                            ? appointment?.rehab?.aerobicCapacity
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -854,13 +899,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.shortTerm_bed_mobility
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .shortTerm_bed_mobility
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.shortTerm_bed_mobility
-                                ? aerobicCapacity.shortTerm_bed_mobility
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .shortTerm_bed_mobility
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .shortTerm_bed_mobility
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -906,13 +954,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.shortTerm_transfer_task
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .shortTerm_transfer_task
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.shortTerm_transfer_task
-                                ? aerobicCapacity.shortTerm_transfer_task
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .shortTerm_transfer_task
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .shortTerm_transfer_task
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -958,13 +1009,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.shortTerm_ambulation_task
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .shortTerm_ambulation_task
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.shortTerm_ambulation_task
-                                ? aerobicCapacity.shortTerm_ambulation_task
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .shortTerm_ambulation_task
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .shortTerm_ambulation_task
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1009,13 +1063,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.shortTerm_standarized_test
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .shortTerm_standarized_test
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.shortTerm_standarized_test
-                                ? aerobicCapacity.shortTerm_standarized_test
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .shortTerm_standarized_test
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .shortTerm_standarized_test
                                 : "Select"}
                             </option>
                             <option value="3 Mint Walk Test">
@@ -1051,13 +1108,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.shortTerm_at_rpe
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .shortTerm_at_rpe
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.shortTerm_at_rpe
-                                ? aerobicCapacity.shortTerm_at_rpe
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .shortTerm_at_rpe
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .shortTerm_at_rpe
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1092,9 +1152,11 @@ const Form1 = () => {
                         placeholder="Describe your problems here"
                         {...register("describe_short_term_goals")}
                         defaultValue={
-                          !!aerobicCapacity &&
-                          !!aerobicCapacity.describe_short_term_goals
-                            ? aerobicCapacity.describe_short_term_goals
+                          !!appointment?.rehab?.aerobicCapacity &&
+                          !!appointment?.rehab?.aerobicCapacity
+                            .describe_short_term_goals
+                            ? appointment?.rehab?.aerobicCapacity
+                                .describe_short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -1123,13 +1185,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.longTerm_bed_mobility
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .longTerm_bed_mobility
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.longTerm_bed_mobility
-                                ? aerobicCapacity.longTerm_bed_mobility
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .longTerm_bed_mobility
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .longTerm_bed_mobility
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1175,13 +1240,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.longTerm_transfer_task
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .longTerm_transfer_task
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.longTerm_transfer_task
-                                ? aerobicCapacity.longTerm_transfer_task
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .longTerm_transfer_task
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .longTerm_transfer_task
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1227,13 +1295,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.longTerm_Ambulation_task
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .longTerm_Ambulation_task
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.longTerm_Ambulation_task
-                                ? aerobicCapacity.longTerm_Ambulation_task
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .longTerm_Ambulation_task
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .longTerm_Ambulation_task
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1278,13 +1349,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.longTerm_Standarized_test
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .longTerm_Standarized_test
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.longTerm_Standarized_test
-                                ? aerobicCapacity.longTerm_Standarized_test
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .longTerm_Standarized_test
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .longTerm_Standarized_test
                                 : "Select"}
                             </option>
                             <option value="3 Mint Walk Test">
@@ -1320,13 +1394,16 @@ const Form1 = () => {
                             <option
                               name="language"
                               defaultValue={
-                                !!aerobicCapacity &&
-                                aerobicCapacity.longTerm_at_rpe
+                                !!appointment?.rehab?.aerobicCapacity &&
+                                appointment?.rehab?.aerobicCapacity
+                                  .longTerm_at_rpe
                               }
                             >
-                              {!!aerobicCapacity &&
-                              aerobicCapacity.longTerm_at_rpe
-                                ? aerobicCapacity.longTerm_at_rpe
+                              {!!appointment?.rehab?.aerobicCapacity &&
+                              appointment?.rehab?.aerobicCapacity
+                                .longTerm_at_rpe
+                                ? appointment?.rehab?.aerobicCapacity
+                                    .longTerm_at_rpe
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1361,9 +1438,11 @@ const Form1 = () => {
                         placeholder="Describe your problems here"
                         {...register("longTerm_description")}
                         defaultValue={
-                          !!aerobicCapacity &&
-                          !!aerobicCapacity.longTerm_description
-                            ? aerobicCapacity.longTerm_description
+                          !!appointment?.rehab?.aerobicCapacity &&
+                          !!appointment?.rehab?.aerobicCapacity
+                            .longTerm_description
+                            ? appointment?.rehab?.aerobicCapacity
+                                .longTerm_description
                             : ""
                         }
                       ></textarea>
@@ -1392,9 +1471,10 @@ const Form1 = () => {
                                     className="form-check-input"
                                     value={items}
                                     defaultChecked={
-                                      !!aerobicCapacity &&
+                                      !!appointment?.rehab?.aerobicCapacity &&
                                       makeArrfromString(
-                                        aerobicCapacity.aerobic_capacity_retraining
+                                        appointment?.rehab?.aerobicCapacity
+                                          .aerobic_capacity_retraining
                                       )?.includes(items)
                                     }
                                     {...register("aerobic_capacity_retraining")}
@@ -1412,8 +1492,9 @@ const Form1 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!aerobicCapacity && !!aerobicCapacity.treatment_plan
-                            ? aerobicCapacity.treatment_plan
+                          !!appointment?.rehab?.aerobicCapacity &&
+                          !!appointment?.rehab?.aerobicCapacity.treatment_plan
+                            ? appointment?.rehab?.aerobicCapacity.treatment_plan
                             : ""
                         }
                       ></textarea>

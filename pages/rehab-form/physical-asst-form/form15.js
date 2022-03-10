@@ -22,7 +22,7 @@ const Form15 = () => {
       return result;
     }
   );
-  const { joint_integrety_mobility_assessmnet } = appointment?.rehab;
+
   const { register, handleSubmit } = useForm();
   const submit_form15 = async (data, event) => {
     event.preventDefault();
@@ -95,9 +95,11 @@ const Form15 = () => {
                                 value="NEGATIVE"
                                 {...register("apprehension_test")}
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.apprehension_test ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .apprehension_test === "NEGATIVE"
                                 }
                               />
                             </div>
@@ -115,9 +117,11 @@ const Form15 = () => {
                                 value="POSITIVE"
                                 {...register("apprehension_test")}
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.apprehension_test ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .apprehension_test === "POSITIVE"
                                 }
                               />
                             </div>
@@ -141,9 +145,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.compression_distraction_test ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .compression_distraction_test === "NEGATIVE"
                                 }
                                 {...register("compression_distraction_test")}
                               />
@@ -161,9 +167,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.compression_distraction_test ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .compression_distraction_test === "POSITIVE"
                                 }
                                 {...register("compression_distraction_test")}
                               />
@@ -188,9 +196,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.drawer_test ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .drawer_test === "NEGATIVE"
                                 }
                                 {...register("drawer_test")}
                               />
@@ -208,9 +218,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.drawer_test ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .drawer_test === "POSITIVE"
                                 }
                                 {...register("drawer_test")}
                               />
@@ -235,9 +247,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.glide_test ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .glide_test === "NEGATIVE"
                                 }
                                 {...register("glide_test")}
                               />
@@ -255,9 +269,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.glide_test ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .glide_test === "POSITIVE"
                                 }
                                 {...register("glide_test")}
                               />
@@ -282,9 +298,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.impingement_test ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .impingement_test === "NEGATIVE"
                                 }
                                 {...register("impingement_test")}
                               />
@@ -302,9 +320,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.impingement_test ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .impingement_test === "POSITIVE"
                                 }
                                 {...register("impingement_test")}
                               />
@@ -329,9 +349,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.palpation ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .palpation === "NEGATIVE"
                                 }
                                 {...register("palpation")}
                               />
@@ -349,9 +371,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.palpation ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .palpation === "POSITIVE"
                                 }
                                 {...register("palpation")}
                               />
@@ -376,9 +400,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.shear_tests ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .shear_tests === "NEGATIVE"
                                 }
                                 {...register("shear_tests")}
                               />
@@ -396,9 +422,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.shear_tests ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .shear_tests === "POSITIVE"
                                 }
                                 {...register("shear_tests")}
                               />
@@ -423,9 +451,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="NEGATIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.valgus_varus_stress_test ===
-                                    "NEGATIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .valgus_varus_stress_test === "NEGATIVE"
                                 }
                                 {...register("valgus_varus_stress_test")}
                               />
@@ -443,9 +473,11 @@ const Form15 = () => {
                                 type="radio"
                                 value="POSITIVE"
                                 defaultChecked={
-                                  !!joint_integrety_mobility_assessmnet &&
-                                  joint_integrety_mobility_assessmnet.valgus_varus_stress_test ===
-                                    "POSITIVE"
+                                  !!appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet &&
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    .valgus_varus_stress_test === "POSITIVE"
                                 }
                                 {...register("valgus_varus_stress_test")}
                               />
@@ -472,9 +504,14 @@ const Form15 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!joint_integrety_mobility_assessmnet &&
-                          !!joint_integrety_mobility_assessmnet.identified_problems
-                            ? joint_integrety_mobility_assessmnet.identified_problems
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet &&
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet
+                            .identified_problems
+                            ? appointment?.rehab
+                                ?.joint_integrety_mobility_assessmnet
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -492,9 +529,14 @@ const Form15 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!joint_integrety_mobility_assessmnet &&
-                          !!joint_integrety_mobility_assessmnet.short_term_goals
-                            ? joint_integrety_mobility_assessmnet.short_term_goals
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet &&
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet
+                            .short_term_goals
+                            ? appointment?.rehab
+                                ?.joint_integrety_mobility_assessmnet
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -512,9 +554,14 @@ const Form15 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!joint_integrety_mobility_assessmnet &&
-                          !!joint_integrety_mobility_assessmnet.long_term_goals
-                            ? joint_integrety_mobility_assessmnet.long_term_goals
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet &&
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet
+                            .long_term_goals
+                            ? appointment?.rehab
+                                ?.joint_integrety_mobility_assessmnet
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -533,9 +580,13 @@ const Form15 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!joint_integrety_mobility_assessmnet &&
-                          !!joint_integrety_mobility_assessmnet.treatment_plan
-                            ? joint_integrety_mobility_assessmnet.treatment_plan
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet &&
+                          !!appointment?.rehab
+                            ?.joint_integrety_mobility_assessmnet.treatment_plan
+                            ? appointment?.rehab
+                                ?.joint_integrety_mobility_assessmnet
+                                .treatment_plan
                             : ""
                         }
                       ></textarea>

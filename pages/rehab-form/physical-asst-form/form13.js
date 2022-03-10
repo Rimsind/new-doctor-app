@@ -22,7 +22,6 @@ const Form13 = () => {
       return result;
     }
   );
-  const { environmental_barrier_assessmnet } = appointment?.rehab;
 
   const { register, handleSubmit } = useForm();
   const submit_form13 = async (data, event) => {
@@ -131,7 +130,24 @@ const Form13 = () => {
                         aria-label="default example"
                         {...register("environmental_barriers")}
                       >
-                        <option selected>Open this select menu</option>
+                        <option
+                          name="language"
+                          defaultValue={
+                            !!appointment?.rehab
+                              ?.environmental_barrier_assessmnet &&
+                            appointment?.rehab?.environmental_barrier_assessmnet
+                              .environmental_barriers
+                          }
+                        >
+                          {!!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          appointment?.rehab?.environmental_barrier_assessmnet
+                            .environmental_barriers
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .environmental_barriers
+                            : "Select"}
+                        </option>
                         <option value="0 No barrier">0 No barrier</option>
                         <option value="1 Mild barriers">1 Mild barriers</option>
                         <option value="2 Moderate barriers">
@@ -154,7 +170,24 @@ const Form13 = () => {
                         aria-label="default example"
                         {...register("facilitators_assessmnet")}
                       >
-                        <option selected>Open this select menu</option>
+                        <option
+                          name="language"
+                          defaultValue={
+                            !!appointment?.rehab
+                              ?.environmental_barrier_assessmnet &&
+                            appointment?.rehab?.environmental_barrier_assessmnet
+                              .facilitators_assessmnet
+                          }
+                        >
+                          {!!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          appointment?.rehab?.environmental_barrier_assessmnet
+                            .facilitators_assessmnet
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .facilitators_assessmnet
+                            : "Select"}
+                        </option>
                         <option value="0 No facilitator">
                           0 No facilitator
                         </option>
@@ -187,9 +220,13 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("family_members")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.family_members
-                            ? environmental_barrier_assessmnet.family_members
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .family_members
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .family_members
                             : ""
                         }
                       />
@@ -209,9 +246,12 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("friends")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.friends
-                            ? environmental_barrier_assessmnet.friends
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .friends
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet.friends
                             : ""
                         }
                       />
@@ -233,9 +273,13 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("personal_care_provider")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.personal_care_provider
-                            ? environmental_barrier_assessmnet.personal_care_provider
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .personal_care_provider
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .personal_care_provider
                             : ""
                         }
                       />
@@ -255,9 +299,13 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("personal_assistants")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.personal_assistants
-                            ? environmental_barrier_assessmnet.personal_assistants
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .personal_assistants
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .personal_assistants
                             : ""
                         }
                       />
@@ -277,9 +325,13 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("health_professionals")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.health_professionals
-                            ? environmental_barrier_assessmnet.health_professionals
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .health_professionals
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .health_professionals
                             : ""
                         }
                       />
@@ -299,9 +351,13 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("societal_attitudes")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.societal_attitudes
-                            ? environmental_barrier_assessmnet.societal_attitudes
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .societal_attitudes
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .societal_attitudes
                             : ""
                         }
                       />
@@ -321,9 +377,12 @@ const Form13 = () => {
                         placeholder="Text Area"
                         {...register("social_norms")}
                         defaultValue={
-                          !!environmental_barrier_assessmnet &&
-                          !!environmental_barrier_assessmnet.social_norms
-                            ? environmental_barrier_assessmnet.social_norms
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .social_norms
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet.social_norms
                             : ""
                         }
                       />
@@ -354,9 +413,12 @@ const Form13 = () => {
                                   value={items}
                                   {...register("home_work_barrier")}
                                   defaultChecked={
-                                    !!environmental_barrier_assessmnet &&
+                                    !!appointment?.rehab
+                                      ?.environmental_barrier_assessmnet &&
                                     makeArrfromString(
-                                      environmental_barrier_assessmnet.home_work_barrier
+                                      appointment?.rehab
+                                        ?.environmental_barrier_assessmnet
+                                        .home_work_barrier
                                     )?.includes(items)
                                   }
                                 />
@@ -382,9 +444,14 @@ const Form13 = () => {
                             placeholder="Describe your problems here"
                             {...register("identified_problems")}
                             defaultValue={
-                              !!environmental_barrier_assessmnet &&
-                              !!environmental_barrier_assessmnet.identified_problems
-                                ? environmental_barrier_assessmnet.identified_problems
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet &&
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .identified_problems
+                                ? appointment?.rehab
+                                    ?.environmental_barrier_assessmnet
+                                    .identified_problems
                                 : ""
                             }
                           ></textarea>
@@ -402,9 +469,14 @@ const Form13 = () => {
                             placeholder="Describe your problems here"
                             {...register("short_term_goals")}
                             defaultValue={
-                              !!environmental_barrier_assessmnet &&
-                              !!environmental_barrier_assessmnet.short_term_goals
-                                ? environmental_barrier_assessmnet.short_term_goals
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet &&
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .short_term_goals
+                                ? appointment?.rehab
+                                    ?.environmental_barrier_assessmnet
+                                    .short_term_goals
                                 : ""
                             }
                           ></textarea>
@@ -422,9 +494,14 @@ const Form13 = () => {
                             placeholder="Describe your problems here"
                             {...register("long_term_goals")}
                             defaultValue={
-                              !!environmental_barrier_assessmnet &&
-                              !!environmental_barrier_assessmnet.long_term_goals
-                                ? environmental_barrier_assessmnet.long_term_goals
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet &&
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .long_term_goals
+                                ? appointment?.rehab
+                                    ?.environmental_barrier_assessmnet
+                                    .long_term_goals
                                 : ""
                             }
                           ></textarea>
@@ -443,9 +520,14 @@ const Form13 = () => {
                             placeholder="Describe your problems here"
                             {...register("treatment_plans")}
                             defaultValue={
-                              !!environmental_barrier_assessmnet &&
-                              !!environmental_barrier_assessmnet.treatment_plans
-                                ? environmental_barrier_assessmnet.treatment_plans
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet &&
+                              !!appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .treatment_plans
+                                ? appointment?.rehab
+                                    ?.environmental_barrier_assessmnet
+                                    .treatment_plans
                                 : ""
                             }
                           ></textarea>

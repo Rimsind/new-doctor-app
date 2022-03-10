@@ -22,7 +22,6 @@ const Form6 = () => {
       return result;
     }
   );
-  const { reflex_sensory_assessment } = appointment?.rehab;
 
   const { register, handleSubmit } = useForm();
   const submit_form6 = async (data, event) => {
@@ -67,7 +66,7 @@ const Form6 = () => {
     );
     return result;
   };
-  const optionList = ["Normal", "Impaired"];
+
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto">
@@ -100,9 +99,11 @@ const Form6 = () => {
                         placeholder="Text Area"
                         {...register("reflex_examination")}
                         defaultValue={
-                          !!reflex_sensory_assessment &&
-                          !!reflex_sensory_assessment.reflex_examination
-                            ? reflex_sensory_assessment.reflex_examination
+                          !!appointment?.rehab?.reflex_sensory_assessment &&
+                          !!appointment?.rehab?.reflex_sensory_assessment
+                            .reflex_examination
+                            ? appointment?.rehab?.reflex_sensory_assessment
+                                .reflex_examination
                             : ""
                         }
                       />
@@ -133,9 +134,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("touch_awareness")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.touch_awareness ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .touch_awareness === "Normal"
                                     }
                                   />
                                 </div>
@@ -153,9 +156,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("touch_awareness")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.touch_awareness ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .touch_awareness === "Impared"
                                     }
                                   />
                                 </div>
@@ -183,9 +188,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("touch_localization")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.touch_localization ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .touch_localization === "Normal"
                                     }
                                   />
                                 </div>
@@ -203,9 +210,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("touch_localization")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.touch_localization ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .touch_localization === "Impared"
                                     }
                                   />
                                 </div>
@@ -232,9 +241,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("touch_pressure_threshold")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.touch_pressure_threshold ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .touch_pressure_threshold === "Normal"
                                     }
                                   />
                                 </div>
@@ -252,9 +263,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("touch_pressure_threshold")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.touch_pressure_threshold ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .touch_pressure_threshold === "Impared"
                                     }
                                   />
                                 </div>
@@ -281,9 +294,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("two_point_discrimination")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.two_point_discrimination ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .two_point_discrimination === "Normal"
                                     }
                                   />
                                 </div>
@@ -301,9 +316,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("two_point_discrimination")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.two_point_discrimination ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .two_point_discrimination === "Impared"
                                     }
                                   />
                                 </div>
@@ -339,8 +356,10 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("sharp")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.sharp ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.sharp ===
                                         "Normal"
                                     }
                                   />
@@ -359,8 +378,10 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("sharp")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.sharp ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.sharp ===
                                         "Impared"
                                     }
                                   />
@@ -388,8 +409,10 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("dull")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.dull ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.dull ===
                                         "Normal"
                                     }
                                   />
@@ -408,8 +431,10 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("dull")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.dull ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.dull ===
                                         "Impared"
                                     }
                                   />
@@ -446,9 +471,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("vibration")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.vibration ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .vibration === "Normal"
                                     }
                                   />
                                 </div>
@@ -466,9 +493,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("vibration")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.vibration ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .vibration === "Impared"
                                     }
                                   />
                                 </div>
@@ -495,9 +524,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("joint_position")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.joint_position ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .joint_position === "Normal"
                                     }
                                   />
                                 </div>
@@ -515,9 +546,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("joint_position")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.joint_position ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .joint_position === "Impared"
                                     }
                                   />
                                 </div>
@@ -544,9 +577,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("joint_motion")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.joint_motion ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .joint_motion === "Normal"
                                     }
                                   />
                                 </div>
@@ -564,9 +599,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("joint_motion")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.joint_motion ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .joint_motion === "Impared"
                                     }
                                   />
                                 </div>
@@ -593,9 +630,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("stereognosis")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.stereognosis ===
-                                        "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .stereognosis === "Normal"
                                     }
                                   />
                                 </div>
@@ -613,9 +652,11 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("stereognosis")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.stereognosis ===
-                                        "Impared"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment
+                                        .stereognosis === "Impared"
                                     }
                                   />
                                 </div>
@@ -651,8 +692,11 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("hot")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.hot === "Normal"
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.hot ===
+                                        "Normal"
                                     }
                                   />
                                 </div>
@@ -670,8 +714,10 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("hot")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.hot ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.hot ===
                                         "Impared"
                                     }
                                   />
@@ -699,8 +745,10 @@ const Form6 = () => {
                                     value="Normal"
                                     {...register("cold")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.cold ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.cold ===
                                         "Normal"
                                     }
                                   />
@@ -719,8 +767,10 @@ const Form6 = () => {
                                     value="Impared"
                                     {...register("cold")}
                                     defaultChecked={
-                                      !!reflex_sensory_assessment &&
-                                      reflex_sensory_assessment.cold ===
+                                      !!appointment?.rehab
+                                        ?.reflex_sensory_assessment &&
+                                      appointment?.rehab
+                                        ?.reflex_sensory_assessment.cold ===
                                         "Impared"
                                     }
                                   />
@@ -748,9 +798,11 @@ const Form6 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!reflex_sensory_assessment &&
-                          !!reflex_sensory_assessment.identified_problems
-                            ? reflex_sensory_assessment.identified_problems
+                          !!appointment?.rehab?.reflex_sensory_assessment &&
+                          !!appointment?.rehab?.reflex_sensory_assessment
+                            .identified_problems
+                            ? appointment?.rehab?.reflex_sensory_assessment
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -768,9 +820,11 @@ const Form6 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!reflex_sensory_assessment &&
-                          !!reflex_sensory_assessment.short_term_goals
-                            ? reflex_sensory_assessment.short_term_goals
+                          !!appointment?.rehab?.reflex_sensory_assessment &&
+                          !!appointment?.rehab?.reflex_sensory_assessment
+                            .short_term_goals
+                            ? appointment?.rehab?.reflex_sensory_assessment
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -788,9 +842,11 @@ const Form6 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!reflex_sensory_assessment &&
-                          !!reflex_sensory_assessment.long_term_goals
-                            ? reflex_sensory_assessment.long_term_goals
+                          !!appointment?.rehab?.reflex_sensory_assessment &&
+                          !!appointment?.rehab?.reflex_sensory_assessment
+                            .long_term_goals
+                            ? appointment?.rehab?.reflex_sensory_assessment
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -809,9 +865,11 @@ const Form6 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!reflex_sensory_assessment &&
-                          !!reflex_sensory_assessment.treatment_plan
-                            ? reflex_sensory_assessment.treatment_plan
+                          !!appointment?.rehab?.reflex_sensory_assessment &&
+                          !!appointment?.rehab?.reflex_sensory_assessment
+                            .treatment_plan
+                            ? appointment?.rehab?.reflex_sensory_assessment
+                                .treatment_plan
                             : ""
                         }
                       ></textarea>

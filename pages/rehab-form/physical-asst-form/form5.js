@@ -22,8 +22,6 @@ const Form5 = () => {
     }
   );
 
-  const { cranial_peripheral_assesment } = appointment?.rehab;
-
   const { register, handleSubmit } = useForm();
   const submit_form5 = async (data, event) => {
     event.preventDefault();
@@ -105,8 +103,10 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("olfactory")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.olfactory ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.olfactory ===
                                     "Normal"
                                 }
                               />
@@ -125,8 +125,10 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("olfactory")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.olfactory ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.olfactory ===
                                     "Impared"
                                 }
                               />
@@ -156,8 +158,10 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("optic")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.optic ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.optic ===
                                     "Normal"
                                 }
                               />
@@ -176,8 +180,10 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("optic")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.optic ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.optic ===
                                     "Impared"
                                 }
                               />
@@ -207,9 +213,11 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("occulomotor")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.occulomotor ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .occulomotor === "Normal"
                                 }
                               />
                             </div>
@@ -227,9 +235,11 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("occulomotor")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.occulomotor ===
-                                    "Impared"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .occulomotor === "Impared"
                                 }
                               />
                             </div>
@@ -258,8 +268,10 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("trochlear")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.trochlear ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.trochlear ===
                                     "Normal"
                                 }
                               />
@@ -278,8 +290,10 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("trochlear")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.trochlear ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.trochlear ===
                                     "Impared"
                                 }
                               />
@@ -309,9 +323,11 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("trigeminal")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.trigeminal ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .trigeminal === "Normal"
                                 }
                               />
                             </div>
@@ -329,9 +345,11 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("trigeminal")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.trigeminal ===
-                                    "Impared"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .trigeminal === "Impared"
                                 }
                               />
                             </div>
@@ -360,8 +378,10 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("abducens")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.abducens ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.abducens ===
                                     "Normal"
                                 }
                               />
@@ -380,8 +400,10 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("abducens")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.abducens ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.abducens ===
                                     "Impared"
                                 }
                               />
@@ -411,9 +433,11 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("facial_nerve")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.facial_nerve ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .facial_nerve === "Normal"
                                 }
                               />
                             </div>
@@ -431,9 +455,11 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("facial_nerve")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.facial_nerve ===
-                                    "Impared"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .facial_nerve === "Impared"
                                 }
                               />
                             </div>
@@ -462,9 +488,11 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("vestibulocohlear")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.vestibulocohlear ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .vestibulocohlear === "Normal"
                                 }
                               />
                             </div>
@@ -482,9 +510,11 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("vestibulocohlear")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.vestibulocohlear ===
-                                    "Impared"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .vestibulocohlear === "Impared"
                                 }
                               />
                             </div>
@@ -513,9 +543,11 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("glossophoryngeal")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.glossophoryngeal ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .glossophoryngeal === "Normal"
                                 }
                               />
                             </div>
@@ -533,9 +565,11 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("glossophoryngeal")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.glossophoryngeal ===
-                                    "Impared"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .glossophoryngeal === "Impared"
                                 }
                               />
                             </div>
@@ -564,8 +598,10 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("vagus")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.vagus ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.vagus ===
                                     "Normal"
                                 }
                               />
@@ -584,8 +620,10 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("vagus")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.vagus ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.vagus ===
                                     "Impared"
                                 }
                               />
@@ -615,8 +653,10 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("accessory")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.accessory ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.accessory ===
                                     "Normal"
                                 }
                               />
@@ -635,8 +675,10 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("accessory")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.accessory ===
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment.accessory ===
                                     "Impared"
                                 }
                               />
@@ -666,9 +708,11 @@ const Form5 = () => {
                                 value="Normal"
                                 {...register("hypoglossal")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.hypoglossal ===
-                                    "Normal"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .hypoglossal === "Normal"
                                 }
                               />
                             </div>
@@ -686,9 +730,11 @@ const Form5 = () => {
                                 value="Impared"
                                 {...register("hypoglossal")}
                                 defaultChecked={
-                                  !!cranial_peripheral_assesment &&
-                                  cranial_peripheral_assesment.hypoglossal ===
-                                    "Impared"
+                                  !!appointment?.rehab
+                                    ?.cranial_peripheral_assesment &&
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    .hypoglossal === "Impared"
                                 }
                               />
                             </div>
@@ -713,9 +759,11 @@ const Form5 = () => {
                         placeholder="Describe your problems here"
                         {...register("peripheral_nerve_nxamination")}
                         defaultValue={
-                          !!cranial_peripheral_assesment &&
-                          !!cranial_peripheral_assesment.peripheral_nerve_nxamination
-                            ? cranial_peripheral_assesment.peripheral_nerve_nxamination
+                          !!appointment?.rehab?.cranial_peripheral_assesment &&
+                          !!appointment?.rehab?.cranial_peripheral_assesment
+                            .peripheral_nerve_nxamination
+                            ? appointment?.rehab?.cranial_peripheral_assesment
+                                .peripheral_nerve_nxamination
                             : ""
                         }
                       ></textarea>
@@ -734,9 +782,11 @@ const Form5 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!cranial_peripheral_assesment &&
-                          !!cranial_peripheral_assesment.identified_problems
-                            ? cranial_peripheral_assesment.identified_problems
+                          !!appointment?.rehab?.cranial_peripheral_assesment &&
+                          !!appointment?.rehab?.cranial_peripheral_assesment
+                            .identified_problems
+                            ? appointment?.rehab?.cranial_peripheral_assesment
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -754,9 +804,11 @@ const Form5 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!cranial_peripheral_assesment &&
-                          !!cranial_peripheral_assesment.short_term_goals
-                            ? cranial_peripheral_assesment.short_term_goals
+                          !!appointment?.rehab?.cranial_peripheral_assesment &&
+                          !!appointment?.rehab?.cranial_peripheral_assesment
+                            .short_term_goals
+                            ? appointment?.rehab?.cranial_peripheral_assesment
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -774,9 +826,11 @@ const Form5 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!cranial_peripheral_assesment &&
-                          !!cranial_peripheral_assesment.long_term_goals
-                            ? cranial_peripheral_assesment.long_term_goals
+                          !!appointment?.rehab?.cranial_peripheral_assesment &&
+                          !!appointment?.rehab?.cranial_peripheral_assesment
+                            .long_term_goals
+                            ? appointment?.rehab?.cranial_peripheral_assesment
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -795,9 +849,11 @@ const Form5 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!cranial_peripheral_assesment &&
-                          !!cranial_peripheral_assesment.treatment_plan
-                            ? cranial_peripheral_assesment.treatment_plan
+                          !!appointment?.rehab?.cranial_peripheral_assesment &&
+                          !!appointment?.rehab?.cranial_peripheral_assesment
+                            .treatment_plan
+                            ? appointment?.rehab?.cranial_peripheral_assesment
+                                .treatment_plan
                             : ""
                         }
                       ></textarea>

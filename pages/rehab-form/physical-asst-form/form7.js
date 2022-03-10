@@ -22,7 +22,6 @@ const Form7 = () => {
       return result;
     }
   );
-  const { postural_assessment } = appointment?.rehab;
 
   const { register, handleSubmit } = useForm();
   const submit_form7 = async (data, event) => {
@@ -150,9 +149,9 @@ const Form7 = () => {
                                 value={items}
                                 {...register("feet")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.fett
+                                    appointment?.rehab?.postural_assessment.fett
                                   )?.includes(items)
                                 }
                               />
@@ -187,9 +186,9 @@ const Form7 = () => {
                                 value={items}
                                 {...register("knee")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.knee
+                                    appointment?.rehab?.postural_assessment.knee
                                   )?.includes(items)
                                 }
                               />
@@ -224,9 +223,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("pelvis")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.pelvis
+                                    appointment?.rehab?.postural_assessment
+                                      .pelvis
                                   )?.includes(items)
                                 }
                               />
@@ -261,9 +261,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("lower_back")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.lower_back
+                                    appointment?.rehab?.postural_assessment
+                                      .lower_back
                                   )?.includes(items)
                                 }
                               />
@@ -298,9 +299,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("upper_back")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.upper_back
+                                    appointment?.rehab?.postural_assessment
+                                      .upper_back
                                   )?.includes(items)
                                 }
                               />
@@ -335,9 +337,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("thorax")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.thorax
+                                    appointment?.rehab?.postural_assessment
+                                      .thorax
                                   )?.includes(items)
                                 }
                               />
@@ -372,9 +375,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("spine")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.spine
+                                    appointment?.rehab?.postural_assessment
+                                      .spine
                                   )?.includes(items)
                                 }
                               />
@@ -409,9 +413,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("abdomen")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.abdomen
+                                    appointment?.rehab?.postural_assessment
+                                      .abdomen
                                   )?.includes(items)
                                 }
                               />
@@ -446,9 +451,10 @@ const Form7 = () => {
                                 value={items}
                                 {...register("shoulder")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.shoulder
+                                    appointment?.rehab?.postural_assessment
+                                      .shoulder
                                   )?.includes(items)
                                 }
                               />
@@ -483,9 +489,9 @@ const Form7 = () => {
                                 value={items}
                                 {...register("head")}
                                 defaultChecked={
-                                  !!postural_assessment &&
+                                  !!appointment?.rehab?.postural_assessment &&
                                   makeArrfromString(
-                                    postural_assessment.head
+                                    appointment?.rehab?.postural_assessment.head
                                   )?.includes(items)
                                 }
                               />
@@ -515,9 +521,11 @@ const Form7 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!postural_assessment &&
-                          !!postural_assessment.identified_problems
-                            ? postural_assessment.identified_problems
+                          !!appointment?.rehab?.postural_assessment &&
+                          !!appointment?.rehab?.postural_assessment
+                            .identified_problems
+                            ? appointment?.rehab?.postural_assessment
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -535,9 +543,11 @@ const Form7 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!postural_assessment &&
-                          !!postural_assessment.short_term_goals
-                            ? postural_assessment.short_term_goals
+                          !!appointment?.rehab?.postural_assessment &&
+                          !!appointment?.rehab?.postural_assessment
+                            .short_term_goals
+                            ? appointment?.rehab?.postural_assessment
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -555,9 +565,11 @@ const Form7 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!postural_assessment &&
-                          !!postural_assessment.long_term_goals
-                            ? postural_assessment.long_term_goals
+                          !!appointment?.rehab?.postural_assessment &&
+                          !!appointment?.rehab?.postural_assessment
+                            .long_term_goals
+                            ? appointment?.rehab?.postural_assessment
+                                .long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -576,9 +588,11 @@ const Form7 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!postural_assessment &&
-                          !!postural_assessment.treatment_plan
-                            ? postural_assessment.treatment_plan
+                          !!appointment?.rehab?.postural_assessment &&
+                          !!appointment?.rehab?.postural_assessment
+                            .treatment_plan
+                            ? appointment?.rehab?.postural_assessment
+                                .treatment_plan
                             : ""
                         }
                       ></textarea>

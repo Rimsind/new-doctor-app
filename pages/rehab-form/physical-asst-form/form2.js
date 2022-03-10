@@ -22,8 +22,6 @@ const Form2 = () => {
     }
   );
 
-  const { abthropometric } = appointment?.rehab;
-  console.log(abthropometric);
   const { register, handleSubmit } = useForm();
   const submit_form2 = async (data, event) => {
     event.preventDefault();
@@ -101,8 +99,9 @@ const Form2 = () => {
                                 placeholder="cm"
                                 {...register("height")}
                                 defaultValue={
-                                  !!abthropometric && !!abthropometric.height
-                                    ? abthropometric.height
+                                  !!appointment?.rehab?.abthropometric &&
+                                  !!appointment?.rehab?.abthropometric.height
+                                    ? appointment?.rehab?.abthropometric.height
                                     : ""
                                 }
                                 // onChange={(e) => setHeight(e.target.value)}
@@ -120,8 +119,9 @@ const Form2 = () => {
                                 placeholder="kg"
                                 {...register("weight")}
                                 defaultValue={
-                                  !!abthropometric && !!abthropometric.weight
-                                    ? abthropometric.weight
+                                  !!appointment?.rehab?.abthropometric &&
+                                  !!appointment?.rehab?.abthropometric.weight
+                                    ? appointment?.rehab?.abthropometric.weight
                                     : ""
                                 }
                                 // onChange={(e) => setWeight(e.target.value)}
@@ -140,8 +140,9 @@ const Form2 = () => {
                                 contentEditable="false"
                                 {...register("bmi")}
                                 defaultValue={
-                                  !!abthropometric && !!abthropometric.bmi
-                                    ? abthropometric.bmi
+                                  !!appointment?.rehab?.abthropometric &&
+                                  !!appointment?.rehab?.abthropometric.bmi
+                                    ? appointment?.rehab?.abthropometric.bmi
                                     : ""
                                 }
                               />
@@ -162,8 +163,9 @@ const Form2 = () => {
                         placeholder="Text Area"
                         {...register("impedence")}
                         defaultValue={
-                          !!abthropometric && !!abthropometric.impedence
-                            ? abthropometric.impedence
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric.impedence
+                            ? appointment?.rehab?.abthropometric.impedence
                             : ""
                         }
                       />
@@ -180,8 +182,9 @@ const Form2 = () => {
                         placeholder="Text Area"
                         {...register("skin_fold")}
                         defaultValue={
-                          !!abthropometric && !!abthropometric.skin_fold
-                            ? abthropometric.skin_fold
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric.skin_fold
+                            ? appointment?.rehab?.abthropometric.skin_fold
                             : ""
                         }
                       />
@@ -202,9 +205,11 @@ const Form2 = () => {
                         placeholder="Text Area"
                         {...register("body_dimension_grith")}
                         defaultValue={
-                          !!abthropometric &&
-                          !!abthropometric.body_dimension_grith
-                            ? abthropometric.body_dimension_grith
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric
+                            .body_dimension_grith
+                            ? appointment?.rehab?.abthropometric
+                                .body_dimension_grith
                             : ""
                         }
                       />
@@ -221,9 +226,11 @@ const Form2 = () => {
                         placeholder="Text Area"
                         {...register("body_dimension_length")}
                         defaultValue={
-                          !!abthropometric &&
-                          !!abthropometric.body_dimension_length
-                            ? abthropometric.body_dimension_length
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric
+                            .body_dimension_length
+                            ? appointment?.rehab?.abthropometric
+                                .body_dimension_length
                             : ""
                         }
                       />
@@ -249,8 +256,10 @@ const Form2 = () => {
                               placeholder="Text Area"
                               {...register("edema_grith")}
                               defaultValue={
-                                !!abthropometric && !!abthropometric.edema_grith
-                                  ? abthropometric.edema_grith
+                                !!appointment?.rehab?.abthropometric &&
+                                !!appointment?.rehab?.abthropometric.edema_grith
+                                  ? appointment?.rehab?.abthropometric
+                                      .edema_grith
                                   : ""
                               }
                             />
@@ -267,9 +276,11 @@ const Form2 = () => {
                               placeholder="Text Area"
                               {...register("edema_palpation")}
                               defaultValue={
-                                !!abthropometric &&
-                                !!abthropometric.edema_palpation
-                                  ? abthropometric.edema_palpation
+                                !!appointment?.rehab?.abthropometric &&
+                                !!appointment?.rehab?.abthropometric
+                                  .edema_palpation
+                                  ? appointment?.rehab?.abthropometric
+                                      .edema_palpation
                                   : ""
                               }
                             />
@@ -286,9 +297,11 @@ const Form2 = () => {
                               placeholder="Text Area"
                               {...register("edema_scales")}
                               defaultValue={
-                                !!abthropometric &&
-                                !!abthropometric.edema_scales
-                                  ? abthropometric.edema_scales
+                                !!appointment?.rehab?.abthropometric &&
+                                !!appointment?.rehab?.abthropometric
+                                  .edema_scales
+                                  ? appointment?.rehab?.abthropometric
+                                      .edema_scales
                                   : ""
                               }
                             />
@@ -305,9 +318,11 @@ const Form2 = () => {
                               placeholder="Text Area"
                               {...register("edema_volume")}
                               defaultValue={
-                                !!abthropometric &&
-                                !!abthropometric.edema_volume
-                                  ? abthropometric.edema_volume
+                                !!appointment?.rehab?.abthropometric &&
+                                !!appointment?.rehab?.abthropometric
+                                  .edema_volume
+                                  ? appointment?.rehab?.abthropometric
+                                      .edema_volume
                                   : ""
                               }
                             />
@@ -329,9 +344,11 @@ const Form2 = () => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!abthropometric &&
-                          !!abthropometric.identified_problems
-                            ? abthropometric.identified_problems
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric
+                            .identified_problems
+                            ? appointment?.rehab?.abthropometric
+                                .identified_problems
                             : ""
                         }
                       ></textarea>
@@ -349,8 +366,10 @@ const Form2 = () => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!abthropometric && !!abthropometric.short_term_goals
-                            ? abthropometric.short_term_goals
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric.short_term_goals
+                            ? appointment?.rehab?.abthropometric
+                                .short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -368,8 +387,9 @@ const Form2 = () => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!abthropometric && !!abthropometric.long_term_goals
-                            ? abthropometric.long_term_goals
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric.long_term_goals
+                            ? appointment?.rehab?.abthropometric.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -388,8 +408,9 @@ const Form2 = () => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!abthropometric && !!abthropometric.treatment_plan
-                            ? abthropometric.treatment_plan
+                          !!appointment?.rehab?.abthropometric &&
+                          !!appointment?.rehab?.abthropometric.treatment_plan
+                            ? appointment?.rehab?.abthropometric.treatment_plan
                             : ""
                         }
                       ></textarea>
