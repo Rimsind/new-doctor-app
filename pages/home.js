@@ -58,6 +58,108 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="dashboard-nav-card mt-5">
+        <div className="row align-items-center">
+          <div className="col-4 mb-2 mt-2">
+            <div className="dashboard-nav-card-item-first">
+              <div className="row">
+                <div className="col-6">
+                  <div className="card-icon text-center">
+                    <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="card-name text-start">
+                    <a href="#" className="fs-5 fw-bold text-light">
+                      Appointment
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mb-2 mt-2">
+            <div className="dashboard-nav-card-item-second">
+              <div className="dashboard-nav-card-item-content">
+                <div className="row">
+                  <div className="col-6">
+                    <div className="card-icon text-center">
+                      <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="card-name text-start">
+                      <a href="#" className="fs-5 fw-bold text-light">
+                        Time Table
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mb-2 mt-2">
+            <div className="dashboard-nav-card-item-third">
+              <div className="dashboard-nav-card-item-content">
+                <div className="row">
+                  <div className="col-6">
+                    <div className="card-icon text-center">
+                      <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="card-name text-start">
+                      <a href="#" className="fs-5 fw-bold text-light">
+                        Profile Settings
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mb-2 mt-2">
+            <div className="dashboard-nav-card-item-forth">
+              <div className="dashboard-nav-card-item-content">
+                <div className="row">
+                  <div className="col-6">
+                    <div className="card-icon text-center">
+                      <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="card-name text-start">
+                      <a href="#" className="fs-5 fw-bold text-light">
+                        Password Settings
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mb-2 mt-2">
+            <div className="dashboard-nav-card-item-fifth">
+              <div className="dashboard-nav-card-item-content">
+                <div className="row">
+                  <div className="col-6">
+                    <div className="card-icon text-center">
+                      <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="card-name text-start">
+                      <a href="#" className="fs-5 fw-bold text-light">
+                        Logout
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

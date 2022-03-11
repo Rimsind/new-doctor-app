@@ -52,7 +52,7 @@ const Layout1 = ({ children }) => {
         <meta name="Version" content="v1.0.0" />
       </Head>
       <div className="page-wrapper chiller-theme toggled">
-        <nav id="sidebar" className="sidebar-wrapper">
+        {/* <nav id="sidebar" className="sidebar-wrapper">
           <div
             className="sidebar-content"
             // data-simplebar="init"
@@ -132,104 +132,145 @@ const Layout1 = ({ children }) => {
               <h5>12/12/12 12:30 am</h5>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <main className="page-content bg-light">
-          <div className="top-header">
-            <div className="header-bar d-flex justify-content-between border-bottom">
-              <div className="d-flex align-items-center">
-                <a href="#" className="logo-icon">
-                  <Image
-                    width="22"
-                    height="22"
-                    src="/images/logo-dark.png"
-                    className="big"
-                    alt=""
-                  />
-                </a>
-                <a
-                  id="close-sidebar"
-                  className="btn btn-icon btn-pills btn-soft-primary ms-2"
-                  href="#"
-                >
-                  <i className="ri-menu-line"></i>
-                </a>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-md">
+            <div className="container-fluid">
+              <div className="logo-brand">
+                <Link href="/">
+                  <a>
+                    <Image
+                      src="/images/logo-dark.png"
+                      height="50"
+                      width="65px"
+                      alt=""
+                    />
+                  </a>
+                </Link>
               </div>
-
-              <ul className="list-unstyled mb-0">
-                <li className="list-inline-item mb-0 ms-1">
-                  <div className="dropdown dropdown-primary">
-                    <button
-                      type="button"
-                      className="btn btn-pills  dropdown-toggle p-0"
-                      data-bs-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      <Image
-                        height="50"
-                        width="50"
-                        src={data?.image?.url || "/images/profile.png"}
-                        className="avatar avatar-ex-small rounded-circle"
-                        alt=""
-                      />
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <Link href="/home">
+                      <a className="nav-link">Dashboard</a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/appointment">
+                      <a className="nav-link">Appointment</a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/time-table">
+                      <a className="nav-link">Time Table</a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/profile-setting">
+                      <a className="nav-link">Profile settings</a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/password-setting">
+                      <a className="nav-link">Password settings</a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <button className="nav-link" onClick={logOut}>
+                      Logout
                     </button>
-                    <div
-                      className="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 py-3"
-                      style={{ minWidth: "200px" }}
-                    >
-                      <a
-                        className="dropdown-item d-flex align-items-center text-dark"
-                        href="profile.html"
+                  </li>
+                </ul>
+                <ul className="list-unstyled mb-0">
+                  <li className="list-inline-item mb-0 ms-1">
+                    <div className="dropdown dropdown-primary">
+                      <button
+                        type="button"
+                        className="btn btn-pills  dropdown-toggle p-0"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
                       >
                         <Image
                           height="50"
                           width="50"
                           src={data?.image?.url || "/images/profile.png"}
-                          className="avatar avatar-md-sm rounded-circle border shadow"
+                          className="avatar avatar-ex-small rounded-circle"
                           alt=""
                         />
-                        <div className="flex-1 ms-2">
-                          <span className="d-block mb-1">
-                            Dr.{data?.firstName}
-                          </span>
-                          <small className="text-muted">Orthopedic</small>
-                        </div>
-                      </a>
-                      <Link href="/home">
-                        <a className="dropdown-item text-dark">
-                          <span className="mb-0 d-inline-block me-1">
-                            <i className="ri-airplay-line align-middle h6"></i>
-                          </span>
-                          Dashboard
-                        </a>
-                      </Link>
-                      <Link href="/profile-setting">
-                        <a className="dropdown-item text-dark">
-                          <span className="mb-0 d-inline-block me-1">
-                            <i className="ri-user-settings-line align-middle h6"></i>
-                          </span>
-                          Profile
-                        </a>
-                      </Link>
-                      <div className="dropdown-divider border-top"></div>
-
-                      <button
-                        className="dropdown-item text-dark"
-                        onClick={logOut}
-                      >
-                        <span className="mb-0 d-inline-block me-1">
-                          <i className="ri-logout-circle-r-line align-middle h6"></i>
-                        </span>
-                        Logout
                       </button>
+                      <div
+                        className="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 py-3"
+                        style={{ minWidth: "200px" }}
+                      >
+                        <a
+                          className="dropdown-item d-flex align-items-center text-dark"
+                          href="profile.html"
+                        >
+                          <Image
+                            height="50"
+                            width="50"
+                            src={data?.image?.url || "/images/profile.png"}
+                            className="avatar avatar-md-sm rounded-circle border shadow"
+                            alt=""
+                          />
+                          <div className="flex-1 ms-2">
+                            <span className="d-block mb-1">
+                              Dr.{data?.firstName}
+                            </span>
+                            <small className="text-muted">Orthopedic</small>
+                          </div>
+                        </a>
+                        <Link href="/home">
+                          <a className="dropdown-item text-dark">
+                            <span className="mb-0 d-inline-block me-1">
+                              <i className="ri-airplay-line align-middle h6"></i>
+                            </span>
+                            Dashboard
+                          </a>
+                        </Link>
+                        <Link href="/profile-setting">
+                          <a className="dropdown-item text-dark">
+                            <span className="mb-0 d-inline-block me-1">
+                              <i className="ri-user-settings-line align-middle h6"></i>
+                            </span>
+                            Profile
+                          </a>
+                        </Link>
+                        <div className="dropdown-divider border-top"></div>
+
+                        <button
+                          className="dropdown-item text-dark"
+                          onClick={logOut}
+                        >
+                          <span className="mb-0 d-inline-block me-1">
+                            <i className="ri-logout-circle-r-line align-middle h6"></i>
+                          </span>
+                          Logout
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <section className="bg-dashboard" style={{ marginTop: "100px" }}>
+          </nav>
+          <section className="bg-dashboard mt-3">
             <div className="container-fluid">
               <div className="row">
                 <div className="col-xl-12 col-lg-12 col-md-12 mt-4 mt-sm-0">
