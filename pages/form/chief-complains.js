@@ -47,22 +47,24 @@ const ChiefComplains = () => {
                   borderRadius: "3px",
                 }}
               >
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col">Complain Description</th>
-                      <th scope="col">Duration</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data?.chiefComplaints?.map((item, index) => (
-                      <tr key={index}>
-                        <td>{item.description}</td>
-                        <td>{item.duration}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Complain Description</th>
+                        <th scope="col">Duration</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {data?.chiefComplaints?.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item.description}</td>
+                          <td>{item.duration}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

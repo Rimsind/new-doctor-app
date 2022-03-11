@@ -503,277 +503,285 @@ const Form9 = () => {
                 <div className="gen-table-form mt-4">
                   <div className="row">
                     <div className="col-md-6">
-                      <table className="table table-bordered border-dark">
-                        <tr>
-                          <th colSpan="3" style={{ textAlign: "center" }}>
-                            Sitting
-                          </th>
-                        </tr>
-                        <tr>
-                          <td>Small Movement</td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Normal"
-                                      {...register("sitting_small_movement")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .sitting_small_movement === "Normal"
-                                      }
-                                    />
+                      <div className="table-responsive">
+                        <table className="table table-bordered border-dark">
+                          <tr>
+                            <th colSpan="3" style={{ textAlign: "center" }}>
+                              Sitting
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>Small Movement</td>
+                            <td>
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Normal"
+                                        {...register("sitting_small_movement")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .sitting_small_movement === "Normal"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Normal</p>
+                                    </div>
                                   </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Normal</p>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Impared"
+                                        {...register("sitting_small_movement")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .sitting_small_movement ===
+                                            "Impared"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Impared</p>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Impared"
-                                      {...register("sitting_small_movement")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .sitting_small_movement === "Impared"
-                                      }
-                                    />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Large Movement</td>
+                            <td>
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Normal"
+                                        {...register("sitting_large_movement")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .sitting_large_movement === "Normal"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Normal</p>
+                                    </div>
                                   </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Impared</p>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Impared"
+                                        {...register("sitting_large_movement")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .sitting_large_movement ===
+                                            "Impared"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Impared</p>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Large Movement</td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Normal"
-                                      {...register("sitting_large_movement")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .sitting_large_movement === "Normal"
-                                      }
-                                    />
-                                  </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Normal</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Impared"
-                                      {...register("sitting_large_movement")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .sitting_large_movement === "Impared"
-                                      }
-                                    />
-                                  </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Impared</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
                     <div className="col-md-6">
-                      <table className="table table-bordered border-dark">
-                        <tr>
-                          <th colSpan="3" style={{ textAlign: "center" }}>
-                            Standing
-                          </th>
-                        </tr>
-                        <tr>
-                          <td>Ankle Strategy</td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Normal"
-                                      {...register("standing_ankle_strategy")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .standing_ankle_strategy === "Normal"
-                                      }
-                                    />
+                      <div className="table-responsive">
+                        <table className="table table-bordered border-dark">
+                          <tr>
+                            <th colSpan="3" style={{ textAlign: "center" }}>
+                              Standing
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>Ankle Strategy</td>
+                            <td>
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Normal"
+                                        {...register("standing_ankle_strategy")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .standing_ankle_strategy ===
+                                            "Normal"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Normal</p>
+                                    </div>
                                   </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Normal</p>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Impared"
+                                        {...register("standing_ankle_strategy")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .standing_ankle_strategy ===
+                                            "Impared"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Impared</p>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Impared"
-                                      {...register("standing_ankle_strategy")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .standing_ankle_strategy === "Impared"
-                                      }
-                                    />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Hip Strategy</td>
+                            <td>
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Normal"
+                                        {...register("standing_hip_strategy")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .standing_hip_strategy === "Normal"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Normal</p>
+                                    </div>
                                   </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Impared</p>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Impared"
+                                        {...register("standing_hip_strategy")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .standing_hip_strategy === "Impared"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Impared</p>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Hip Strategy</td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Normal"
-                                      {...register("standing_hip_strategy")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .standing_hip_strategy === "Normal"
-                                      }
-                                    />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Stepping Strategy</td>
+                            <td>
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Normal"
+                                        {...register("stepping_strategy")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .stepping_strategy === "Normal"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Normal</p>
+                                    </div>
                                   </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Normal</p>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="row">
+                                    <div className="col-md-4">
+                                      <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        value="Impared"
+                                        {...register("stepping_strategy")}
+                                        defaultChecked={
+                                          !!appointment?.rehab
+                                            ?.postural_control_assesment &&
+                                          appointment?.rehab
+                                            ?.postural_control_assesment
+                                            .stepping_strategy === "Impared"
+                                        }
+                                      />
+                                    </div>
+                                    <div className="col-md-8">
+                                      <p className="space-x-4">Impared</p>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Impared"
-                                      {...register("standing_hip_strategy")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .standing_hip_strategy === "Impared"
-                                      }
-                                    />
-                                  </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Impared</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Stepping Strategy</td>
-                          <td>
-                            <div className="row">
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Normal"
-                                      {...register("stepping_strategy")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .stepping_strategy === "Normal"
-                                      }
-                                    />
-                                  </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Normal</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-md-6">
-                                <div className="row">
-                                  <div className="col-md-4">
-                                    <input
-                                      className="form-check-input"
-                                      type="radio"
-                                      value="Impared"
-                                      {...register("stepping_strategy")}
-                                      defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
-                                          .stepping_strategy === "Impared"
-                                      }
-                                    />
-                                  </div>
-                                  <div className="col-md-8">
-                                    <p className="space-x-4">Impared</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>

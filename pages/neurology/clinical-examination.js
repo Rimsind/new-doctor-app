@@ -187,7 +187,7 @@ const ClinicalExamination = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-2 mt-2">
                     <div className="prescription-add-btn text-end">
                       <span className="btn btn-primary" onClick={addData}>
                         Add

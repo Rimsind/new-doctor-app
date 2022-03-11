@@ -41,17 +41,14 @@ const Layout1 = ({ children }) => {
       <Head>
         <meta charSet="utf-8" />
 
-        <meta
-          name="description"
-          content="Premium Bootstrap 4 Landing Page Template"
-        />
+        <meta name="description" content="Main Software Backand" />
         <meta
           name="keywords"
           content="Appointment, Booking, System, Dashboard, Health"
         />
-        <meta name="author" content="Shreethemes" />
-        <meta name="email" content="shreethemes@gmail.com" />
-        <meta name="website" content="http://www.shreethemes.in" />
+        <meta name="author" content="Rims India" />
+        <meta name="email" content="Rimsindia@gmail.com" />
+        <meta name="website" content="http://www.Rimstechnologies.in" />
         <meta name="Version" content="v1.0.0" />
       </Head>
       <div className="page-wrapper chiller-theme toggled">
