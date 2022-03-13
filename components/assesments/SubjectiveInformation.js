@@ -5,7 +5,7 @@ const SubjectiveInformation = (props) => {
     <>
       <div className="patient-subjective-info">
         <div className="mt-4 ms-3 pt-3">
-          <h5 className="mt-3 mb-1" style={{ textAlign: "center" }}>
+          <h5 className="mt-3 mb-1 text-center">
             PATIENT&apos;S SUBJECTIVE INFORMATION
           </h5>
         </div>

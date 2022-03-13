@@ -94,574 +94,576 @@ const Form16 = () => {
               </div>
               <form onSubmit={handleSubmit(submit_form16)}>
                 <div className="gen-form-table mt-4">
-                  <table className="table table-bordered">
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th>WNL</th>
-                      <th>NA</th>
-                    </tr>
+                  <div className="table-responsive">
+                    <table className="table table-bordered">
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th>WNL</th>
+                        <th>NA</th>
+                      </tr>
 
-                    <tr>
-                      <td>CHEST WALL AND RELATED STRUCTURES</td>
+                      <tr>
+                        <td>CHEST WALL AND RELATED STRUCTURES</td>
 
-                      <td>
-                        <p>
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("chest_wall_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .chest_wall_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .chest_wall_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("chest_wall_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("chest_wall_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .chest_wall_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .chest_wall_text
-                                : ""
+                                .chest_wall_value === "WNL"
                             }
                           />
-                        </p>
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("chest_wall_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .chest_wall_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("chest_wall_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .chest_wall_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PHONATION</td>
-
-                      <td>
-                        <p>
+                        </td>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("phonation_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("chest_wall_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .phonation_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .phonation_text
-                                : ""
+                                .chest_wall_value === "NA"
                             }
                           />
-                        </p>
-                      </td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>PHONATION</td>
 
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("phonation_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .phonation_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("phonation_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .phonation_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PULMONARY RELATED SYMPTOMS</td>
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("phonation_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .phonation_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .phonation_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
 
-                      <td>
-                        <p>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("pulmonary_related_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("phonation_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .pulmonary_related_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .pulmonary_related_text
-                                : ""
+                                .phonation_value === "WNL"
                             }
                           />
-                        </p>
-                      </td>
-
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("pulmonary_related_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .pulmonary_related_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("pulmonary_related_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .pulmonary_related_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PULMONARY VITAL SIGNS</td>
-
-                      <td>
-                        <p>
+                        </td>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("pulmonary_vital_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("phonation_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .pulmonary_vital_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .pulmonary_vital_text
-                                : ""
+                                .phonation_value === "NA"
                             }
                           />
-                        </p>
-                      </td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>PULMONARY RELATED SYMPTOMS</td>
 
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("pulmonary_vital_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .pulmonary_vital_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("pulmonary_vital_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .pulmonary_vital_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>THORACOABDOMINAL VENTILATORY PATTERNS</td>
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("pulmonary_related_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .pulmonary_related_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .pulmonary_related_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
 
-                      <td>
-                        <p>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("thoracoabdominal_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("pulmonary_related_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .thoracoabdominal_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .thoracoabdominal_text
-                                : ""
+                                .pulmonary_related_value === "WNL"
                             }
                           />
-                        </p>
-                      </td>
-
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("thoracoabdominal_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .thoracoabdominal_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("thoracoabdominal_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .thoracoabdominal_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>PRESENCE AND LEVEL OF CYANOSIS</td>
-
-                      <td>
-                        <p>
+                        </td>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("presence_level_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("pulmonary_related_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .presence_level_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .presence_level_text
-                                : ""
+                                .pulmonary_related_value === "NA"
                             }
                           />
-                        </p>
-                      </td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>PULMONARY VITAL SIGNS</td>
 
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("presence_level_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .presence_level_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("presence_level_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .presence_level_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ability to clear and protect airways</td>
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("pulmonary_vital_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .pulmonary_vital_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .pulmonary_vital_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
 
-                      <td>
-                        <p>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("protect_airways_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("pulmonary_vital_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .protect_airways_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .protect_airways_text
-                                : ""
+                                .pulmonary_vital_value === "WNL"
                             }
                           />
-                        </p>
-                      </td>
-
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("protect_airways_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .protect_airways_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("protect_airways_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .protect_airways_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Gas exchange and oxygen level/transport</td>
-
-                      <td>
-                        <p>
+                        </td>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("gas_exchange_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("pulmonary_vital_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .gas_exchange_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .gas_exchange_text
-                                : ""
+                                .pulmonary_vital_value === "NA"
                             }
                           />
-                        </p>
-                      </td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>THORACOABDOMINAL VENTILATORY PATTERNS</td>
 
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("gas_exchange_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .gas_exchange_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("gas_exchange_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .gas_exchange_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>pulmonary function and ventilatory mechanism</td>
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("thoracoabdominal_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .thoracoabdominal_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .thoracoabdominal_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
 
-                      <td>
-                        <p>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("ventilatory_mechanism_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("thoracoabdominal_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .ventilatory_mechanism_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .ventilatory_mechanism_text
-                                : ""
+                                .thoracoabdominal_value === "WNL"
                             }
                           />
-                        </p>
-                      </td>
-
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("ventilatory_mechanism_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .ventilatory_mechanism_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("ventilatory_mechanism_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .ventilatory_mechanism_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>BREATH AND VOICE SOUNDS</td>
-
-                      <td>
-                        <p>
+                        </td>
+                        <td>
                           <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Text Area"
-                            {...register("breath_voice_text")}
-                            defaultValue={
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("thoracoabdominal_value")}
+                            defaultChecked={
                               !!appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
+                              appointment?.rehab
                                 ?.ventilation_respiration_gas_exchange
-                                .breath_voice_text
-                                ? appointment?.rehab
-                                    ?.ventilation_respiration_gas_exchange
-                                    .breath_voice_text
-                                : ""
+                                .thoracoabdominal_value === "NA"
                             }
                           />
-                        </p>
-                      </td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>PRESENCE AND LEVEL OF CYANOSIS</td>
 
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="WNL"
-                          {...register("breath_voice_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .breath_voice_value === "WNL"
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          value="NA"
-                          {...register("breath_voice_value")}
-                          defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
-                              .breath_voice_value === "NA"
-                          }
-                        />
-                      </td>
-                    </tr>
-                  </table>
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("presence_level_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .presence_level_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .presence_level_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("presence_level_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .presence_level_value === "WNL"
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("presence_level_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .presence_level_value === "NA"
+                            }
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ability to clear and protect airways</td>
+
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("protect_airways_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .protect_airways_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .protect_airways_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("protect_airways_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .protect_airways_value === "WNL"
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("protect_airways_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .protect_airways_value === "NA"
+                            }
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Gas exchange and oxygen level/transport</td>
+
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("gas_exchange_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .gas_exchange_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .gas_exchange_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("gas_exchange_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .gas_exchange_value === "WNL"
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("gas_exchange_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .gas_exchange_value === "NA"
+                            }
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>pulmonary function and ventilatory mechanism</td>
+
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("ventilatory_mechanism_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .ventilatory_mechanism_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .ventilatory_mechanism_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("ventilatory_mechanism_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .ventilatory_mechanism_value === "WNL"
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("ventilatory_mechanism_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .ventilatory_mechanism_value === "NA"
+                            }
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>BREATH AND VOICE SOUNDS</td>
+
+                        <td>
+                          <p>
+                            <input
+                              className="form-control"
+                              type="text"
+                              placeholder="Text Area"
+                              {...register("breath_voice_text")}
+                              defaultValue={
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange &&
+                                !!appointment?.rehab
+                                  ?.ventilation_respiration_gas_exchange
+                                  .breath_voice_text
+                                  ? appointment?.rehab
+                                      ?.ventilation_respiration_gas_exchange
+                                      .breath_voice_text
+                                  : ""
+                              }
+                            />
+                          </p>
+                        </td>
+
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="WNL"
+                            {...register("breath_voice_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .breath_voice_value === "WNL"
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            value="NA"
+                            {...register("breath_voice_value")}
+                            defaultChecked={
+                              !!appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange &&
+                              appointment?.rehab
+                                ?.ventilation_respiration_gas_exchange
+                                .breath_voice_value === "NA"
+                            }
+                          />
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
 
                 <div className="gen-form">

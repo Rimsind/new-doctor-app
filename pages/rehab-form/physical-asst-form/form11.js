@@ -176,1875 +176,1879 @@ const Form11 = () => {
               </div>
               <form onSubmit={handleSubmit(submit_form11)}>
                 <div className="gen-form-table mt-4">
-                  <table className="table table-bordered border-dark">
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th>WNL Value</th>
-                      <th>WFL Value</th>
+                  <div className="table-responsive">
+                    <table className="table table-bordered border-dark">
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th>WNL Value</th>
+                        <th>WFL Value</th>
 
-                      <th>Range Of Motion Score</th>
-                      <th>Strength</th>
-                    </tr>
+                        <th>Range Of Motion Score</th>
+                        <th>Strength</th>
+                      </tr>
 
-                    <tr>
-                      <td
-                        className="fs-5 fw-bold"
-                        rowSpan="5"
-                        style={{ width: "70px" }}
-                      >
-                        HIP
-                      </td>
-
-                      <td>
-                        <p>Flexion / Flexors</p>
-                      </td>
-                      <td>0-120</td>
-                      <td>0-120</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_score
-                              : ""
-                          }
-                          {...register("hip_flexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("hip_flexion_strength")}
+                      <tr>
+                        <td
+                          className="fs-5 fw-bold"
+                          rowSpan="5"
+                          style={{ width: "70px" }}
                         >
-                          <option
+                          HIP
+                        </td>
+
+                        <td>
+                          <p>Flexion / Flexors</p>
+                        </td>
+                        <td>0-120</td>
+                        <td>0-120</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .hip_flexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_score
+                                : ""
+                            }
+                            {...register("hip_flexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("hip_flexion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>Extension / Extensors</p>
-                      </td>
-                      <td>0-20</td>
-                      <td>0-20</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .hip_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_extension_score
-                              : ""
-                          }
-                          {...register("hip_extension_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("hip_extension_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>Extension / Extensors</p>
+                        </td>
+                        <td>0-20</td>
+                        <td>0-20</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .hip_extension_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_extension_score
+                                : ""
+                            }
+                            {...register("hip_extension_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("hip_extension_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_extension_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_extension_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_extension_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_extension_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>Abduction / Abductors</p>
-                      </td>
-                      <td>0-45</td>
-                      <td>0-45</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .hip_abduction_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_abduction_score
-                              : ""
-                          }
-                          {...register("hip_abduction_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("hip_abduction_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>Abduction / Abductors</p>
+                        </td>
+                        <td>0-45</td>
+                        <td>0-45</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .hip_abduction_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_abduction_score
+                                : ""
+                            }
+                            {...register("hip_abduction_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("hip_abduction_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_abduction_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_abduction_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_abduction_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_abduction_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_abduction_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>External Rotation / External Rotators</p>
-                      </td>
-                      <td>0-45</td>
-                      <td>0-45</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .hip_externalRotation_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_externalRotation_score
-                              : ""
-                          }
-                          {...register("hip_externalRotation_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("hip_externalRotation_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>External Rotation / External Rotators</p>
+                        </td>
+                        <td>0-45</td>
+                        <td>0-45</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .hip_externalRotation_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_externalRotation_score
+                                : ""
+                            }
+                            {...register("hip_externalRotation_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("hip_externalRotation_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_externalRotation_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_externalRotation_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_externalRotation_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_externalRotation_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_externalRotation_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>Internal Rotation / Internal Rotators</p>
-                      </td>
-                      <td>0-30</td>
-                      <td>0-30</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .hip_internalRotation_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_internalRotation_score
-                              : ""
-                          }
-                          {...register("hip_internalRotation_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("hip_internalRotation_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>Internal Rotation / Internal Rotators</p>
+                        </td>
+                        <td>0-30</td>
+                        <td>0-30</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .hip_internalRotation_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_internalRotation_score
+                                : ""
+                            }
+                            {...register("hip_internalRotation_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("hip_internalRotation_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_internalRotation_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_internalRotation_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_internalRotation_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_internalRotation_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_internalRotation_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td
-                        className="fs-5 fw-bold"
-                        rowSpan="3"
-                        style={{ width: "70px" }}
-                      >
-                        KNEE
-                      </td>
-
-                      <td>
-                        <p>Flexion</p>
-                      </td>
-                      <td>0-145</td>
-                      <td>0-145</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .knee_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .knee_flexion_score
-                              : ""
-                          }
-                          {...register("knee_flexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("knee_flexion_strength")}
+                      <tr>
+                        <td
+                          className="fs-5 fw-bold"
+                          rowSpan="3"
+                          style={{ width: "70px" }}
                         >
-                          <option
+                          KNEE
+                        </td>
+
+                        <td>
+                          <p>Flexion</p>
+                        </td>
+                        <td>0-145</td>
+                        <td>0-145</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .knee_flexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .knee_flexion_score
+                                : ""
+                            }
+                            {...register("knee_flexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("knee_flexion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .knee_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .knee_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .knee_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .knee_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .knee_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>Extension </p>
-                      </td>
-                      <td>145-0</td>
-                      <td>145-0</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .knee_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .knee_extension_score
-                              : ""
-                          }
-                          {...register("knee_extension_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("knee_extension_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>Extension </p>
+                        </td>
+                        <td>145-0</td>
+                        <td>145-0</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .knee_extension_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .knee_extension_score
+                                : ""
+                            }
+                            {...register("knee_extension_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("knee_extension_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .knee_extension_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .knee_extension_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .knee_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .knee_extension_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .knee_extension_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>STRAIGHT LEG RAISE</p>
-                      </td>
-                      <td>0-90</td>
-                      <td>0-90</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .knee_straightLegRaise_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .knee_straightLegRaise_score
-                              : ""
-                          }
-                          {...register("knee_straightLegRaise_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("knee_straightLegRaise_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>STRAIGHT LEG RAISE</p>
+                        </td>
+                        <td>0-90</td>
+                        <td>0-90</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .knee_straightLegRaise_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .knee_straightLegRaise_score
+                                : ""
+                            }
+                            {...register("knee_straightLegRaise_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("knee_straightLegRaise_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .knee_straightLegRaise_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .knee_straightLegRaise_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .knee_straightLegRaise_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .knee_straightLegRaise_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .knee_straightLegRaise_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td
-                        className="fs-5 fw-bold"
-                        rowSpan="4"
-                        style={{ width: "70px" }}
-                      >
-                        ANKLE
-                      </td>
-
-                      <td>
-                        <p>DORSIFLEXION/FLEXORS</p>
-                      </td>
-                      <td>0-20</td>
-                      <td>0-20</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .ankle_dorsiflexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_dorsiflexion_score
-                              : ""
-                          }
-                          {...register("ankle_dorsiflexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("ankle_dorsiflexion_strength")}
+                      <tr>
+                        <td
+                          className="fs-5 fw-bold"
+                          rowSpan="4"
+                          style={{ width: "70px" }}
                         >
-                          <option
+                          ANKLE
+                        </td>
+
+                        <td>
+                          <p>DORSIFLEXION/FLEXORS</p>
+                        </td>
+                        <td>0-20</td>
+                        <td>0-20</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .ankle_dorsiflexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_dorsiflexion_score
+                                : ""
+                            }
+                            {...register("ankle_dorsiflexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("ankle_dorsiflexion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .ankle_dorsiflexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .ankle_dorsiflexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .ankle_dorsiflexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_dorsiflexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_dorsiflexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>PLANTERFLEXION/FLEXORS</p>
-                      </td>
-                      <td>0-50</td>
-                      <td>0-50</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .ankle_planterflexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_planterflexion_score
-                              : ""
-                          }
-                          {...register("ankle_planterflexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("ankle_planterflexion_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>PLANTERFLEXION/FLEXORS</p>
+                        </td>
+                        <td>0-50</td>
+                        <td>0-50</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .ankle_planterflexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_planterflexion_score
+                                : ""
+                            }
+                            {...register("ankle_planterflexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("ankle_planterflexion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .ankle_planterflexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .ankle_planterflexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .ankle_planterflexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_planterflexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_planterflexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>INVERSION/INVERTORS</p>
-                      </td>
-                      <td>0-15</td>
-                      <td>0-15</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .ankle_inversion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_inversion_score
-                              : ""
-                          }
-                          {...register("ankle_inversion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("ankle_inversion_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>INVERSION/INVERTORS</p>
+                        </td>
+                        <td>0-15</td>
+                        <td>0-15</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .ankle_inversion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_inversion_score
+                                : ""
+                            }
+                            {...register("ankle_inversion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("ankle_inversion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .ankle_inversion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .ankle_inversion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .ankle_inversion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_inversion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_inversion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>EVERSION/EVERTORS</p>
-                      </td>
-                      <td>0-20</td>
-                      <td>0-20</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .ankle_eversion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_eversion_score
-                              : ""
-                          }
-                          {...register("ankle_eversion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("ankle_eversion_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>EVERSION/EVERTORS</p>
+                        </td>
+                        <td>0-20</td>
+                        <td>0-20</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .ankle_eversion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_eversion_score
+                                : ""
+                            }
+                            {...register("ankle_eversion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("ankle_eversion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .ankle_eversion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .ankle_eversion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .ankle_eversion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .ankle_eversion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .ankle_eversion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="fs-5 fw-bold"
-                        rowSpan="6"
-                        style={{ width: "70px" }}
-                      >
-                        CERVICAL
-                      </td>
-
-                      <td>
-                        <p> FLEXION / FLEXORS</p>
-                      </td>
-                      <td>40-70</td>
-                      <td>40-70</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_flexion_score
-                              : ""
-                          }
-                          {...register("cervical_flexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("cervical_flexion_strength")}
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="fs-5 fw-bold"
+                          rowSpan="6"
+                          style={{ width: "70px" }}
                         >
-                          <option
+                          CERVICAL
+                        </td>
+
+                        <td>
+                          <p> FLEXION / FLEXORS</p>
+                        </td>
+                        <td>40-70</td>
+                        <td>40-70</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .cervical_flexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_flexion_score
+                                : ""
+                            }
+                            {...register("cervical_flexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("cervical_flexion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .cervical_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .cervical_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .cervical_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>EXTENSION / EXTENSORS</p>
-                      </td>
-                      <td>60-80</td>
-                      <td>60-80</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_extension_score
-                              : ""
-                          }
-                          {...register("cervical_extension_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label=" example"
-                          {...register("cervical_extension_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>EXTENSION / EXTENSORS</p>
+                        </td>
+                        <td>60-80</td>
+                        <td>60-80</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .cervical_extension_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_extension_score
+                                : ""
+                            }
+                            {...register("cervical_extension_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label=" example"
+                            {...register("cervical_extension_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .cervical_extension_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .cervical_extension_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .cervical_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_extension_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_extension_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
-                      </td>
-                      <td>40-50</td>
-                      <td>40-50</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_sideflexion_left_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_sideflexion_left_score
-                              : ""
-                          }
-                          {...register("cervical_sideflexion_left_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("cervical_sideflexion_left_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
+                        </td>
+                        <td>40-50</td>
+                        <td>40-50</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .cervical_sideflexion_left_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_sideflexion_left_score
+                                : ""
+                            }
+                            {...register("cervical_sideflexion_left_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("cervical_sideflexion_left_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .cervical_sideflexion_left_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .cervical_sideflexion_left_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .cervical_sideflexion_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_sideflexion_left_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_sideflexion_left_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
-                      </td>
-                      <td>40-50</td>
-                      <td>40-50</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_sideflexion_rigth_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_sideflexion_rigth_score
-                              : ""
-                          }
-                          {...register("cervical_sideflexion_rigth_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("cervical_sideflexion_rigth_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
+                        </td>
+                        <td>40-50</td>
+                        <td>40-50</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .cervical_sideflexion_rigth_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_sideflexion_rigth_score
+                                : ""
+                            }
+                            {...register("cervical_sideflexion_rigth_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("cervical_sideflexion_rigth_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .cervical_sideflexion_rigth_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .cervical_sideflexion_rigth_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .cervical_sideflexion_rigth_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_sideflexion_rigth_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_sideflexion_rigth_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>ROTATION / ROTATORS (LEFT)</p>
-                      </td>
-                      <td>70-90</td>
-                      <td>70-90</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_rotation_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_rotation_left_strength
-                              : ""
-                          }
-                          {...register("cervical_rotation_left_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("cervical_rotation_left_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>ROTATION / ROTATORS (LEFT)</p>
+                        </td>
+                        <td>70-90</td>
+                        <td>70-90</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .cervical_rotation_left_strength
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_rotation_left_strength
+                                : ""
+                            }
+                            {...register("cervical_rotation_left_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("cervical_rotation_left_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .cervical_rotation_left_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .cervical_rotation_left_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .cervical_rotation_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_rotation_left_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_rotation_left_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>ROTATION / ROTATORS (RIGHT)</p>
-                      </td>
-                      <td>70-90</td>
-                      <td>70-90</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_rotation_rigth_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_rotation_rigth_score
-                              : ""
-                          }
-                          {...register("cervical_rotation_rigth_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("cervical_rotation_rigth_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>ROTATION / ROTATORS (RIGHT)</p>
+                        </td>
+                        <td>70-90</td>
+                        <td>70-90</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .cervical_rotation_rigth_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_rotation_rigth_score
+                                : ""
+                            }
+                            {...register("cervical_rotation_rigth_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("cervical_rotation_rigth_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .cervical_rotation_rigth_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .cervical_rotation_rigth_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .cervical_rotation_rigth_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_rotation_rigth_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .cervical_rotation_rigth_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="fs-5 fw-bold"
-                        rowSpan="7"
-                        style={{ width: "70px" }}
-                      >
-                        THORACIC
-                      </td>
-
-                      <td>
-                        <p> FLEXION / FLEXORS</p>
-                      </td>
-                      <td>20-30</td>
-                      <td>20-30</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_flexion_score
-                              : ""
-                          }
-                          {...register("thoracic_flexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_flexion_strength")}
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="fs-5 fw-bold"
+                          rowSpan="7"
+                          style={{ width: "70px" }}
                         >
-                          <option
+                          THORACIC
+                        </td>
+
+                        <td>
+                          <p> FLEXION / FLEXORS</p>
+                        </td>
+                        <td>20-30</td>
+                        <td>20-30</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_flexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_flexion_score
+                                : ""
+                            }
+                            {...register("thoracic_flexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_flexion_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>EXTENSION / EXTENSORS</p>
-                      </td>
-                      <td>25-35</td>
-                      <td>25-35</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_extension_score
-                              : ""
-                          }
-                          {...register("thoracic_extension_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_extension_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>EXTENSION / EXTENSORS</p>
+                        </td>
+                        <td>25-35</td>
+                        <td>25-35</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_extension_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_extension_score
+                                : ""
+                            }
+                            {...register("thoracic_extension_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_extension_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_extension_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_extension_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_extension_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_extension_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
-                      </td>
-                      <td>20-25</td>
-                      <td>20-25</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_sideFlexion_left_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_sideFlexion_left_score
-                              : ""
-                          }
-                          {...register("thoracic_sideFlexion_left_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_sideFlexion_left_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
+                        </td>
+                        <td>20-25</td>
+                        <td>20-25</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_sideFlexion_left_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_sideFlexion_left_score
+                                : ""
+                            }
+                            {...register("thoracic_sideFlexion_left_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_sideFlexion_left_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_sideFlexion_left_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_sideFlexion_left_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_sideFlexion_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_sideFlexion_left_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_sideFlexion_left_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
-                      </td>
-                      <td>20-25</td>
-                      <td>20-25</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_sideFlexion_right_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_sideFlexion_right_strength
-                              : ""
-                          }
-                          {...register("thoracic_sideFlexion_right_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_sideFlexion_right_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
+                        </td>
+                        <td>20-25</td>
+                        <td>20-25</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_sideFlexion_right_strength
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_sideFlexion_right_strength
+                                : ""
+                            }
+                            {...register("thoracic_sideFlexion_right_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_sideFlexion_right_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_sideFlexion_right_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_sideFlexion_right_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_sideFlexion_right_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_sideFlexion_right_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_sideFlexion_right_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>ROTATION / ROTATORS (LEFT)</p>
-                      </td>
-                      <td>5-10</td>
-                      <td>5-10</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_rotation_left_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_rotation_left_score
-                              : ""
-                          }
-                          {...register("thoracic_rotation_left_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_rotation_left_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>ROTATION / ROTATORS (LEFT)</p>
+                        </td>
+                        <td>5-10</td>
+                        <td>5-10</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_rotation_left_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_rotation_left_score
+                                : ""
+                            }
+                            {...register("thoracic_rotation_left_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_rotation_left_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_rotation_left_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_rotation_left_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_rotation_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_rotation_left_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_rotation_left_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>ROTATION / ROTATORS (RIGHT)</p>
-                      </td>
-                      <td>5-10</td>
-                      <td>5-10</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_rotation_right_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_rotation_right_score
-                              : ""
-                          }
-                          {...register("thoracic_rotation_right_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_rotation_rigth_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>ROTATION / ROTATORS (RIGHT)</p>
+                        </td>
+                        <td>5-10</td>
+                        <td>5-10</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_rotation_right_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_rotation_right_score
+                                : ""
+                            }
+                            {...register("thoracic_rotation_right_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_rotation_rigth_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_rotation_rigth_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_rotation_rigth_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_rotation_rigth_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_rotation_rigth_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_rotation_rigth_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>KYPOSIS POSTURE</p>
-                      </td>
-                      <td>30-40</td>
-                      <td>30-40</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_kyposis_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_kyposis_score
-                              : ""
-                          }
-                          {...register("thoracic_kyposis_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("thoracic_kyposis_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>KYPOSIS POSTURE</p>
+                        </td>
+                        <td>30-40</td>
+                        <td>30-40</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .thoracic_kyposis_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_kyposis_score
+                                : ""
+                            }
+                            {...register("thoracic_kyposis_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("thoracic_kyposis_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .thoracic_kyposis_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .thoracic_kyposis_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_kyposis_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_kyposis_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .thoracic_kyposis_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="fs-5 fw-bold"
-                        rowSpan="11"
-                        style={{ width: "70px" }}
-                      >
-                        LUMBAR
-                      </td>
-
-                      <td>
-                        <p> SACRAL INCLINATION ANGLE</p>
-                      </td>
-                      <td>15-30</td>
-                      <td>15-30</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_sacralinclination_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_sacralinclination_score
-                              : ""
-                          }
-                          {...register("lumbar_sacralinclination_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_sacralinclination_strength")}
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="fs-5 fw-bold"
+                          rowSpan="11"
+                          style={{ width: "70px" }}
                         >
-                          <option
+                          LUMBAR
+                        </td>
+
+                        <td>
+                          <p> SACRAL INCLINATION ANGLE</p>
+                        </td>
+                        <td>15-30</td>
+                        <td>15-30</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_sacralinclination_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_sacralinclination_score
+                                : ""
+                            }
+                            {...register("lumbar_sacralinclination_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_sacralinclination_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .lumbar_sacralinclination_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .lumbar_sacralinclination_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_sacralinclination_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_sacralinclination_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_sacralinclination_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>STANDING LORDOSIS</p>
-                      </td>
-                      <td>25-40</td>
-                      <td>25-40</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_standinglordosis_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_standinglordosis_score
-                              : ""
-                          }
-                          {...register("lumbar_standinglordosis_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_standinglordosis_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>STANDING LORDOSIS</p>
+                        </td>
+                        <td>25-40</td>
+                        <td>25-40</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_standinglordosis_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_standinglordosis_score
+                                : ""
+                            }
+                            {...register("lumbar_standinglordosis_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_standinglordosis_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .lumbar_standinglordosis_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .lumbar_standinglordosis_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_standinglordosis_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_standinglordosis_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_standinglordosis_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td>
-                        <p>STANDING HIP FLEXION</p>
-                      </td>
-                      <td>45-65</td>
-                      <td>45-65</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_standinghipflexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_standinghipflexion_score
-                              : ""
-                          }
-                          {...register("lumbar_standinghipflexion_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_standinghipflexion_strength")}
-                        >
-                          <option
+                      <tr>
+                        <td>
+                          <p>STANDING HIP FLEXION</p>
+                        </td>
+                        <td>45-65</td>
+                        <td>45-65</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_standinghipflexion_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_standinghipflexion_score
+                                : ""
                             }
+                            {...register("lumbar_standinghipflexion_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_standinghipflexion_strength")}
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_standinghipflexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_standinghipflexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
-                            </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>FLEXION (AMA method)</p>
-                      </td>
-                      <td>40-75</td>
-                      <td>40-75</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_flexionAMA_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_flexionAMA_score
-                              : ""
-                          }
-                          {...register("lumbar_flexionAMA_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_flexionAMA_strength")}
-                        >
-                          <option
-                            defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
                                   .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
+                              appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_standinghipflexion_strength
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_standinghipflexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>EXTENSION (AMA method)</p>
-                      </td>
-                      <td>20-35</td>
-                      <td>20-35</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_extensionAMA_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_extensionAMA_score
-                              : ""
-                          }
-                          {...register("lumbar_extensionAMA_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_extensionAMA_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>FLEXION (AMA method)</p>
+                        </td>
+                        <td>40-75</td>
+                        <td>40-75</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_flexionAMA_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_flexionAMA_score
+                                : ""
+                            }
+                            {...register("lumbar_flexionAMA_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_flexionAMA_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>FLEXION (curve angle method)</p>
-                      </td>
-                      <td>0-20</td>
-                      <td>0-20</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .lumbar_flexion_curveangle_score
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .lumbar_flexion_curveangle_score
-                              : ""
-                          }
-                          {...register("lumbar_flexion_curveangle_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_flexion_curveangle_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>EXTENSION (AMA method)</p>
+                        </td>
+                        <td>20-35</td>
+                        <td>20-35</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_extensionAMA_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_extensionAMA_score
+                                : ""
+                            }
+                            {...register("lumbar_extensionAMA_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_extensionAMA_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>EXTENSION (curve angle method)</p>
-                      </td>
-                      <td>60-75</td>
-                      <td>60-75</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
-                              : ""
-                          }
-                          {...register("lumbar_extention_curveangle_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_extention_curveangle_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>FLEXION (curve angle method)</p>
+                        </td>
+                        <td>0-20</td>
+                        <td>0-20</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .lumbar_flexion_curveangle_score
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .lumbar_flexion_curveangle_score
+                                : ""
+                            }
+                            {...register("lumbar_flexion_curveangle_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_flexion_curveangle_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
-                      </td>
-                      <td>15-35</td>
-                      <td>15-35</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
-                              : ""
-                          }
-                          {...register("lumbar_sideflexion_left_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_sideflexion_left_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>EXTENSION (curve angle method)</p>
+                        </td>
+                        <td>60-75</td>
+                        <td>60-75</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .identified_problems
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .identified_problems
+                                : ""
+                            }
+                            {...register("lumbar_extention_curveangle_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register(
+                              "lumbar_extention_curveangle_strength"
+                            )}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
-                      </td>
-                      <td>15-35</td>
-                      <td>15-35</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
-                              : ""
-                          }
-                          {...register("lumbar_sideflexion_right_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_sideflexion_right_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
+                        </td>
+                        <td>15-35</td>
+                        <td>15-35</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .identified_problems
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .identified_problems
+                                : ""
+                            }
+                            {...register("lumbar_sideflexion_left_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_sideflexion_left_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>ROTATION / ROTATORS (LEFT)</p>
-                      </td>
-                      <td>10-20</td>
-                      <td>10-20</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
-                              : ""
-                          }
-                          {...register("lumbar_rotation_left_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_rotation_left_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
+                        </td>
+                        <td>15-35</td>
+                        <td>15-35</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .identified_problems
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .identified_problems
+                                : ""
+                            }
+                            {...register("lumbar_sideflexion_right_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_sideflexion_right_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>ROTATION / ROTATORS (RIGHT)</p>
-                      </td>
-                      <td>10-20</td>
-                      <td>10-20</td>
-                      <td>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Text Box"
-                          defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
-                              : ""
-                          }
-                          {...register("lumbar_rotation_right_score")}
-                        />
-                      </td>
-                      <td>
-                        <select
-                          className="form-select bg-light "
-                          aria-label="example"
-                          {...register("lumbar_rotation_right_strength")}
-                        >
-                          <option
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>ROTATION / ROTATORS (LEFT)</p>
+                        </td>
+                        <td>10-20</td>
+                        <td>10-20</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
                             defaultValue={
                               !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .identified_problems
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .identified_problems
+                                : ""
+                            }
+                            {...register("lumbar_rotation_left_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_rotation_left_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
                               appointment?.rehab?.manual_muscle_assesment
                                 .hip_flexion_strength
-                            }
-                          >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
-                              : ""}
-                          </option>
-                          {scoreList.map((items, index) => (
-                            <option value={items} key={index}>
-                              {items}
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
                             </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                  </table>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>ROTATION / ROTATORS (RIGHT)</p>
+                        </td>
+                        <td>10-20</td>
+                        <td>10-20</td>
+                        <td>
+                          <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Text Box"
+                            defaultValue={
+                              !!appointment?.rehab?.manual_muscle_assesment &&
+                              !!appointment?.rehab?.manual_muscle_assesment
+                                .identified_problems
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .identified_problems
+                                : ""
+                            }
+                            {...register("lumbar_rotation_right_score")}
+                          />
+                        </td>
+                        <td>
+                          <select
+                            className="form-select bg-light "
+                            aria-label="example"
+                            {...register("lumbar_rotation_right_strength")}
+                          >
+                            <option
+                              defaultValue={
+                                !!appointment?.rehab?.manual_muscle_assesment &&
+                                appointment?.rehab?.manual_muscle_assesment
+                                  .hip_flexion_strength
+                              }
+                            >
+                              {!!appointment?.rehab?.manual_muscle_assesment &&
+                              appointment?.rehab?.manual_muscle_assesment
+                                .hip_flexion_strength
+                                ? appointment?.rehab?.manual_muscle_assesment
+                                    .hip_flexion_strength
+                                : ""}
+                            </option>
+                            {scoreList.map((items, index) => (
+                              <option value={items} key={index}>
+                                {items}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
                 <div className="gen-form">
                   <div className="row justify-centent-between align-items-center">

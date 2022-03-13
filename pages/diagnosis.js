@@ -54,7 +54,7 @@ const Diagnosis = () => {
         <div className="col-xl-4 col-lg-6 mt-4 mt-lg-0">
           <div className="justify-content-md-end">
             <form>
-              <div className="row justify-content-between align-items-center">
+              <div className="row justify-content-between align-items-baseline">
                 <div className="col-sm-12 col-md-6 mt-6 mt-sm-0">
                   <div className="d-grid">
                     <Link href="/diagnosis">
@@ -63,7 +63,7 @@ const Diagnosis = () => {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-6 mt-4 mt-sm-0">
+                <div className="col-sm-12 col-md-6 mt-4 mt-sm-0 mt-sm-3">
                   <div className="d-grid">
                     <Link href="/diagnosis">
                       <a className="btn btn-primary">Next</a>

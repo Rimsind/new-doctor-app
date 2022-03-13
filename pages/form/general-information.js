@@ -214,9 +214,9 @@ const GeneralInformation = () => {
                 </div>
                 <div className="gen-form">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 mb-2">
                           <h3 className="fs-6 fs-bold text-dark">Language</h3>
                         </div>
                         <div className="col-md-6">
@@ -268,9 +268,9 @@ const GeneralInformation = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-2">
                       <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 mb-2">
                           <h3 className="fs-6 fs-bold text-dark">
                             Highest Level of Education
                           </h3>
