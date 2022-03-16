@@ -118,12 +118,11 @@ const Eprescription = () => {
         safetyMeasures: allPrecaution.toString(),
         treatmentreferral: allReferral.toString(),
         test: testList,
-        followup: {
-          date: data.revisitDate,
-          type: data.revisitType,
-        },
+        followUp_date: data.followUp_date,
+        followUp_type: data.followUp_type,
       },
     };
+    // console.log(payload);
 
     const res = await axios.put(
       `${apiUrl}/appointments/${appointmentId}`,
@@ -137,6 +136,7 @@ const Eprescription = () => {
     const result = res.data;
     alert("Form Submitted Succesfully");
     router.push(`/diagnosis?appointmentId=${appointmentId}`);
+    console.log(result);
     return result;
   };
 
@@ -952,12 +952,7 @@ const Eprescription = () => {
                     <input
                       type="date"
                       className="form-control"
-                      name="days"
-                      value={
-                        !!appointmentDetails?.eprescription &&
-                        appointmentDetails?.eprescription?.followup?.date
-                      }
-                      {...register("revisitDate")}
+                      {...register("followUp_date")}
                     />
                   </div>
                   <div className="col-md-6">
@@ -965,7 +960,7 @@ const Eprescription = () => {
                     <select
                       className="form-control"
                       aria-label="Default select example"
-                      {...register("revisitType")}
+                      {...register("followUp_type")}
                     >
                       <option
                         name="language"
