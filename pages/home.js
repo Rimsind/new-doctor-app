@@ -1,8 +1,7 @@
 import { useAuth } from "../context";
-
+import Link from "next/link";
 const Home = () => {
   const { auth } = useAuth();
-  console.log(auth);
 
   return (
     <>
@@ -60,27 +59,9 @@ const Home = () => {
       </div>
       <div className="dashboard-nav-card mt-5">
         <div className="row align-items-center">
-          <div className="col-4 mb-2 mt-2">
-            <div className="dashboard-nav-card-item-first">
-              <div className="row">
-                <div className="col-6">
-                  <div className="card-icon text-center">
-                    <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="card-name text-start">
-                    <a href="#" className="fs-5 fw-bold text-light">
-                      Appointment
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 mb-2 mt-2">
-            <div className="dashboard-nav-card-item-second">
-              <div className="dashboard-nav-card-item-content">
+          <Link href="/appointment">
+            <div className="col-4 mb-2 mt-2" style={{ cursor: "pointer" }}>
+              <div className="dashboard-nav-card-item-first">
                 <div className="row">
                   <div className="col-6">
                     <div className="card-icon text-center">
@@ -89,56 +70,80 @@ const Home = () => {
                   </div>
                   <div className="col-6">
                     <div className="card-name text-start">
-                      <a href="#" className="fs-5 fw-bold text-light">
-                        Time Table
-                      </a>
+                      <a className="fs-5 fw-bold text-light">Appointment</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-4 mb-2 mt-2">
-            <div className="dashboard-nav-card-item-third">
-              <div className="dashboard-nav-card-item-content">
-                <div className="row">
-                  <div className="col-6">
-                    <div className="card-icon text-center">
-                      <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+          </Link>
+          <Link href="/time-table">
+            <div className="col-4 mb-2 mt-2" style={{ cursor: "pointer" }}>
+              <div className="dashboard-nav-card-item-second">
+                <div className="dashboard-nav-card-item-content">
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="card-icon text-center">
+                        <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="card-name text-start">
-                      <a href="#" className="fs-5 fw-bold text-light">
-                        Profile Settings
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 mb-2 mt-2">
-            <div className="dashboard-nav-card-item-forth">
-              <div className="dashboard-nav-card-item-content">
-                <div className="row">
-                  <div className="col-6">
-                    <div className="card-icon text-center">
-                      <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="card-name text-start">
-                      <a href="#" className="fs-5 fw-bold text-light">
-                        Password Settings
-                      </a>
+                    <div className="col-6">
+                      <div className="card-name text-start">
+                        <a href="#" className="fs-5 fw-bold text-light">
+                          Time Table
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-4 mb-2 mt-2">
+          </Link>
+          <Link href="/profile-setting">
+            <div className="col-4 mb-2 mt-2" style={{ cursor: "pointer" }}>
+              <div className="dashboard-nav-card-item-third">
+                <div className="dashboard-nav-card-item-content">
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="card-icon text-center">
+                        <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="card-name text-start">
+                        <a href="#" className="fs-5 fw-bold text-light">
+                          Profile Settings
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link href="/password-seting">
+            <div className="col-4 mb-2 mt-2" style={{ cursor: "pointer" }}>
+              <div className="dashboard-nav-card-item-forth">
+                <div className="dashboard-nav-card-item-content">
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="card-icon text-center">
+                        <i className="ri-calendar-line fs-3 p-4 bg-white rounded-circle"></i>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="card-name text-start">
+                        <a href="#" className="fs-5 fw-bold text-light">
+                          Password Settings
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <div className="col-4 mb-2 mt-2" style={{ cursor: "pointer" }}>
             <div className="dashboard-nav-card-item-fifth">
               <div className="dashboard-nav-card-item-content">
                 <div className="row">

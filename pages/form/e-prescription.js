@@ -108,8 +108,7 @@ const Eprescription = () => {
   };
 
   const { register, handleSubmit } = useForm();
-  const submitPrescription = async (data, e) => {
-    e.preventDefault();
+  const submitPrescription = async (data) => {
     const payload = {
       eprescription: {
         ...appointmentDetails.eprescription,
@@ -412,7 +411,7 @@ const Eprescription = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {appointmentDetails?.patient?.medicalHistory?.medicationHistory.map(
+                        {appointmentDetails?.patient?.past_medical_history?.map(
                           (items, index) => (
                             <tr key={index}>
                               <td>{items?.medicineName}</td>
